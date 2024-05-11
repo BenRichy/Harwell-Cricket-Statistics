@@ -1,0 +1,103 @@
+Get cricket stats from play cricket
+
+API details here: https://play-cricket.ecb.co.uk/hc/en-us/sections/360000978518-API-Experienced-Developers-Only
+
+```{r LoadPackages}
+library(httr)
+library(jsonlite)
+library(readr)
+library(dplyr)
+
+```
+
+```{r Globals}
+season <- 2024
+team_name <- "Harwell"
+
+
+```
+
+
+```{r FilePaths}
+FP_api_key <- "data/playcricket_api_key.txt"
+FP_club_id <- "data/playcricket_club_id.txt"
+FP_results_summary <- "data/results_summary.csv"
+
+
+
+```
+
+
+```{r GetSummaryData}
+# read in the api and club id
+api_key <- readLines(FP_api_key)
+club_id <- readLines(FP_club_id)
+
+# get the list of matches for the defined season
+get_matches_query <- sprintf(
+    "http://play-cricket.com/api/v2/result_summary.json?&site_id=%s&season=%s&api_token=%s",
+    club_id,
+    season,
+    api_key
+)
+
+results_return <- GET(get_matches_query)
+results_data <- fromJSON(rawToChar(results_return$content))$result_summary
+
+# write df of results data to a csv
+write_csv(results_data, FP_results_summary)
+
+
+```
+
+
+```{r GetDetailedData}
+
+# read in csv of summary results
+results_data <- read_csv(FP_results_summary)
+
+# loop through the summary results, and get the detailed results for each match
+for (i in 1:nrow(results_data)) {
+    # get the match id
+    match_id <- results_data[i, "id"]
+
+    # set the gettter
+    get_matches_detail_query <- sprintf(
+        "http://play-cricket.com/api/v2/match_detail.json?&match_id=%s&api_token=%s",
+        match_id,
+        api_key
+    )
+
+    # get the detailed match data
+    results_detail_return <- GET(get_matches_detail_query)
+    # pull out the detail
+    results_detail_data <- fromJSON(rawToChar(results_detail_return$content))$match_details
+
+    # get the list of players in the teams
+    results_detail_players_home <- results_detail_data$players[[1]]$home_team[[1]]
+    results_detail_players_away <- results_detail_data$players[[1]]$away_team[[1]]
+
+    # get the detailed data
+    results_detail_innings <- results_detail_data$innings[[1]]
+
+    # find the row that the club is on
+    # this is the club's batting innings
+    results_detail_innings_bat <- results_detail_innings |>
+        filter(grepl(paste0(".*", team_name, ".*"), team_batting_name))
+
+    # get the data of the batting score card
+    results_detail_batting <- results_detail_innings_bat$bat[[1]]
+    # get the data of the fall of wickets
+    results_detail_partnerships <- results_detail_innings_bat$fow[[1]]
+
+    # filter the innings data for the row that the club is not on
+    # this is the club's bowling figures
+    results_detail_innings_bowl <- results_detail_innings |>
+        filter(!grepl(paste0(".*", team_name, ".*"), team_batting_name))
+
+    results_detail_bowling <- results_detail_innings_bowl$bowl[[1]]
+}
+
+
+
+```
