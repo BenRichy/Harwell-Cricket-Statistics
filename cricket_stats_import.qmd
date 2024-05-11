@@ -7,6 +7,8 @@ library(httr)
 library(jsonlite)
 library(readr)
 library(dplyr)
+library(stringr)
+library(DBI)
 
 ```
 
@@ -119,15 +121,87 @@ for (i in 1:nrow(results_data)) {
 
 ```
 
+
+Create meta data tables to work with the database
+```{r CleanData}
+
+# create table to map dismissals in play-cricket to clean names
+batting_dismissals <- tribble(
+    ~pc_dismissal, ~clean_dismissal,
+    "b", "Bowled",
+    "ct", "Caught",
+    "lbw", "LBW",
+    "not out", "Not Out",
+    "did not bat", "DNB",
+    "run out", "Run Out",
+    "st", "Stumped",
+    "retired not out", "Retired Not Out"
+)
+
+# need to sum up the number of overs/balls so that these can be grouped later
+# split the overs by the period (.)
+data_bowling_clean <- data_bowling |>
+    mutate(separated_overs = str_split(overs, "\\."))
+
+# loop through rows
+for (i in 1:nrow(data_bowling_clean)) {
+    # determine the number of completed overs
+    data_bowling_clean[i, "complete_overs"] <- as.numeric(data_bowling_clean$separated_overs[[i]][1])
+
+    # determine the number of remaining balls
+    data_bowling_clean[i, "residual_balls"] <- as.numeric(data_bowling_clean$separated_overs[[i]][2])
+}
+
+# calculate how many balls the bowler bowled a match
+data_bowling_clean <- data_bowling_clean |>
+    mutate(
+        residual_balls = case_when(
+            is.na(residual_balls) ~ 0,
+            TRUE ~ residual_balls
+        ),
+        ball_count = complete_overs * 6 + residual_balls
+    )
+
+# calculate the number of runs in each partnership
+data_partnerships_clean <- data_partnerships |>
+    mutate(partnership_runs = NA_integer_)
+
+# loop over rows
+for (i in 1:nrow(data_partnerships_clean)) {
+    # if the wicket is the first to fall, just get the runs
+    if (data_partnerships_clean[i, "wickets"] == 1) {
+        data_partnerships_clean[i, "partnership_runs"] <- data_partnerships_clean[i, "runs"]
+        # if not the first to fall, find the difference between it and the run above,
+        # check if the match id is the same as the row above though
+    } else if (data_partnerships_clean[i, "match_id"] == data_partnerships_clean[i - 1, "match_id"]) {
+        data_partnerships_clean[i, "partnership_runs"] <- (as.numeric(data_partnerships_clean[i, "runs"]) - as.numeric(data_partnerships_clean[i - 1, "runs"]))
+    }
+}
+
+
+
+```
+
 Create a database that contains all of the data for the team
 ```{r CreateDatabase}
 
-cricket_database <- src_sqlite(FP_data_base, create = TRUE)
+players <- data_players
+batting <- data_batting
+partnerships <- data_partnerships_clean
+bowling <- data_bowling_clean |> select(-separated_overs)
 
-copy_to(cricket_database, data_players)
-copy_to(cricket_database, data_batting)
-copy_to(cricket_database, data_partnerships)
-copy_to(cricket_database, data_bowling)
+cricket_database <- dbConnect(RSQLite::SQLite(), FP_data_base)
+dbWriteTable(cricket_database, "players", players)
+dbWriteTable(cricket_database, "batting", batting)
+dbWriteTable(cricket_database, "partnerships", partnerships)
+dbWriteTable(cricket_database, "bowling", bowling)
+dbWriteTable(cricket_database, "batting_dismissals", batting_dismissals)
+
+dbListTables(cricket_database)
+
+dbDisconnect(cricket_database)
+
+
 
 
 ```
