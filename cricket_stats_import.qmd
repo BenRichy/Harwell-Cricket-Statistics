@@ -22,6 +22,7 @@ team_name <- "Harwell"
 FP_api_key <- "data/playcricket_api_key.txt"
 FP_club_id <- "data/playcricket_club_id.txt"
 FP_results_summary <- "data/results_summary.csv"
+FP_data_base <- "data/cricket_detail_database.sqlite"
 
 
 
@@ -110,12 +111,23 @@ for (i in 1:nrow(results_data)) {
 
 
     # write data to the dataframes
-    data_players <- data_players |> bind_rows(results_detail_players_home)
-    data_batting <- data_batting |> bind_rows(results_detail_batting |> mutate(test = 2))
-    data_partnerships <- data_partnerships |> bind_rows(results_detail_partnerships)
-    data_bowling <- data_bowling |> bind_rows(results_detail_bowling)
+    data_players <- data_players |> bind_rows(results_detail_players_home |> mutate(match_id = match_id))
+    data_batting <- data_batting |> bind_rows(results_detail_batting |> mutate(match_id = match_id))
+    data_partnerships <- data_partnerships |> bind_rows(results_detail_partnerships |> mutate(match_id = match_id))
+    data_bowling <- data_bowling |> bind_rows(results_detail_bowling |> mutate(match_id = match_id))
 }
 
+```
+
+Create a database that contains all of the data for the team
+```{r CreateDatabase}
+
+cricket_database <- src_sqlite(FP_data_base, create = TRUE)
+
+copy_to(cricket_database, data_players)
+copy_to(cricket_database, data_batting)
+copy_to(cricket_database, data_partnerships)
+copy_to(cricket_database, data_bowling)
 
 
 ```
