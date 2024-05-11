@@ -56,10 +56,16 @@ write_csv(results_data, FP_results_summary)
 # read in csv of summary results
 results_data <- read_csv(FP_results_summary)
 
+# define dataframes for data to be returned into
+data_players <- data.frame()
+data_batting <- data.frame()
+data_partnerships <- data.frame()
+data_bowling <- data.frame()
+
 # loop through the summary results, and get the detailed results for each match
 for (i in 1:nrow(results_data)) {
     # get the match id
-    match_id <- results_data[i, "id"]
+    match_id <- results_data[i, "id"][[1]]
 
     # set the gettter
     get_matches_detail_query <- sprintf(
@@ -72,6 +78,11 @@ for (i in 1:nrow(results_data)) {
     results_detail_return <- GET(get_matches_detail_query)
     # pull out the detail
     results_detail_data <- fromJSON(rawToChar(results_detail_return$content))$match_details
+
+    # if the result was cancelled then go to the next match
+    if (results_detail_data["result"][[1]] == "C") {
+        next
+    }
 
     # get the list of players in the teams
     results_detail_players_home <- results_detail_data$players[[1]]$home_team[[1]]
@@ -94,8 +105,15 @@ for (i in 1:nrow(results_data)) {
     # this is the club's bowling figures
     results_detail_innings_bowl <- results_detail_innings |>
         filter(!grepl(paste0(".*", team_name, ".*"), team_batting_name))
-
+    # get the data of the fbowling score card
     results_detail_bowling <- results_detail_innings_bowl$bowl[[1]]
+
+
+    # write data to the dataframes
+    data_players <- data_players |> bind_rows(results_detail_players_home)
+    data_batting <- data_batting |> bind_rows(results_detail_batting |> mutate(test = 2))
+    data_partnerships <- data_partnerships |> bind_rows(results_detail_partnerships)
+    data_bowling <- data_bowling |> bind_rows(results_detail_bowling)
 }
 
 
