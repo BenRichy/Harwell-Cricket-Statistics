@@ -15,6 +15,7 @@ library(DBI)
 ```{r Globals}
 season <- 2024
 team_name <- "Harwell"
+club_name <- "Harwell International CC"
 
 
 ```
@@ -185,20 +186,52 @@ for (i in 1:nrow(data_partnerships_clean)) {
 Create a database that contains all of the data for the team
 ```{r CreateDatabase}
 
+# tidy the names up, and remove columns that the database won't accept
 players <- data_players
 batting <- data_batting
 partnerships <- data_partnerships_clean
 bowling <- data_bowling_clean |> select(-separated_overs)
 
-cricket_database <- dbConnect(RSQLite::SQLite(), FP_data_base)
-dbWriteTable(cricket_database, "players", players)
-dbWriteTable(cricket_database, "batting", batting)
-dbWriteTable(cricket_database, "partnerships", partnerships)
-dbWriteTable(cricket_database, "bowling", bowling)
-dbWriteTable(cricket_database, "batting_dismissals", batting_dismissals)
+results <- results_data |>
+    mutate(
+        opposition = case_when(
+            away_club_name == club_name ~ home_club_name,
+            TRUE ~ away_club_name
+        ),
+        home_away = case_when(
+            away_club_name == club_name ~ "Home",
+            TRUE ~ "Away"
+        ),
+        league_name = case_when(
+            is.na(league_name) ~ "Friendly",
+            TRUE ~ league_name
+        )
+    ) |>
+    select(
+        id,
+        match_date,
+        opposition,
+        toss,
+        result,
+        result_description,
+        league_name
+    )
 
+# create database
+cricket_database <- dbConnect(RSQLite::SQLite(), FP_data_base)
+
+# write tables to database
+dbWriteTable(cricket_database, "players", players, overwrite = TRUE)
+dbWriteTable(cricket_database, "batting", batting, overwrite = TRUE)
+dbWriteTable(cricket_database, "partnerships", partnerships, overwrite = TRUE)
+dbWriteTable(cricket_database, "bowling", bowling, overwrite = TRUE)
+dbWriteTable(cricket_database, "batting_dismissals", batting_dismissals, overwrite = TRUE)
+dbWriteTable(cricket_database, "results", results, overwrite = TRUE)
+
+# list tables to check they are in the database
 dbListTables(cricket_database)
 
+# disconnect from database
 dbDisconnect(cricket_database)
 
 

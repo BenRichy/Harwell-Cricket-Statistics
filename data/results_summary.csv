@@ -1,0 +1,27 @@
+id,status,published,last_updated,league_id,competition_name,competition_id,competition_type,match_type,game_type,countdown_cricket,match_date,match_time,ground_name,ground_id,home_team_name,home_team_id,home_club_name,home_club_id,away_team_name,away_team_id,away_club_name,away_club_id,umpire_1_name,umpire_1_id,umpire_2_name,umpire_2_id,umpire_3_name,umpire_3_id,referee_name,referee_id,scorer_1_name,scorer_1_id,scorer_2_name,scorer_2_id,toss_won_by_team_id,toss,batted_first,no_of_overs,balls_per_innings,no_of_innings,result,result_description,result_applied_to,home_confirmed,away_confirmed,result_locked,scorecard_locked,match_notes,points,innings,league_name
+6366477,New,Yes,28/04/2024,,,,Friendly,Limited Overs,Standard,no,28/04/2024,14:00,Witney Mills,38266,Friendly XI,105141,Oxfordshire County Council Staff CC,4947,Friendly XI,15138,Harwell International CC,3220,,,,,,,,,,,,,,,,,,1,C,Cancelled,,false,false,false,false,"<p>Rained&nbsp;off</p>
+",,,NA
+6586586,New,Yes,04/05/2024,,,,Friendly,Limited Overs,Standard,no,04/05/2024,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,248249,Garsington CC,2861,,,,,,,,,,,,,248249,Garsington CC - 2nd XI won the toss and elected to field,284082,,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Harwell International CC 1st XI Innings</b><br/>
+9.6 Harwell International CC 1st XI: 50 runs in 9.5 overs, 43 minutes, 20 extras<br/>22.4 Harwell International CC 1st XI: 100 runs in 22.4 overs, 93 minutes, 29 extras<br/>24.3 Matt Davies: 50 runs in 83 balls, 100 minutes (8x4)
+<br/>
+",,,NA
+6279722,New,Yes,05/05/2024,,,,Friendly,Limited Overs,Standard,no,05/05/2024,13:30,Harwell,11535,Friendly XI,15138,Harwell International CC,3220,Sunday XI,53920,Goring on Thames CC,2946,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to bat,15138,,,1,A,Abandoned,,false,true,false,false,"<b>Harwell International CC Friendly XI Innings</b><br/>
+15.4 Harwell International CC Friendly XI: 50 runs in 15.4 overs, 62 minutes, 3 extras<br/>22.7 5th Wicket: 50 runs in 55 balls, 36 minutes, Graham Stevens 36 (37), Sandeep Gumudelli 11 (18), 4 extras<br/>23.3 Harwell International CC Friendly XI: 100 runs in 23.3 overs, 95 minutes, 8 extras<br/>25.1 Graham Stevens: 50 runs in 63 balls, 64 minutes (8x4)
+<br/>
+",,,NA
+6289938,New,Yes,08/05/2024,16676,Division 3 North,119698,League,Limited Overs,Standard,no,08/05/2024,18:00,Harwell,11535,Midweek XI,15137,Harwell International CC,3220,Midweek XI,216693,Metal Box CC,11949,,,,,,,,,,,,,15137,Harwell International CC - Midweek XI won the toss and elected to field,216693,20,,1,W,Harwell International CC - Midweek XI - Won,15137,false,false,false,false,"<b>Metal Box CC Midweek XI Innings</b><br/>
+10.3 Metal Box CC Midweek XI: 50 runs in 10.3 overs, 41 minutes, 20 extras<br/>18.4 Metal Box CC Midweek XI: 100 runs in 18.4 overs, 70 minutes, 34 extras
+<br/>
+<br/>
+<b>Harwell International CC Midweek XI Innings</b><br/>
+7.1 Harwell International CC Midweek XI: 50 runs in 7.1 overs, 23 minutes, 13 extras<br/>17.3 Harwell International CC Midweek XI: 100 runs in 17.3 overs, 62 minutes, 28 extras
+<br/>
+",,,Downs League
+6309995,New,Yes,11/05/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,11/05/2024,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,1st XI,356211,Letcombe CC,3918,,,,,,,,,,,,,356211,Letcombe CC - 1st XI won the toss and elected to bat,356211,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Letcombe CC 1st XI Innings</b><br/>
+13.5 Letcombe CC 1st XI: 50 runs in 13.5 overs, 54 minutes, 1 extra<br/>26.7 Letcombe CC 1st XI: 100 runs in 26.5 overs, 107 minutes, 10 extras
+<br/>
+<br/>
+<b>Harwell International CC 1st XI Innings</b><br/>
+12.5 Harwell International CC 1st XI: 50 runs in 12.5 overs, 46 minutes, 10 extras<br/>21.2 Harwell International CC 1st XI: 100 runs in 21.2 overs, 85 minutes, 13 extras<br/>21.5 Max Schofield: 50 runs in 55 balls, 86 minutes (8x4)<br/>25.1 3rd Wicket: 50 runs in 55 balls, 37 minutes, Max Schofield 35 (28), Graham Stevens 14 (27), 1 extra
+<br/>
+",,,Cherwell League
