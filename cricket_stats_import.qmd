@@ -1,8 +1,8 @@
-#
-#
-#
-#
-#
+Get cricket stats from play cricket
+
+API details here: https://play-cricket.ecb.co.uk/hc/en-us/sections/360000978518-API-Experienced-Developers-Only
+
+```{r LoadPackages}
 library(httr)
 library(jsonlite)
 library(readr)
@@ -10,18 +10,18 @@ library(dplyr)
 library(stringr)
 library(DBI)
 
-#
-#
-#
+```
+
+```{r Globals}
 season <- 2024
 team_name <- "Harwell"
 club_name <- "Harwell International CC"
 
 
-#
-#
-#
-#
+```
+
+
+```{r FilePaths}
 FP_api_key <- "data/playcricket_api_key.txt"
 FP_club_id <- "data/playcricket_club_id.txt"
 FP_results_summary <- "data/results_summary.csv"
@@ -29,10 +29,10 @@ FP_data_base <- "data/cricket_detail_database.sqlite"
 
 
 
-#
-#
-#
-#
+```
+
+
+```{r GetSummaryData}
 # read in the api and club id
 api_key <- readLines(FP_api_key)
 club_id <- readLines(FP_club_id)
@@ -52,10 +52,10 @@ results_data <- fromJSON(rawToChar(results_return$content))$result_summary
 write_csv(results_data, FP_results_summary)
 
 
-#
-#
-#
-#
+```
+
+
+```{r GetDetailedData}
 
 # read in csv of summary results
 results_data <- read_csv(FP_results_summary)
@@ -120,11 +120,11 @@ for (i in 1:nrow(results_data)) {
     data_bowling <- data_bowling |> bind_rows(results_detail_bowling |> mutate(match_id = match_id))
 }
 
-#
-#
-#
-#
-#
+```
+
+
+Create meta data tables to work with the database
+```{r CleanData}
 
 # create table to map dismissals in play-cricket to clean names
 batting_dismissals <- tribble(
@@ -181,10 +181,10 @@ for (i in 1:nrow(data_partnerships_clean)) {
 
 
 
-#
-#
-#
-#
+```
+
+Create a database that contains all of the data for the team
+```{r CreateDatabase}
 
 # tidy the names up, and remove columns that the database won't accept
 players <- data_players
@@ -208,7 +208,7 @@ bowling <- data_bowling_clean |>
     select(-separated_overs) |>
     mutate(
         maidens = as.numeric(maidens),
-        runs = as.number(runs),
+        runs = as.numeric(runs),
         wides = as.numeric(wides),
         no_balls = as.numeric(no_balls),
         wickets = as.numeric(wickets)
@@ -259,6 +259,4 @@ dbDisconnect(cricket_database)
 
 
 
-#
-#
-#
+```
