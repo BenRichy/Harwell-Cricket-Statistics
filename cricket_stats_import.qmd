@@ -128,15 +128,15 @@ Create meta data tables to work with the database
 
 # create table to map dismissals in play-cricket to clean names
 batting_dismissals <- tribble(
-    ~pc_dismissal, ~clean_dismissal,
-    "b", "Bowled",
-    "ct", "Caught",
-    "lbw", "LBW",
-    "not out", "Not Out",
-    "did not bat", "DNB",
-    "run out", "Run Out",
-    "st", "Stumped",
-    "retired not out", "Retired Not Out"
+    ~pc_dismissal, ~clean_dismissal, ~count_out, ~count_innings,
+    "b", "Bowled", 1, 1,
+    "ct", "Caught", 1, 1,
+    "lbw", "LBW", 1, 1,
+    "not out", "Not Out", 0, 1,
+    "did not bat", "DNB", 0, 0,
+    "run out", "Run Out", 1, 1,
+    "st", "Stumped", 1, 1,
+    "retired not out", "Retired Not Out", 0, 1
 )
 
 # need to sum up the number of overs/balls so that these can be grouped later
@@ -188,7 +188,15 @@ Create a database that contains all of the data for the team
 
 # tidy the names up, and remove columns that the database won't accept
 players <- data_players
-batting <- data_batting
+batting <- data_batting |>
+    mutate(
+        position = as.numeric(position),
+        runs = as.numeric(runs),
+        balls = as.numeric(balls),
+        fours = as.numeric(fours),
+        sixes = as.numeric(sixes)
+    )
+
 partnerships <- data_partnerships_clean
 bowling <- data_bowling_clean |> select(-separated_overs)
 
