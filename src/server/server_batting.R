@@ -19,9 +19,17 @@ batting_summary <- DBI::dbGetQuery(
     left join results r on b.match_id = r.id;"
 )
 
+observeEvent(input$team_scope, {
+  
+  if(is.null(input$team_scope)){
+    input_team_scope <- league_names
+  } else{
+    input_team_scope <- input$team_scope
+  }
+
 # Produce summary table of batting stats
-# TODO: allow the user to group/filter by league
 batting_summary_default <- batting_summary |>
+  filter(league_name %in% input_team_scope) |> 
     group_by(batsman_name) |>
     summarise(
         innings = sum(count_innings, na.rm = TRUE),
@@ -40,6 +48,32 @@ batting_summary_default <- batting_summary |>
     )
 
 
-# runs by position
+output$batting_summary <- renderDT({datatable(batting_summary_default)})
+
+
+# runs by position, highest score by position
+runs_batter_position <- batting_summary |> 
+  group_by(batsman_name, position) |> 
+  summarise(
+    runs = sum(runs, na.rm = TRUE),
+    balls_faced = sum(balls, na.rm = TRUE)
+  ) |>
+  ungroup()
+
+output$batting_position_person <- renderDT({datatable(runs_batter_position)})
+
+runs_batter_position_max <- runs_batter_position |> 
+  arrange(position, runs, balls_faced) |> 
+  slice_max(runs, n=1, by = position) 
+
+ggplot(runs_batter_position_max) +
+  geom_col()
+
+
+output$batting_position_record <- renderDT({datatable(runs_batter_position_max)})
+
+})
+
+
 
 # cumulative runs over time
