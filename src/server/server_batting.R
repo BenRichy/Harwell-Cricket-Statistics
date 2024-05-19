@@ -44,7 +44,7 @@ batting_summary_default <- batting_summary |>
         runs_per_innings = round(runs / innings,2),
         average = round(runs / dismissed,2),
         strike_rate = round((runs / balls_faced) * 100,0),
-        percent_runs_boundaries = round((fours * 4 + sixes * 6) / runs,2)
+        percent_runs_boundaries = round(((fours * 4 + sixes * 6) / runs)*100,2)
     ) |> 
   arrange(desc(average))
 
@@ -54,12 +54,26 @@ output$batting_summary <- renderDT({datatable(batting_summary_default)})
 
 # runs by position for each batter
 runs_batter_position <- batting_summary |> 
+  filter(league_name %in% input_team_scope) |> 
   group_by(batsman_name, position) |> 
   summarise(
+    innings = sum(count_innings, na.rm = TRUE),
+    dismissed = sum(count_out, na.rm = TRUE),
     runs = sum(runs, na.rm = TRUE),
-    balls_faced = sum(balls, na.rm = TRUE)
+    balls_faced = sum(balls, na.rm = TRUE),
+    fours = sum(fours, na.rm = TRUE),
+    sixes = sum(sixes, na.rm = TRUE)
   ) |>
-  ungroup()
+  ungroup() |>
+  mutate(
+    runs_per_innings = round(runs / innings,2),
+    average = round(runs / dismissed,2),
+    strike_rate = round((runs / balls_faced) * 100,0),
+    percent_runs_boundaries = round(((fours * 4 + sixes * 6) / runs)*100,2)
+  ) |>
+  ungroup() |> 
+  arrange(position,
+          batsman_name)
 
 output$batting_position_person <- renderDT({datatable(runs_batter_position)})
 
