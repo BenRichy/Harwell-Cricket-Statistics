@@ -8,3 +8,10 @@ library(stringi)
 library(lubridate)
 library(shinydashboard)
 library(DBI)
+
+# connect to the detailed database
+connect <- function(..., con = here::here("data/cricket_detail_database.sqlite")) {
+    con <-
+        DBI::dbConnect(RSQLite::SQLite(), con, extend_types = TRUE)
+    con
+}
