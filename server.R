@@ -34,6 +34,7 @@ shinyServer(function(input, output) {
     
     
     source("src/server/server_batting.R",local = TRUE)
+    source("src/server/server_bowling.R",local = TRUE)
     
 
     # # cut down stats for visualising

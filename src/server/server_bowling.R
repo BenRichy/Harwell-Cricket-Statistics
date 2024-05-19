@@ -16,9 +16,19 @@ bowling_summary <- DBI::dbGetQuery(
     left join results r on b.match_id = r.id;"
 )
 
+observeEvent(input$team_scope_bowling, {
+  
+  if(is.null(input$team_scope_bowling)){
+    input_team_scope <- league_names
+  } else{
+    input_team_scope <- input$team_scope_bowling
+  }
+
+
 # Produce summary table of batting stats
 # TODO: allow the user to group/filter by league
 bowling_summary_default <- bowling_summary |>
+  filter(league_name %in% input_team_scope) |> 
     group_by(bowler_name) |>
     summarise(
         ball_count = sum(ball_count, na.rm = TRUE),
@@ -32,11 +42,17 @@ bowling_summary_default <- bowling_summary |>
     mutate(
         complete_overs = floor(ball_count / 6),
         residual_balls = ball_count - (6 * complete_overs),
-        overs = paste0(complete_overs, ".", residual_balls),
-        average = runs / wickets,
-        strike_rate = ball_count / wickets,
-        economy = runs / (complete_overs + (residual_balls / 6))
+        overs = format(as.numeric(paste0(complete_overs, ".", residual_balls)),nsmall=1),
+        average = round(runs / wickets,2),
+        strike_rate = round(ball_count / wickets,2),
+        economy = round(runs / (complete_overs + (residual_balls / 6)),2)#,
+        #t_overs = as.numeric(overs)
     )
+
+output$bowling_summary <- renderDT({datatable(bowling_summary_default)})
 
 # cumulative wickets over time
 # extras percentage of runs conceded
+
+
+})

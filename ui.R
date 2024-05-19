@@ -47,7 +47,10 @@ dashboardPage(
                 tabName = "bowling-stats",
                 h2("Bowling Stats"),
                 br(),
-                uiOutput("SelectTeam_Bowling")
+                uiOutput("SelectTeam_Bowling"),
+                br(),
+                tabsetPanel(
+                  tabPanel("Summary",DTOutput("bowling_summary")))
             ),
 
             # Second tab content
