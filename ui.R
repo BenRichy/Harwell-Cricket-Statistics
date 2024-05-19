@@ -29,7 +29,7 @@ dashboardPage(
                 #uiOutput("SelectTeam_Team")
             ),
 
-            # Second tab content
+            # Batting Stats
             tabItem(
                 tabName = "batting-stats",
                 h2("Batting Stats"),
@@ -38,11 +38,12 @@ dashboardPage(
                 br(),
                 tabsetPanel(
                 tabPanel("Summary",DTOutput("batting_summary")),
-                tabPanel("position per person",DTOutput("batting_position_person")),
-                tabPanel("position record",plotlyOutput("batting_position_record")))
+                tabPanel("Runs By Position/Person",DTOutput("batting_position_person")),
+                tabPanel("Runs By Position",plotlyOutput("batting_position_record")),
+                tabPanel("Partnerships"))
             ),
 
-            # Second tab content
+            # Bowling Stats
             tabItem(
                 tabName = "bowling-stats",
                 h2("Bowling Stats"),
@@ -53,7 +54,7 @@ dashboardPage(
                   tabPanel("Summary",DTOutput("bowling_summary")))
             ),
 
-            # Second tab content
+            # Award Stats
             tabItem(
                 tabName = "award-stats",
                 h2("Award Stats"),
