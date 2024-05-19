@@ -9,39 +9,56 @@
 
 
 dashboardPage(
-    dashboardHeader(title = "AQ Git Management"),
+    dashboardHeader(title = "Harwell Cricket Statistics"),
     dashboardSidebar(
         sidebarMenu(
-            menuItem("Inventories", tabName = "inventories", icon = icon("cloud")),
-            menuItem("GIS", tabName = "gis", icon = icon("map")),
-            menuItem("Measurements", tabName = "measurements", icon = icon("ruler")),
-            menuItem("Modelling", tabName = "modelling", icon = icon("wind"))
+            menuItem("Team Stats", tabName = "team-stats", icon = icon("cloud")),
+            menuItem("Batting Stats", tabName = "batting-stats", icon = icon("map")),
+            menuItem("Bowling Stats", tabName = "bowling-stats", icon = icon("ruler")),
+            menuItem("Awards", tabName = "award-stats", icon = icon("wind"))
         )
     ),
     dashboardBody(
         tabItems(
             # First tab content
-            tabItem(tabName = "batting",
-                    h2("Batting Stats"),
-                    br()
+            tabItem(
+                tabName = "team-stats",
+                h2("Team Stats"),
+                br(),
+                h3("Test")#,
+                #uiOutput("SelectTeam_Team")
             ),
-            
+
             # Second tab content
-            tabItem(tabName = "bowling",
-                    h2("Bowling Stats"),
-                    br()
+            tabItem(
+                tabName = "batting-stats",
+                h2("Batting Stats"),
+                br(),
+                uiOutput("SelectTeam"),
+                br(),
+                tabsetPanel(
+                tabPanel("Summary",DTOutput("batting_summary")),
+                tabPanel("position per person",DTOutput("batting_position_person")),
+                tabPanel("position record",DTOutput("batting_position_record")))#,
+                # DTOutput("batting_summary"),
+                # br(),
+                # DTOutput("batting_position_person"),
+                # br(),
+                # DTOutput("batting_position_record")
             ),
-            
+
             # Second tab content
-            tabItem(tabName = "partnerships",
-                    h2("Partnership Stats"),
-                    br()
+            tabItem(
+                tabName = "bowling-stats",
+                h2("Bowling Stats"),
+                br()
             ),
-            
+
             # Second tab content
-            tabItem(tabName = "awards",
-                    h2("Award Stats"),
-                    br()
+            tabItem(
+                tabName = "award-stats",
+                h2("Award Stats"),
+                br()
             )
         )
     )
