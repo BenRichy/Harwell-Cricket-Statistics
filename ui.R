@@ -15,6 +15,7 @@ dashboardPage(
             menuItem("Team Stats", tabName = "team-stats", icon = icon("cloud")),
             menuItem("Batting Stats", tabName = "batting-stats", icon = icon("map")),
             menuItem("Bowling Stats", tabName = "bowling-stats", icon = icon("ruler")),
+            menuItem("Partnership Stats", tabName = "partnership-stats", icon = icon("ruler")),
             menuItem("Awards", tabName = "award-stats", icon = icon("wind"))
         )
     ),
@@ -39,8 +40,7 @@ dashboardPage(
                 tabsetPanel(
                 tabPanel("Summary",DTOutput("batting_summary")),
                 tabPanel("Runs By Position/Person",DTOutput("batting_position_person")),
-                tabPanel("Runs By Position",plotlyOutput("batting_position_record")),
-                tabPanel("Partnerships"))
+                tabPanel("Runs By Position",plotlyOutput("batting_position_record")))
             ),
 
             # Bowling Stats
@@ -52,6 +52,17 @@ dashboardPage(
                 br(),
                 tabsetPanel(
                   tabPanel("Summary",DTOutput("bowling_summary")))
+            ),
+            
+            # Partnership Statistics
+            tabItem(
+              tabName = "partnership-stats",
+              h2("Partnership Stats"),
+              br(),
+              uiOutput("SelectTeam_Partnership"),
+              br(),
+              tabsetPanel(
+                tabPanel("Highest Partnerships"))
             ),
 
             # Award Stats
