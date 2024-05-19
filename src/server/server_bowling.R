@@ -45,9 +45,23 @@ bowling_summary_default <- bowling_summary |>
         overs = format(as.numeric(paste0(complete_overs, ".", residual_balls)),nsmall=1),
         average = round(runs / wickets,2),
         strike_rate = round(ball_count / wickets,2),
-        economy = round(runs / (complete_overs + (residual_balls / 6)),2)#,
-        #t_overs = as.numeric(overs)
-    )
+        economy = round(runs / (complete_overs + (residual_balls / 6)),2),
+        percent_runs_extras = round(((no_balls + wides) / runs)*100,2)) |>
+  select(
+    "Bowler" = bowler_name,
+    "Overs" = overs,
+    "Maidens"= maidens,
+    "Runs Conceded" = runs,
+    "Wickets" = wickets,
+    "Average" = average,
+    "Strike Rate" = strike_rate,
+    "Economy" = economy,
+    "Wides" = wides,
+    "No Balls" = no_balls,
+    "%Runs from Extras" = percent_runs_extras
+  ) |> 
+  arrange(desc(Wickets))
+  
 
 output$bowling_summary <- renderDT({datatable(bowling_summary_default)})
 
