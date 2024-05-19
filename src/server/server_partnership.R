@@ -12,6 +12,48 @@ partnership_summary <- DBI::dbGetQuery(
     left join results r on p.match_id = r.id;"
 )
 
+
+observeEvent(input$team_scope_partnership, {
+  
+  if(is.null(input$team_scope_partnership)){
+    input_team_scope <- league_names
+  } else{
+    input_team_scope <- input$team_scope_partnership
+  }
+
 # highest partnership by number
+  partnership_position_max <- partnership_summary |> 
+    filter(league_name %in% input_team_scope) |> 
+    arrange(wickets, partnership_runs) |> 
+    slice_max(partnership_runs, n=1, by = wickets) |> 
+    select(wickets,
+           batsman_out_name,
+           batsman_in_name,
+           opposition,
+           match_date,
+           league_name,
+           partnership_runs)
+  
+  
+  #plot the greaph of the highest score by position
+  graph_partnership_position <- ggplot(partnership_position_max, 
+                               #generate the text for the tooltip
+                               aes(text = paste('</br>Wicket Number: ', wickets,
+                                                '</br>Batters: ', paste0(batsman_out_name,"/",batsman_in_name),
+                                                '</br>Runs: ', partnership_runs,
+                                                '</br>Opposition: ', opposition,
+                                                '</br>Date: ', match_date))) +
+    #column chart
+    geom_col(aes(x=wickets, y=partnership_runs)) +
+    #switch x axis so that batting position 1 is at the top
+    scale_x_reverse(labels = partnership_position_max$wickets, breaks = partnership_position_max$wickets) +
+    #swap x and y axes
+    coord_flip()
+  
+  graph_partnership_position <- ggplotly(graph_partnership_position, tooltip = c("text"))
+  output$partnership_position_record <- renderPlotly({graph_partnership_position})
 
 # chord graph of partnerships
+  
+  
+})

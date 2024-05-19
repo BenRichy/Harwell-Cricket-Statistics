@@ -32,7 +32,7 @@ shinyServer(function(input, output) {
     )})
     
     output$SelectTeam_Partnership <- renderUI({selectInput(
-      "team_scope_Partnership",
+      "team_scope_partnership",
       tags$h4("Select Team(s)",align="center"),
       choices = league_names,
       selected = league_names,
@@ -43,6 +43,7 @@ shinyServer(function(input, output) {
     
     source("src/server/server_batting.R",local = TRUE)
     source("src/server/server_bowling.R",local = TRUE)
+    source("src/server/server_partnership.R",local = TRUE)
     
 
     # # cut down stats for visualising

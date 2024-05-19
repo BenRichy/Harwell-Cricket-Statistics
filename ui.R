@@ -62,7 +62,7 @@ dashboardPage(
               uiOutput("SelectTeam_Partnership"),
               br(),
               tabsetPanel(
-                tabPanel("Highest Partnerships"))
+                tabPanel("Highest Partnerships", plotlyOutput("partnership_position_record")))
             ),
 
             # Award Stats
