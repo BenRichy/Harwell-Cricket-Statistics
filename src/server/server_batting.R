@@ -19,12 +19,12 @@ batting_summary <- DBI::dbGetQuery(
     left join results r on b.match_id = r.id;"
 )
 
-observeEvent(input$team_scope, {
+observeEvent(input$team_scope_batting, {
   
-  if(is.null(input$team_scope)){
+  if(is.null(input$team_scope_batting)){
     input_team_scope <- league_names
   } else{
-    input_team_scope <- input$team_scope
+    input_team_scope <- input$team_scope_batting
   }
 
 # Produce summary table of batting stats
@@ -96,13 +96,14 @@ graph_run_position <- ggplot(runs_batter_position_max,
   coord_flip() 
   
 graph_run_position <- ggplotly(graph_run_position, tooltip = c("text"))
-  
-
-
 output$batting_position_record <- renderPlotly({graph_run_position})
+
+
+# cumulative runs over time
+
 
 })
 
 
 
-# cumulative runs over time
+

@@ -34,7 +34,7 @@ dashboardPage(
                 tabName = "batting-stats",
                 h2("Batting Stats"),
                 br(),
-                uiOutput("SelectTeam"),
+                uiOutput("SelectTeam_Batting"),
                 br(),
                 tabsetPanel(
                 tabPanel("Summary",DTOutput("batting_summary")),
@@ -46,7 +46,8 @@ dashboardPage(
             tabItem(
                 tabName = "bowling-stats",
                 h2("Bowling Stats"),
-                br()
+                br(),
+                uiOutput("SelectTeam_Bowling")
             ),
 
             # Second tab content
