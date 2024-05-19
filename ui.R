@@ -39,12 +39,7 @@ dashboardPage(
                 tabsetPanel(
                 tabPanel("Summary",DTOutput("batting_summary")),
                 tabPanel("position per person",DTOutput("batting_position_person")),
-                tabPanel("position record",plotlyOutput("batting_position_record")))#,
-                # DTOutput("batting_summary"),
-                # br(),
-                # DTOutput("batting_position_person"),
-                # br(),
-                # DTOutput("batting_position_record")
+                tabPanel("position record",plotlyOutput("batting_position_record")))
             ),
 
             # Second tab content

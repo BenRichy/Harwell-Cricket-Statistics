@@ -41,11 +41,12 @@ batting_summary_default <- batting_summary |>
     ) |>
     ungroup() |>
     mutate(
-        runs_per_innings = runs / innings,
-        average = runs / dismissed,
-        strike_rate = (runs / balls_faced) * 100,
-        percent_runs_boundaries = (fours * 4 + sixes * 6) / runs
-    )
+        runs_per_innings = round(runs / innings,2),
+        average = round(runs / dismissed,2),
+        strike_rate = round((runs / balls_faced) * 100,0),
+        percent_runs_boundaries = round((fours * 4 + sixes * 6) / runs,2)
+    ) |> 
+  arrange(desc(average))
 
 
 output$batting_summary <- renderDT({datatable(batting_summary_default)})
