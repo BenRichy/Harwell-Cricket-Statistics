@@ -113,7 +113,93 @@ graph_run_position <- ggplotly(graph_run_position, tooltip = c("text"))
 output$batting_position_record <- renderPlotly({graph_run_position})
 
 
-# cumulative runs over time
+# cumulative runs over time -  Area chart
+#do a cumulative sum of the batting runs
+batting_cum_sum <- batting_summary |> 
+  filter(league_name %in% input_team_scope) |> 
+  select(match_date,
+         batsman_name,
+         runs) |> 
+  ungroup() |> 
+  filter(!is.na(runs)) |> 
+  group_by(batsman_name) |> 
+  mutate(runs_cum_sum = cumsum(runs),
+         match_date = as.POSIXct(match_date, format = "%d/%m/%Y")) |> 
+  ungroup()
+
+#get unique dates
+unique_dates <- batting_cum_sum |> 
+  select(match_date_unique = match_date) |> 
+  distinct() 
+
+#get the day before the first game
+day_before <- unique_dates |> slice_min(unique_dates) - (60*60*24)
+
+#add the day before in
+unique_dates <- unique_dates |> 
+  rbind(day_before) |> 
+  arrange(match_date_unique)
+
+#get unique players
+unique_players <- batting_cum_sum |> 
+  select(batsman_unique = batsman_name) |> 
+  distinct()
+
+
+#get a complete dataset of dates and players
+batting_cum_sum_all <- unique_dates |>
+  cross_join(unique_players) |> 
+  #join on known runs
+  left_join(batting_cum_sum,
+            by = c("match_date_unique" = "match_date",
+                   "batsman_unique" = "batsman_name")) |>
+  #set the first week runs to 0
+  mutate(runs_cum_sum = case_when(match_date_unique == day_before[[1]] ~ 0,
+                                  TRUE ~ runs_cum_sum)) |> 
+  #fill in the weeks where someone didn't play
+  group_by(batsman_unique) |> 
+  fill(runs_cum_sum, .direction = "downup") |> 
+  ungroup() |> 
+  arrange(match_date_unique, desc(runs_cum_sum)) |> 
+  group_by(match_date_unique) |> 
+  #rank the players by number of runs
+  mutate(Rank = rank(runs_cum_sum, ties.method = "first")) |> 
+  arrange(desc(Rank)) |> 
+  ungroup() 
+
+
+# plot graphs
+graph_batting_area <- ggplot(batting_cum_sum_all |> 
+              arrange(desc(match_date_unique)) |> 
+              select(Batter = batsman_unique,
+                     `Match Date` = match_date_unique,
+                     Runs = runs_cum_sum),
+            aes(x=`Match Date`,
+                y=Runs,
+                fill=Batter)) +
+  geom_area(stat="identity",colour="grey2") +
+  theme(legend.position="none",
+        scale_x_datetime(breaks=c(unique_dates$match_date_unique)))
+
+
+graph_batting_area <- ggplotly(graph_batting_area)
+output$batting_total_area<- renderPlotly({graph_batting_area})
+
+
+# cumulative runs over time - animated bars
+#do a cumulative sum of the batting runs
+# batting_cum_sum <- batting_summary |> 
+#   ungroup() |> 
+#   filter(!is.na(runs)) |> 
+#   group_by(batsman_name) |> 
+#   mutate(runs_cum_sum = cumsum(runs))
+# 
+# ggplot(batting_cum_sum) +
+#   geom_col(aes(x=runs_cum_sum, y=batsman_name)) +
+#   transition_states(match_date,
+#                     transition_length = 3,
+#                     state_length = 2)
+
 
 
 })

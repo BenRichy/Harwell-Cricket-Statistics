@@ -40,7 +40,9 @@ dashboardPage(
                 tabsetPanel(
                 tabPanel("Summary",DTOutput("batting_summary")),
                 tabPanel("Runs By Position/Person",DTOutput("batting_position_person")),
-                tabPanel("Runs By Position",plotlyOutput("batting_position_record")))
+                tabPanel("Runs By Position",plotlyOutput("batting_position_record")),
+                tabPanel("Total Runs Over Time",plotlyOutput("batting_total_area"))
+                )
             ),
 
             # Bowling Stats
