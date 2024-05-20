@@ -32,26 +32,81 @@ unique_players <- batting_cum_sum |>
   distinct()
 
 
-
+#get a complete dataset of dates and players
 batting_cum_sum_all <- unique_dates |>
   cross_join(unique_players) |> 
+  #join on known runs
   left_join(batting_cum_sum,
              by = c("match_date_unique" = "match_date",
                     "batsman_unique" = "batsman_name")) |>
+  #set the first week runs to 0
   mutate(runs_cum_sum = case_when(match_date_unique == day_before[[1]] ~ 0,
                                   TRUE ~ runs_cum_sum)) |> 
+  #fill in the weeks where someone didn't play
   group_by(batsman_unique) |> 
-  fill(runs_cum_sum, .direction = "downup")
+  fill(runs_cum_sum, .direction = "downup") |> 
+  ungroup() |> 
+  arrange(match_date_unique, desc(runs_cum_sum)) |> 
+  group_by(match_date_unique) |> 
+  #rank the players by number of runs
+  mutate(Rank = rank(runs_cum_sum, ties.method = "first")) |> 
+  arrange(desc(Rank)) |> 
+  ungroup() 
 
 
+staticplot = ggplot(batting_cum_sum_all, aes(Rank, group = batsman_unique, 
+                                       fill = as.factor(batsman_unique), color = as.factor(batsman_unique))) +
+  geom_tile(aes(y = runs_cum_sum/2,
+                height = runs_cum_sum,
+                width = 0.9), alpha = 0.8, color = NA) +
+  theme(legend.position = "none") +
+  coord_flip(clip = "off", expand = FALSE) +
+  geom_text(aes(y = 0, label = paste(batsman_unique, " ")), vjust = 0.2, hjust = 1)
+
+staticplot
+
+anim = staticplot + transition_states(match_date_unique,
+                                      transition_length = 5,
+                                      state_length = 2) +
+  view_follow(fixed_x = TRUE)  +
+  labs(title = 'Runs as of : {closest_state}',  
+       subtitle  =  "Top 10 Countries",
+       caption  = "GDP in Billions USD | Data Source: World Bank Data")
+
+animate(anim, 200, fps = 20,  width = 1200, height = 1000, 
+        renderer = gifski_renderer("gganim.gif"))
+
+anim
 ggplot(batting_cum_sum_all) +
-  geom_col(aes(x=runs_cum_sum, y=batsman_unique)) +
+  geom_col(aes(x=runs_cum_sum, y=batsman_unique, fill = batsman_unique)) +
+  geom_text(aes(x=Rank, y=0,
+                label=batsman_unique, group=batsman_unique),
+            hjust=1.25) +
   transition_states(match_date_unique,
                     transition_length = 3,
                     state_length = 2) +
-  ease_aes()
+  view_follow(fixed_y = TRUE) +
+  ease_aes() +
+  exit_fly(x_loc = 0, y_loc = 0) +         # chart exit animation params
+  enter_fly(x_loc = 0, y_loc = 0) +
+  theme(legend.position = "none")
 
+g <- ggplot(batting_cum_sum_all |> 
+              arrange(desc(match_date_unique)) |> 
+              select(Batter = batsman_unique,
+                     `Match Date` = match_date_unique,
+                     Runs = runs_cum_sum),
+            aes(x=`Match Date`,
+             y=Runs,
+             fill=Batter)) +
+  geom_area(stat="identity",colour="grey2") +
+  theme(legend.position="none",
+        scale_x_datetime(breaks=c(unique_dates$match_date_unique)))
 
+g
+
+g <- ggplotly(g)
+g
 
 a <- data.frame(group=c("A","B","C"), values=c(3,2,4), frame=rep('a',3))
 b <- data.frame(group=c("A","B","C"), values=c(5,3,7), frame=rep('b',3))
