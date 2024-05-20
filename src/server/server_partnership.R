@@ -54,17 +54,37 @@ observeEvent(input$team_scope_partnership, {
   output$partnership_position_record <- renderPlotly({graph_partnership_position})
 
 # chord graph of partnerships
-  # mig_data_filter <- partnership_summary |> 
-  #   mutate(first_bat = case_when(batsman_out_name < batsman_in_name ~ batsman_out_name,
-  #                                TRUE ~ batsman_in_name),
-  #          second_bat = case_when(batsman_out_name < batsman_in_name ~ batsman_in_name,
-  #                                 TRUE ~ batsman_out_name)) |> 
-  #   select(first_bat, second_bat, partnership_runs) |> 
-  #   filter(partnership_runs > 0) |> 
-  #   arrange(first_bat, second_bat)
-  # 
-  # mig_data_filter<-as.matrix(as_adjacency_matrix(as_tbl_graph(mig_data_filter),attr = "partnership_runs", type = "upper"))
-  # 
+  partnership_chord_data <- partnership_summary |> 
+    filter(league_name %in% input_team_scope) |>
+    mutate(first_bat = case_when(batsman_out_name < batsman_in_name ~ batsman_out_name,
+                                 TRUE ~ batsman_in_name),
+           second_bat = case_when(batsman_out_name < batsman_in_name ~ batsman_in_name,
+                                  TRUE ~ batsman_out_name)) |> 
+    select(first_bat, second_bat, partnership_runs) |> 
+    filter(partnership_runs > 0) |> 
+    arrange(first_bat, second_bat)
+  
+  #duplicate partnership chord data
+  partnership_chord_data_dupli <- partnership_chord_data |> 
+    select(second_bat = first_bat, first_bat = second_bat, partnership_runs)
+  
+  partnership_chord_data_all <- partnership_chord_data |> 
+    bind_rows(partnership_chord_data_dupli)
+  
+  partnership_chord_matrix<-as.matrix(as_adjacency_matrix(as_tbl_graph(partnership_chord_data_all),attr = "partnership_runs"))
+  
+  chord_partnership <-chorddiag(data = partnership_chord_matrix,
+                   groupnamePadding = 30,
+                   groupPadding = 3,
+                   groupColors = c("#ffffe5","#fff7bc","#fee391","#fec44f","#fe9929","#ec7014","#cc4c02","#8c2d04"),
+                   groupnameFontsize = 13 ,
+                   showTicks = FALSE,
+                   margin=150,
+                   tooltipGroupConnector = "    &#x25B6;    ",
+                   chordedgeColor = "#B3B6B7"
+  )
+  
+  output$chord_partnership_graph <- renderChorddiag({chord_partnership})
   
   
 })
