@@ -41,7 +41,8 @@ dashboardPage(
                 tabPanel("Summary",DTOutput("batting_summary")),
                 tabPanel("Runs By Position/Person",DTOutput("batting_position_person")),
                 tabPanel("Runs By Position",plotlyOutput("batting_position_record")),
-                tabPanel("Total Runs Over Time",plotlyOutput("batting_total_area"))
+                tabPanel("Total Runs Over Time (raw)",plotlyOutput("batting_total_area_raw")),
+                tabPanel("Total Runs Over Time (percent)",plotlyOutput("batting_total_area_percent"))
                 )
             ),
 

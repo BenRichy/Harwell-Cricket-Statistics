@@ -125,7 +125,21 @@ batting_cum_sum <- batting_summary |>
   group_by(batsman_name) |> 
   mutate(runs_cum_sum = cumsum(runs),
          match_date = as.POSIXct(match_date, format = "%d/%m/%Y")) |> 
-  ungroup()
+  ungroup() 
+
+#get the cumulative match runs for percentage of total runs scored
+batting_cum_sum_match <- batting_summary |> 
+  filter(league_name %in% input_team_scope) |>
+  select(match_date,
+         runs) |> 
+  ungroup() |> 
+  filter(!is.na(runs)) |> 
+  group_by(match_date) |> 
+  summarise(runs_off_bat_match = sum(runs)) |> 
+  mutate(runs_cum_sum_match = cumsum(runs_off_bat_match),
+         match_date = as.POSIXct(match_date, format = "%d/%m/%Y")) |> 
+  ungroup() |> 
+  select(-runs_off_bat_match)
 
 #get unique dates
 unique_dates <- batting_cum_sum |> 
@@ -153,13 +167,18 @@ batting_cum_sum_all <- unique_dates |>
   left_join(batting_cum_sum,
             by = c("match_date_unique" = "match_date",
                    "batsman_unique" = "batsman_name")) |>
+  left_join(batting_cum_sum_match,
+            by = c("match_date_unique" = "match_date")) |> 
   #set the first week runs to 0
   mutate(runs_cum_sum = case_when(match_date_unique == day_before[[1]] ~ 0,
-                                  TRUE ~ runs_cum_sum)) |> 
+                                  TRUE ~ runs_cum_sum),
+         runs_cum_sum_match = case_when(match_date_unique == day_before[[1]] ~ 1,
+                                  TRUE ~ runs_cum_sum_match)) |> 
   #fill in the weeks where someone didn't play
   group_by(batsman_unique) |> 
   fill(runs_cum_sum, .direction = "downup") |> 
   ungroup() |> 
+  mutate(percent_team_runs = round(100*(runs_cum_sum/runs_cum_sum_match),2)) |> 
   arrange(match_date_unique, desc(runs_cum_sum)) |> 
   group_by(match_date_unique) |> 
   #rank the players by number of runs
@@ -169,8 +188,8 @@ batting_cum_sum_all <- unique_dates |>
 
 
 # plot graphs
-graph_batting_area <- ggplot(batting_cum_sum_all |> 
-              arrange(desc(match_date_unique)) |> 
+graph_batting_area_raw <- ggplot(batting_cum_sum_all |>
+              arrange(desc(match_date_unique)) |>
               select(Batter = batsman_unique,
                      `Match Date` = match_date_unique,
                      Runs = runs_cum_sum),
@@ -178,12 +197,38 @@ graph_batting_area <- ggplot(batting_cum_sum_all |>
                 y=Runs,
                 fill=Batter)) +
   geom_area(stat="identity",colour="grey2") +
-  theme(legend.position="none",
-        scale_x_datetime(breaks=c(unique_dates$match_date_unique)))
+  geom_vline(xintercept = c(as.numeric(unique_dates$match_date_unique))) +
+  theme(legend.position="none")
 
 
-graph_batting_area <- ggplotly(graph_batting_area)
-output$batting_total_area<- renderPlotly({graph_batting_area})
+graph_batting_area_raw <- ggplotly(graph_batting_area_raw)
+
+output$batting_total_area_raw<- renderPlotly({graph_batting_area_raw})
+
+
+a_test <- batting_cum_sum_all |>
+  arrange(desc(match_date_unique)) |>
+  select(Batter = batsman_unique,
+         `Match Date` = match_date_unique,
+         Runs = percent_team_runs)
+
+#percent of runs scored
+graph_batting_area_percent <- ggplot(batting_cum_sum_all |>
+                                   arrange(desc(match_date_unique)) |>
+                                   select(Batter = batsman_unique,
+                                          `Match Date` = match_date_unique,
+                                          Runs = percent_team_runs),
+                                 aes(x=`Match Date`,
+                                     y=Runs,
+                                     fill=Batter)) +
+  geom_area(stat="identity",colour="grey2") +
+  geom_vline(xintercept = c(as.numeric(unique_dates$match_date_unique))) +
+  theme(legend.position="none")
+
+
+graph_batting_area_percent <- ggplotly(graph_batting_area_percent)
+
+output$batting_total_area_percent <- renderPlotly({graph_batting_area_percent})
 
 
 # cumulative runs over time - animated bars
