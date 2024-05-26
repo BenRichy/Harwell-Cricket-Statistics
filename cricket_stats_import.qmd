@@ -48,6 +48,17 @@ get_matches_query <- sprintf(
 results_return <- GET(get_matches_query)
 results_data <- fromJSON(rawToChar(results_return$content))$result_summary
 
+#get match summaries
+get_matches_summary_query <- sprintf(
+    "http://play-cricket.com/api/v2/matches.json?&site_id=%s&season=%s&api_token=%s",
+    club_id,
+    season,
+    api_key
+)
+
+matches_return <- GET(get_matches_summary_query)
+matches_data <- fromJSON(rawToChar(matches_return$content))$matches
+
 # write df of results data to a csv
 write_csv(results_data, FP_results_summary)
 
