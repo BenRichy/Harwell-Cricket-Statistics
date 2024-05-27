@@ -54,7 +54,10 @@ dashboardPage(
                 uiOutput("SelectTeam_Bowling"),
                 br(),
                 tabsetPanel(
-                  tabPanel("Summary",DTOutput("bowling_summary")))
+                  tabPanel("Summary",DTOutput("bowling_summary")),
+                  tabPanel("Total Wickets Over Time (raw)",plotlyOutput("bowling_total_area_raw")),
+                  tabPanel("Total Wickets Over Time (percent)",plotlyOutput("bowling_total_area_percent"))
+                  )
             ),
             
             # Partnership Statistics

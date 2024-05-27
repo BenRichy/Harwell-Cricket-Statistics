@@ -25,8 +25,7 @@ observeEvent(input$team_scope_bowling, {
   }
 
 
-# Produce summary table of batting stats
-# TODO: allow the user to group/filter by league
+# Produce summary table of bowling stats
 bowling_summary_default <- bowling_summary |>
   filter(league_name %in% input_team_scope) |> 
     group_by(bowler_name) |>
@@ -66,7 +65,114 @@ bowling_summary_default <- bowling_summary |>
 output$bowling_summary <- renderDT({datatable(bowling_summary_default)})
 
 # cumulative wickets over time
-# extras percentage of runs conceded
+bowling_cum_sum <- bowling_summary |> 
+  filter(league_name %in% input_team_scope) |> 
+  select(match_date,
+         bowler_name,
+         wickets) |> 
+  ungroup() |> 
+  filter(!is.na(wickets)) |> 
+  group_by(bowler_name) |> 
+  mutate(wickets_cum_sum = cumsum(wickets),
+         match_date = as.POSIXct(match_date, format = "%d/%m/%Y")) |> 
+  ungroup() 
+
+#get the cumulative match wickets for percentage of total wickets scored
+bowling_cum_sum_match <- bowling_summary |> 
+  filter(league_name %in% input_team_scope) |>
+  select(match_date,
+         wickets) |> 
+  ungroup() |> 
+  filter(!is.na(wickets)) |> 
+  group_by(match_date) |> 
+  summarise(wickets_to_bowler_match = sum(wickets)) |> 
+  mutate(wickets_cum_sum_match = cumsum(wickets_to_bowler_match),
+         match_date = as.POSIXct(match_date, format = "%d/%m/%Y")) |> 
+  ungroup() |> 
+  select(-wickets_to_bowler_match)
+
+#get unique dates
+unique_dates <- bowling_cum_sum |> 
+  select(match_date_unique = match_date) |> 
+  distinct() 
+
+#get the day before the first game
+day_before <- unique_dates |> slice_min(unique_dates) - (60*60*24)
+
+#add the day before in
+unique_dates <- unique_dates |> 
+  rbind(day_before) |> 
+  arrange(match_date_unique)
+
+#get unique players
+unique_players <- bowling_cum_sum |> 
+  select(bowler_unique = bowler_name) |> 
+  distinct()
+
+
+#get a complete dataset of dates and players
+bowling_cum_sum_all <- unique_dates |>
+  cross_join(unique_players) |> 
+  #join on known runs
+  left_join(bowling_cum_sum,
+            by = c("match_date_unique" = "match_date",
+                   "bowler_unique" = "bowler_name")) |>
+  left_join(bowling_cum_sum_match,
+            by = c("match_date_unique" = "match_date")) |> 
+  #set the first week runs to 0
+  mutate(wickets_cum_sum = case_when(match_date_unique == day_before[[1]] ~ 0,
+                                  TRUE ~ wickets_cum_sum),
+         wickets_cum_sum_match = case_when(match_date_unique == day_before[[1]] ~ 1,
+                                        TRUE ~ wickets_cum_sum_match)) |> 
+  #fill in the weeks where someone didn't play
+  group_by(bowler_unique) |> 
+  fill(wickets_cum_sum, .direction = "downup") |> 
+  ungroup() |> 
+  mutate(percent_team_wickets = round(100*(wickets_cum_sum/wickets_cum_sum_match),2)) |> 
+  arrange(match_date_unique, desc(wickets_cum_sum)) |> 
+  group_by(match_date_unique) |> 
+  #rank the players by number of runs
+  mutate(Rank = rank(wickets_cum_sum, ties.method = "first")) |> 
+  arrange(desc(Rank)) |> 
+  ungroup() 
+
+
+# plot graphs
+graph_bowling_area_raw <- ggplot(bowling_cum_sum_all |>
+                                   arrange(desc(match_date_unique)) |>
+                                   select(Bowler = bowler_unique,
+                                          `Match Date` = match_date_unique,
+                                          Wickets = wickets_cum_sum),
+                                 aes(x=`Match Date`,
+                                     y=Wickets,
+                                     fill=Bowler)) +
+  geom_area(stat="identity",colour="grey2") +
+  geom_vline(xintercept = c(as.numeric(unique_dates$match_date_unique))) +
+  theme(legend.position="none")
+
+
+graph_bowling_area_raw <- ggplotly(graph_bowling_area_raw)
+
+output$bowling_total_area_raw<- renderPlotly({graph_bowling_area_raw})
+
+
+#percent of wickets taken
+graph_bowling_area_percent <- ggplot(bowling_cum_sum_all |>
+                                       arrange(desc(match_date_unique)) |>
+                                       select(Bowler = bowler_unique,
+                                              `Match Date` = match_date_unique,
+                                              Wickets = percent_team_wickets),
+                                     aes(x=`Match Date`,
+                                         y=Wickets,
+                                         fill=Bowler)) +
+  geom_area(stat="identity",colour="grey2") +
+  geom_vline(xintercept = c(as.numeric(unique_dates$match_date_unique))) +
+  theme(legend.position="none")
+
+
+graph_bowling_area_percent <- ggplotly(graph_bowling_area_percent)
+
+output$bowling_total_area_percent <- renderPlotly({graph_bowling_area_percent})
 
 
 })
