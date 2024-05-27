@@ -206,11 +206,6 @@ graph_batting_area_raw <- ggplotly(graph_batting_area_raw)
 output$batting_total_area_raw<- renderPlotly({graph_batting_area_raw})
 
 
-a_test <- batting_cum_sum_all |>
-  arrange(desc(match_date_unique)) |>
-  select(Batter = batsman_unique,
-         `Match Date` = match_date_unique,
-         Runs = percent_team_runs)
 
 #percent of runs scored
 graph_batting_area_percent <- ggplot(batting_cum_sum_all |>
