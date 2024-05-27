@@ -12,11 +12,11 @@ dashboardPage(
     dashboardHeader(title = "Harwell Cricket Statistics"),
     dashboardSidebar(
         sidebarMenu(
-            menuItem("Team Stats", tabName = "team-stats", icon = icon("cloud")),
-            menuItem("Batting Stats", tabName = "batting-stats", icon = icon("map")),
-            menuItem("Bowling Stats", tabName = "bowling-stats", icon = icon("ruler")),
-            menuItem("Partnership Stats", tabName = "partnership-stats", icon = icon("ruler")),
-            menuItem("Awards", tabName = "award-stats", icon = icon("wind"))
+            menuItem("Home Page", tabName = "team-stats", icon = icon("house")),
+            menuItem("Batting Stats", tabName = "batting-stats", icon = icon("baseball-bat-ball")),
+            menuItem("Bowling Stats", tabName = "bowling-stats", icon = icon("bowling-ball")),
+            menuItem("Partnership Stats", tabName = "partnership-stats", icon = icon("yin-yang")),
+            menuItem("Awards", tabName = "award-stats", icon = icon("trophy"))
         )
     ),
     dashboardBody(
@@ -24,9 +24,9 @@ dashboardPage(
             # First tab content
             tabItem(
                 tabName = "team-stats",
-                h2("Team Stats"),
+                h2("Welcome to the Home of Harwell Cricket Statistics!"),
                 br(),
-                h3("Test")#,
+                h3("Please check out the other pages to view statistics")#,
                 #uiOutput("SelectTeam_Team")
             ),
 
@@ -76,7 +76,8 @@ dashboardPage(
             tabItem(
                 tabName = "award-stats",
                 h2("Award Stats"),
-                br()
+                br(),
+                h3("Statistics under construction")
             )
         )
     )
