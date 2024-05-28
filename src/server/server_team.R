@@ -49,29 +49,29 @@ observeEvent(input$team_scope_team, {
            total_bowling_overs_bowled_balls = total_bowling_balls_bowled-(total_bowling_overs_bowled_overs*6),
            total_bowling_overs_bowled = as.numeric(paste0(total_bowling_overs_bowled_overs,".",total_bowling_overs_bowled_balls))) |> 
     #select columns wanted
-    select(total_batting_runs_scored,
-           total_batting_wickets_lost,
-           total_batting_overs_faced,
-           overall_batting_average,
-           overall_batting_strike_rate,
-           overall_batting_run_rate,
-           total_bowling_overs_bowled,
-           total_bowling_runs_conceded,
-           total_bowling_wickets_taken,
-           overall_bowling_average,
-           overall_bowling_strike_rate,
-           overall_bowling_economy) |> 
+    select(`Batting: Total Runs Scored` = total_batting_runs_scored,
+           `Batting: Total Wickets Lost` = total_batting_wickets_lost,
+           `Batting: Total Overs Faced` = total_batting_overs_faced,
+           `Batting: Overall Average (Runs/Wicket)` = overall_batting_average,
+           `Batting: Overall Strike Rate (Runs/100 balls)` = overall_batting_strike_rate,
+           `Batting: Overall Run Rate (Runs/Over)` = overall_batting_run_rate,
+           `Bowling: Total Overs Bowled` = total_bowling_overs_bowled,
+           `Bowling: Total Runs Conceded` = total_bowling_runs_conceded,
+           `Bowling: Total Wickets Taken` = total_bowling_wickets_taken,
+           `Bowling: Overall Average (Runs/Wicket)` = overall_bowling_average,
+           `Bowling: Overall Strike Rate (Balls/Wicket)` = overall_bowling_strike_rate,
+           `Bowling: Overall Economy (Runs/Over)` = overall_bowling_economy) |> 
     #make into one long table
     pivot_longer(cols = everything(),
                  names_to = "Metric",
                  values_to = "Value")
   
-  output$team_summary <- renderDT({datatable(team_summary_data,
-                                             rownames = FALSE,
-                                             options = list(
-                                               paging = FALSE,
-                                               autoWidth = TRUE,
-                                               columnDefs = list(list(width = '500px', targets = c(0)))))})
+  team_summary_data <- datatable(team_summary_data,
+                                 rownames = FALSE,
+                                 options = list(
+                                   paging = FALSE))
+  
+  output$team_summary <- renderDT({team_summary_data})
   
   
 })
