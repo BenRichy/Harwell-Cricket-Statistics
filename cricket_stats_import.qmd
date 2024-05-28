@@ -16,6 +16,7 @@ library(DBI)
 season <- 2024
 team_name <- "Harwell"
 club_name <- "Harwell International CC"
+team_ids <- c(284082,15138,15137)
 
 
 ```
@@ -48,6 +49,8 @@ get_matches_query <- sprintf(
 results_return <- GET(get_matches_query)
 results_data <- fromJSON(rawToChar(results_return$content))$result_summary
 
+
+
 #get match summaries
 get_matches_summary_query <- sprintf(
     "http://play-cricket.com/api/v2/matches.json?&site_id=%s&season=%s&api_token=%s",
@@ -57,7 +60,71 @@ get_matches_summary_query <- sprintf(
 )
 
 matches_return <- GET(get_matches_summary_query)
-matches_data <- fromJSON(rawToChar(matches_return$content))$matches
+matches_data <- fromJSON(rawToChar(matches_return$content))$matches |> 
+  select(match_id = id,
+         ground_latitude,
+         ground_longitude)
+
+#get innings data
+innings_return <- results_data$innings
+
+
+innings_info <- tibble(match_id = as.integer(),
+                       batting_runs_scored = as.integer(),
+                       batting_overs_faced_overs = as.integer(),
+                       batting_overs_faced_balls = as.integer(),
+                       batting_wickets_lost = as.integer(),
+                       bowling_runs_conceded = as.integer(),
+                       bowling_overs_bowled_overs = as.integer(),
+                       bowling_overs_bowled_balls = as.integer(),
+                       bowling_wickets_taken = as.integer(),
+                       bowling_wides_conceded = as.integer(),
+                       bowling_no_balls_conceded = as.integer(),
+                       bowling_byes_conceded = as.integer(),
+                       bowling_leg_byes_conceded = as.integer())
+
+for (i in 1:nrow(results_data)) {
+  
+  #set match id to the correct match
+  innings_info[i,"match_id"] <- results_data[i,"id"]
+  
+  #get the innings data for each match
+  innings_data_frame <- results_data$innings[[i]]
+  
+  #get the innings data for the team wanted, and for the opposition
+  innings_data_frame_team <- innings_data_frame |> filter(team_batting_id %in% team_ids)
+  innings_data_frame_oppo <- innings_data_frame |> filter(!team_batting_id %in% team_ids)
+  
+  #assign values for each of the variables
+  #batting variables
+  innings_info[i,"batting_runs_scored"] <- as.integer(innings_data_frame_team[1,"runs"])
+  #get the number of overs and balls as integers
+  batting_overs_faced <- as.numeric(innings_data_frame_team[1,"overs"])
+  batting_overs_faced_calc_overs <- floor(batting_overs_faced)
+  batting_overs_faced_calc_balls <- round((batting_overs_faced - batting_overs_faced_calc_overs)*10)
+  
+  innings_info[i,"batting_overs_faced_overs"] <- batting_overs_faced_calc_overs
+  innings_info[i,"batting_overs_faced_balls"] <- batting_overs_faced_calc_balls
+  
+  innings_info[i,"batting_wickets_lost"] <- as.integer(innings_data_frame_team[1,"wickets"])
+  
+  #bowling variables
+  innings_info[i,"bowling_runs_conceded"] <- as.integer(innings_data_frame_oppo[1,"runs"])
+  #get the number of overs and balls as integers
+  bowling_overs_faced <- as.numeric(innings_data_frame_oppo[1,"overs"])
+  bowling_overs_faced_calc_overs <- floor(bowling_overs_faced)
+  bowling_overs_faced_calc_balls <- round((bowling_overs_faced - bowling_overs_faced_calc_overs)*10)
+  
+  innings_info[i,"bowling_overs_bowled_overs"] <- bowling_overs_faced_calc_overs
+  innings_info[i,"bowling_overs_bowled_balls"] <- bowling_overs_faced_calc_balls
+  
+  innings_info[i,"bowling_wickets_taken"] <- as.integer(innings_data_frame_oppo[1,"wickets"])
+  innings_info[i,"bowling_wides_conceded"] <- as.integer(innings_data_frame_oppo[1,"extra_wides"])
+  innings_info[i,"bowling_no_balls_conceded"] <- as.integer(innings_data_frame_oppo[1,"extra_no_balls"])
+  innings_info[i,"bowling_byes_conceded"] <- as.integer(innings_data_frame_oppo[1,"extra_byes"])
+  innings_info[i,"bowling_leg_byes_conceded"] <- as.integer(innings_data_frame_oppo[1,"extra_leg_byes"])
+  
+}
 
 # write df of results data to a csv
 write_csv(results_data, FP_results_summary)
@@ -250,6 +317,7 @@ results <- results_data |>
         league_name
     )
 
+
 # create database
 cricket_database <- dbConnect(RSQLite::SQLite(), FP_data_base)
 
@@ -260,6 +328,7 @@ dbWriteTable(cricket_database, "partnerships", partnerships, overwrite = TRUE)
 dbWriteTable(cricket_database, "bowling", bowling, overwrite = TRUE)
 dbWriteTable(cricket_database, "batting_dismissals", batting_dismissals, overwrite = TRUE)
 dbWriteTable(cricket_database, "results", results, overwrite = TRUE)
+dbWriteTable(cricket_database, "match_summary", innings_info, overwrite = TRUE)
 
 # list tables to check they are in the database
 dbListTables(cricket_database)
