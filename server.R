@@ -12,6 +12,16 @@ shinyServer(function(input, output) {
     #drop down to select the team scope
     #multiple select
     
+    output$SelectTeam_Team <- renderUI({
+      selectInput(
+        "team_scope_team",
+        tags$h4("Select Team(s)",align="center"),
+        choices = league_names,
+        selected = league_names,
+        multiple = TRUE
+      )
+    })
+    
     output$SelectTeam_Batting <- renderUI({
       selectInput(
         "team_scope_batting",
@@ -40,7 +50,7 @@ shinyServer(function(input, output) {
     )})
     
     
-    
+    source("src/server/server_team.R",local = TRUE)
     source("src/server/server_batting.R",local = TRUE)
     source("src/server/server_bowling.R",local = TRUE)
     source("src/server/server_partnership.R",local = TRUE)

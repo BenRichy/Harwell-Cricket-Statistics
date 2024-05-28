@@ -26,8 +26,10 @@ dashboardPage(
                 tabName = "team-stats",
                 h2("Welcome to the Home of Harwell Cricket Statistics!"),
                 br(),
-                h3("Please check out the other pages to view statistics")#,
-                #uiOutput("SelectTeam_Team")
+                h3("Please check out the other pages to view statistics"),
+                uiOutput("SelectTeam_Team"),
+                br(),
+                DTOutput("team_summary")
             ),
 
             # Batting Stats
