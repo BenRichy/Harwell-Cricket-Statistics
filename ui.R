@@ -29,7 +29,8 @@ dashboardPage(
                 h3("Please check out the other pages to view statistics"),
                 uiOutput("SelectTeam_Team"),
                 br(),
-                DTOutput("team_summary")
+                div(style = "width: 700px",
+                DTOutput("team_summary"))
             ),
 
             # Batting Stats
