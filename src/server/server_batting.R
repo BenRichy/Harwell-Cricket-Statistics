@@ -81,7 +81,6 @@ output$batting_position_person <- renderDT({datatable(runs_batter_position)})
 runs_batter_position_max <- batting_summary |> 
   filter(league_name %in% input_team_scope) |> 
   arrange(position, runs, balls) |> 
-  filter(balls > 0) |> 
   slice_max(runs, n=1, by = position) |> 
   slice_min(balls, n=1, by = position) |> 
   select(position,
