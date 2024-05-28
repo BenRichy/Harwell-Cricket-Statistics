@@ -214,6 +214,7 @@ batting_dismissals <- tribble(
     "did not bat", "DNB", 0, 0,
     "run out", "Run Out", 1, 1,
     "st", "Stumped", 1, 1,
+    "hit wicket", "Hit Wicket", 1, 1,
     "retired not out", "Retired Not Out", 0, 1
 )
 
