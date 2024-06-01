@@ -1,0 +1,12 @@
+match_id,batting_runs_scored,batting_overs_faced_overs,batting_overs_faced_balls,batting_wickets_lost,bowling_runs_conceded,bowling_overs_bowled_overs,bowling_overs_bowled_balls,bowling_wickets_taken,bowling_wides_conceded,bowling_no_balls_conceded,bowling_byes_conceded,bowling_leg_byes_conceded,id,match_date,opposition,toss,result,result_description,league_name
+6366477,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6366477,28/04/2024,Oxfordshire County Council Staff CC,NA,C,Cancelled,Friendly
+6586586,128,31,4,10,49,14,4,10,2,0,0,0,6586586,04/05/2024,Garsington CC,Garsington CC - 2nd XI won the toss and elected to field,W,Harwell International CC - 1st XI - Won,Friendly
+6279722,148,35,0,5,48,11,1,1,0,1,0,0,6279722,05/05/2024,Goring on Thames CC,Harwell International CC - Friendly XI won the toss and elected to bat,A,Abandoned,Friendly
+6289938,104,18,3,7,103,20,0,7,28,4,0,2,6289938,08/05/2024,Metal Box CC,Harwell International CC - Midweek XI won the toss and elected to field,W,Harwell International CC - Midweek XI - Won,Downs League
+6309995,138,27,0,3,137,37,2,10,3,1,5,3,6309995,11/05/2024,Letcombe CC,Letcombe CC - 1st XI won the toss and elected to bat,W,Harwell International CC - 1st XI - Won,Cherwell League
+6588534,101,35,0,8,102,10,4,1,1,5,0,0,6588534,12/05/2024,Holton & Wheatley CC,Harwell International CC - Friendly XI won the toss and elected to bat,W,Holton & Wheatley CC - Friendly XI - Won,Friendly
+6289955,123,20,0,8,119,20,0,8,28,4,5,0,6289955,15/05/2024,Steventon CC,Steventon CC - Midweek XI won the toss and elected to field,W,Harwell International CC - Midweek XI - Won,Downs League
+6309997,240,45,0,9,97,27,0,9,8,1,1,5,6309997,18/05/2024,Cumnor CC,Cumnor CC - 3rd XI won the toss and elected to field,W,Harwell International CC - 1st XI - Won,Cherwell League
+6407042,86,35,0,8,215,35,0,5,19,5,1,2,6407042,19/05/2024,Wantage & Grove CC,Wantage & Grove CC - Friendly XI won the toss and elected to bat,W,Wantage & Grove CC - Friendly XI - Won,Friendly
+6310005,109,36,4,10,134,43,2,10,13,1,2,2,6310005,25/05/2024,Steventon CC,Steventon CC - 1st XI won the toss and elected to bat,W,Steventon CC - 1st XI - Won,Cherwell League
+6289991,127,20,0,6,126,20,0,4,15,2,0,0,6289991,29/05/2024,Didcot CC,Didcot CC - Downs 2nd XI won the toss and elected to bat,W,Harwell International CC - Midweek XI - Won,Downs League

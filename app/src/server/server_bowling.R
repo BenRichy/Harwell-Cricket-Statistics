@@ -1,20 +1,5 @@
 # cut down stats for visualising
-bowling_summary <- DBI::dbGetQuery(
-    conn,
-    "SELECT
-    r.opposition,
-    r.match_date,
-    r.league_name,
-    bowler_name,
-    ball_count,
-    maidens,
-    runs,
-    wides,
-    no_balls,
-    wickets
-    FROM bowling b
-    left join results r on b.match_id = r.id;"
-)
+bowling_summary <- read_csv("data/db_dump/bowling_summary.csv")
 
 observeEvent(input$team_scope_bowling, {
   

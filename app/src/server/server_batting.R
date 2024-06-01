@@ -1,23 +1,5 @@
 # cut down stats for visualising
-batting_summary <- DBI::dbGetQuery(
-    conn,
-    "SELECT
-    r.opposition,
-    r.match_date,
-    r.league_name,
-    position,
-    batsman_name,
-    bd.clean_dismissal,
-    bd.count_out,
-    bd.count_innings,
-    runs,
-    balls,
-    fours,
-    sixes
-    FROM batting b
-    left join batting_dismissals bd on b.how_out = bd.pc_dismissal
-    left join results r on b.match_id = r.id;"
-)
+batting_summary <- read_csv("data/db_dump/batting_summary.csv")
 
 observeEvent(input$team_scope_batting, {
   

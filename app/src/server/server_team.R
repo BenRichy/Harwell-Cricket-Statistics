@@ -1,13 +1,7 @@
 #server_team.R
 
 #get summary data for matches/innings
-match_summary <- DBI::dbGetQuery(
-  conn,
-  "SELECT
-    *
-    FROM match_summary m
-  left join results r on m.match_id = r.id;"
-)
+match_summary <- read_csv("data/db_dump/match_summary.csv")
 
 
 observeEvent(input$team_scope_team, {
@@ -99,9 +93,9 @@ observeEvent(input$team_scope_team, {
 
 
 #produce a map of where all of the runs have been scored
-batting_summary2 <- DBI::dbGetQuery(
-  conn,
-  "SELECT
-    *
-    FROM results b;"
-)
+# batting_summary2 <- DBI::dbGetQuery(
+#   conn,
+#   "SELECT
+#     *
+#     FROM results b;"
+# )

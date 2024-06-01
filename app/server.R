@@ -1,11 +1,8 @@
 shinyServer(function(input, output) {
-    conn <- connect()
+    #conn <- connect()
 
     #get the league names for filtering purposes
-    league_names <- DBI::dbGetQuery(
-      conn,
-      "SELECT distinct league_name
-      FROM results;")
+    league_names <- read_csv("data/db_dump/league_names.csv")
     
     league_names <- as.vector(unlist(league_names))
     
@@ -50,10 +47,10 @@ shinyServer(function(input, output) {
     )})
     
     
-    source("src/server/server_team.R",local = TRUE)
-    source("src/server/server_batting.R",local = TRUE)
-    source("src/server/server_bowling.R",local = TRUE)
-    source("src/server/server_partnership.R",local = TRUE)
+    # source("src/server/server_team.R",local = TRUE)
+    # source("src/server/server_batting.R",local = TRUE)
+    # source("src/server/server_bowling.R",local = TRUE)
+    # source("src/server/server_partnership.R",local = TRUE)
     
 
     
