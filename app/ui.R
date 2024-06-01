@@ -42,10 +42,10 @@ dashboardPage(
                 br(),
                 tabsetPanel(
                 tabPanel("Summary",reactableOutput("batting_summary")),
-                tabPanel("Runs By Position/Person",reactableOutput("batting_position_person"))#,
-                #tabPanel("Runs By Position",plotlyOutput("batting_position_record")),
-                #tabPanel("Total Runs Over Time (raw)",plotlyOutput("batting_total_area_raw")),
-                #tabPanel("Total Runs Over Time (percent)",plotlyOutput("batting_total_area_percent"))
+                tabPanel("Runs By Position/Person",reactableOutput("batting_position_person")),
+                tabPanel("Runs By Position",plotlyOutput("batting_position_record")),
+                tabPanel("Total Runs Over Time (raw)",plotlyOutput("batting_total_area_raw")),
+                tabPanel("Total Runs Over Time (percent)",plotlyOutput("batting_total_area_percent"))
                 )
             ),
 
@@ -57,9 +57,9 @@ dashboardPage(
                 uiOutput("SelectTeam_Bowling"),
                 br(),
                 tabsetPanel(
-                  tabPanel("Summary",reactableOutput("bowling_summary"))#,
-                  #tabPanel("Total Wickets Over Time (raw)",plotlyOutput("bowling_total_area_raw")),
-                  #tabPanel("Total Wickets Over Time (percent)",plotlyOutput("bowling_total_area_percent"))
+                  tabPanel("Summary",reactableOutput("bowling_summary")),
+                  tabPanel("Total Wickets Over Time (raw)",plotlyOutput("bowling_total_area_raw")),
+                  tabPanel("Total Wickets Over Time (percent)",plotlyOutput("bowling_total_area_percent"))
                   )
             ),
             
@@ -71,8 +71,8 @@ dashboardPage(
               uiOutput("SelectTeam_Partnership"),
               br(),
               tabsetPanel(
-                # tabPanel("Chord Diagram", chorddiagOutput("chord_partnership_graph", height = "900px")),
-                # tabPanel("Highest Partnerships", plotlyOutput("partnership_position_record"))
+                tabPanel("Chord Diagram", chorddiagOutput("chord_partnership_graph", height = "900px")),
+                tabPanel("Highest Partnerships", plotlyOutput("partnership_position_record"))
                 )
             ),
 

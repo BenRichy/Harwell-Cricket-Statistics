@@ -110,8 +110,8 @@ graph_run_position <- ggplot(runs_batter_position_max,
   #swap x and y axes
   coord_flip() 
   
-# graph_run_position <- ggplotly(graph_run_position, tooltip = c("text"))
-# output$batting_position_record <- renderPlotly({graph_run_position})
+graph_run_position <- ggplotly(graph_run_position, tooltip = c("text"))
+output$batting_position_record <- renderPlotly({graph_run_position})
 
 
 # cumulative runs over time -  Area chart
@@ -202,9 +202,9 @@ graph_batting_area_raw <- ggplot(batting_cum_sum_all |>
   theme(legend.position="none")
 
 
-# graph_batting_area_raw <- ggplotly(graph_batting_area_raw)
-# 
-# output$batting_total_area_raw<- renderPlotly({graph_batting_area_raw})
+graph_batting_area_raw <- ggplotly(graph_batting_area_raw)
+
+output$batting_total_area_raw<- renderPlotly({graph_batting_area_raw})
 
 
 
@@ -222,9 +222,9 @@ graph_batting_area_percent <- ggplot(batting_cum_sum_all |>
   theme(legend.position="none")
 
 
-# graph_batting_area_percent <- ggplotly(graph_batting_area_percent)
-# 
-# output$batting_total_area_percent <- renderPlotly({graph_batting_area_percent})
+graph_batting_area_percent <- ggplotly(graph_batting_area_percent)
+
+output$batting_total_area_percent <- renderPlotly({graph_batting_area_percent})
 
 
 # cumulative runs over time - animated bars

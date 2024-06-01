@@ -55,7 +55,7 @@ shinyServer(function(input, output) {
     source("src/server/server_team.R",local = TRUE)
     source("src/server/server_batting.R",local = TRUE)
     source("src/server/server_bowling.R",local = TRUE)
-    # source("src/server/server_partnership.R",local = TRUE)
+    source("src/server/server_partnership.R",local = TRUE)
     
 
     

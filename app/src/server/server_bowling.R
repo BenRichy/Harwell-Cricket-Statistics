@@ -153,9 +153,9 @@ graph_bowling_area_raw <- ggplot(bowling_cum_sum_all |>
   theme(legend.position="none")
 
 
-# graph_bowling_area_raw <- ggplotly(graph_bowling_area_raw)
-# 
-# output$bowling_total_area_raw<- renderPlotly({graph_bowling_area_raw})
+graph_bowling_area_raw <- ggplotly(graph_bowling_area_raw)
+
+output$bowling_total_area_raw<- renderPlotly({graph_bowling_area_raw})
 
 
 #percent of wickets taken
@@ -172,9 +172,9 @@ graph_bowling_area_percent <- ggplot(bowling_cum_sum_all |>
   theme(legend.position="none")
 
 
-# graph_bowling_area_percent <- ggplotly(graph_bowling_area_percent)
-# 
-# output$bowling_total_area_percent <- renderPlotly({graph_bowling_area_percent})
+graph_bowling_area_percent <- ggplotly(graph_bowling_area_percent)
+
+output$bowling_total_area_percent <- renderPlotly({graph_bowling_area_percent})
 
 
 })
