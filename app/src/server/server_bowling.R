@@ -73,10 +73,10 @@ bowling_cum_sum <- bowling_summary |>
          bowler_name,
          wickets) |> 
   ungroup() |> 
+  mutate(match_date = as.POSIXct(match_date, format = "%d/%m/%Y")) |> 
   filter(!is.na(wickets)) |> 
   group_by(bowler_name) |> 
-  mutate(wickets_cum_sum = cumsum(wickets),
-         match_date = as.POSIXct(match_date, format = "%d/%m/%Y")) |> 
+  mutate(wickets_cum_sum = cumsum(wickets)) |> 
   ungroup() 
 
 #get the cumulative match wickets for percentage of total wickets scored
@@ -85,11 +85,11 @@ bowling_cum_sum_match <- bowling_summary |>
   select(match_date,
          wickets) |> 
   ungroup() |> 
+  mutate(match_date = as.POSIXct(match_date, format = "%d/%m/%Y")) |> 
   filter(!is.na(wickets)) |> 
   group_by(match_date) |> 
   summarise(wickets_to_bowler_match = sum(wickets)) |> 
-  mutate(wickets_cum_sum_match = cumsum(wickets_to_bowler_match),
-         match_date = as.POSIXct(match_date, format = "%d/%m/%Y")) |> 
+  mutate(wickets_cum_sum_match = cumsum(wickets_to_bowler_match)) |> 
   ungroup() |> 
   select(-wickets_to_bowler_match)
 

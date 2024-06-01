@@ -122,10 +122,10 @@ batting_cum_sum <- batting_summary |>
          batsman_name,
          runs) |> 
   ungroup() |> 
+  mutate(match_date = as.POSIXct(match_date, format = "%d/%m/%Y")) |> 
   filter(!is.na(runs)) |> 
   group_by(batsman_name) |> 
-  mutate(runs_cum_sum = cumsum(runs),
-         match_date = as.POSIXct(match_date, format = "%d/%m/%Y")) |> 
+  mutate(runs_cum_sum = cumsum(runs)) |> 
   ungroup() 
 
 #get the cumulative match runs for percentage of total runs scored
@@ -134,11 +134,11 @@ batting_cum_sum_match <- batting_summary |>
   select(match_date,
          runs) |> 
   ungroup() |> 
+  mutate(match_date = as.POSIXct(match_date, format = "%d/%m/%Y")) |> 
   filter(!is.na(runs)) |> 
   group_by(match_date) |> 
   summarise(runs_off_bat_match = sum(runs)) |> 
-  mutate(runs_cum_sum_match = cumsum(runs_off_bat_match),
-         match_date = as.POSIXct(match_date, format = "%d/%m/%Y")) |> 
+  mutate(runs_cum_sum_match = cumsum(runs_off_bat_match)) |> 
   ungroup() |> 
   select(-runs_off_bat_match)
 

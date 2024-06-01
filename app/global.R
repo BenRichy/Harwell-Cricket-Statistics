@@ -7,6 +7,8 @@ library(dplyr)
 library(ggplot2)
 library(tidyr)
 library(shiny)
+library(here)
+library(RSQLite)
 #library(DT)
 library(reactable)
 library(stringi)
@@ -20,8 +22,7 @@ library(tidygraph)
 library(chorddiag)
 
 # connect to the detailed database
-connect <- function(..., con = here::here("data/cricket_detail_database.sqlite")) {
-    con <-
-        DBI::dbConnect(RSQLite::SQLite(), con, extend_types = TRUE)
+connect <- function(..., con = here::here("app/data/cricket_detail_database.sqlite")) {
+    con <- DBI::dbConnect(RSQLite::SQLite(), con, extend_types = TRUE)
     con
 }
