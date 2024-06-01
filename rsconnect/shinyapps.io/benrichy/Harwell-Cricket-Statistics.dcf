@@ -1,0 +1,13 @@
+name: Harwell-Cricket-Statistics
+title: Harwell-Cricket-Statistics
+username: benrichy
+account: benrichy
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12079267
+bundleId: 8687343
+url: https://benrichy.shinyapps.io/Harwell-Cricket-Statistics/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: api/.gitkeep|cricket_stats_import.qmd|Harwell-Cricket-Statistics.code-workspace|README.md|working/create_batting_gifs.R|working/working_batting.R
