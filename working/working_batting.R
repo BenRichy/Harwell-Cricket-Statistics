@@ -1,4 +1,31 @@
+# connect to the detailed database
+connect <- function(..., con = here::here("data/cricket_detail_database.sqlite")) {
+  con <-
+    DBI::dbConnect(RSQLite::SQLite(), con, extend_types = TRUE)
+  con
+}
 
+conn <- connect()
+
+batting_summary <- DBI::dbGetQuery(
+  conn,
+  "SELECT
+    r.opposition,
+    r.match_date,
+    r.league_name,
+    position,
+    batsman_name,
+    bd.clean_dismissal,
+    bd.count_out,
+    bd.count_innings,
+    runs,
+    balls,
+    fours,
+    sixes
+    FROM batting b
+    left join batting_dismissals bd on b.how_out = bd.pc_dismissal
+    left join results r on b.match_id = r.id;"
+)
 
 # cumulative runs over time - animated bars
 #do a cumulative sum of the batting runs
@@ -63,20 +90,24 @@ staticplot = ggplot(batting_cum_sum_all, aes(Rank, group = batsman_unique,
   coord_flip(clip = "off", expand = FALSE) +
   geom_text(aes(y = 0, label = paste(batsman_unique, " ")), vjust = 0.2, hjust = 1)
 
-staticplot
+staticplot + gganimate::transition_time(match_date_unique)
 
 anim = staticplot + transition_states(match_date_unique,
-                                      transition_length = 5,
-                                      state_length = 2) +
+                                      transition_length = 50,
+                                      state_length = 10) +
   view_follow(fixed_x = TRUE)  +
   labs(title = 'Runs as of : {closest_state}',  
-       subtitle  =  "Top 10 Countries",
-       caption  = "GDP in Billions USD | Data Source: World Bank Data")
+       subtitle  =  "Leading Run Scorers over Time",
+       caption  = "Harwell Cricket - All runs scored")
 
-animate(anim, 200, fps = 20,  width = 1200, height = 1000, 
+anim
+
+animate(anim, nrow(unique_dates)*50, fps = 10,  width = 1200, height = 1000, 
         renderer = gifski_renderer("gganim.gif"))
 
 anim
+
+
 ggplot(batting_cum_sum_all) +
   geom_col(aes(x=runs_cum_sum, y=batsman_unique, fill = batsman_unique)) +
   geom_text(aes(x=Rank, y=0,
