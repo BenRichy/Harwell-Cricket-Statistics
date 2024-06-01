@@ -23,8 +23,8 @@ team_ids <- c(284082,15138,15137)
 
 
 ```{r FilePaths}
-FP_api_key <- "data/playcricket_api_key.txt"
-FP_club_id <- "data/playcricket_club_id.txt"
+FP_api_key <- "api/playcricket_api_key.txt"
+FP_club_id <- "api/playcricket_club_id.txt"
 FP_results_summary <- "data/results_summary.csv"
 FP_data_base <- "data/cricket_detail_database.sqlite"
 
