@@ -1,7 +1,8 @@
 # cut down stats for visualising
+# batting_summary <- read_csv("data/db_dump/batting_summary.csv")
 batting_summary <- DBI::dbGetQuery(
-    conn,
-    "SELECT
+  conn,
+  "SELECT
     r.opposition,
     r.match_date,
     r.league_name,
@@ -18,6 +19,7 @@ batting_summary <- DBI::dbGetQuery(
     left join batting_dismissals bd on b.how_out = bd.pc_dismissal
     left join results r on b.match_id = r.id;"
 )
+
 
 observeEvent(input$team_scope_batting, {
   
@@ -49,7 +51,7 @@ batting_summary_default <- batting_summary |>
   arrange(desc(average))
 
 
-output$batting_summary <- renderDT({datatable(batting_summary_default)})
+output$batting_summary <- renderReactable({reactable(batting_summary_default)})
 
 
 # runs by position for each batter
@@ -75,7 +77,7 @@ runs_batter_position <- batting_summary |>
   arrange(position,
           batsman_name)
 
-output$batting_position_person <- renderDT({datatable(runs_batter_position)})
+output$batting_position_person <- renderReactable({reactable(runs_batter_position)})
 
 #highest score by position for
 runs_batter_position_max <- batting_summary |> 

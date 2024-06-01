@@ -2,6 +2,8 @@ shinyServer(function(input, output) {
     conn <- connect()
 
     #get the league names for filtering purposes
+    # league_names <- read_csv("data/db_dump/league_names.csv")
+    
     league_names <- DBI::dbGetQuery(
       conn,
       "SELECT distinct league_name

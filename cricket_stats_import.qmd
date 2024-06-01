@@ -341,3 +341,106 @@ dbDisconnect(cricket_database)
 
 
 ```
+
+
+Create csv files from the database
+```{r csv_out}
+#connect to db
+source("src/general_functions.R")
+
+conn <- connect()
+
+#get league names
+league_names <- DBI::dbGetQuery(
+      conn,
+      "SELECT distinct league_name
+      FROM results;")
+
+write_csv(league_names, "data/db_dump/league_names.csv")
+
+#get batting summary
+batting_summary <- DBI::dbGetQuery(
+    conn,
+    "SELECT
+    r.opposition,
+    r.match_date,
+    r.league_name,
+    position,
+    batsman_name,
+    bd.clean_dismissal,
+    bd.count_out,
+    bd.count_innings,
+    runs,
+    balls,
+    fours,
+    sixes
+    FROM batting b
+    left join batting_dismissals bd on b.how_out = bd.pc_dismissal
+    left join results r on b.match_id = r.id;"
+)
+
+write_csv(batting_summary, "data/db_dump/batting_summary.csv")
+
+#get bowling summary
+bowling_summary <- DBI::dbGetQuery(
+    conn,
+    "SELECT
+    r.opposition,
+    r.match_date,
+    r.league_name,
+    bowler_name,
+    ball_count,
+    maidens,
+    runs,
+    wides,
+    no_balls,
+    wickets
+    FROM bowling b
+    left join results r on b.match_id = r.id;"
+)
+
+write_csv(bowling_summary, "data/db_dump/bowling_summary.csv")
+
+#get partnership data
+#batters by position
+batting_summary_position <- DBI::dbGetQuery(
+  conn,
+  "SELECT
+    r.league_name,
+    position,
+    batsman_name
+  FROM batting b
+    left join results r on b.match_id = r.id;"
+)
+
+write_csv(batting_summary_position, "data/db_dump/batting_summary_position.csv")
+
+#actual partnership info
+partnership_summary <- DBI::dbGetQuery(
+  conn,
+  "SELECT
+    r.opposition,
+    r.match_date,
+    r.league_name,
+    wickets,
+    batsman_out_name,
+    batsman_in_name,
+    partnership_runs
+    FROM partnerships p
+    left join results r on p.match_id = r.id;"
+) 
+
+write_csv(partnership_summary, "data/db_dump/partnership_summary.csv")
+
+#get team data
+match_summary <- DBI::dbGetQuery(
+  conn,
+  "SELECT
+    *
+    FROM match_summary m
+  left join results r on m.match_id = r.id;"
+)
+
+write_csv(match_summary, "data/db_dump/match_summary.csv")
+
+```

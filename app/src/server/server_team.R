@@ -1,6 +1,7 @@
 #server_team.R
 
 #get summary data for matches/innings
+# match_summary <- read_csv("data/db_dump/match_summary.csv")
 match_summary <- DBI::dbGetQuery(
   conn,
   "SELECT
@@ -8,7 +9,6 @@ match_summary <- DBI::dbGetQuery(
     FROM match_summary m
   left join results r on m.match_id = r.id;"
 )
-
 
 observeEvent(input$team_scope_team, {
   
@@ -66,12 +66,10 @@ observeEvent(input$team_scope_team, {
                  names_to = "Metric",
                  values_to = "Value")
   
-  team_summary_data <- datatable(team_summary_data,
-                                 rownames = FALSE,
-                                 options = list(
-                                   paging = FALSE))
+  team_summary_data <- reactable(team_summary_data,
+                                   pagination = FALSE)
   
-  output$team_summary <- renderDT({team_summary_data})
+  output$team_summary <- renderReactable({team_summary_data})
   
   
 })
@@ -99,9 +97,9 @@ observeEvent(input$team_scope_team, {
 
 
 #produce a map of where all of the runs have been scored
-batting_summary2 <- DBI::dbGetQuery(
-  conn,
-  "SELECT
-    *
-    FROM results b;"
-)
+# batting_summary2 <- DBI::dbGetQuery(
+#   conn,
+#   "SELECT
+#     *
+#     FROM results b;"
+# )

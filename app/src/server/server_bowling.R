@@ -1,7 +1,8 @@
 # cut down stats for visualising
+# bowling_summary <- read_csv("data/db_dump/bowling_summary.csv")
 bowling_summary <- DBI::dbGetQuery(
-    conn,
-    "SELECT
+  conn,
+  "SELECT
     r.opposition,
     r.match_date,
     r.league_name,
@@ -15,6 +16,7 @@ bowling_summary <- DBI::dbGetQuery(
     FROM bowling b
     left join results r on b.match_id = r.id;"
 )
+
 
 observeEvent(input$team_scope_bowling, {
   
@@ -62,7 +64,7 @@ bowling_summary_default <- bowling_summary |>
   arrange(desc(Wickets))
   
 
-output$bowling_summary <- renderDT({datatable(bowling_summary_default)})
+output$bowling_summary <- renderReactable({reactable(bowling_summary_default)})
 
 # cumulative wickets over time
 bowling_cum_sum <- bowling_summary |> 

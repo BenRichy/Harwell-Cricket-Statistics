@@ -1,15 +1,20 @@
 # global.R
 
 # load in packages
-library(tidyverse)
+#library(tidyverse)
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
 library(shiny)
-library(DT)
+#library(DT)
+library(reactable)
 library(stringi)
 library(lubridate)
 library(shinydashboard)
 library(DBI)
 library(plotly)
-library(gganimate)
+#library(gganimate)
 library(igraph)
 library(tidygraph)
 library(chorddiag)
