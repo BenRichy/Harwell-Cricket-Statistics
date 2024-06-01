@@ -1,5 +1,25 @@
 # cut down stats for visualising
-batting_summary <- read_csv("data/db_dump/batting_summary.csv")
+# batting_summary <- read_csv("data/db_dump/batting_summary.csv")
+batting_summary <- DBI::dbGetQuery(
+  conn,
+  "SELECT
+    r.opposition,
+    r.match_date,
+    r.league_name,
+    position,
+    batsman_name,
+    bd.clean_dismissal,
+    bd.count_out,
+    bd.count_innings,
+    runs,
+    balls,
+    fours,
+    sixes
+    FROM batting b
+    left join batting_dismissals bd on b.how_out = bd.pc_dismissal
+    left join results r on b.match_id = r.id;"
+)
+
 
 observeEvent(input$team_scope_batting, {
   
@@ -31,7 +51,7 @@ batting_summary_default <- batting_summary |>
   arrange(desc(average))
 
 
-output$batting_summary <- renderDT({datatable(batting_summary_default)})
+output$batting_summary <- renderReactable({reactable(batting_summary_default)})
 
 
 # runs by position for each batter
@@ -57,7 +77,7 @@ runs_batter_position <- batting_summary |>
   arrange(position,
           batsman_name)
 
-output$batting_position_person <- renderDT({datatable(runs_batter_position)})
+output$batting_position_person <- renderReactable({reactable(runs_batter_position)})
 
 #highest score by position for
 runs_batter_position_max <- batting_summary |> 
@@ -90,8 +110,8 @@ graph_run_position <- ggplot(runs_batter_position_max,
   #swap x and y axes
   coord_flip() 
   
-graph_run_position <- ggplotly(graph_run_position, tooltip = c("text"))
-output$batting_position_record <- renderPlotly({graph_run_position})
+# graph_run_position <- ggplotly(graph_run_position, tooltip = c("text"))
+# output$batting_position_record <- renderPlotly({graph_run_position})
 
 
 # cumulative runs over time -  Area chart
@@ -182,9 +202,9 @@ graph_batting_area_raw <- ggplot(batting_cum_sum_all |>
   theme(legend.position="none")
 
 
-graph_batting_area_raw <- ggplotly(graph_batting_area_raw)
-
-output$batting_total_area_raw<- renderPlotly({graph_batting_area_raw})
+# graph_batting_area_raw <- ggplotly(graph_batting_area_raw)
+# 
+# output$batting_total_area_raw<- renderPlotly({graph_batting_area_raw})
 
 
 
@@ -202,9 +222,9 @@ graph_batting_area_percent <- ggplot(batting_cum_sum_all |>
   theme(legend.position="none")
 
 
-graph_batting_area_percent <- ggplotly(graph_batting_area_percent)
-
-output$batting_total_area_percent <- renderPlotly({graph_batting_area_percent})
+# graph_batting_area_percent <- ggplotly(graph_batting_area_percent)
+# 
+# output$batting_total_area_percent <- renderPlotly({graph_batting_area_percent})
 
 
 # cumulative runs over time - animated bars

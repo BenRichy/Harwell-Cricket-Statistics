@@ -1,18 +1,23 @@
 # global.R
 
 # load in packages
-library(tidyverse)
+#library(tidyverse)
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
 library(shiny)
-library(DT)
+#library(DT)
+library(reactable)
 library(stringi)
 library(lubridate)
 library(shinydashboard)
 library(DBI)
-library(plotly)
+#library(plotly)
 #library(gganimate)
 library(igraph)
 library(tidygraph)
-library(chorddiag)
+#library(chorddiag)
 
 # connect to the detailed database
 # connect <- function(..., con = here::here("data/cricket_detail_database.sqlite")) {
