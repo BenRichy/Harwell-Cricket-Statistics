@@ -1,4 +1,6 @@
-/data/playcricket_club_id.txt
-/data/playcricket_api_key.txt
+/api/playcricket_club_id.txt
+/api/playcricket_api_key.txt
+/api/polished_app_api_key.txt
 .Rproj.user
 .Rhistory
+
