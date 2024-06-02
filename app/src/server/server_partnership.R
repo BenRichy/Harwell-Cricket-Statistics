@@ -1,9 +1,31 @@
-batting_summary_position <- read_csv("data/db_dump/batting_summary_position.csv")
+#batting_summary_position <- read_csv("data/db_dump/batting_summary_position.csv")
 
+batting_summary_position <- DBI::dbGetQuery(
+  conn,
+  "SELECT
+    r.league_name,
+    position,
+    batsman_name
+  FROM batting b
+    left join results r on b.match_id = r.id;"
+)
 
 
 #get partnership data
-partnership_summary <- read_csv("data/db_dump/partnership_summary.csv")
+#partnership_summary <- read_csv("data/db_dump/partnership_summary.csv")
+partnership_summary <- DBI::dbGetQuery(
+  conn,
+  "SELECT
+    r.opposition,
+    r.match_date,
+    r.league_name,
+    wickets,
+    batsman_out_name,
+    batsman_in_name,
+    partnership_runs
+    FROM partnerships p
+    left join results r on p.match_id = r.id;"
+) 
 
 observeEvent(input$team_scope_partnership, {
   
