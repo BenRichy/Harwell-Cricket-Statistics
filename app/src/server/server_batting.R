@@ -51,7 +51,9 @@ batting_summary_default <- batting_summary |>
   arrange(desc(average))
 
 
-output$batting_summary <- renderReactable({reactable(batting_summary_default)})
+output$batting_summary <- renderReactable({reactable(batting_summary_default,
+                                                     filterable = TRUE,
+                                                     searchable = TRUE)})
 
 
 # runs by position for each batter
@@ -77,7 +79,9 @@ runs_batter_position <- batting_summary |>
   arrange(position,
           batsman_name)
 
-output$batting_position_person <- renderReactable({reactable(runs_batter_position)})
+output$batting_position_person <- renderReactable({reactable(runs_batter_position,
+                                                             filterable = TRUE,
+                                                             searchable = TRUE)})
 
 #highest score by position for
 runs_batter_position_max <- batting_summary |> 

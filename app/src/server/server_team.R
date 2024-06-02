@@ -67,7 +67,9 @@ observeEvent(input$team_scope_team, {
                  values_to = "Value")
   
   team_summary_data <- reactable(team_summary_data,
-                                   pagination = FALSE)
+                                   pagination = FALSE,
+                                 filterable = TRUE,
+                                 searchable = TRUE)
   
   output$team_summary <- renderReactable({team_summary_data})
   

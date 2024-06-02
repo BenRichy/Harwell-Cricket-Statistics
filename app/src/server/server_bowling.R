@@ -64,7 +64,9 @@ bowling_summary_default <- bowling_summary |>
   arrange(desc(Wickets))
   
 
-output$bowling_summary <- renderReactable({reactable(bowling_summary_default)})
+output$bowling_summary <- renderReactable({reactable(bowling_summary_default,
+                                                     filterable = TRUE,
+                                                     searchable = TRUE)})
 
 # cumulative wickets over time
 bowling_cum_sum <- bowling_summary |> 
