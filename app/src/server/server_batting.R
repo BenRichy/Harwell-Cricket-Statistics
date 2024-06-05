@@ -48,12 +48,26 @@ batting_summary_default <- batting_summary |>
         strike_rate = round((runs / balls_faced) * 100,0),
         percent_runs_boundaries = round(((fours * 4 + sixes * 6) / runs)*100,2)
     ) |> 
-  arrange(desc(average))
+  arrange(desc(average)) |> 
+  select(Batter = batsman_name,
+         `# Innings` = innings,
+         `# Out` = dismissed,
+         Runs = runs,
+         `Balls Faced` = balls_faced,
+         Fours = fours,
+         Sixes = sixes,
+         `Runs/Innings` = runs_per_innings,
+         Average = average,
+         `Strike Rate` = strike_rate,
+         `% Runs from Boundaries` = percent_runs_boundaries)
 
 
 output$batting_summary <- renderReactable({reactable(batting_summary_default,
                                                      filterable = TRUE,
-                                                     searchable = TRUE)})
+                                                     searchable = TRUE,
+                                                     highlight = TRUE,
+                                                     striped = TRUE,
+                                                     showSortable = TRUE)})
 
 
 # runs by position for each batter
@@ -77,11 +91,26 @@ runs_batter_position <- batting_summary |>
   ) |>
   ungroup() |> 
   arrange(position,
-          batsman_name)
+          batsman_name) |> 
+  select(Batter = batsman_name,
+         `Batting Position` = position,
+         `# Innings` = innings,
+         `# Out` = dismissed,
+         Runs = runs,
+         `Balls Faced` = balls_faced,
+         Fours = fours,
+         Sixes = sixes,
+         `Runs/Innings` = runs_per_innings,
+         Average = average,
+         `Strike Rate` = strike_rate,
+         `% Runs from Boundaries` = percent_runs_boundaries)
 
 output$batting_position_person <- renderReactable({reactable(runs_batter_position,
                                                              filterable = TRUE,
-                                                             searchable = TRUE)})
+                                                             searchable = TRUE,
+                                                             highlight = TRUE,
+                                                             striped = TRUE,
+                                                             showSortable = TRUE)})
 
 #highest score by position for
 runs_batter_position_max <- batting_summary |> 
@@ -112,7 +141,11 @@ graph_run_position <- ggplot(runs_batter_position_max,
   #switch x axis so that batting position 1 is at the top
   scale_x_reverse(labels = runs_batter_position_max$position, breaks = runs_batter_position_max$position) +
   #swap x and y axes
-  coord_flip() 
+  coord_flip() +
+  #label axes
+  labs(y = "Runs in Innings",
+       x = "Batting Position",
+       title = "Highest Run Scorers by Batting Position")
   
 graph_run_position <- ggplotly(graph_run_position, tooltip = c("text"))
 output$batting_position_record <- renderPlotly({graph_run_position})
