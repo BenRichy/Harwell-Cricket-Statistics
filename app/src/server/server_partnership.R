@@ -62,7 +62,11 @@ observeEvent(input$team_scope_partnership, {
     #switch x axis so that batting position 1 is at the top
     scale_x_reverse(labels = partnership_position_max$wickets, breaks = partnership_position_max$wickets) +
     #swap x and y axes
-    coord_flip()
+    coord_flip() +
+    #label axes
+    labs(y = "Runs in Partnership",
+         x = "Wicket Number",
+         title = "Highest Partnerships by Wicket Number")
   
   graph_partnership_position <- ggplotly(graph_partnership_position, tooltip = c("text"))
   output$partnership_position_record <- renderPlotly({graph_partnership_position})
