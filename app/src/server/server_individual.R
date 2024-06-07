@@ -140,6 +140,46 @@ batting_individual_summary_position <- batting_individual |>
     pivot_wider(names_from = "Position",
                 values_from = "Value")
 
+## summary stats by opposition
+batting_individual_summary_opposition <- batting_individual |>
+  group_by(batsman_name,
+           opposition) |>
+  summarise(
+    innings = sum(count_innings, na.rm = TRUE),
+    dismissed = sum(count_out, na.rm = TRUE),
+    runs = sum(runs, na.rm = TRUE),
+    balls_faced = sum(balls, na.rm = TRUE),
+    fours = sum(fours, na.rm = TRUE),
+    sixes = sum(sixes, na.rm = TRUE)
+  ) |>
+  ungroup() |>
+  mutate(
+    runs_per_innings = round(runs / innings,2),
+    average = round(runs / dismissed,2),
+    strike_rate = round((runs / balls_faced) * 100,0),
+    percent_runs_boundaries = round(((fours * 4 + sixes * 6) / runs)*100,2)
+  ) |> 
+  arrange(desc(average)) |> 
+  select(Batter = batsman_name,
+         Opposition = opposition,
+         `# Innings` = innings,
+         `# Out` = dismissed,
+         Runs = runs,
+         `Balls Faced` = balls_faced,
+         Fours = fours,
+         Sixes = sixes,
+         `Runs/Innings` = runs_per_innings,
+         Average = average,
+         `Strike Rate` = strike_rate,
+         `% Runs from Boundaries` = percent_runs_boundaries) |> 
+  select(-Batter) |>  
+  pivot_longer(cols = c(`# Innings`:`% Runs from Boundaries`),
+               names_to = "Metric",
+               values_to = "Value") |> 
+  pivot_wider(names_from = "Opposition",
+              values_from = "Value")
+
+
 
 output$individual_batting_summary <- renderReactable({reactable(batting_individual_summary,
                                                      highlight = TRUE,
@@ -148,6 +188,10 @@ output$individual_batting_summary <- renderReactable({reactable(batting_individu
 output$individual_batting_summary_position <- renderReactable({reactable(batting_individual_summary_position,
                                                                 highlight = TRUE,
                                                                 striped = TRUE)})
+
+output$individual_batting_summary_opposition <- renderReactable({reactable(batting_individual_summary_opposition,
+                                                                         highlight = TRUE,
+                                                                         striped = TRUE)})
 
 
 ## dismissals

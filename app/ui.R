@@ -90,7 +90,7 @@ dashboardPage(
                 tabPanel("Batting - Manhattan"),
                 tabPanel("Batting - Dismissals", plotlyOutput("individual_dismissal_pie")),
                 tabPanel("Batting - By Position", reactableOutput("individual_batting_summary_position")),
-                tabPanel("Batting - By Opposition"),
+                tabPanel("Batting - By Opposition", reactableOutput("individual_batting_summary_opposition")),
                 tabPanel("Batting - Best Scores"),
                 tabPanel("Batting - % Runs"),
                 tabPanel("Bowling - Summary"),
