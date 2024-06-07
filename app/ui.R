@@ -82,7 +82,24 @@ dashboardPage(
               h2("Individual Stats"),
               br(),
               uiOutput("SelectPlayer_Individual"),
-              h3("Statistics under construction")
+              uiOutput("SelectTeam_Individual"),
+              br(),
+              tabsetPanel(
+                tabPanel("Batting - Summary", 
+                         div(style = "width: 700px", reactableOutput("individual_batting_summary"))),
+                tabPanel("Batting - Manhattan"),
+                tabPanel("Batting - Dismissals", plotlyOutput("individual_dismissal_pie")),
+                tabPanel("Batting - By Position", reactableOutput("individual_batting_summary_position")),
+                tabPanel("Batting - By Opposition"),
+                tabPanel("Batting - Best Scores"),
+                tabPanel("Batting - % Runs"),
+                tabPanel("Bowling - Summary"),
+                tabPanel("Bowling - Manhattan"),
+                tabPanel("Bowling - Wickets"),
+                tabPanel("Bowling - By Opposition"),
+                tabPanel("Bowling - Best Figures"),
+                tabPanel("Bowling - % Wickets")
+              )
             ),
             
 
