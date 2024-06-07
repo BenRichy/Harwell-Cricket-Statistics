@@ -109,7 +109,37 @@ dashboardPage(
                 tabName = "award-stats",
                 h2("Award Stats"),
                 br(),
-                h3("Statistics under construction")
+                tabsetPanel(
+                  tabPanel("Matt Hills Fielding Award",
+                           tabsetPanel(
+                             tabPanel("Summary"),
+                             tabPanel("Detail"),
+                             tabPanel("Visualise")
+                           )),
+                  tabPanel("Champagne Moment",
+                           tabsetPanel(
+                             tabPanel("Summary"),
+                             tabPanel("Detail"),
+                             tabPanel("Visualise")
+                           )),
+                  tabPanel("Dick of the Day",
+                           tabsetPanel(
+                             tabPanel("Summary"),
+                             tabPanel("Detail"),
+                             tabPanel("Visualise")
+                           )),
+                  tabPanel("Man of the Match",
+                           tabsetPanel(
+                             tabPanel("Summary"),
+                             tabPanel("Detail"),
+                             tabPanel("Visualise")
+                           )),
+                  tabPanel("Toby Gallington Fair Play Award",
+                           tabsetPanel(
+                             tabPanel("Summary"),
+                             tabPanel("Detail"),
+                             tabPanel("Visualise")
+                           )))
             )
         )
     )
