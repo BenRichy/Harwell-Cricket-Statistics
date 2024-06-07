@@ -62,6 +62,10 @@ batting_individual <- batting_individual |>
   filter(batsman_name == input$player_scope_individual,
          league_name %in% input$team_scope_individual)
 
+bowling_individual <- bowling_individual |> 
+  filter(bowler_name == input$player_scope_individual,
+         league_name %in% input$team_scope_individual)
+
 # individual batting stats
 ## summary stats
 batting_individual_summary <- batting_individual |>
@@ -215,6 +219,98 @@ output$individual_dismissal_pie <- renderPlotly({plot_ly(data = batting_individu
                                     labels = ~clean_dismissal,
                                     type = "pie")})
 
+
+# individual bowling stats
+bowling_individual_summary <- bowling_individual |>
+  group_by(bowler_name) |>
+  summarise(
+    ball_count = sum(ball_count, na.rm = TRUE),
+    maidens = sum(maidens, na.rm = TRUE),
+    runs = sum(runs, na.rm = TRUE),
+    wides = sum(wides, na.rm = TRUE),
+    no_balls = sum(no_balls, na.rm = TRUE),
+    wickets = sum(wickets, na.rm = TRUE)
+  ) |>
+  ungroup() |>
+  mutate(
+    complete_overs = floor(ball_count / 6),
+    residual_balls = ball_count - (6 * complete_overs),
+    overs = as.numeric(format(as.numeric(paste0(complete_overs, ".", residual_balls)),nsmall=1)),
+    average = round(runs / wickets,2),
+    strike_rate = round(ball_count / wickets,2),
+    economy = round(runs / (complete_overs + (residual_balls / 6)),2),
+    percent_runs_extras = round(((no_balls + wides) / runs)*100,2)) |>
+  select(
+    "Bowler" = bowler_name,
+    "Overs" = overs,
+    "Maidens"= maidens,
+    "Runs Conceded" = runs,
+    "Wickets" = wickets,
+    "Average" = average,
+    "Strike Rate" = strike_rate,
+    "Economy" = economy,
+    "Wides" = wides,
+    "No Balls" = no_balls,
+    "%Runs from Extras" = percent_runs_extras
+  ) |> 
+  arrange(desc(Wickets)) |> 
+  select(-Bowler) |> 
+  pivot_longer(cols = c(`Overs`:`%Runs from Extras`),
+               names_to = "Metric",
+               values_to = "Value")
+
+
+### by opposition
+bowling_individual_summary_opposition <- bowling_individual |>
+  group_by(bowler_name,
+           opposition) |>
+  summarise(
+    ball_count = sum(ball_count, na.rm = TRUE),
+    maidens = sum(maidens, na.rm = TRUE),
+    runs = sum(runs, na.rm = TRUE),
+    wides = sum(wides, na.rm = TRUE),
+    no_balls = sum(no_balls, na.rm = TRUE),
+    wickets = sum(wickets, na.rm = TRUE)
+  ) |>
+  ungroup() |>
+  mutate(
+    complete_overs = floor(ball_count / 6),
+    residual_balls = ball_count - (6 * complete_overs),
+    overs = as.numeric(format(as.numeric(paste0(complete_overs, ".", residual_balls)),nsmall=1)),
+    average = round(runs / wickets,2),
+    strike_rate = round(ball_count / wickets,2),
+    economy = round(runs / (complete_overs + (residual_balls / 6)),2),
+    percent_runs_extras = round(((no_balls + wides) / runs)*100,2)) |>
+  select(
+    "Bowler" = bowler_name,
+    "Opposition" = opposition,
+    "Overs" = overs,
+    "Maidens"= maidens,
+    "Runs Conceded" = runs,
+    "Wickets" = wickets,
+    "Average" = average,
+    "Strike Rate" = strike_rate,
+    "Economy" = economy,
+    "Wides" = wides,
+    "No Balls" = no_balls,
+    "%Runs from Extras" = percent_runs_extras
+  ) |> 
+  arrange(desc(Wickets)) |> 
+  select(-Bowler) |> 
+  pivot_longer(cols = c(`Overs`:`%Runs from Extras`),
+               names_to = "Metric",
+               values_to = "Value") |> 
+  pivot_wider(names_from = "Opposition",
+              values_from = "Value")
+
+
+output$individual_bowling_summary <- renderReactable({reactable(bowling_individual_summary,
+                                                                           highlight = TRUE,
+                                                                           striped = TRUE)})
+
+output$individual_bowling_summary_opposition <- renderReactable({reactable(bowling_individual_summary_opposition,
+                                                                highlight = TRUE,
+                                                                striped = TRUE)})
 
 
 })

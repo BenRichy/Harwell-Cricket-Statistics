@@ -93,10 +93,11 @@ dashboardPage(
                 tabPanel("Batting - By Opposition", reactableOutput("individual_batting_summary_opposition")),
                 tabPanel("Batting - Best Scores"),
                 tabPanel("Batting - % Runs"),
-                tabPanel("Bowling - Summary"),
+                tabPanel("Bowling - Summary", 
+                         div(style = "width: 700px", reactableOutput("individual_bowling_summary"))),
                 tabPanel("Bowling - Manhattan"),
                 tabPanel("Bowling - Wickets"),
-                tabPanel("Bowling - By Opposition"),
+                tabPanel("Bowling - By Opposition", reactableOutput("individual_bowling_summary_opposition")),
                 tabPanel("Bowling - Best Figures"),
                 tabPanel("Bowling - % Wickets")
               )
