@@ -281,6 +281,41 @@ bowling_individual_summary <- bowling_individual |>
                names_to = "Metric",
                values_to = "Value")
 
+output$individual_bowling_summary <- renderReactable({reactable(bowling_individual_summary,
+                                                                highlight = TRUE,
+                                                                striped = TRUE)})
+
+### bowling game by game
+bowling_individual_by_game <- bowling_individual |>
+  mutate(
+    complete_overs = floor(ball_count / 6),
+    residual_balls = ball_count - (6 * complete_overs),
+    overs = as.numeric(format(as.numeric(paste0(complete_overs, ".", residual_balls)),nsmall=1)),
+    average = round(runs / wickets,2),
+    strike_rate = round(ball_count / wickets,2),
+    economy = round(runs / (complete_overs + (residual_balls / 6)),2),
+    percent_runs_extras = round(((no_balls + wides) / runs)*100,2)) |>
+  select(
+    "Bowler" = bowler_name,
+    `Match Date` = match_date,
+    `League` = league_name,
+    Opposition = opposition,
+    "Overs" = overs,
+    "Maidens"= maidens,
+    "Runs Conceded" = runs,
+    "Wickets" = wickets,
+    "Average" = average,
+    "Strike Rate" = strike_rate,
+    "Economy" = economy,
+    "Wides" = wides,
+    "No Balls" = no_balls,
+    "%Runs from Extras" = percent_runs_extras
+  ) |> 
+  select(-Bowler)
+
+output$individual_bowling_by_game <- renderReactable({reactable(bowling_individual_by_game,
+                                                                highlight = TRUE,
+                                                                striped = TRUE)})
 
 ### by opposition
 bowling_individual_summary_opposition <- bowling_individual |>
@@ -326,9 +361,6 @@ bowling_individual_summary_opposition <- bowling_individual |>
               values_from = "Value")
 
 
-output$individual_bowling_summary <- renderReactable({reactable(bowling_individual_summary,
-                                                                           highlight = TRUE,
-                                                                           striped = TRUE)})
 
 output$individual_bowling_summary_opposition <- renderReactable({reactable(bowling_individual_summary_opposition,
                                                                 highlight = TRUE,
