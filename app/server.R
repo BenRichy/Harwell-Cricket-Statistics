@@ -74,6 +74,16 @@ shinyServer(function(input, output) {
       )
     })
     
+    output$SelectTeam_Awards <- renderUI({
+      selectInput(
+        "team_scope_awards",
+        tags$h4("Select Team(s)",align="center"),
+        choices = league_names,
+        selected = league_names,
+        multiple = TRUE
+      )
+    })
+    
     source("src/server/server_team.R",local = TRUE)
     source("src/server/server_batting.R",local = TRUE)
     source("src/server/server_bowling.R",local = TRUE)

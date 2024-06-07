@@ -109,7 +109,15 @@ dashboardPage(
                 tabName = "award-stats",
                 h2("Award Stats"),
                 br(),
+                uiOutput("SelectTeam_Awards"),
+                br(),
                 tabsetPanel(
+                  tabPanel("Summary",
+                           tabsetPanel(
+                             tabPanel("Summary"),
+                             tabPanel("Detail"),
+                             tabPanel("Visualise")
+                           )),
                   tabPanel("Matt Hills Fielding Award",
                            tabsetPanel(
                              tabPanel("Summary"),
