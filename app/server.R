@@ -11,6 +11,13 @@ shinyServer(function(input, output) {
     
     league_names <- as.vector(unlist(league_names))
     
+    #get list of player names
+    player_names <- DBI::dbGetQuery(
+      conn,
+      "SELECT distinct batsman_name player
+      FROM batting
+      order by player;")
+    
     #drop down to select the team scope
     #multiple select
     
@@ -48,6 +55,13 @@ shinyServer(function(input, output) {
       tags$h4("Select Team(s)",align="center"),
       choices = league_names,
       selected = league_names,
+      multiple = TRUE
+    )})
+    
+    output$SelectPlayer_Individual <- renderUI({selectInput(
+      "player_scope_individual",
+      tags$h4("Select Player",align="center"),
+      choices = player_names,
       multiple = TRUE
     )})
     

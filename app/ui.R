@@ -16,6 +16,7 @@ dashboardPage(
             menuItem("Batting Stats", tabName = "batting-stats", icon = icon("baseball-bat-ball")),
             menuItem("Bowling Stats", tabName = "bowling-stats", icon = icon("bowling-ball")),
             menuItem("Partnership Stats", tabName = "partnership-stats", icon = icon("yin-yang")),
+            menuItem("Individual Stats", tabName = "individual-stats"),
             menuItem("Awards", tabName = "award-stats", icon = icon("trophy"))
         )
     ),
@@ -75,6 +76,15 @@ dashboardPage(
                 tabPanel("Highest Partnerships", plotlyOutput("partnership_position_record"))
                 )
             ),
+            # Individual Stats
+            tabItem(
+              tabName = "individual-stats",
+              h2("Individual Stats"),
+              br(),
+              uiOutput("SelectPlayer_Individual"),
+              h3("Statistics under construction")
+            ),
+            
 
             # Award Stats
             tabItem(
