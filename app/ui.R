@@ -87,6 +87,7 @@ dashboardPage(
               tabsetPanel(
                 tabPanel("Batting - Summary", 
                          div(style = "width: 700px", reactableOutput("individual_batting_summary"))),
+                tabPanel("Batting - Game By Game", reactableOutput("individual_batting_by_game")),
                 tabPanel("Batting - Manhattan"),
                 tabPanel("Batting - Dismissals", plotlyOutput("individual_dismissal_pie")),
                 tabPanel("Batting - By Position", reactableOutput("individual_batting_summary_position")),
@@ -95,6 +96,7 @@ dashboardPage(
                 tabPanel("Batting - % Runs"),
                 tabPanel("Bowling - Summary", 
                          div(style = "width: 700px", reactableOutput("individual_bowling_summary"))),
+                tabPanel("Bowling - Game By Game"),
                 tabPanel("Bowling - Manhattan"),
                 tabPanel("Bowling - Wickets"),
                 tabPanel("Bowling - By Opposition", reactableOutput("individual_bowling_summary_opposition")),
