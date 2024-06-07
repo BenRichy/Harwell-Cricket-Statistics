@@ -16,7 +16,7 @@ dashboardPage(
             menuItem("Batting Stats", tabName = "batting-stats", icon = icon("baseball-bat-ball")),
             menuItem("Bowling Stats", tabName = "bowling-stats", icon = icon("bowling-ball")),
             menuItem("Partnership Stats", tabName = "partnership-stats", icon = icon("yin-yang")),
-            menuItem("Individual Stats", tabName = "individual-stats"),
+            menuItem("Individual Stats", tabName = "individual-stats", icon = icon("person")),
             menuItem("Awards", tabName = "award-stats", icon = icon("trophy"))
         )
     ),
