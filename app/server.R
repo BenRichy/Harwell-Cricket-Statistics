@@ -61,15 +61,24 @@ shinyServer(function(input, output) {
     output$SelectPlayer_Individual <- renderUI({selectInput(
       "player_scope_individual",
       tags$h4("Select Player",align="center"),
-      choices = player_names,
-      multiple = TRUE
+      choices = player_names
     )})
     
+    output$SelectTeam_Individual <- renderUI({
+      selectInput(
+        "team_scope_individual",
+        tags$h4("Select Team(s)",align="center"),
+        choices = league_names,
+        selected = league_names,
+        multiple = TRUE
+      )
+    })
     
     source("src/server/server_team.R",local = TRUE)
     source("src/server/server_batting.R",local = TRUE)
     source("src/server/server_bowling.R",local = TRUE)
     source("src/server/server_partnership.R",local = TRUE)
+    source("src/server/server_individual.R",local = TRUE)
     
 
     
