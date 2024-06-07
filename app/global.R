@@ -22,7 +22,14 @@ library(tidygraph)
 library(chorddiag)
 
 # connect to the detailed database
-connect <- function(..., con = here::here("app/data/cricket_detail_database.sqlite")) {
+if(file.exists("app") == TRUE){
+  db_fp <- "app/data/cricket_detail_database.sqlite"
+} else{
+  db_fp <- "data/cricket_detail_database.sqlite"
+}
+
+
+connect <- function(..., con = db_fp) {
     con <- DBI::dbConnect(RSQLite::SQLite(), con, extend_types = TRUE)
     con
 }
