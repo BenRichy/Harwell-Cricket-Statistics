@@ -346,7 +346,7 @@ dbDisconnect(cricket_database)
 Create csv files from the database
 ```{r csv_out}
 #connect to db
-source("src/general_functions.R")
+source("app/src/general_functions.R")
 
 conn <- connect()
 
