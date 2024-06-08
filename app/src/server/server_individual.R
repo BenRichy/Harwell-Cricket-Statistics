@@ -132,8 +132,18 @@ batting_individual_game_graph_data <- batting_individual_by_game |>
          `Cumulative Runs` = cumsum(Runs))
 
 plotly_batting_individual <- plot_ly(batting_individual_game_graph_data, 
-        x = ~`Match Number`, y = ~Runs, type = "bar", name = "Runs by Game") |> 
-  add_trace(x = ~`Match Number`, y = ~`Cumulative Runs`, type = "scatter", mode = "lines+markers", yaxis = "y2", name = "Cumulative Runs") |> 
+        x = ~`Match Number`, y = ~Runs, type = "bar", name = "Runs by Game",
+        hoverinfo = "text",
+        hovertext = paste("Match Date:", batting_individual_game_graph_data$`Match Date`,
+                          "<br>Opposition:", batting_individual_game_graph_data$Opposition,
+                          "<br>Competition:", batting_individual_game_graph_data$League,
+                          "<br>Runs:", batting_individual_game_graph_data$Runs,
+                          "<br>Balls:", batting_individual_game_graph_data$Balls,
+                          "<br>Strike Rate:", batting_individual_game_graph_data$`Strike Rate`)) |> 
+  add_trace(x = ~`Match Number`, y = ~`Cumulative Runs`, type = "scatter", mode = "lines+markers", yaxis = "y2", name = "Cumulative Runs",
+            hoverinfo = "text",
+            hovertext = paste("Matches Played:", batting_individual_game_graph_data$`Match Number`,
+                              "<br>Cumulative Runs:", batting_individual_game_graph_data$`Runs Wickets`)) |> 
   layout(yaxis2 = list(overlaying = "y", side = "right"))
 
 output$individual_batting_plotly <- renderPlotly(plotly_batting_individual)
@@ -335,8 +345,22 @@ bowling_individual_game_graph_data <- bowling_individual_by_game |>
          `Cumulative Wickets` = cumsum(Wickets))
 
 plotly_bowling_individual <- plot_ly(bowling_individual_game_graph_data, 
-                                     x = ~`Match Number`, y = ~Wickets, type = "bar", name = "Wickets by Game") |> 
-  add_trace(x = ~`Match Number`, y = ~`Cumulative Wickets`, type = "scatter", mode = "lines+markers", yaxis = "y2", name = "Cumulative Wickets") |> 
+                                     x = ~`Match Number`, y = ~Wickets, type = "bar", name = "Wickets by Game",
+                                     hoverinfo = "text",
+                                     hovertext = paste("Match Date:", bowling_individual_game_graph_data$`Match Date`,
+                                                       "<br>Opposition:", bowling_individual_game_graph_data$Opposition,
+                                                       "<br>Competition:", bowling_individual_game_graph_data$League,
+                                                       "<br>Wickets:", bowling_individual_game_graph_data$Wickets,
+                                                       "<br>Overs:", bowling_individual_game_graph_data$Overs,
+                                                       "<br>Maidens:", bowling_individual_game_graph_data$Maidens,
+                                                       "<br>Runs Conceded:", bowling_individual_game_graph_data$`Runs Conceded`,
+                                                       "<br>Average:", bowling_individual_game_graph_data$Average,
+                                                       "<br>Strike Rate:", bowling_individual_game_graph_data$`Strike Rate`,
+                                                       "<br>Economy:", bowling_individual_game_graph_data$Economy)) |> 
+  add_trace(x = ~`Match Number`, y = ~`Cumulative Wickets`, type = "scatter", mode = "lines+markers", yaxis = "y2", name = "Cumulative Wickets",
+            hoverinfo = "text",
+            hovertext = paste("Matches Played:", bowling_individual_game_graph_data$`Match Number`,
+                              "<br>Cumulative Wickets:", bowling_individual_game_graph_data$`Cumulative Runs`)) |> 
   layout(yaxis2 = list(overlaying = "y", side = "right"))
 
 output$individual_bowling_plotly <- renderPlotly(plotly_bowling_individual)
