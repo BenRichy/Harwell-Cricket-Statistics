@@ -88,7 +88,7 @@ shinyServer(function(input, output) {
       selectInput(
         "batting_stat_scope_individual",
         tags$h4("Select Cumulative Stat",align="center"),
-        choices = c("Runs","Average","Strike Rate"),
+        choices = c("Runs","Average","Strike Rate", "Runs per Innings"),
         selected = "Runs",
         multiple = FALSE
       )

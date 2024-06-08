@@ -116,11 +116,15 @@ batting_individual_by_game <- batting_individual |>
          Runs = runs,
          Balls = balls,
          Fours = fours,
-         Sixes = sixes) |> 
+         Sixes = sixes,
+         count_innings,
+         count_out) |> 
   mutate(`Strike Rate` = round((Runs / Balls) * 100,0),
          `% Runs from Boundaries` = round(((Fours * 4 + Sixes * 6) / Runs)*100,2))
 
-output$individual_batting_by_game <- renderReactable({reactable(batting_individual_by_game,
+output$individual_batting_by_game <- renderReactable({reactable(batting_individual_by_game |> 
+                                                                  select(-count_innings,
+                                                                         -count_out),
                                                                 highlight = TRUE,
                                                                 striped = TRUE,
                                                                 showSortable = TRUE)})
@@ -129,7 +133,22 @@ output$individual_batting_by_game <- renderReactable({reactable(batting_individu
 batting_individual_game_graph_data <- batting_individual_by_game |> 
   filter(`How Out` != 'DNB') |> 
   mutate(`Match Number` = row_number(),
-         `Cumulative Runs` = cumsum(Runs))
+         `Cumulative Runs` = cumsum(Runs),
+         `Cumulative Balls` = cumsum(Balls),
+         cum_innings = cumsum(count_innings),
+         cum_out = cumsum(count_out),
+         `Cumulative Average` = round(`Cumulative Runs`/cum_out,2),
+         `Cumulative Strike Rate` = round((`Cumulative Runs`/`Cumulative Balls`)*100,2),
+         `Cumulative Runs per Innings` = round(`Cumulative Runs`/cum_innings,2))
+
+#reactive graph depending on the data shown
+observeEvent(input$batting_stat_scope_individual, {
+  
+  individual_batting_stat <- paste0("Cumulative ",input$batting_stat_scope_individual)
+  individual_batting_stat_variable_short <- paste0(individual_batting_stat)
+  
+  batting_individual_game_graph_data <- batting_individual_game_graph_data |> 
+    mutate(cum_data = get(individual_batting_stat_variable_short))
 
 plotly_batting_individual <- plot_ly(batting_individual_game_graph_data, 
         x = ~`Match Number`, y = ~Runs, type = "bar", name = "Runs by Game",
@@ -140,13 +159,15 @@ plotly_batting_individual <- plot_ly(batting_individual_game_graph_data,
                           "<br>Runs:", batting_individual_game_graph_data$Runs,
                           "<br>Balls:", batting_individual_game_graph_data$Balls,
                           "<br>Strike Rate:", batting_individual_game_graph_data$`Strike Rate`)) |> 
-  add_trace(x = ~`Match Number`, y = ~`Cumulative Runs`, type = "scatter", mode = "lines+markers", yaxis = "y2", name = "Cumulative Runs",
+  add_trace(x = ~`Match Number`, y = ~cum_data, type = "scatter", mode = "lines+markers", yaxis = "y2", name = individual_batting_stat,
             hoverinfo = "text",
-            hovertext = paste("Matches Played:", batting_individual_game_graph_data$`Match Number`,
-                              "<br>Cumulative Runs:", batting_individual_game_graph_data$`Runs Wickets`)) |> 
+            hovertext = paste0("Matches Played: ", batting_individual_game_graph_data$`Match Number`,
+                              "<br>",individual_batting_stat,": ", batting_individual_game_graph_data$cum_data)) |> 
   layout(yaxis2 = list(overlaying = "y", side = "right"))
 
 output$individual_batting_plotly <- renderPlotly(plotly_batting_individual)
+
+})
 
 ## summary stats by position
 batting_individual_summary_position <- batting_individual |>
