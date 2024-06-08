@@ -125,6 +125,18 @@ output$individual_batting_by_game <- renderReactable({reactable(batting_individu
                                                                 striped = TRUE,
                                                                 showSortable = TRUE)})
 
+###create bar chart for batting
+batting_individual_game_graph_data <- batting_individual_by_game |> 
+  filter(`How Out` != 'DNB') |> 
+  mutate(`Match Number` = row_number(),
+         `Cumulative Runs` = cumsum(Runs))
+
+plotly_batting_individual <- plot_ly(batting_individual_game_graph_data, 
+        x = ~`Match Number`, y = ~Runs, type = "bar", name = "Runs by Game") |> 
+  add_trace(x = ~`Match Number`, y = ~`Cumulative Runs`, type = "scatter", mode = "lines+markers", yaxis = "y2", name = "Cumulative Runs") |> 
+  layout(yaxis2 = list(overlaying = "y", side = "right"))
+
+output$individual_batting_plotly <- renderPlotly(plotly_batting_individual)
 
 ## summary stats by position
 batting_individual_summary_position <- batting_individual |>
@@ -316,6 +328,18 @@ bowling_individual_by_game <- bowling_individual |>
 output$individual_bowling_by_game <- renderReactable({reactable(bowling_individual_by_game,
                                                                 highlight = TRUE,
                                                                 striped = TRUE)})
+
+### bowling by game graph
+bowling_individual_game_graph_data <- bowling_individual_by_game |> 
+  mutate(`Match Number` = row_number(),
+         `Cumulative Wickets` = cumsum(Wickets))
+
+plotly_bowling_individual <- plot_ly(bowling_individual_game_graph_data, 
+                                     x = ~`Match Number`, y = ~Wickets, type = "bar", name = "Wickets by Game") |> 
+  add_trace(x = ~`Match Number`, y = ~`Cumulative Wickets`, type = "scatter", mode = "lines+markers", yaxis = "y2", name = "Cumulative Wickets") |> 
+  layout(yaxis2 = list(overlaying = "y", side = "right"))
+
+output$individual_bowling_plotly <- renderPlotly(plotly_bowling_individual)
 
 ### by opposition
 bowling_individual_summary_opposition <- bowling_individual |>
