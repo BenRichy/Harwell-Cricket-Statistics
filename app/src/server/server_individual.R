@@ -331,19 +331,39 @@ bowling_individual_by_game <- bowling_individual |>
     "Economy" = economy,
     "Wides" = wides,
     "No Balls" = no_balls,
-    "%Runs from Extras" = percent_runs_extras
+    "%Runs from Extras" = percent_runs_extras,
+    ball_count
   ) |> 
   select(-Bowler)
 
-output$individual_bowling_by_game <- renderReactable({reactable(bowling_individual_by_game,
+output$individual_bowling_by_game <- renderReactable({reactable(bowling_individual_by_game |> 
+                                                                  select(-ball_count),
                                                                 highlight = TRUE,
                                                                 striped = TRUE)})
 
 ### bowling by game graph
 bowling_individual_game_graph_data <- bowling_individual_by_game |> 
+  #calculate individual cumulative info
   mutate(`Match Number` = row_number(),
-         `Cumulative Wickets` = cumsum(Wickets))
+         `Cumulative Wickets` = cumsum(Wickets),
+         cum_runs = cumsum(`Runs Conceded`),
+         cum_balls = cumsum(ball_count),
+         `Cumulative Average` = round(cum_runs/`Cumulative Wickets`,2),
+         `Cumulative Strike Rate` = round(cum_balls/`Cumulative Wickets`,2),
+         cum_complete_overs = floor(cum_balls / 6),
+         cum_residual_balls = cum_balls - (6 * cum_complete_overs),
+         `Cumulative Economy` = round(cum_runs / (cum_complete_overs + (cum_residual_balls / 6)),2))
 
+#reactive graph depending on the data shown
+observeEvent(input$bowling_stat_scope_individual, {
+  
+  individual_bowling_stat <- paste0("Cumulative ",input$bowling_stat_scope_individual)
+  individual_bowling_stat_variable_short <- paste0(individual_bowling_stat)
+  #individual_bowling_stat_variable_full <- paste0("bowling_individual_game_graph_data$`",individual_bowling_stat,"`")
+  
+  bowling_individual_game_graph_data <- bowling_individual_game_graph_data |> 
+    mutate(cum_data = get(individual_bowling_stat_variable_short))
+  
 plotly_bowling_individual <- plot_ly(bowling_individual_game_graph_data, 
                                      x = ~`Match Number`, y = ~Wickets, type = "bar", name = "Wickets by Game",
                                      hoverinfo = "text",
@@ -357,13 +377,15 @@ plotly_bowling_individual <- plot_ly(bowling_individual_game_graph_data,
                                                        "<br>Average:", bowling_individual_game_graph_data$Average,
                                                        "<br>Strike Rate:", bowling_individual_game_graph_data$`Strike Rate`,
                                                        "<br>Economy:", bowling_individual_game_graph_data$Economy)) |> 
-  add_trace(x = ~`Match Number`, y = ~`Cumulative Wickets`, type = "scatter", mode = "lines+markers", yaxis = "y2", name = "Cumulative Wickets",
+  add_trace(x = ~`Match Number`, y = ~cum_data, type = "scatter", mode = "lines+markers", yaxis = "y2", name = individual_bowling_stat,
             hoverinfo = "text",
-            hovertext = paste("Matches Played:", bowling_individual_game_graph_data$`Match Number`,
-                              "<br>Cumulative Wickets:", bowling_individual_game_graph_data$`Cumulative Runs`)) |> 
+            hovertext = paste0("Matches Played: ", bowling_individual_game_graph_data$`Match Number`,
+                              "<br>",individual_bowling_stat,": ", bowling_individual_game_graph_data$cum_data)) |> 
   layout(yaxis2 = list(overlaying = "y", side = "right"))
 
 output$individual_bowling_plotly <- renderPlotly(plotly_bowling_individual)
+
+})
 
 ### by opposition
 bowling_individual_summary_opposition <- bowling_individual |>

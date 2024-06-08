@@ -88,7 +88,7 @@ dashboardPage(
                 tabPanel("Batting - Summary", 
                          div(style = "width: 700px", reactableOutput("individual_batting_summary"))),
                 tabPanel("Batting - Game By Game", reactableOutput("individual_batting_by_game")),
-                tabPanel("Batting - Manhattan", plotlyOutput("individual_batting_plotly")),
+                tabPanel("Batting - Manhattan", uiOutput("SelectBattingStat_Individual"), br(), plotlyOutput("individual_batting_plotly")),
                 tabPanel("Batting - Dismissals", plotlyOutput("individual_dismissal_pie")),
                 tabPanel("Batting - By Position", reactableOutput("individual_batting_summary_position")),
                 tabPanel("Batting - By Opposition", reactableOutput("individual_batting_summary_opposition")),
@@ -96,7 +96,7 @@ dashboardPage(
                 tabPanel("Bowling - Summary", 
                          div(style = "width: 700px", reactableOutput("individual_bowling_summary"))),
                 tabPanel("Bowling - Game By Game", reactableOutput("individual_bowling_by_game")),
-                tabPanel("Bowling - Manhattan", plotlyOutput("individual_bowling_plotly")),
+                tabPanel("Bowling - Manhattan", uiOutput("SelectBowlingStat_Individual"), br(),plotlyOutput("individual_bowling_plotly")),
                 tabPanel("Bowling - Wickets", "In Progress"),
                 tabPanel("Bowling - By Opposition", reactableOutput("individual_bowling_summary_opposition")),
                 tabPanel("Bowling - % Wickets", "In Progress")
@@ -107,7 +107,7 @@ dashboardPage(
             # Award Stats
             tabItem(
                 tabName = "award-stats",
-                h2("Award Stats"),
+                h2("Award Stats - Under Construction"),
                 br(),
                 uiOutput("SelectTeam_Awards"),
                 br(),

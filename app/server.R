@@ -74,6 +74,26 @@ shinyServer(function(input, output) {
       )
     })
     
+    output$SelectBowlingStat_Individual <- renderUI({
+      selectInput(
+        "bowling_stat_scope_individual",
+        tags$h4("Select Cumulative Stat",align="center"),
+        choices = c("Wickets","Average","Strike Rate","Economy"),
+        selected = "Wickets",
+        multiple = FALSE
+      )
+    })
+    
+    output$SelectBattingStat_Individual <- renderUI({
+      selectInput(
+        "batting_stat_scope_individual",
+        tags$h4("Select Cumulative Stat",align="center"),
+        choices = c("Runs","Average","Strike Rate"),
+        selected = "Runs",
+        multiple = FALSE
+      )
+    })
+    
     output$SelectTeam_Awards <- renderUI({
       selectInput(
         "team_scope_awards",
