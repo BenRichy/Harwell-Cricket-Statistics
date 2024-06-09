@@ -60,7 +60,8 @@ dashboardPage(
                 tabsetPanel(
                   tabPanel("Summary",reactableOutput("bowling_summary")),
                   tabPanel("Total Wickets Over Time (raw)",plotlyOutput("bowling_total_area_raw")),
-                  tabPanel("Total Wickets Over Time (percent)",plotlyOutput("bowling_total_area_percent"))
+                  tabPanel("Total Wickets Over Time (percent)",plotlyOutput("bowling_total_area_percent")),
+                  tabPanel("Bowling Figures by End", reactableOutput("bowling_detail_end"))
                   )
             ),
             

@@ -80,3 +80,11 @@ detailed_bowling_home_group <- detailed_bowling_home_select |>
          Average,
          `Strike Rate` = strike_rate,
          Economy = economy)
+
+
+output$bowling_detail_end <- renderReactable({reactable(detailed_bowling_home_group,
+                                                        filterable = TRUE,
+                                                        searchable = TRUE,
+                                                        highlight = TRUE,
+                                                        striped = TRUE,
+                                                        showSortable = TRUE)})
