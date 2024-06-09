@@ -1,0 +1,10 @@
+# connect to the detailed database
+if(file.exists("app") == TRUE){
+  bowling_detail_fp <- "app/data/ball-data-dump.csv"
+} else{
+  bowling_detail_fp <- "data/ball-data-dump.csv"
+}
+
+#get the bowling data only
+detailed_bowling_import <- read_csv(bowling_detail_fp) |> 
+  filter(grepl("Harwell.*",`Bowling Team`))
