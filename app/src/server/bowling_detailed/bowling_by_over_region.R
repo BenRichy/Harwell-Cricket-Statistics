@@ -82,4 +82,6 @@ output$bowling_over_region <- renderReactable({reactable(summarised_bowling_over
                                                          searchable = TRUE,
                                                          highlight = TRUE,
                                                          striped = TRUE,
-                                                         showSortable = TRUE)})
+                                                         showSortable = TRUE,
+                                                         showPageSizeOptions = TRUE,
+                                                         defaultPageSize = 25)})
