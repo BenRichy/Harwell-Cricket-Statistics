@@ -53,7 +53,7 @@ detailed_bowling_home <- detailed_bowling_home |>
                                  TRUE ~ (Total_overs * 6)))
 
 
-detailed_bowling_home_group <- detailed_bowling_home_select |> 
+detailed_bowling_home_group <- detailed_bowling_home |> 
   group_by(Bowler,
            `Ground End`) |> 
   summarise(Total_balls = sum(Total_balls, na.rm = TRUE),
