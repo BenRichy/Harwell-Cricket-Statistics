@@ -182,6 +182,43 @@ for (i in 1:nrow(results_data)) {
     results_detail_batting <- results_detail_innings_bat$bat[[1]]
     # get the data of the fall of wickets
     results_detail_partnerships <- results_detail_innings_bat$fow[[1]]
+    # also get the partnership of not out batsman
+    #check if the innings exists or if it was abanadoned
+    if(nrow(results_detail_batting) == 0){
+      next
+      #check the number of not out batters
+    } else if(nrow(results_detail_batting |> filter(how_out == "not out")) == 2){
+      #get dataframe of not out batters
+      not_out_batters <- results_detail_batting |> filter(how_out == "not out")
+      
+      #extract batter names
+      batsman_1 <- not_out_batters$batsman_name[[1]]
+      batsman_2 <- not_out_batters$batsman_name[[2]]
+      
+      #get the final score so the difference can be found
+      final_score <- results_detail_innings_bat$runs[[1]]
+      #get the last row of partnership data
+      last_partnership <- tail(results_detail_partnerships, n = 1)
+      #last_partnership_total <- as.numeric(last_partnership$runs[[1]])
+      
+      #get the last wicket number to fall so to get wicket number of partnership
+      last_partnership_wicket <- as.numeric(last_partnership$wickets[[1]])
+      
+      partnership_number <- last_partnership_wicket + 1
+      #partnership_runs <- final_score - last_partnership_total
+      
+      #create dataframe of the partnership
+      last_partnership_detail <- data.frame(runs = final_score,
+                                            wickets = partnership_number,
+                                            batsman_out_name = batsman_1,
+                                            batsman_in_name = batsman_2)
+      
+      #join last partnership onto original data
+      results_detail_partnerships <- results_detail_partnerships |> 
+        bind_rows(last_partnership_detail)
+      
+    }
+  
 
     # filter the innings data for the row that the club is not on
     # this is the club's bowling figures
