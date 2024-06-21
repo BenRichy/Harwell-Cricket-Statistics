@@ -1,0 +1,268 @@
+## Result analysis for Cherwell results
+
+
+```{r LoadPackages}
+library(httr)
+library(jsonlite)
+library(readr)
+library(dplyr)
+library(stringr)
+library(DBI)
+library(tidyr)
+
+```
+
+```{r Globals}
+season <- 2024
+
+
+
+```
+
+
+```{r FilePaths}
+FP_api_key_cherwell <- "api/cherwell_api_key.txt"
+FP_team_leagues <- "data/team_results_helper.csv"
+FP_data_base <- "app/data/cherwell_result_db.sqlite"
+
+
+```
+
+
+```{r LoadCherwellAPI}
+
+# read in the api and club id
+api_key_cherwell <- readLines(FP_api_key_cherwell)
+
+table_team_leagues <- read_csv(FP_team_leagues)
+
+data_results <- data.frame()
+
+
+for(i in 1:nrow(table_team_leagues)) {
+  
+  season <- table_team_leagues[[i,"Year"]]
+  division_name <- table_team_leagues[[i,"Division"]]
+  team_name <- table_team_leagues[[i,"Team"]]
+
+  # get result types
+  get_result_type_query <- sprintf(
+      "https://www.cherwellcricketleague.com/api/v3/result_type.php?api_token=%s",
+      api_key_cherwell
+  )
+  
+  cherwell_result_type_return <- GET(get_result_type_query)
+  cherwell_result_type_data <- fromJSON(rawToChar(cherwell_result_type_return$content))
+  
+  result_id_win_lose <- c(1,2,9)
+  result_id_draw <- cherwell_result_type_data |> 
+    filter(!result_id %in% result_id_win_lose) |> 
+    select(result_id) |> 
+    pull()
+  
+  # get the list of divisions for the defined season
+  get_divisions_query <- sprintf(
+      "https://www.cherwellcricketleague.com/api/v3/division_list.php?api_token=%s&year=%s",
+      api_key_cherwell,
+      season
+  )
+  
+  cherwell_divisions_return <- GET(get_divisions_query)
+  cherwell_divisions_data <- fromJSON(rawToChar(cherwell_divisions_return$content))
+  
+  #get the division id for each year
+  division_id <- cherwell_divisions_data |> 
+    filter(division == division_name) |> 
+    select(division_id) |> 
+    pull()
+  
+  # get the results in a division for each year
+  get_results_query <- sprintf(
+      "https://www.cherwellcricketleague.com/api/v3/result_list.php?api_token=%s&year=%s&divisionid=%s",
+      api_key_cherwell,
+      season,
+      division_id
+  )
+  
+  cherwell_results_return <- GET(get_results_query)
+  cherwell_results_data <- fromJSON(rawToChar(cherwell_results_return$content))
+  
+  #get the team id for team in question
+  team_id <- cherwell_results_data |> 
+    filter(grepl(team_name,home_team)) |> 
+    select(home_team_id) |> 
+    distinct() |> 
+    pull()
+    
+  
+  #filter results to only get the team we care about
+  cherwell_results_data_filter <- cherwell_results_data |> 
+    filter(grepl(team_name,fixture)) |> 
+    mutate(team = team_name,
+           opposition = str_replace_all(fixture,team_name,""),
+           opposition = str_replace_all(opposition," vs ",""),
+           opposition_harwell = case_when(opposition == "Harwell International 1" ~ TRUE,
+                                          TRUE ~ FALSE),
+           season = season,
+           division_name = division_name,
+           home = case_when(home_team_id == team_id ~ TRUE,
+                            TRUE ~ FALSE),
+           result_out = case_when(grepl("forfeit",result) ~ NA_character_,
+                              home == TRUE & home_result_id %in% c(1,9) ~ "W",
+                              home == FALSE & home_result_id %in% c(2) ~ "W",
+                              home == TRUE & home_result_id %in% c(2) ~ "L",
+                              home == FALSE & home_result_id %in% c(1,9) ~ "L",
+                              home_result_id %in% result_id_draw ~ "D"),
+           toss_won = case_when(is.na(result_out) ~ NA,
+                                toss == team_id ~ TRUE,
+                                TRUE ~ FALSE),
+           first_innings = case_when(is.na(result_out) ~ NA,
+                                     batted_first == team_id ~ "batted",
+                                     TRUE ~ "bowled"),
+           first_innings_runs = case_when(is.na(result_out) ~ NA,
+                                          home_team_id == batted_first ~ home_runs,
+                                          TRUE ~ away_runs)) |> 
+    select(team,
+           season,
+           division_name,
+           match_date,
+           opposition,
+           opposition_harwell,
+           home,
+           result_out,
+           toss_won,
+           first_innings,
+           first_innings_runs)
+  
+  data_results <- data_results |> 
+    bind_rows(cherwell_results_data_filter)
+
+}
+
+
+
+
+
+```
+
+
+
+```{r ResultAnalysis}
+
+#define the team
+team_filter <- "Harwell International 1"
+
+#filter the results for the team
+result_filter <- data_results |> 
+  filter(team == team_filter) |> 
+  mutate(first_innings_runs = as.numeric(first_innings_runs))
+
+#get statistics for batting first
+bat_first <- result_filter |> 
+  filter(first_innings == "batted")
+  
+##win percentage
+percent_win_bat_first <- bat_first |> 
+  group_by(team,
+           result_out) |> 
+  tally()
+
+percent_win_bat_first_games <- percent_win_bat_first |> 
+  summarise(n = sum(n)) |> 
+  pull()
+
+percent_win_bat_first_wins <- percent_win_bat_first |> 
+  filter(result_out == "W") |> 
+  pull()
+
+percent_win_bat_first <- paste0(round((percent_win_bat_first_wins/percent_win_bat_first_games)*100,0),"%")
+
+##number of runs scored by when batting first
+bat_first_runs <- bat_first |> 
+  group_by(team) |> 
+  summarise(avg_first_inns_runs_bat = mean(first_innings_runs, na.rm = TRUE)) |> 
+  ungroup() |> 
+  select(-team) |> 
+  pull() |> 
+  round() |> 
+  as.character()
+
+#batting second
+bat_second <- result_filter |> 
+  filter(first_innings == "bowled")
+
+##win % when batting 2nd
+percent_win_bat_second <- bat_second |> 
+  group_by(team,
+           result_out) |> 
+  tally()
+
+percent_win_bat_second_games <- percent_win_bat_second |> 
+  summarise(n = sum(n)) |> 
+  pull()
+
+percent_win_bat_second_wins <- percent_win_bat_second |> 
+  filter(result_out == "W") |> 
+  pull()
+
+percent_win_bat_second <- paste0(round((percent_win_bat_second_wins/percent_win_bat_second_games)*100,0),"%")
+
+#number of runs scored by either team when batting first at home
+home_first_runs <- result_filter |> 
+  filter(home == TRUE) |> 
+  summarise(avg_first_inns_runs_home = mean(first_innings_runs, na.rm = TRUE))|> 
+  pull() |> 
+  round() |> 
+  as.character()
+
+
+#win percentage at home
+home_results <- result_filter |> 
+  filter(home == TRUE,
+         !is.na(result_out)) |> 
+  group_by(team,
+           result_out) |> 
+  tally()
+
+percent_win_home_games <- home_results |> 
+  summarise(n = sum(n)) |> 
+  pull()
+
+percent_win_home_wins <- home_results |> 
+  filter(result_out == "W") |> 
+  pull()
+
+percent_win_home <- paste0(round((percent_win_home_wins/percent_win_home_games)*100,0),"%")
+
+#win percentage away
+away_results <- result_filter |> 
+  filter(home == FALSE,
+         !is.na(result_out)) |> 
+  group_by(team,
+           result_out) |> 
+  tally()
+
+percent_win_away_games <- away_results |> 
+  summarise(n = sum(n)) |> 
+  pull()
+
+percent_win_away_wins <- away_results |> 
+  filter(result_out == "W") |> 
+  pull()
+
+percent_win_away <- paste0(round((percent_win_away_wins/percent_win_away_games)*100,0),"%")
+
+#summarise all the data
+team_summary <- tribble(
+  ~Key, ~Value,
+  "Team", team_filter,
+  "Runs Batting First", bat_first_runs,
+  "1st Innings Runs Home", home_first_runs,
+  "% Win Batting First", percent_win_bat_first,
+  "% Win Batting Second", percent_win_bat_second,
+  "% Win at home", percent_win_home,
+  "% Win away", percent_win_away
+)
+  
+
+```
