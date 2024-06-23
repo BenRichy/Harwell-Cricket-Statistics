@@ -285,6 +285,17 @@ data_bowling_clean <- data_bowling_clean |>
         ball_count = complete_overs * 6 + residual_balls
     )
 
+#get the clean cut of bowling dismissals
+data_bowling_wickets_clean <- data_bowling_wicket_detail |> 
+  select(position,
+         bowler_name,
+         bowler_id,
+         how_out,
+         fielder_name,
+         fielder_id,
+         match_id) |> 
+  filter(bowler_name != "" | fielder_name != "")
+
 # calculate the number of runs in each partnership
 data_partnerships_clean <- data_partnerships |>
     mutate(partnership_runs = NA_integer_)
@@ -336,6 +347,8 @@ bowling <- data_bowling_clean |>
         wickets = as.numeric(wickets)
     )
 
+bowling_wickets <- data_bowling_wickets_clean
+
 results <- results_data |>
     mutate(
         opposition = case_when(
@@ -370,6 +383,7 @@ dbWriteTable(cricket_database, "players", players, overwrite = TRUE)
 dbWriteTable(cricket_database, "batting", batting, overwrite = TRUE)
 dbWriteTable(cricket_database, "partnerships", partnerships, overwrite = TRUE)
 dbWriteTable(cricket_database, "bowling", bowling, overwrite = TRUE)
+dbWriteTable(cricket_database, "bowling_wickets", bowling_wickets, overwrite = TRUE)
 dbWriteTable(cricket_database, "batting_dismissals", batting_dismissals, overwrite = TRUE)
 dbWriteTable(cricket_database, "results", results, overwrite = TRUE)
 dbWriteTable(cricket_database, "match_summary", innings_info, overwrite = TRUE)

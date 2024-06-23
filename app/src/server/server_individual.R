@@ -20,6 +20,20 @@ bowling_individual <- DBI::dbGetQuery(
     left join results r on b.match_id = r.id;"
 )
 
+bowling_individual_wickets <- DBI::dbGetQuery(
+  conn,
+  "SELECT
+    r.opposition,
+    r.match_date,
+    r.league_name,
+    bowler_name,
+    bd.clean_dismissal,
+    fielder_name
+    FROM bowling_wickets b
+    left join batting_dismissals bd on b.how_out = bd.pc_dismissal
+    left join results r on b.match_id = r.id;"
+)
+
 batting_individual <- DBI::dbGetQuery(
   conn,
   "SELECT
@@ -63,6 +77,10 @@ batting_individual <- batting_individual |>
          league_name %in% input$team_scope_individual)
 
 bowling_individual <- bowling_individual |> 
+  filter(bowler_name == input$player_scope_individual,
+         league_name %in% input$team_scope_individual)
+
+bowling_individual_wickets <- bowling_individual_wickets |> 
   filter(bowler_name == input$player_scope_individual,
          league_name %in% input$team_scope_individual)
 
@@ -457,5 +475,18 @@ output$individual_bowling_summary_opposition <- renderReactable({reactable(bowli
                                                                 highlight = TRUE,
                                                                 striped = TRUE)})
 
+#bowling individual wicket dismissals
+bowling_individual_wickets_summary <- bowling_individual_wickets |> 
+  select(bowler_name,
+         league_name,
+         clean_dismissal) |> 
+  group_by(bowler_name,
+           clean_dismissal) |> 
+  tally()
+
+output$individual_wickets_pie <- renderPlotly({plot_ly(data = bowling_individual_wickets_summary,
+                                                         values = ~n,
+                                                         labels = ~clean_dismissal,
+                                                         type = "pie")})
 
 })

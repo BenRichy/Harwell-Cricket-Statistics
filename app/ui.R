@@ -102,7 +102,7 @@ dashboardPage(
                          div(style = "width: 700px", reactableOutput("individual_bowling_summary"))),
                 tabPanel("Bowling - Game By Game", reactableOutput("individual_bowling_by_game")),
                 tabPanel("Bowling - Manhattan", uiOutput("SelectBowlingStat_Individual"), br(),plotlyOutput("individual_bowling_plotly")),
-                tabPanel("Bowling - Wickets", "In Progress"),
+                tabPanel("Bowling - Wickets", plotlyOutput("individual_wickets_pie")),
                 tabPanel("Bowling - By Opposition", reactableOutput("individual_bowling_summary_opposition")),
                 tabPanel("Bowling - % Wickets", "In Progress")
               )
