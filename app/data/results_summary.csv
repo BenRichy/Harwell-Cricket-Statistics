@@ -43,7 +43,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 8.5 Steventon CC Midweek XI: 50 runs in 8.5 overs, 29 minutes, 17 extras<br/>15.2 Steventon CC Midweek XI: 100 runs in 15.2 overs, 56 minutes, 32 extras
 <br/>
 ",,,Downs League
-6309997,New,Yes,01/06/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,18/05/2024,13:00,Add New Ground,,3rd XI,43570,Cumnor CC,2190,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,43570,Cumnor CC - 3rd XI won the toss and elected to field,284082,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell League
+6309997,New,Yes,21/06/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,18/05/2024,13:00,Add New Ground,,3rd XI,43570,Cumnor CC,2190,1st XI,284082,Harwell International CC,3220,,,Martin Friend,6287797,,,,,,,,,43570,Cumnor CC - 3rd XI won the toss and elected to field,284082,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell League
 6407042,New,Yes,19/05/2024,,,,Friendly,Limited Overs,Standard,no,19/05/2024,14:00,Harwell,11535,Friendly XI,15138,Harwell International CC,3220,Friendly XI,121326,Wantage & Grove CC,6648,,,,,,,,,,,,,121326,Wantage & Grove CC - Friendly XI won the toss and elected to bat,121326,,,1,W,Wantage & Grove CC - Friendly XI - Won,121326,false,false,false,false,"<b>Wantage & Grove CC Friendly XI Innings</b><br/>
 8.1 Wantage & Grove CC Friendly XI: 50 runs in 8.1 overs, 38 minutes, 7 extras<br/>9.1 2nd Wicket: 50 runs in 41 balls, 30 minutes, Steve Bramley 23 (20), Chris Rolls 19 (21), 8 extras<br/>15.4 Wantage & Grove CC Friendly XI: 100 runs in 15.3 overs, 76 minutes, 16 extras<br/>22.3 Chris Rolls: 50 runs in 59 balls, 92 minutes (6x4)<br/>23.4 Wantage & Grove CC Friendly XI: 150 runs in 23.4 overs, 112 minutes, 25 extras<br/>29.4 4th Wicket: 50 runs in 52 balls, 37 minutes, Chris Rolls 34 (34), Tom Sparrow 14 (18), 2 extras<br/>33.3 Wantage & Grove CC Friendly XI: 200 runs in 33.3 overs, 151 minutes, 26 extras
 <br/>
@@ -52,7 +52,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 16.5 Harwell International CC Friendly XI: 50 runs in 16.5 overs, 61 minutes, 7 extras
 <br/>
 ",,,NA
-6310005,New,Yes,25/05/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,25/05/2024,13:00,Steventon Green,,1st XI,189998,Steventon CC,6038,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,189998,Steventon CC - 1st XI won the toss and elected to bat,189998,45,,1,W,Steventon CC - 1st XI - Won,189998,false,false,false,false,"<b>Steventon CC 1st XI Innings</b><br/>
+6310005,New,Yes,21/06/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,25/05/2024,13:00,Steventon Green,,1st XI,189998,Steventon CC,6038,1st XI,284082,Harwell International CC,3220,Joe Oldfield,6362242,S Yakkalakota,6375132,,,,,Rebecca Lake,5850964,,,189998,Steventon CC - 1st XI won the toss and elected to bat,189998,45,,1,W,Steventon CC - 1st XI - Won,189998,false,false,false,false,"<b>Steventon CC 1st XI Innings</b><br/>
 17.4 Steventon CC 1st XI: 50 runs in 17.4 overs, 74 minutes, 12 extras<br/>36.3 Steventon CC 1st XI: 100 runs in 36.3 overs, 141 minutes, 15 extras
 <br/>
 <br/>
@@ -60,6 +60,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 6.4 T Cannon: 5 wickets (3.4-1-4-5)<br/>15.2 Harwell International CC 1st XI: 50 runs in 15.1 overs, 63 minutes, 9 extras<br/>34.3 Harwell International CC 1st XI: 100 runs in 34.3 overs, 132 minutes, 20 extras
 <br/>
 ",,,Cherwell League
+6588537,New,Yes,07/06/2024,,,,Friendly,Limited Overs,Standard,no,26/05/2024,13:30,Wadham College,57503,Friendly XI,76718,Oxenford CC,4939,Friendly XI,15138,Harwell International CC,3220,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to field,76718,,,1,A,Abandoned,,false,false,false,false,,,,NA
 6289991,New,Yes,29/05/2024,16676,Division 3 North,119698,League,Limited Overs,Standard,no,29/05/2024,18:00,Harwell,11535,Midweek XI,15137,Harwell International CC,3220,Downs 2nd XI,354155,Didcot CC,2301,,,,,,,,,,,,,354155,Didcot CC - Downs 2nd XI won the toss and elected to bat,354155,20,,1,W,Harwell International CC - Midweek XI - Won,15137,false,false,false,false,"<b>Didcot CC Downs 2nd XI Innings</b><br/>
 8.4 Didcot CC Downs 2nd XI: 50 runs in 8.4 overs, 31 minutes, 10 extras<br/>16.5 Didcot CC Downs 2nd XI: 100 runs in 16.5 overs, 64 minutes, 14 extras<br/>18.5 4th Wicket: 50 runs in 35 balls, 24 minutes, Adam McBrien 21 (15), James Head 28 (20), 4 extras<br/>19.2 Adam McBrien: 50 runs in 47 balls, 73 minutes (6x4, 1x6)
 <br/>
@@ -74,5 +75,69 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <br/>
 <b>Harwell International CC 1st XI Innings</b><br/>
 12.3 Harwell International CC 1st XI: 50 runs in 12.3 overs, 61 minutes, 15 extras
+<br/>
+",,,Cherwell League
+6290009,New,Yes,05/06/2024,16676,Division 3 North,119698,League,Limited Overs,Standard,no,05/06/2024,18:00,Harwell,11535,Midweek XI,15137,Harwell International CC,3220,1st XI,234429,Evotec CC,18257,,,,,,,,,,,,,15137,Harwell International CC - Midweek XI won the toss and elected to field,234429,20,,1,W,Evotec CC - 1st XI - Won,234429,false,false,false,false,"<b>Evotec CC 1st XI Innings</b><br/>
+7.5 Evotec CC 1st XI: 50 runs in 7.5 overs, 30 minutes, 17 extras<br/>9.1 3rd Wicket: 50 runs in 33 balls, 23 minutes, James Grosvenor 30 (22), Vikram Bagwani 9 (11), 11 extras<br/>11.6 James Grosvenor: 50 runs in 36 balls, 45 minutes (8x4)<br/>14.3 Evotec CC 1st XI: 100 runs in 14.3 overs, 56 minutes, 19 extras<br/>19.3 Evotec CC 1st XI: 150 runs in 19.3 overs, 74 minutes, 23 extras<br/>19.4 James Grosvenor: 100 runs in 64 balls, 74 minutes (14x4, 1x6)
+<br/>
+<br/>
+<b>Harwell International CC Midweek XI Innings</b><br/>
+9.4 Harwell International CC Midweek XI: 50 runs in 9.4 overs, 27 minutes, 17 extras<br/>19.1 Harwell International CC Midweek XI: 100 runs in 19.1 overs, 58 minutes, 31 extras<br/>19.8 N Patel: 5 wickets (2-0-9-5)
+<br/>
+",,,Downs League
+6310013,New,Yes,08/06/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,08/06/2024,13:00,Dorchester Recreation Ground,33082,2nd XI,356209,Dorchester-on-Thames CC,9839,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,356209,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Dorchester-on-Thames CC 2nd XI Innings</b><br/>
+10.1 Dorchester-on-Thames CC 2nd XI: 50 runs in 10.1 overs, 43 minutes, 11 extras<br/>21.3 Dorchester-on-Thames CC 2nd XI: 100 runs in 21.3 overs, 79 minutes, 18 extras<br/>31.4 Keir Walker: 50 runs in 77 balls, 92 minutes (7x4)
+<br/>
+<br/>
+<b>Harwell International CC 1st XI Innings</b><br/>
+10.1 Harwell International CC 1st XI: 50 runs in 10.1 overs, 42 minutes, 4 extras<br/>22.4 Harwell International CC 1st XI: 100 runs in 22.3 overs, 92 minutes, 9 extras
+<br/>
+",,,Cherwell League
+6306185,New,Yes,09/06/2024,,,,Friendly,Limited Overs,Standard,no,09/06/2024,13:00,Harwell,,Friendly XI,15138,Harwell International CC,3220,Friendly XI,196653,Ewelme & Benson CC,2633,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to field,196653,,,1,W,Ewelme & Benson CC - Friendly XI - Won,196653,false,false,false,false,"<b>Ewelme & Benson CC Friendly XI Innings</b><br/>
+9.4 Ewelme & Benson CC Friendly XI: 50 runs in 9.3 overs, 38 minutes, 10 extras<br/>11.4 2nd Wicket: 50 runs in 61 balls, 35 minutes, Joe Maggs 20 (30), Keir Walker 20 (31), 10 extras<br/>16.1 Ewelme & Benson CC Friendly XI: 100 runs in 16.0 overs, 60 minutes, 18 extras<br/>20.2 Keir Walker: 50 runs in 55 balls, 74 minutes (7x4)<br/>23.5 Ewelme & Benson CC Friendly XI: 150 runs in 23.5 overs, 96 minutes, 29 extras<br/>28.4 4th Wicket: 50 runs in 36 balls, 23 minutes, Keir Walker 24 (14), Fabian Mcelwaine-Johnn 22 (22), 6 extras<br/>28.6 Ewelme & Benson CC Friendly XI: 200 runs in 28.4 overs, 117 minutes, 34 extras<br/>34.3 Keir Walker: 100 runs in 103 balls, 131 minutes (14x4)
+<br/>
+<br/>
+<b>Harwell International CC Friendly XI Innings</b><br/>
+15.2 Harwell International CC Friendly XI: 50 runs in 15.2 overs, 51 minutes, 6 extras<br/>19.7 2nd Wicket: 50 runs in 58 balls, 36 minutes, Dan Strangward 18 (34), Jamie Ross 32 (24), 3 extras<br/>23.1 Harwell International CC Friendly XI: 100 runs in 23.1 overs, 82 minutes, 9 extras<br/>23.2 Jamie Ross: 50 runs in 34 balls, 47 minutes (9x4)<br/>30.4 Dan Strangward: 50 runs in 104 balls, 109 minutes (7x4)<br/>33.6 Harwell International CC Friendly XI: 150 runs in 34.0 overs, 122 minutes, 13 extras
+<br/>
+",,,NA
+6290026,New,Yes,12/06/2024,16676,Division 3 North,119698,League,Limited Overs,Standard,no,12/06/2024,18:00,Boundary Park Pitch 2,59099,Midweek XI,216693,Metal Box CC,11949,Midweek XI,15137,Harwell International CC,3220,,,,,,,,,,,,,15137,Harwell International CC - Midweek XI won the toss and elected to bat,15137,20,,1,W,Harwell International CC - Midweek XI - Won,15137,false,false,false,false,"<b>Harwell International CC Midweek XI Innings</b><br/>
+7.3 Harwell International CC Midweek XI: 50 runs in 7.3 overs, 28 minutes, 20 extras<br/>8.4 3rd Wicket: 50 runs in 28 balls, 21 minutes, James Goldsby-West 17 (18), Jayesh Manwani 14 (10), 19 extras<br/>13.6 Harwell International CC Midweek XI: 100 runs in 14.0 overs, 49 minutes, 25 extras
+<br/>
+<br/>
+<b>Metal Box CC Midweek XI Innings</b><br/>
+10.1 Metal Box CC Midweek XI: 50 runs in 10.1 overs, 38 minutes, 21 extras<br/>15.2 5th Wicket: 50 runs in 33 balls, 22 minutes, Josh Cole 23 (16), Liam Cole 10 (17), 19 extras<br/>16.2 Josh Cole: 50 runs in 44 balls, 57 minutes (7x4)<br/>16.6 Metal Box CC Midweek XI: 100 runs in 17.0 overs, 59 minutes, 28 extras
+<br/>
+",,,Downs League
+6310017,New,Yes,17/06/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,15/06/2024,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,35370,Challow & Childrey CC,1747,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,35370,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Challow & Childrey CC 3rd XI Innings</b><br/>
+29.3 Challow & Childrey CC 3rd XI: 50 runs in 29.3 overs, 104 minutes, 15 extras
+<br/>
+<br/>
+<b>Harwell International CC 1st XI Innings</b><br/>
+20.5 Harwell International CC 1st XI: 50 runs in 20.5 overs, 72 minutes, 4 extras
+<br/>
+",,,Cherwell League
+6588538,New,Yes,17/06/2024,,,,Friendly,Limited Overs,Standard,no,16/06/2024,00:00,Harwell,11535,Friendly XI,15138,Harwell International CC,3220,Friendly XI,87484,"Appleton CC, Oxon",736,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to field,87484,,,1,W,Harwell International CC - Friendly XI - Won,15138,false,true,false,false,"<b>Appleton CC, Oxon Friendly XI Innings</b><br/>
+12.4 Appleton CC, Oxon Friendly XI: 50 runs in 12.3 overs, 58 minutes, 3 extras<br/>15.1 3rd Wicket: 50 runs in 29 balls, 24 minutes, A Gilkes 33 (15), Phil Atkinson 16 (14), 1 extra<br/>16.2 Appleton CC, Oxon Friendly XI: 100 runs in 16.2 overs, 75 minutes, 3 extras<br/>16.6 A Gilkes: 50 runs in 31 balls, 49 minutes (7x4, 2x6)<br/>20.1 3rd Wicket: 100 runs in 59 balls, 49 minutes, A Gilkes 65 (32), Phil Atkinson 32 (27), 3 extras<br/>23.3 Appleton CC, Oxon Friendly XI: 150 runs in 23.3 overs, 105 minutes, 6 extras<br/>35.6 A Gilkes: 100 runs in 90 balls, 130 minutes (15x4, 2x6)<br/>35.7 Appleton CC, Oxon Friendly XI: 200 runs in 35.5 overs, 157 minutes, 15 extras<br/>39.6 7th Wicket: 50 runs in 39 balls, 29 minutes, A Gilkes 35 (34), - Timmins 2 (5), 14 extras
+<br/>
+<br/>
+<b>Harwell International CC Friendly XI Innings</b><br/>
+8.2 Harwell International CC Friendly XI: 50 runs in 8.2 overs, 36 minutes, 8 extras<br/>11.8 5th Wicket: 50 runs in 34 balls, 25 minutes, Jamie Ross 38 (22), Patrick Harland 5 (12), 7 extras<br/>12.1 Jamie Ross: 50 runs in 33 balls, 38 minutes (9x4)<br/>15.2 Harwell International CC Friendly XI: 100 runs in 15.1 overs, 67 minutes, 13 extras<br/>25.2 Harwell International CC Friendly XI: 150 runs in 25.2 overs, 108 minutes, 17 extras<br/>31.6 9th Wicket: 50 runs in 54 balls, 29 minutes, M Date 32 (32), Stephen Boag 14 (22), 4 extras<br/>34.5 M Date: 50 runs in 53 balls, 67 minutes (5x4)<br/>34.5 Harwell International CC Friendly XI: 200 runs in 34.5 overs, 140 minutes, 21 extras
+<br/>
+",,,NA
+6290046,New,Yes,19/06/2024,16676,Division 3 North,119698,League,Limited Overs,Standard,no,19/06/2024,18:00,Harwell,11535,Midweek XI,15137,Harwell International CC,3220,Midweek XI,230019,Steventon CC,6038,Ian Royle,4973200,,,,,,,,,,,15137,Harwell International CC - Midweek XI won the toss and elected to field,230019,20,,1,W,Steventon CC - Midweek XI - Won,230019,false,false,false,false,"<b>Steventon CC Midweek XI Innings</b><br/>
+8.6 Steventon CC Midweek XI: 50 runs in 9.0 overs, 34 minutes, 17 extras<br/>16.5 Steventon CC Midweek XI: 100 runs in 16.5 overs, 71 minutes, 30 extras
+<br/>
+<br/>
+<b>Harwell International CC Midweek XI Innings</b><br/>
+8.4 Harwell International CC Midweek XI: 50 runs in 8.4 overs, 33 minutes, 20 extras<br/>15.1 Harwell International CC Midweek XI: 100 runs in 15.1 overs, 64 minutes, 38 extras
+<br/>
+",,,Downs League
+6310023,New,Yes,22/06/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,22/06/2024,13:00,East & West Hendred Cricket Club,60425,2nd XI,119942,East & West Hendred CC,2436,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,119942,East & West Hendred CC - 2nd XI won the toss and elected to bat,119942,45,,1,D,Harwell International CC - 1st XI - Winning Draw,284082,false,false,false,false,"<b>East & West Hendred CC 2nd XI Innings</b><br/>
+14.4 1st Wicket: 50 runs in 89 balls, 49 minutes, Ivan Mulford 24 (50), Liam Richards 18 (39), 10 extras<br/>14.4 East & West Hendred CC 2nd XI: 50 runs in 14.4 overs, 49 minutes, 10 extras<br/>25.6 East & West Hendred CC 2nd XI: 100 runs in 25.4 overs, 93 minutes, 17 extras<br/>40.6 East & West Hendred CC 2nd XI: 150 runs in 41.0 overs, 148 minutes, 19 extras
+<br/>
+<br/>
+<b>Harwell International CC 1st XI Innings</b><br/>
+16.1 Harwell International CC 1st XI: 50 runs in 16.1 overs, 61 minutes, 12 extras<br/>26.3 Harwell International CC 1st XI: 100 runs in 26.3 overs, 100 minutes, 14 extras<br/>40.3 Harwell International CC 1st XI: 150 runs in 40.3 overs, 154 minutes, 18 extras
 <br/>
 ",,,Cherwell League

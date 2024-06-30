@@ -17,6 +17,20 @@ bowling_summary <- DBI::dbGetQuery(
     left join results r on b.match_id = r.id;"
 )
 
+bowling_wickets <- DBI::dbGetQuery(
+  conn,
+  "SELECT
+    r.opposition,
+    r.match_date,
+    r.league_name,
+    bowler_name,
+    bd.clean_dismissal,
+    fielder_name
+    FROM bowling_wickets b
+    left join batting_dismissals bd on b.how_out = bd.pc_dismissal
+    left join results r on b.match_id = r.id;"
+)
+
 
 observeEvent(input$team_scope_bowling, {
   
@@ -181,5 +195,8 @@ graph_bowling_area_percent <- ggplotly(graph_bowling_area_percent)
 
 output$bowling_total_area_percent <- renderPlotly({graph_bowling_area_percent})
 
+
+
+  
 
 })

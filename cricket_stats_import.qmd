@@ -143,6 +143,8 @@ data_players <- data.frame()
 data_batting <- data.frame()
 data_partnerships <- data.frame()
 data_bowling <- data.frame()
+data_bowling_wicket_detail <- data.frame()
+
 
 # loop through the summary results, and get the detailed results for each match
 for (i in 1:nrow(results_data)) {
@@ -224,8 +226,11 @@ for (i in 1:nrow(results_data)) {
     # this is the club's bowling figures
     results_detail_innings_bowl <- results_detail_innings |>
         filter(!grepl(paste0(".*", team_name, ".*"), team_batting_name))
-    # get the data of the fbowling score card
+    # get the data of the bowling score card
     results_detail_bowling <- results_detail_innings_bowl$bowl[[1]]
+    
+    #get the wicket details from the club, including fielders
+    results_detail_bowling_wickets <- results_detail_innings_bowl$bat[[1]]
 
 
     # write data to the dataframes
@@ -233,6 +238,7 @@ for (i in 1:nrow(results_data)) {
     data_batting <- data_batting |> bind_rows(results_detail_batting |> mutate(match_id = match_id))
     data_partnerships <- data_partnerships |> bind_rows(results_detail_partnerships |> mutate(match_id = match_id))
     data_bowling <- data_bowling |> bind_rows(results_detail_bowling |> mutate(match_id = match_id))
+    data_bowling_wicket_detail <- data_bowling_wicket_detail |> bind_rows(results_detail_bowling_wickets |> mutate(match_id = match_id))
 }
 
 ```
@@ -278,6 +284,17 @@ data_bowling_clean <- data_bowling_clean |>
         ),
         ball_count = complete_overs * 6 + residual_balls
     )
+
+#get the clean cut of bowling dismissals
+data_bowling_wickets_clean <- data_bowling_wicket_detail |> 
+  select(position,
+         bowler_name,
+         bowler_id,
+         how_out,
+         fielder_name,
+         fielder_id,
+         match_id) |> 
+  filter(bowler_name != "" | fielder_name != "")
 
 # calculate the number of runs in each partnership
 data_partnerships_clean <- data_partnerships |>
@@ -330,6 +347,8 @@ bowling <- data_bowling_clean |>
         wickets = as.numeric(wickets)
     )
 
+bowling_wickets <- data_bowling_wickets_clean
+
 results <- results_data |>
     mutate(
         opposition = case_when(
@@ -364,6 +383,7 @@ dbWriteTable(cricket_database, "players", players, overwrite = TRUE)
 dbWriteTable(cricket_database, "batting", batting, overwrite = TRUE)
 dbWriteTable(cricket_database, "partnerships", partnerships, overwrite = TRUE)
 dbWriteTable(cricket_database, "bowling", bowling, overwrite = TRUE)
+dbWriteTable(cricket_database, "bowling_wickets", bowling_wickets, overwrite = TRUE)
 dbWriteTable(cricket_database, "batting_dismissals", batting_dismissals, overwrite = TRUE)
 dbWriteTable(cricket_database, "results", results, overwrite = TRUE)
 dbWriteTable(cricket_database, "match_summary", innings_info, overwrite = TRUE)
