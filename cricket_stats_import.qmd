@@ -13,11 +13,11 @@ library(DBI)
 ```
 
 ```{r Globals}
-season <- 2024
+season <- c(2022:2024)
 team_name <- "Harwell"
 club_name <- "Harwell International CC"
 team_ids <- c(284082,15138,15137)
-
+saturday_team_id <- 284082
 
 ```
 
@@ -38,16 +38,32 @@ FP_data_base <- "app/data/cricket_detail_database.sqlite"
 api_key <- readLines(FP_api_key)
 club_id <- readLines(FP_club_id)
 
+results_data <- data.frame()
+
+for(year in 1:length(season)){
+
 # get the list of matches for the defined season
 get_matches_query <- sprintf(
     "http://play-cricket.com/api/v2/result_summary.json?&site_id=%s&season=%s&api_token=%s",
     club_id,
-    season,
+    season[year],
     api_key
 )
 
 results_return <- GET(get_matches_query)
-results_data <- fromJSON(rawToChar(results_return$content))$result_summary
+results_data_year <- fromJSON(rawToChar(results_return$content))$result_summary
+
+#filter data so that pre-2024 it's only the Saturday team
+if(season[year] < 2024) {
+results_data_year <- results_data_year |> 
+  filter(home_team_id %in% saturday_team_id | away_team_id %in% saturday_team_id)
+
+}
+
+results_data <- results_data |> 
+  bind_rows(results_data_year) |> 
+  #filter it so it's only the teams we are getting stats for that we get results
+  filter(home_team_id %in% team_ids | away_team_id %in% team_ids)
 
 
 
@@ -55,7 +71,7 @@ results_data <- fromJSON(rawToChar(results_return$content))$result_summary
 get_matches_summary_query <- sprintf(
     "http://play-cricket.com/api/v2/matches.json?&site_id=%s&season=%s&api_token=%s",
     club_id,
-    season,
+    season[year],
     api_key
 )
 
@@ -64,6 +80,7 @@ matches_data <- fromJSON(rawToChar(matches_return$content))$matches |>
   select(match_id = id,
          ground_latitude,
          ground_longitude)
+}
 
 #get innings data
 innings_return <- results_data$innings
@@ -126,6 +143,7 @@ for (i in 1:nrow(results_data)) {
   
 }
 
+
 # write df of results data to a csv
 write_csv(results_data, FP_results_summary)
 
@@ -164,9 +182,10 @@ for (i in 1:nrow(results_data)) {
     results_detail_data <- fromJSON(rawToChar(results_detail_return$content))$match_details
 
     # if the result was cancelled then go to the next match
-    if (results_detail_data["result"][[1]] == "C") {
+    if (results_detail_data["result"][[1]] %in% c("C","A")) {
         next
     }
+    
 
     # get the list of players in the teams
     results_detail_players_home <- results_detail_data$players[[1]]$home_team[[1]]
@@ -185,8 +204,11 @@ for (i in 1:nrow(results_data)) {
     # get the data of the fall of wickets
     results_detail_partnerships <- results_detail_innings_bat$fow[[1]]
     # also get the partnership of not out batsman
-    #check if the innings exists or if it was abanadoned
+    #check if the innings exists or if it was abandoned
     if(nrow(results_detail_batting) == 0){
+      next
+      #check if partnerships is empty
+    } else if(length(results_detail_partnerships) == 0){
       next
       #check the number of not out batters
     } else if(nrow(results_detail_batting |> filter(how_out == "not out")) == 2){
