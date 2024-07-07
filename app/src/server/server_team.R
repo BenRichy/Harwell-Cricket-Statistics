@@ -10,16 +10,24 @@ match_summary <- DBI::dbGetQuery(
   left join results r on m.match_id = r.id;"
 )
 
-observeEvent(input$team_scope_team, {
-  
-  if(is.null(input$team_scope_team)){
-    input_team_scope <- league_names
-  } else{
-    input_team_scope <- input$team_scope_team
-  }
+observeEvent(c(input$team_scope_team,
+               input$year_scope_team), {
+                 
+                 if(is.null(input$team_scope_team)){
+                   input_team_scope <- league_names
+                 } else{
+                   input_team_scope <- input$team_scope_team
+                 }
+                 
+                 if(is.null(input$year_scope_team)){
+                   input_year_scope <- season_years
+                 } else{
+                   input_year_scope <- input$year_scope_team
+                 }   
   
   team_summary_data <- match_summary |> 
-    filter(league_name %in% input_team_scope) |>
+    filter(league_name %in% input_team_scope,
+           season %in% input_year_scope) |>
     #summarise the batting data by group
     summarise(total_batting_runs_scored = sum(batting_runs_scored, na.rm = TRUE),
               total_batting_wickets_lost = sum(batting_wickets_lost, na.rm = TRUE),

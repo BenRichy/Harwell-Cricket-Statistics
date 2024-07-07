@@ -4,6 +4,7 @@ bowling_summary <- DBI::dbGetQuery(
   conn,
   "SELECT
     r.opposition,
+    r.season,
     r.match_date,
     r.league_name,
     bowler_name,
@@ -21,6 +22,7 @@ bowling_wickets <- DBI::dbGetQuery(
   conn,
   "SELECT
     r.opposition,
+    r.season,
     r.match_date,
     r.league_name,
     bowler_name,
@@ -32,18 +34,28 @@ bowling_wickets <- DBI::dbGetQuery(
 )
 
 
-observeEvent(input$team_scope_bowling, {
-  
-  if(is.null(input$team_scope_bowling)){
-    input_team_scope <- league_names
-  } else{
-    input_team_scope <- input$team_scope_bowling
-  }
+observeEvent(c(input$team_scope_bowling,
+               input$year_scope_bowling), {
+                 
+                 
+                 if(is.null(input$team_scope_bowling)){
+                   input_team_scope <- league_names
+                 } else{
+                   input_team_scope <- input$team_scope_bowling
+                 }
+                 
+                 if(is.null(input$year_scope_bowling)){
+                   input_year_scope <- season_years
+                 } else{
+                   input_year_scope <- input$year_scope_bowling
+                 }              
+                 
 
 
 # Produce summary table of bowling stats
 bowling_summary_default <- bowling_summary |>
-  filter(league_name %in% input_team_scope) |> 
+  filter(league_name %in% input_team_scope,
+         season %in% input_year_scope) |> 
     group_by(bowler_name) |>
     summarise(
         ball_count = sum(ball_count, na.rm = TRUE),
@@ -87,7 +99,8 @@ output$bowling_summary <- renderReactable({reactable(bowling_summary_default,
 
 # cumulative wickets over time
 bowling_cum_sum <- bowling_summary |> 
-  filter(league_name %in% input_team_scope) |> 
+  filter(league_name %in% input_team_scope,
+         season %in% input_year_scope) |> 
   select(match_date,
          bowler_name,
          wickets) |> 
@@ -100,7 +113,8 @@ bowling_cum_sum <- bowling_summary |>
 
 #get the cumulative match wickets for percentage of total wickets scored
 bowling_cum_sum_match <- bowling_summary |> 
-  filter(league_name %in% input_team_scope) |>
+  filter(league_name %in% input_team_scope,
+         season %in% input_year_scope) |>
   select(match_date,
          wickets) |> 
   ungroup() |> 

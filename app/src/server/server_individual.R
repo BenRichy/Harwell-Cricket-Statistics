@@ -7,6 +7,7 @@ bowling_individual <- DBI::dbGetQuery(
   conn,
   "SELECT
     r.opposition,
+    r.season,
     r.match_date,
     r.league_name,
     bowler_name,
@@ -24,6 +25,7 @@ bowling_individual_wickets <- DBI::dbGetQuery(
   conn,
   "SELECT
     r.opposition,
+    r.season,
     r.match_date,
     r.league_name,
     bowler_name,
@@ -38,6 +40,7 @@ batting_individual <- DBI::dbGetQuery(
   conn,
   "SELECT
     r.opposition,
+    r.season,
     r.match_date,
     r.league_name,
     position,
@@ -58,6 +61,7 @@ partnerhip_individual <- DBI::dbGetQuery(
   conn,
   "SELECT
     r.opposition,
+    r.season,
     r.match_date,
     r.league_name,
     wickets,
@@ -69,20 +73,24 @@ partnerhip_individual <- DBI::dbGetQuery(
 ) 
 
 observeEvent(c(input$player_scope_individual,
-               input$team_scope_individual), {
+               input$team_scope_individual,
+               input$year_scope_individual), {
 
 #filter data by player
 batting_individual <- batting_individual |> 
   filter(batsman_name == input$player_scope_individual,
-         league_name %in% input$team_scope_individual)
+         league_name %in% input$team_scope_individual,
+         season %in% input$year_scope_individual)
 
 bowling_individual <- bowling_individual |> 
   filter(bowler_name == input$player_scope_individual,
-         league_name %in% input$team_scope_individual)
+         league_name %in% input$team_scope_individual,
+         season %in% input$year_scope_individual)
 
 bowling_individual_wickets <- bowling_individual_wickets |> 
   filter(bowler_name == input$player_scope_individual,
-         league_name %in% input$team_scope_individual)
+         league_name %in% input$team_scope_individual,
+         season %in% input$year_scope_individual)
 
 # individual batting stats
 ## summary stats
@@ -126,7 +134,8 @@ output$individual_batting_summary <- renderReactable({reactable(batting_individu
 
 ## batting details by game
 batting_individual_by_game <- batting_individual |> 
-  select(`Match Date` = match_date,
+  select(Season = season,
+         `Match Date` = match_date,
          `League` = league_name,
          Opposition = opposition,
          `Batting Position` = position,
@@ -153,10 +162,34 @@ batting_individual_game_graph_data <- batting_individual_by_game |>
   mutate(`Match Number` = row_number(),
          `Cumulative Runs` = cumsum(Runs),
          `Cumulative Balls` = cumsum(Balls),
+         runs_sr = Runs,
+         balls_sr = Balls,
          cum_innings = cumsum(count_innings),
          cum_out = cumsum(count_out),
-         `Cumulative Average` = round(`Cumulative Runs`/cum_out,2),
-         `Cumulative Strike Rate` = round((`Cumulative Runs`/`Cumulative Balls`)*100,2),
+         cum_sum_runs_sr = `Cumulative Runs`,
+         cum_sum_balls_sr = `Cumulative Balls`)
+
+#loop over rows and where ball data isn't available, assume the same sr as the game before
+for(i in 1:nrow(batting_individual_game_graph_data)){
+  
+  if(is.na(batting_individual_game_graph_data[i,"balls_sr"])){
+    batting_individual_game_graph_data[i,"runs_sr"] <- 0
+    batting_individual_game_graph_data[i,"balls_sr"] <- 0
+    
+    batting_individual_game_graph_data <- batting_individual_game_graph_data |> 
+      mutate(cum_sum_runs_sr = cumsum(runs_sr),
+             cum_sum_balls_sr = cumsum(balls_sr))
+    
+  } 
+  
+  
+}
+
+
+
+batting_individual_game_graph_data <- batting_individual_game_graph_data |> 
+  mutate(`Cumulative Average` = round(`Cumulative Runs`/cum_out,2),
+         `Cumulative Strike Rate` = round((cum_sum_runs_sr/cum_sum_balls_sr)*100,2),
          `Cumulative Runs per Innings` = round(`Cumulative Runs`/cum_innings,2))
 
 #reactive graph depending on the data shown
@@ -269,7 +302,7 @@ batting_individual_summary_opposition <- batting_individual |>
   pivot_longer(cols = c(`# Innings`:`% Runs from Boundaries`),
                names_to = "Metric",
                values_to = "Value") |> 
-  pivot_wider(names_from = "Opposition",
+  pivot_wider(names_from = "Metric",
               values_from = "Value")
 
 
@@ -358,6 +391,7 @@ bowling_individual_by_game <- bowling_individual |>
     percent_runs_extras = round(((no_balls + wides) / runs)*100,2)) |>
   select(
     "Bowler" = bowler_name,
+    Season = season,
     `Match Date` = match_date,
     `League` = league_name,
     Opposition = opposition,
@@ -466,7 +500,7 @@ bowling_individual_summary_opposition <- bowling_individual |>
   pivot_longer(cols = c(`Overs`:`%Runs from Extras`),
                names_to = "Metric",
                values_to = "Value") |> 
-  pivot_wider(names_from = "Opposition",
+  pivot_wider(names_from = "Metric",
               values_from = "Value")
 
 

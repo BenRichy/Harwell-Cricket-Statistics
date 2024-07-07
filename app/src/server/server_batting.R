@@ -4,6 +4,7 @@ batting_summary <- DBI::dbGetQuery(
   conn,
   "SELECT
     r.opposition,
+    r.season,
     r.match_date,
     r.league_name,
     position,
@@ -21,17 +22,25 @@ batting_summary <- DBI::dbGetQuery(
 )
 
 
-observeEvent(input$team_scope_batting, {
+observeEvent(c(input$team_scope_batting,
+               input$year_scope_batting), {
   
   if(is.null(input$team_scope_batting)){
     input_team_scope <- league_names
   } else{
     input_team_scope <- input$team_scope_batting
   }
+                 
+  if(is.null(input$year_scope_batting)){
+    input_year_scope <- season_years
+  } else{
+    input_year_scope <- input$year_scope_batting
+  }              
 
 # Produce summary table of batting stats
 batting_summary_default <- batting_summary |>
-  filter(league_name %in% input_team_scope) |> 
+  filter(league_name %in% input_team_scope,
+         season %in% input_year_scope) |> 
     group_by(batsman_name) |>
     summarise(
         innings = sum(count_innings, na.rm = TRUE),
@@ -72,7 +81,8 @@ output$batting_summary <- renderReactable({reactable(batting_summary_default,
 
 # runs by position for each batter
 runs_batter_position <- batting_summary |> 
-  filter(league_name %in% input_team_scope) |> 
+  filter(league_name %in% input_team_scope,
+         season %in% input_year_scope) |> 
   group_by(batsman_name, position) |> 
   summarise(
     innings = sum(count_innings, na.rm = TRUE),
@@ -114,7 +124,8 @@ output$batting_position_person <- renderReactable({reactable(runs_batter_positio
 
 #highest score by position for
 runs_batter_position_max <- batting_summary |> 
-  filter(league_name %in% input_team_scope) |> 
+  filter(league_name %in% input_team_scope,
+         season %in% input_year_scope) |> 
   arrange(position, runs, balls) |> 
   slice_max(runs, n=1, by = position) |> 
   slice_min(balls, n=1, by = position) |> 
@@ -154,7 +165,8 @@ output$batting_position_record <- renderPlotly({graph_run_position})
 # cumulative runs over time -  Area chart
 #do a cumulative sum of the batting runs
 batting_cum_sum <- batting_summary |> 
-  filter(league_name %in% input_team_scope) |> 
+  filter(league_name %in% input_team_scope,
+         season %in% input_year_scope) |> 
   select(match_date,
          batsman_name,
          runs) |> 
@@ -167,7 +179,8 @@ batting_cum_sum <- batting_summary |>
 
 #get the cumulative match runs for percentage of total runs scored
 batting_cum_sum_match <- batting_summary |> 
-  filter(league_name %in% input_team_scope) |>
+  filter(league_name %in% input_team_scope,
+         season %in% input_year_scope) |>
   select(match_date,
          runs) |> 
   ungroup() |> 
