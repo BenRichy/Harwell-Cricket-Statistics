@@ -4,6 +4,7 @@ batting_summary_position <- DBI::dbGetQuery(
   conn,
   "SELECT
     r.league_name,
+    r.season,
     position,
     batsman_name
   FROM batting b
@@ -17,6 +18,7 @@ partnership_summary <- DBI::dbGetQuery(
   conn,
   "SELECT
     r.opposition,
+    r.season,
     r.match_date,
     r.league_name,
     wickets,
@@ -27,17 +29,25 @@ partnership_summary <- DBI::dbGetQuery(
     left join results r on p.match_id = r.id;"
 ) 
 
-observeEvent(input$team_scope_partnership, {
+observeEvent(c(input$team_scope_partnership,
+               input$year_scope_partnership), {
+                 
+                 if(is.null(input$team_scope_partnership)){
+                   input_team_scope <- league_names
+                 } else{
+                   input_team_scope <- input$team_scope_partnership
+                 }
   
-  if(is.null(input$team_scope_partnership)){
-    input_team_scope <- league_names
-  } else{
-    input_team_scope <- input$team_scope_partnership
-  }
+                 if(is.null(input$year_scope_partnership)){
+                   input_year_scope <- season_years
+                 } else{
+                   input_year_scope <- input$year_scope_partnership
+                 } 
 
 # highest partnership by number
   partnership_position_max <- partnership_summary |> 
-    filter(league_name %in% input_team_scope) |> 
+    filter(league_name %in% input_team_scope,
+           season %in% input_year_scope) |> 
     arrange(wickets, partnership_runs) |> 
     slice_max(partnership_runs, n=1, by = wickets) |> 
     select(wickets,
@@ -74,7 +84,8 @@ observeEvent(input$team_scope_partnership, {
 # chord graph of partnerships
   #get average position of players
   average_position <- batting_summary_position |> 
-    filter(league_name %in% input_team_scope) |>
+    filter(league_name %in% input_team_scope,
+           season %in% input_year_scope) |>
     select(batsman_name,
            position) |> 
     summarise(avg_position = mean(position),
@@ -91,7 +102,8 @@ observeEvent(input$team_scope_partnership, {
   
   
   partnership_chord_data <- partnership_summary |> 
-    filter(league_name %in% input_team_scope) |>
+    filter(league_name %in% input_team_scope,
+           season %in% input_year_scope) |>
     mutate(first_bat = case_when(batsman_out_name < batsman_in_name ~ batsman_out_name,
                                  TRUE ~ batsman_in_name),
            second_bat = case_when(batsman_out_name < batsman_in_name ~ batsman_in_name,
