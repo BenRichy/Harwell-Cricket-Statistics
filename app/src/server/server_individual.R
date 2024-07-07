@@ -162,10 +162,34 @@ batting_individual_game_graph_data <- batting_individual_by_game |>
   mutate(`Match Number` = row_number(),
          `Cumulative Runs` = cumsum(Runs),
          `Cumulative Balls` = cumsum(Balls),
+         runs_sr = Runs,
+         balls_sr = Balls,
          cum_innings = cumsum(count_innings),
          cum_out = cumsum(count_out),
-         `Cumulative Average` = round(`Cumulative Runs`/cum_out,2),
-         `Cumulative Strike Rate` = round((`Cumulative Runs`/`Cumulative Balls`)*100,2),
+         cum_sum_runs_sr = `Cumulative Runs`,
+         cum_sum_balls_sr = `Cumulative Balls`)
+
+#loop over rows and where ball data isn't available, assume the same sr as the game before
+for(i in 1:nrow(batting_individual_game_graph_data)){
+  
+  if(is.na(batting_individual_game_graph_data[i,"balls_sr"])){
+    batting_individual_game_graph_data[i,"runs_sr"] <- 0
+    batting_individual_game_graph_data[i,"balls_sr"] <- 0
+    
+    batting_individual_game_graph_data <- batting_individual_game_graph_data |> 
+      mutate(cum_sum_runs_sr = cumsum(runs_sr),
+             cum_sum_balls_sr = cumsum(balls_sr))
+    
+  } 
+  
+  
+}
+
+
+
+batting_individual_game_graph_data <- batting_individual_game_graph_data |> 
+  mutate(`Cumulative Average` = round(`Cumulative Runs`/cum_out,2),
+         `Cumulative Strike Rate` = round((cum_sum_runs_sr/cum_sum_balls_sr)*100,2),
          `Cumulative Runs per Innings` = round(`Cumulative Runs`/cum_innings,2))
 
 #reactive graph depending on the data shown
