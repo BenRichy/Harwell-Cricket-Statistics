@@ -130,6 +130,7 @@ observeEvent(c(input$team_scope_partnership,
   if(nrow(partnership_chord_data_all) == 0){
     
     output$chord_partnership_graph <- renderPrint({"Can't display data."})
+    output$chord_partnership_info <- renderText({ return(paste("<span style=\"color:red\">Not an acceptable combination.</span>"))})
     
   } else {
   
@@ -147,6 +148,7 @@ observeEvent(c(input$team_scope_partnership,
   )
   
   output$chord_partnership_graph <- renderChorddiag({chord_partnership})
+  output$chord_partnership_info <- renderText({ return(paste("<span style=\"color:green\">Acceptable conditions.</span>"))})
   
   }
   

@@ -85,7 +85,9 @@ dashboardPage(
               uiOutput("SelectYear_Partnership"),
               br(),
               tabsetPanel(
-                tabPanel("Chord Diagram", chorddiagOutput("chord_partnership_graph", height = "900px")),
+                tabPanel("Chord Diagram", 
+                         h5(htmlOutput("chord_partnership_info")),
+                         chorddiagOutput("chord_partnership_graph", height = "900px")),
                 tabPanel("Highest Partnerships", plotlyOutput("partnership_position_record"))
                 )
             ),
