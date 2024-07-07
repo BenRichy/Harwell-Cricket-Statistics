@@ -147,7 +147,7 @@ dashboardPage(
                              tabPanel("Detail"),
                              tabPanel("Visualise")
                            )),
-                  tabPanel("Dick of the Day",
+                  tabPanel("DoD",
                            tabsetPanel(
                              tabPanel("Summary"),
                              tabPanel("Detail"),
