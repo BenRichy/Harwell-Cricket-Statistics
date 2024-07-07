@@ -381,8 +381,10 @@ results <- results_data |>
             away_club_name == club_name ~ "Home",
             TRUE ~ "Away"
         ),
+        #overwrites for specific leagues
         league_name = case_when(
             is.na(league_name) ~ "Friendly",
+            league_name == "Cherwell Cricket League" ~ "Cherwell League",
             TRUE ~ league_name
         ), season = as.numeric(str_sub(match_date, start = -4))
     ) |>
