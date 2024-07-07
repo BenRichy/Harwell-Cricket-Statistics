@@ -27,8 +27,10 @@ dashboardPage(
                 tabName = "team-stats",
                 h2("Welcome to the Home of Harwell Cricket Statistics!"),
                 br(),
-                h3("Please check out the other pages to view statistics"),
+                h3("Please check out the other pages to view detailed statistics."),
+                h4("Delete/Select criteria to change the view of statisitcs.", style="color:red"),
                 uiOutput("SelectTeam_Team"),
+                uiOutput("SelectYear_Team"),
                 br(),
                 div(style = "width: 700px",
                     reactableOutput("team_summary"))
@@ -39,7 +41,9 @@ dashboardPage(
                 tabName = "batting-stats",
                 h2("Batting Stats"),
                 br(),
+                h4("Delete/Select criteria to change the view of statisitcs.", style="color:red"),
                 uiOutput("SelectTeam_Batting"),
+                uiOutput("SelectYear_Batting"),
                 br(),
                 tabsetPanel(
                 tabPanel("Summary",reactableOutput("batting_summary")),
@@ -56,7 +60,9 @@ dashboardPage(
                 tabName = "bowling-stats",
                 h2("Bowling Stats"),
                 br(),
+                h4("Delete/Select criteria to change the view of statisitcs.", style="color:red"),
                 uiOutput("SelectTeam_Bowling"),
+                uiOutput("SelectYear_Bowling"),
                 br(),
                 tabsetPanel(
                   tabPanel("Summary",reactableOutput("bowling_summary")),
@@ -74,7 +80,9 @@ dashboardPage(
               tabName = "partnership-stats",
               h2("Partnership Stats"),
               br(),
+              h4("Delete/Select criteria to change the view of statisitcs.", style="color:red"),
               uiOutput("SelectTeam_Partnership"),
+              uiOutput("SelectYear_Partnership"),
               br(),
               tabsetPanel(
                 tabPanel("Chord Diagram", chorddiagOutput("chord_partnership_graph", height = "900px")),
@@ -86,8 +94,10 @@ dashboardPage(
               tabName = "individual-stats",
               h2("Individual Stats"),
               br(),
+              h4("Delete/Select criteria to change the view of statisitcs.", style="color:red"),
               uiOutput("SelectPlayer_Individual"),
               uiOutput("SelectTeam_Individual"),
+              uiOutput("SelectYear_Individual"),
               br(),
               tabsetPanel(
                 tabPanel("Batting - Summary", 
