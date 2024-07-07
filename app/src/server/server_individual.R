@@ -278,7 +278,7 @@ batting_individual_summary_opposition <- batting_individual |>
   pivot_longer(cols = c(`# Innings`:`% Runs from Boundaries`),
                names_to = "Metric",
                values_to = "Value") |> 
-  pivot_wider(names_from = "Opposition",
+  pivot_wider(names_from = "Metric",
               values_from = "Value")
 
 
@@ -476,7 +476,7 @@ bowling_individual_summary_opposition <- bowling_individual |>
   pivot_longer(cols = c(`Overs`:`%Runs from Extras`),
                names_to = "Metric",
                values_to = "Value") |> 
-  pivot_wider(names_from = "Opposition",
+  pivot_wider(names_from = "Metric",
               values_from = "Value")
 
 
