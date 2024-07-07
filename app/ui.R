@@ -29,6 +29,7 @@ dashboardPage(
                 br(),
                 h3("Please check out the other pages to view statistics"),
                 uiOutput("SelectTeam_Team"),
+                uiOutput("SelectYear_Team"),
                 br(),
                 div(style = "width: 700px",
                     reactableOutput("team_summary"))
@@ -40,6 +41,7 @@ dashboardPage(
                 h2("Batting Stats"),
                 br(),
                 uiOutput("SelectTeam_Batting"),
+                uiOutput("SelectYear_Batting"),
                 br(),
                 tabsetPanel(
                 tabPanel("Summary",reactableOutput("batting_summary")),
@@ -57,6 +59,7 @@ dashboardPage(
                 h2("Bowling Stats"),
                 br(),
                 uiOutput("SelectTeam_Bowling"),
+                uiOutput("SelectYear_Bowling"),
                 br(),
                 tabsetPanel(
                   tabPanel("Summary",reactableOutput("bowling_summary")),
@@ -75,6 +78,7 @@ dashboardPage(
               h2("Partnership Stats"),
               br(),
               uiOutput("SelectTeam_Partnership"),
+              uiOutput("SelectYear_Partnership"),
               br(),
               tabsetPanel(
                 tabPanel("Chord Diagram", chorddiagOutput("chord_partnership_graph", height = "900px")),
@@ -88,6 +92,7 @@ dashboardPage(
               br(),
               uiOutput("SelectPlayer_Individual"),
               uiOutput("SelectTeam_Individual"),
+              uiOutput("SelectYear_Individual"),
               br(),
               tabsetPanel(
                 tabPanel("Batting - Summary", 

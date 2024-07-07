@@ -384,10 +384,11 @@ results <- results_data |>
         league_name = case_when(
             is.na(league_name) ~ "Friendly",
             TRUE ~ league_name
-        )
+        ), season = as.numeric(str_sub(match_date, start = -4))
     ) |>
     select(
         id,
+        season,
         match_date,
         opposition,
         toss,

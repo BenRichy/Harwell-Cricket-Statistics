@@ -11,6 +11,14 @@ shinyServer(function(input, output) {
     
     league_names <- as.vector(unlist(league_names))
     
+    #get years for filtering
+    season_years <- DBI::dbGetQuery(
+      conn,
+      "SELECT distinct season
+      FROM results;")
+    
+    season_years <- as.vector(unlist(season_years))
+    
     #get list of player names
     player_names <- DBI::dbGetQuery(
       conn,
@@ -31,12 +39,32 @@ shinyServer(function(input, output) {
       )
     })
     
+    output$SelectYear_Team <- renderUI({
+      selectInput(
+        "year_scope_team",
+        tags$h4("Select Year(s)",align="center"),
+        choices = season_years,
+        selected = season_years,
+        multiple = TRUE
+      )
+    })
+    
     output$SelectTeam_Batting <- renderUI({
       selectInput(
         "team_scope_batting",
         tags$h4("Select Team(s)",align="center"),
         choices = league_names,
         selected = league_names,
+        multiple = TRUE
+      )
+    })
+    
+    output$SelectYear_Batting <- renderUI({
+      selectInput(
+        "year_scope_batting",
+        tags$h4("Select Year(s)",align="center"),
+        choices = season_years,
+        selected = season_years,
         multiple = TRUE
       )
     })
@@ -50,6 +78,16 @@ shinyServer(function(input, output) {
       multiple = TRUE
     )})
     
+    output$SelectYear_Bowling <- renderUI({
+      selectInput(
+        "year_scope_bowling",
+        tags$h4("Select Year(s)",align="center"),
+        choices = season_years,
+        selected = season_years,
+        multiple = TRUE
+      )
+    })
+    
     output$SelectTeam_Partnership <- renderUI({selectInput(
       "team_scope_partnership",
       tags$h4("Select Team(s)",align="center"),
@@ -57,6 +95,16 @@ shinyServer(function(input, output) {
       selected = league_names,
       multiple = TRUE
     )})
+    
+    output$SelectYear_Partnership <- renderUI({
+      selectInput(
+        "year_scope_partnership",
+        tags$h4("Select Year(s)",align="center"),
+        choices = season_years,
+        selected = season_years,
+        multiple = TRUE
+      )
+    })
     
     output$SelectPlayer_Individual <- renderUI({selectInput(
       "player_scope_individual",
@@ -70,6 +118,16 @@ shinyServer(function(input, output) {
         tags$h4("Select Team(s)",align="center"),
         choices = league_names,
         selected = league_names,
+        multiple = TRUE
+      )
+    })
+    
+    output$SelectYear_Individual <- renderUI({
+      selectInput(
+        "year_scope_individual",
+        tags$h4("Select Year(s)",align="center"),
+        choices = season_years,
+        selected = season_years,
         multiple = TRUE
       )
     })
