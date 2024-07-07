@@ -19,7 +19,12 @@ batting_runs_non_striker <- detailed_batting_import |>
 
 #calculate total distance run
 batting_distance_all <- batting_runs_striker |> 
-  bind_rows(batting_runs_non_striker) |> 
+  bind_rows(batting_runs_non_striker) 
+
+if(nrow(batting_distance_all) == 0){
+  batting_distance_all <- batting_distance_all
+} else{
+batting_distance_all <- batting_distance_all |> 
   mutate(distance_run = Runs * cricket_pitch_meter) |> 
   summarise(distance_run = sum(distance_run, na.rm = TRUE),
             .by = c(Batter, on_strike)) |>  
@@ -34,6 +39,7 @@ batting_distance_all <- batting_runs_striker |>
          `Total Distance Travelled (m)` = total_distance,
          `Navigations of Diamond Light Source` = diamond_circumnavigations) |> 
   arrange(desc(`Navigations of Diamond Light Source`))
+}
 
 output$batting_distance_run <- renderReactable({reactable(batting_distance_all,
                                                         filterable = TRUE,

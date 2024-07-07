@@ -14,16 +14,24 @@ detailed_bowling_import <- read_csv(bowling_detail_fp) |>
   filter(grepl("Harwell.*",`Bowling Team`)) |> 
   left_join(read_csv(match_date_fp), by = c("Date" = "match_date"))
 
-observeEvent(input$team_scope_bowling, {
-  
-  if(is.null(input$team_scope_bowling)){
-    input_team_scope <- league_names
-  } else{
-    input_team_scope <- input$team_scope_bowling
-  }
+observeEvent(c(input$team_scope_bowling,
+               input$year_scope_bowling), {
+                 
+                 if(is.null(input$team_scope_bowling)){
+                   input_team_scope <- league_names
+                 } else{
+                   input_team_scope <- input$team_scope_bowling
+                 }
+                 
+                 if(is.null(input$year_scope_bowling)){
+                   input_year_scope <- season_years
+                 } else{
+                   input_year_scope <- input$year_scope_bowling
+                 }
   
   detailed_bowling_import <- detailed_bowling_import |>
-    filter(league_name %in% input_team_scope)
+    filter(league_name %in% input_team_scope,
+           season %in% input_year_scope)
 
 source("src/server/bowling_detailed/bowling_by_end.R",local = TRUE)
 source("src/server/bowling_detailed/bowling_by_batting_position.R",local = TRUE)

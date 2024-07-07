@@ -12,16 +12,26 @@ detailed_batting_import <- read_csv(batting_detail_fp) |>
   filter(grepl("Harwell.*",`Batting Team`)) |> 
   left_join(read_csv(match_date_fp_batting), by = c("Date" = "match_date"))
 
-observeEvent(input$team_scope_batting, {
+observeEvent(c(input$team_scope_batting,
+               input$year_scope_batting), {
+                 
+                 if(is.null(input$team_scope_batting)){
+                   input_team_scope <- league_names
+                 } else{
+                   input_team_scope <- input$team_scope_batting
+                 }
   
-  if(is.null(input$team_scope_batting)){
-    input_team_scope <- league_names
-  } else{
-    input_team_scope <- input$team_scope_batting
-  }
+                 
+                 if(is.null(input$year_scope_batting)){
+                   input_year_scope <- season_years
+                 } else{
+                   input_year_scope <- input$year_scope_batting
+                 }              
+                 
   
   detailed_batting_import <- detailed_batting_import |>
-    filter(league_name %in% input_team_scope)
+    filter(league_name %in% input_team_scope,
+           season %in% input_year_scope)
   
   
   source("src/server/batting_detailed/batting_distance_travelled.R",local = TRUE)

@@ -7,6 +7,7 @@ bowling_individual <- DBI::dbGetQuery(
   conn,
   "SELECT
     r.opposition,
+    r.season,
     r.match_date,
     r.league_name,
     bowler_name,
@@ -24,6 +25,7 @@ bowling_individual_wickets <- DBI::dbGetQuery(
   conn,
   "SELECT
     r.opposition,
+    r.season,
     r.match_date,
     r.league_name,
     bowler_name,
@@ -38,6 +40,7 @@ batting_individual <- DBI::dbGetQuery(
   conn,
   "SELECT
     r.opposition,
+    r.season,
     r.match_date,
     r.league_name,
     position,
@@ -58,6 +61,7 @@ partnerhip_individual <- DBI::dbGetQuery(
   conn,
   "SELECT
     r.opposition,
+    r.season,
     r.match_date,
     r.league_name,
     wickets,
@@ -69,20 +73,24 @@ partnerhip_individual <- DBI::dbGetQuery(
 ) 
 
 observeEvent(c(input$player_scope_individual,
-               input$team_scope_individual), {
+               input$team_scope_individual,
+               input$year_scope_individual), {
 
 #filter data by player
 batting_individual <- batting_individual |> 
   filter(batsman_name == input$player_scope_individual,
-         league_name %in% input$team_scope_individual)
+         league_name %in% input$team_scope_individual,
+         season %in% input$year_scope_individual)
 
 bowling_individual <- bowling_individual |> 
   filter(bowler_name == input$player_scope_individual,
-         league_name %in% input$team_scope_individual)
+         league_name %in% input$team_scope_individual,
+         season %in% input$year_scope_individual)
 
 bowling_individual_wickets <- bowling_individual_wickets |> 
   filter(bowler_name == input$player_scope_individual,
-         league_name %in% input$team_scope_individual)
+         league_name %in% input$team_scope_individual,
+         season %in% input$year_scope_individual)
 
 # individual batting stats
 ## summary stats
@@ -126,7 +134,8 @@ output$individual_batting_summary <- renderReactable({reactable(batting_individu
 
 ## batting details by game
 batting_individual_by_game <- batting_individual |> 
-  select(`Match Date` = match_date,
+  select(Season = season,
+         `Match Date` = match_date,
          `League` = league_name,
          Opposition = opposition,
          `Batting Position` = position,
@@ -358,6 +367,7 @@ bowling_individual_by_game <- bowling_individual |>
     percent_runs_extras = round(((no_balls + wides) / runs)*100,2)) |>
   select(
     "Bowler" = bowler_name,
+    Season = season,
     `Match Date` = match_date,
     `League` = league_name,
     Opposition = opposition,
