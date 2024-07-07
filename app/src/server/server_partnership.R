@@ -127,6 +127,12 @@ observeEvent(c(input$team_scope_partnership,
   partnership_chord_data_all <- partnership_chord_data |> 
     bind_rows(partnership_chord_data_dupli)
   
+  if(nrow(partnership_chord_data_all) == 0){
+    
+    output$chord_partnership_graph <- renderPrint({"Can't display data."})
+    
+  } else {
+  
   partnership_chord_matrix<-as.matrix(as_adjacency_matrix(as_tbl_graph(partnership_chord_data_all),attr = "partnership_runs"))
   
   chord_partnership <-chorddiag(data = partnership_chord_matrix,
@@ -141,6 +147,8 @@ observeEvent(c(input$team_scope_partnership,
   )
   
   output$chord_partnership_graph <- renderChorddiag({chord_partnership})
+  
+  }
   
   
 })
