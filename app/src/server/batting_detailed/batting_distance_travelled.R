@@ -32,11 +32,13 @@ batting_distance_all <- batting_distance_all |>
               values_from = distance_run) |> 
   rowwise() |>  
   mutate(total_distance = sum(striker, non_striker, na.rm = TRUE)) |> 
-  mutate(diamond_circumnavigations = round(total_distance/diamond_circumference,2)) |> 
+  mutate(diamond_circumnavigations = round(total_distance/diamond_circumference,2),
+         ratio = round(striker/non_striker,2)) |> 
   select(Batter,
          `Distance Travelled as Striker (m)` = striker,
          `Distance Travelled as Non-Striker (m)` = non_striker,
          `Total Distance Travelled (m)` = total_distance,
+         `Striker/Non-Striker ratio` = ratio,
          `Navigations of Diamond Light Source` = diamond_circumnavigations) |> 
   arrange(desc(`Navigations of Diamond Light Source`))
 }
