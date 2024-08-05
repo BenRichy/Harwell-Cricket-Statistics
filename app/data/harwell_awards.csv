@@ -1,86 +1,149 @@
-﻿match_id,award_id,nomination_id,nominee,nomination_summary,votes,won
-6309995,mhfa,1,Stephen Boag,What gives Boagy the right to play football?,0,0
-6309995,mhfa,2,Thomas Forrest,Tom's one handed catch with the fingers behind the stumps,3,0
-6309995,mhfa,3,Rakesh Shah,Rakesh ambled diving catch,3,1
-6309995,mhfa,4,Ben Richmond,Chilli covering up for G,0,0
-6309995,mhfa,5,Stephen Boag,Tweedle Dee and Tweedle Dum,2,0
-6309995,mhfa,5,Graham Stevens,Tweedle Dee and Tweedle Dum,2,0
-6309995,mhfa,6,Jon Timms,Timmsy's high swirling catch,3,0
-6309995,mhfa,7,Toby Gallington,Toby's slip drop,2,0
-6309995,cm,1,Thomas Forrest,Tom's one handed catch with the fingers behind the stumps,2,0
-6309995,cm,2,Max Schofield,Max's 4 to whin the game,4,0
-6309995,cm,3,Laura (Opposition),Laura reverse sweeping Ben,3,0
-6309995,cm,4,Stephen Boag,Boag's 100th league wicker,7,1
-6309995,motm,1,Max Schofield,69* off 68 balls,10,1
-6309995,motm,2,Toby Gallington,4.2-2-9-3,2,0
-6309995,dod,1,Toby Gallington,"Toby Gallington for bowling the first extra of the season, dropping a slip catch, losing the toss, took Max off after a wicket, cringey wk glove use in the warm up",10,1
-6309995,dod,2,Graham Stevens,Graham self nominated for the jiggle juggle catch where he had it 3 times,1,0
-6309995,dod,3,Max Schofield,Max for bowling the wrong line and bitching about the captain moving a slip,1,0
-6309995,tgfp,1,Phil Knight (umpire),"General antics and annoying Herbie, his umpire partner in crime",0,0
-6309995,tgfp,2,Letcombe opening bat,Opener walking after the umpire couldn't hear an edge,10,1
-,mhfa,1,Patrick Harland,Pat's catch & drops,0,0
-,mhfa,2,William Nichols,William's successful long barrier with hands x2,0,0
-,mhfa,3,Ranok Banerjee,Antics in the field,6,1
-,cm,1,Patrick Harland,Pat's catch,6,1
-,cm,2,Cordy Williams,Cordy's catch,2,0
-,cm,3,Ranok Banerjee,Ranok's bowled,0,0
-,motm,1,Andy Smith,Top scoring with a bloodied thumb,4,0
-,motm,2,Ranok Banerjee,Good debut where he was surprised by his good bowling,6,1
-,dod,1,Andy Smith,Cutting his thumb over and then continually knocking it,0,0
-,dod,2,Patrick Harland,Missing his bus to get to the match,5,1
-,dod,3,Stephen Boag,Starting the awards,1,0
-,dod,4,Toby Gallington,Slagging Rolls off who then scored,2,0
-,dod,5,William Nichols,Asking to bat higher up the order then not batting,3,0
-,tgfp,1,Opposition,Filling in for sick note Andy Smith,11,1
-6309997,mhfa,1,Thomas Forrest,"Tom's all round fielding - slide, field then missed; then chased and thrown in and hit the stumps",,1
-6309997,mhfa,2,Matt Davies,Matt's 2nd catch,,0
-6309997,mhfa,3,Max Schofield,Max's imposter throw from 4 yards that didn't even hit 9th stump,,0
-6309997,cm,1,Thomas Forrest,,,0
-6309997,cm,2,Toby Gallington,,,0
-6309997,cm,3,Joey Braham,,,0
-6309997,cm,4,Lee Gallington,,,1
-6309997,motm,1,Jon Timms,,,1
-6309997,motm,2,Joey Braham,,,0
-6309997,motm,3,Rakesh Shah,,,0
-6309997,motm,4,Matt Davies,,,0
-6309997,dod,1,Toby Gallington,,,1
-6309997,dod,2,Thomas Forrest,,,0
-6309997,tgfp,1,Opposition,,,1
-6309997,tgfp,2,Rakesh Shah,,,0
-6309997,tgfp,3,Toby Gallington,,,0
-6310005,mhfa,1,Max Schofield,,,0
-6310005,mhfa,2,Graham Stevens,,,1
-6310005,mhfa,3,Ethin George,,,0
-6310005,mhfa,4,Ethin George,,,0
-6310005,mhfa,5,Ben Richmond,,,0
-6310005,mhfa,6,Toby Gallington,,,0
-6310005,cm,1,Ethin George,,,1
-6310005,cm,2,Toby Gallington,,,0
-6310005,cm,3,James Wilson,,,0
-6310005,cm,4,Ben Richmond,,,0
-6310005,motm,1,Ben Richmond,,,1
-6310005,motm,2,Toby Gallington,,,0
-6310005,motm,3,Ethin George,,,0
-6310005,motm,4,Max Schofield,,,0
-6310005,dod,1,Top Order,,,1
-6310005,dod,2,James Wilson,,,0
-6310005,dod,3,Toby Gallington,,,0
-6310005,dod,4,Jon Timms,,,0
-6310005,tgfp,5,Toby Gallington,,,1
-6310005,tgfp,6,Rakesh Shah,,,0
-6310007,mhfa,1,Ethin George,,,0
-6310007,mhfa,2,Ben Richmond,,,0
-6310007,mhfa,3,Matt Davies,,,1
-6310007,mhfa,4,Graham Stevens,,,0
-6310007,mhfa,5,Jon Timms,,,0
-6310007,cm,1,Toby Gallington,,,0
-6310007,cm,2,Matt Davies,,,1
-6310007,cm,3,Graham Stevens,,,0
-6310007,cm,4,Graham Stevens,,,0
-6310007,motm,1,Matt Davies,,,1
-6310007,motm,2,Toby Gallington,,,0
-6310007,motm,3,Stephen Boag,,,0
-6310007,dod,1,Toby Gallington,,,1
-6310007,dod,2,Ethin George,,,0
-6310007,tgfp,1,Opposition,,,0
-6310007,tgfp,2,Opposition,,,1
+﻿match_date,award_id,nominee,nomination_summary,
+04/05/2024,mhfa,James Wilson,Solid hands behind the stumps on a variable bounce day.,
+04/05/2024,cm,Joey Braham,Cover drive that kept picking up speed as it barrelled over the ropes for 4.,
+04/05/2024,dod,Joey Braham,Talked himself into it.,
+04/05/2024,motm,Matt Davies,"Scoring more than the opposition and easily more than the rest of the Harwell team too. Added to that a wonderful catch, cracking performance from Matt!",
+05/05/2024,mhfa,James Goldsby-West,Direct run out - first attempt of the game (read and week Schofield!),
+05/05/2024,cm,James Goldsby-West,All run 4.,
+05/05/2024,dod,James Goldsby-West,"Dad joke, and for the hat-trick.",
+05/05/2024,motm,Graham Stevens,51 retired.,
+05/05/2024,tgfp,Uday Pande,Not walking.,
+08/05/2024,mhfa,Ben Richmond,Dropping Jamie Ross and reenacting Matt hills throwing it sideways from the boundary (whilst fielding for the opportunity).,
+08/05/2024,cm,Max Schofield,Hitting a full toss for 6.,
+08/05/2024,dod,Jamie Ross,"Bringing excessive chat, eventually succumbing to his fourth outside edge to Sach and an early departure. ",
+08/05/2024,motm,Jon Timms,"Good fielding including catching Jamie, a tidy over and bring us home safely from an uncertain spot. ",
+11/05/2024,mhfa,Rakesh Shah,Ambling over towards the ball to then for the last 4 steps charge forward and hurl himself to the ground to take a screamer.,
+11/05/2024,cm,Stephen Boag,100th league wicket. Congrats Boagy!!!,
+11/05/2024,dod,Toby Gallington,"Bowling the first extra of the season, dropping a slip catch, losing the toss, taking Max off after his wicket, cringey glove use in pre-match training ",
+11/05/2024,motm,Max Schofield,Very good bowling but the highlight a display of very mature and accomplished batting that brought the game home with ease in the end.,
+15/05/2024,mhfa,Rakesh Shah,"Losing his shoe whilst walking in with the bowler,",
+15/05/2024,cm,Sachin,Second wicket in two balls to put us on top.,
+15/05/2024,dod,Toby Gallington,Launching the ball full throttle into a pram of an innocent by stander (luckly no baby was harmed) + dropping Braders early doors + voting for himself.,
+15/05/2024,motm,Sachin,Excellent bowling.,
+15/05/2024,tgfp,Max Schofield,Chuntering at Tom our volunteer umpire for widing Max.,
+18/05/2024,mhfa,Tom Forrest,"Chasing the ball down to the boundary with an exquisite dive  to swoop down on thin air, get back up again, chase down the ball, and fling in a direct hit.",
+18/05/2024,cm,Lee Gallington,Bowled wicket.,
+18/05/2024,dod,Toby Gallington,Going way too far over the top due to actions of the winner of the TGFP,
+18/05/2024,motm,Jon Timms,Some beautiful hits to take us to a big score and then 4 wickets that took the game away completely.,
+18/05/2024,tgfp,Opposition batsman,"Edging it with the back of his bat to 1st slip walked at least 6 paces off towards the pavilion only to then return, completely unashamedly, after the umpire declared it not out. In the words of James GW Show Your Class.",
+19/05/2024,mhfa,Raunakk Banerjee,Great stop followed by pantomime losing the ball.,
+19/05/2024,cm,Patrick Harland,Good catch.,
+19/05/2024,dod,Patrick Harland,Motorway/bus/traingate.,
+19/05/2024,motm,Raunakk Banerjee,,
+19/05/2024,tgfp,Wantage, Lending us a fielder after Andy Smith splitting his thumb open in the 2nd over.,
+25/05/2024,mhfa,Graham Stevens,"The “G juggle.” Not to be outdone by last weeks triple juggle drop, went for a quadruple juggle catch.",
+25/05/2024,cm,Ethin George,"Caught and bowled, at full height, jumping, one handed.",
+25/05/2024,dod,Top Order (Including Max),Standard collapse.,
+25/05/2024,motm,Ben Richmond,"Excellent bowling at a pivotal time in the game, and a lot of bottle with the bat too.",
+25/05/2024,tgfp,Toby Gallington,Kicking Jamie Ross out of the Harwell group for chatting about a club that no-one cares about because it’s a Harwell WhatsApp group.,
+26/05/2024,mhfa,Tom Forrest,Falling over.,
+26/05/2024,cm,Tom Forrest,Casual catch.,
+26/05/2024,dod,William Nicholls,"Being late,not staying for awards.",
+26/05/2024,motm,Raunakk Banerjee,3 wickets.,
+29/05/2024,mhfa,Sachin,Juggle / keepyups.,
+29/05/2024,cm,Patrick Harland,Winning run two when the game was over after he'd completed the first.,
+29/05/2024,dod,Whole team,Poor fielding second over.,
+29/05/2024,motm,Ethin George,,
+29/05/2024,tgfp,Cordy Williams,Giving a no ball.,
+01/06/2024,mhfa,Matt Davies,"3 catches, 1 good, 1 excellent and 1 outstanding.",
+01/06/2024,cm,Matt Davies,Outstanding catch.,
+01/06/2024,dod,Toby Gallington,"Not being responsible for his batting and for keeping Timmsy out of the bowling, keeping the field out so Boag’s couldn’t get the 10th wicket so he could get his 5er.",
+01/06/2024,motm,Toby Gallington,5 wickets for not many runs.,
+01/06/2024,tgfp,Chris Butcher,Being the most miserable man on any cricket field anywhere.,
+06/06/2024,mhfa,Paul Eccleston,Catch & drop.,
+06/06/2024,cm,Ethin George,Clean bowled top of off.,
+06/06/2024,dod,Ethin George,Moaning for first 6 overs and no-ball.,
+06/06/2024,motm,Jayesh Manwani,Batting and running.,
+06/06/2024,tgfp,James,Walking on edge Boagy missing.,Check which James
+08/06/2024,mhfa,Matt Davies,Excellent catch in the Dorchester slap fielding position.,
+08/06/2024,cm,Lee Gallington,Bowling Ferris.,
+08/06/2024,dod,Joey Braham,Running out Matty D and telling Rakesh he was going to take his first catch of the season and then dropping it.,
+08/06/2024,motm,Joey Braham,46 not out and general enthusiasm throughout the game. Good pep talk after drinks too!!,
+08/06/2024,tgfp,Umpire aka The Lost Man,The guy was a bit lost.,
+09/06/2024,mhfa,Tom Forrest,Behindy grab.,
+09/06/2024,cm,Dan Strangward,Reaching his first fifty.,
+09/06/2024,dod,William Nicholls,Leaving half way through our innings.,
+09/06/2024,motm,Dan Strangward,"62 runs, 2 catches.",
+09/06/2024,tgfp,William Nicholls,"Being last here,first to leave and not helping set up or pack up.",
+15/06/2024,mhfa,Lee Gallington,"“I’ll get it, no I won’t.” Depriving Tommy F of an opportunity to field the ball as a spectator, to only miss it anyway.",
+15/06/2024,cm,Max Schofield,Clean bowled.,
+15/06/2024,dod,Toby Gallington,Going for the only boundary of the C&C innings off the bat and bringing himself on to clean up the tail.,
+15/06/2024,motm,Max Schofield,Bowling absolute 🔥 today.,
+15/06/2024,tgfp,Henry Maunder,"Walking on the edge. More of note a very mature and resilient knock from the young man, he then added a screaming catch behind the stumps to boot.",
+16/06/2024,mhfa,Rick Tanner,Diving stop.,
+16/06/2024,cm,Jamie Ross,Whispering wicket.,
+16/06/2024,dod,Toby Gallington,Putting Max on top of the covers.,
+16/06/2024,motm,Mihir Date,77 off 75 and 2 wickets.,
+16/06/2024,tgfp,Rick Tanner,No-ball call.,
+19/06/2024,mhfa,Sachin,Nonchalant 1 handed catch .,
+19/06/2024,cm,Ethin George,Brilliant bowled at a crucial time.,
+19/06/2024,dod,Jayesh Manwani,"Thinking he was playing for Steventon and running out 2 of his partners, 1 on a diamond duck; and also for having a go at the bowler for not being ready.",
+19/06/2024,motm,Ben Richmond,Creative captaincy that somehow almost worked.,
+19/06/2024,tgfp,"Andy Coates, Graham Stevens, Stephen Boag",Doing a solid and umpiring and scoring in exchange for pizza (a very close 2nd was the oppo spectator fetching a ball after it had gone for 4 whilst holding a child in one arm).,
+23/06/2024,mhfa,James Wilson,Absolutely top quality keeping all innings.,
+23/06/2024,cm,Jayesh Manwani,Big 6.,
+23/06/2024,dod,Ethin George,"Nearly getting run out again, for dropping a catch, chatting to Rakesh for too long, and finally, bowling a no ball on Hattrick ball. Special mention for the team to get DoD for bullying Joey Braham during the awards.",
+23/06/2024,motm,Ethin George,Bowling absolute 🔥.,
+23/06/2024,tgfp,E&W Hendred’s Nathan Lyon,Knowing that Ben is a gentleman and one shouldn’t run out a gentleman.,
+26/06/2024,mhfa,"Raunakk Banerjee, Jayesh Manwani, Uday Pande",Avoiding planet Boag running half the pitch for a caught and bowled .,
+26/06/2024,cm,Patrick Harland,First ball flick off the legs for 4.,
+26/06/2024,dod,Stephen Boag,"Taking the last over from Sachin then bowling 3 wides. Honorable mention to Ethin, Sooraj and Raunakk for cheering each other's wides.",
+26/06/2024,motm,Sooraj,Excellent bowling and batting to bring us home.,
+30/06/2024,mhfa,Toby Gallington,Run out.,
+30/06/2024,cm,Toby Gallington,"Calling “yes,” Joey Braham calling “no” ,” and Toby shouting “WHYYYY” and gesturing dramatically with his bat.",
+30/06/2024,dod,James Wilson,Parking in Harwell village and trekking 45 minutes to the ground.,
+30/06/2024,motm,Toby Gallington,Excellent batting and good bowling too.,
+30/06/2024,tgfp,Stephen Boag and Tom Forrest,Jumping through every campus hoop to get the game on. Less note for Stephen Boag for calling back a batsman.,
+03/07/2024,mhfa,Lee Gallington,Brilliant stopping a boundary then  kicking it over in his follow throw.,
+03/07/2024,cm,Sachin,First ball wicket.,
+03/07/2024,dod,Max Schofield,Missing himself in the team selection.,
+03/07/2024,motm,Sooraj,Excellent batting.,
+03/07/2024,tgfp,Ethin George,Dropping batsmen on 98 and hitting a dolly for his friend to catch.,
+07/07/2024,mhfa,Tom Forrest,Powering in then sliding under the ball.,
+07/07/2024,cm,Jayesh Manwani,6 to win the game.,
+07/07/2024,dod,Jamie Ross,Either losing or inventing a bat.,
+07/07/2024,motm,Jayesh Manwani,56* and 4 overs for 16.,
+07/07/2024,tgfp,Cordy Williams & Whole team,Not running out the opener when he slipped over.,
+10/07/2024,mhfa,Uday Pande,One hand of hope turning into a special catch.,
+10/07/2024,cm,James Warren,Catch for the oppo.,
+10/07/2024,dod,Max Schofield,Forgetting socks and having excessive legside field.,
+10/07/2024,motm,James Goldsby-West,Good batting and football slide to save 4.,
+10/07/2024,tgfp,Toby Gallington,Being the first Australian to walk in the history of cricket.,
+13/07/2024,mhfa,James Wilson,All round keeping and obvs the catch.,
+13/07/2024,cm,James Wilson,One handed catch to remove Josh.,
+13/07/2024,dod,Lee Gallington,Appealing madly for lbw whilst the rest of the team waited for Chilli to catch the huge top edge and dropping Josh who went on to hit a 50. Special mention for being called Toby’s dad by the Letcombe raffler.,
+13/07/2024,motm,Max Schofield,A really class performance one of the best of any this year for sure. 96 and 3 wickets could so easily have been a century and a 5er.,
+13/07/2024,tgfp,Opposition bowler,Successful mankad on James Wilson but their captain ensured no appeal.,
+14/07/2024,mhfa,Stephen Boag,Nonchalant football antics.,
+14/07/2024,cm,Jamie Ross,Elegant cover drive crunched for 4 forcing a player to leave the pitch it was hit that hard (the glaze is majestic but is also all true) .,
+14/07/2024,dod,Cordy Williams,Forgetting to put the team email out meaning Chamal turned up 30 mins into the game.,
+14/07/2024,motm,Sooraj,All round good performance both batting bowling and taking a catch on the first ball.,
+14/07/2024,tgfp,Opposition batsman,2019 world cup re-enactment where the batsmen kicked it past cordy then taking a single and cordy then saying ‘that’s not fair’ in typical fashion.,
+20/07/2024,mhfa,Rakesh Shah,"Low sliding forward catch, because Ben absolutely needed more wickets.",
+20/07/2024,cm,Ben Richmond,"9th wicket, his best ball of the day just knicking the leg stump bail.",
+20/07/2024,dod,Max Schofield,"Not letting Ben get his 10 wickets, making a 12 year old cry twice, and also making Tommy put his pads on.",
+20/07/2024,motm,Ben Richmond,"Twelve point two overs, five maidens, nine wickets, thirteen runs. Best bowling performance in 94 games across the Cherwell League.",
+20/07/2024,tgfp,Toby Gallington,"Pep talking the 12 year old that Max made cry, and then consoling him when Max made him cry again.",
+21/07/2024,mhfa,Jamie Ross,Catch plus astonishment.,
+21/07/2024,cm,Stephen Boag,Bowled wicket.,
+21/07/2024,dod,Patrick Harland,Deciding to fly WhizzAir.,
+21/07/2024,motm,Dan Strangward,32 runs.,
+21/07/2024,tgfp,Danny McAllister,Bouncing his 6 over Pat's car.,
+24/07/2024,mhfa,Cordy Williams,"For taking a peppering on her legs, with a special mention to her left foot 👀 Ethin.",
+24/07/2024,cm,Paul Eccleston,6 over cover.,
+24/07/2024,dod,Stephen Boag,"Getting Sooraj and Rakesh confused whilst batting, realizing when Sooraj went out to bat after Rakesh got out.",
+24/07/2024,motm,Rakesh Shah,Tight quality bowling.,
+27/07/2024,mhfa,Ben Richmond,"Chasing round the boundary to stop a 4 to then boot it a good additional 40 yards, chase it down and a great throw in.",
+27/07/2024,cm,Max Schofield,"1st wicket of the match, bowling Kester beautifully.",
+27/07/2024,dod,Graham Stevens,"Nominating himself for Champagne moment, nominating the skipper for him not carrying his bat, and for being the world’s most chasmic colander in the field.",
+27/07/2024,motm,Graham Stevens,Absolutely superb 104. Respect and pride for his wicket early on to build a foundation for some fluid picture perfect shots.,
+27/07/2024,tgfp,Joey Braham,"Walking, and for the “Joe-off” with Steventon. A special mention to him for also apologising to the Steventon lad, when he really didn’t need to, he did nothing wrong.",
+28/07/2024,mhfa,Mihir Date,One handed stop and launching it.,
+28/07/2024,cm,Rick Tanner,Rickles tickles steering the ball around the field.,
+28/07/2024,dod,Jamie Ross,Converting 2s into 1s whilst batting and 2s into 3s whilst fielding.,
+28/07/2024,motm,Dan Strangward,Solid keeping and anchoring the innings to bring us home.,
+03/08/2024,mhfa,Half the team,The calamitous run out!,
+03/08/2024,cm,Sooraj,"Breaking the tension with the first wicket. A special mention should go to Toby, for leaving and sparking us to actually get the wicket.",
+03/08/2024,dod,Stephen Boag,Bowling his first extra in the CCL this year.,
+03/08/2024,motm,Sooraj,6 wickets and some useful runs!,
+03/08/2024,tgfp,Young Bertie Smith,Being so scared of Ethin that he got himself runout.,
