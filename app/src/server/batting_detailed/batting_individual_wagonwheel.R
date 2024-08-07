@@ -8,19 +8,19 @@ if(file.exists("app") == TRUE){
 
 
 
-#get the bowling data only
-detailed_bowling_import_individual <- read_csv(bowling_detail_fp) |> 
-  filter(grepl("Harwell.*",`Bowling Team`)) |> 
+#get the batting data only
+detailed_batting_import_individual <- read_csv(bowling_detail_fp) |> 
+  filter(grepl("Harwell.*",`Batting Team`)) |> 
   left_join(read_csv(match_date_fp), by = c("Date" = "match_date"))
 
 
-#only get the data for bowlers where the wagonwheel is available
+#only get the data for batters where the wagonwheel is available
 
 
-bowling_individual_wagon <- detailed_bowling_import_individual |> 
+batting_individual_wagon <- detailed_batting_import_individual |> 
   filter(!is.na(FieldX),
          Runs > 0) |> 
-  select(Bowler,
+  select(Batter,
          Runs,
          FieldX,
          FieldY,
@@ -31,10 +31,10 @@ bowling_individual_wagon <- detailed_bowling_import_individual |>
          Runs = as.factor(Runs),
          FieldX = FieldX-180,
          FieldY = 180 - FieldY) |> 
-  filter(Bowler == "Stephen Boag")
+  filter(Batter == "Max Schofield")
 
 
-wagon <- ggplot(bowling_individual_wagon, aes(x = FieldX, y = FieldY, colour = Runs)) +
+wagon <- ggplot(batting_individual_wagon, aes(x = FieldX, y = FieldY, colour = Runs)) +
   geom_point() +
   scale_color_discrete("Paired") +
   geom_segment(aes(xend = 0, yend = 0))
