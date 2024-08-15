@@ -523,4 +523,9 @@ output$individual_wickets_pie <- renderPlotly({plot_ly(data = bowling_individual
                                                          labels = ~clean_dismissal,
                                                          type = "pie")})
 
+
+#batting wagonwheel
+source("src/server/batting_detailed/batting_individual_wagonwheel.R",local = TRUE)
+source("src/server/bowling_detailed/bowling_individual_wagonwheel.R",local = TRUE)
+
 })

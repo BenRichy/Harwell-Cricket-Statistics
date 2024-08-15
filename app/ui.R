@@ -109,6 +109,7 @@ dashboardPage(
                 tabPanel("Batting - Dismissals", plotlyOutput("individual_dismissal_pie")),
                 tabPanel("Batting - By Position", reactableOutput("individual_batting_summary_position")),
                 tabPanel("Batting - By Opposition", reactableOutput("individual_batting_summary_opposition")),
+                tabPanel("Batting - WagonWheel", fluidRow(column(3,uiOutput("SelectTeamBattingWagon_Individual"), column(8,plotlyOutput("individual_batting_wagon_plotly"))))),
                 tabPanel("Batting - % Runs", "In Progress"),
                 tabPanel("Bowling - Summary", 
                          div(style = "width: 700px", reactableOutput("individual_bowling_summary"))),
@@ -116,6 +117,7 @@ dashboardPage(
                 tabPanel("Bowling - Manhattan", uiOutput("SelectBowlingStat_Individual"), br(),plotlyOutput("individual_bowling_plotly")),
                 tabPanel("Bowling - Wickets", plotlyOutput("individual_wickets_pie")),
                 tabPanel("Bowling - By Opposition", reactableOutput("individual_bowling_summary_opposition")),
+                tabPanel("Bowling - WagonWheel", fluidRow(column(3,uiOutput("SelectTeamBowlingWagon_Individual")), column(8,plotlyOutput("individual_bowling_wagon_plotly")))),
                 tabPanel("Bowling - % Wickets", "In Progress")
               )
             ),
