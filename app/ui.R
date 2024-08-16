@@ -131,42 +131,12 @@ dashboardPage(
                 uiOutput("SelectTeam_Awards"),
                 br(),
                 tabsetPanel(
-                  tabPanel("Summary",
-                           tabsetPanel(
-                             tabPanel("Summary"),
-                             tabPanel("Detail"),
-                             tabPanel("Visualise")
-                           )),
-                  tabPanel("Matt Hills Fielding Award",
-                           tabsetPanel(
-                             tabPanel("Summary"),
-                             tabPanel("Detail"),
-                             tabPanel("Visualise")
-                           )),
-                  tabPanel("Champagne Moment",
-                           tabsetPanel(
-                             tabPanel("Summary"),
-                             tabPanel("Detail"),
-                             tabPanel("Visualise")
-                           )),
-                  tabPanel("DoD",
-                           tabsetPanel(
-                             tabPanel("Summary"),
-                             tabPanel("Detail"),
-                             tabPanel("Visualise")
-                           )),
-                  tabPanel("Man of the Match",
-                           tabsetPanel(
-                             tabPanel("Summary"),
-                             tabPanel("Detail"),
-                             tabPanel("Visualise")
-                           )),
-                  tabPanel("Toby Gallington Fair Play Award",
-                           tabsetPanel(
-                             tabPanel("Summary"),
-                             tabPanel("Detail"),
-                             tabPanel("Visualise")
-                           )))
+                  tabPanel("Summary"),
+                  tabPanel("Matt Hills Fielding Award"),
+                  tabPanel("Champagne Moment"),
+                  tabPanel("DoD"),
+                  tabPanel("Man of the Match"),
+                  tabPanel("Toby Gallington Fair Play Award"))
             )
         )
     )
