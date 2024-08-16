@@ -52,8 +52,16 @@ awards_data_all_summary <- awards_data_all_detail |>
   #replace NA values with 0
   mutate(across(where(is.numeric), ~replace_na(., 0)),
          #calculate the total number of awards
-         `Total Awards` = rowSums(across(where(is.numeric)), na.rm=TRUE))
-  
+         `Total Awards` = rowSums(across(where(is.numeric)), na.rm=TRUE)) |> 
+  arrange(desc(`Total Awards`))
+
+output$awards_all <- renderReactable({reactable(awards_data_all_summary, details = function(index) {
+  awards_data_all_detail_filter <- awards_data_all_detail[awards_data_all_detail$nominee == awards_data_all_summary$Person[index], ]
+  htmltools::div(style = "padding: 1rem",
+                 reactable(awards_data_all_detail_filter, outlined = TRUE)
+  )
+})  
+})
 
 
 

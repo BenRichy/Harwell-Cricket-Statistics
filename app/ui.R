@@ -131,7 +131,7 @@ dashboardPage(
                 uiOutput("SelectTeam_Awards"),
                 br(),
                 tabsetPanel(
-                  tabPanel("Summary"),
+                  tabPanel("Summary", reactableOutput("awards_all")),
                   tabPanel("Matt Hills Fielding Award"),
                   tabPanel("Champagne Moment"),
                   tabPanel("DoD"),

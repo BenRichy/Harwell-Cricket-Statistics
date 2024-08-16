@@ -169,6 +169,7 @@ shinyServer(function(input, output) {
     source("src/server/server_individual.R",local = TRUE)
     source("src/server/server_bowling_detailed.R",local = TRUE)
     source("src/server/server_batting_detailed.R",local = TRUE)
+    source("src/server/server_awards.R",local = TRUE)
     
 
     
