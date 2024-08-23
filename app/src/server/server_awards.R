@@ -27,6 +27,16 @@ awards_mapping <- tribble(
   "tgfp"   , "Toby Gallington Fair Play Award"
 )
 
+#filter data based on league selection
+observeEvent(c(input$team_scope_awards), {
+                 
+                 if(is.null(input$team_scope_awards)){
+                   input_team_scope <- league_names
+                 } else{
+                   input_team_scope <- input$team_scope_awards
+                 }
+                 
+
 #join match ids onto awards data
 awards_data_all_detail <- awards_data |> 
   left_join(match_dates,
@@ -38,7 +48,8 @@ awards_data_all_detail <- awards_data |>
          match_date,
          opposition,
          league_name,
-         nomination_summary)
+         nomination_summary) |> 
+  filter(league_name %in% input_team_scope)
 
 #Create summary dataset of all awards
 awards_data_all_summary <- awards_data_all_detail |> 
@@ -55,12 +66,24 @@ awards_data_all_summary <- awards_data_all_detail |>
          `Total Awards` = rowSums(across(where(is.numeric)), na.rm=TRUE)) |> 
   arrange(desc(`Total Awards`))
 
+awards_data_all_detail <- awards_data_all_detail |> 
+  select(
+  "Award Winner" = nominee,
+  Award = award_name,
+  "Match Date" = match_date,
+  Opposition = opposition,
+  "League Name" = league_name,
+  "Nomination Description" = nomination_summary
+)
+
 output$awards_all <- renderReactable({reactable(awards_data_all_summary, details = function(index) {
-  awards_data_all_detail_filter <- awards_data_all_detail[awards_data_all_detail$nominee == awards_data_all_summary$Person[index], ]
+  awards_data_all_detail_filter <- awards_data_all_detail[awards_data_all_detail$`Award Winner` == awards_data_all_summary$Person[index], ]
   htmltools::div(style = "padding: 1rem",
                  reactable(awards_data_all_detail_filter, outlined = TRUE)
   )
 })  
+})
+
 })
 
 
