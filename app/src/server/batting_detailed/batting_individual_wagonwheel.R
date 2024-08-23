@@ -82,7 +82,7 @@ add_segments(x = ~FieldX,
              hovertext = paste("Match Date:", batting_individual_wagon$Date,
                                "<br>Opposition:", batting_individual_wagon$`Bowling Team`,
                                "<br>Competition:", batting_individual_wagon$league_name,
-                               "<br>Runs:", batting_individual_wagon$Runs))  |> 
+                               "<br>Runs Scored:", batting_individual_wagon$Runs))  |> 
   layout(xaxis = list(title = '', 
                       showticklabels = FALSE,
                       showgrid = FALSE),

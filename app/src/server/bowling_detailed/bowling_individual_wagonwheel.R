@@ -67,7 +67,7 @@ observeEvent(input$bowling_wagon_oppo_individual, {
                  hovertext = paste("Match Date:", bowling_individual_wagon$Date,
                                    "<br>Opposition:", bowling_individual_wagon$`Batting Team`,
                                    "<br>Competition:", bowling_individual_wagon$league_name,
-                                   "<br>Runs:", bowling_individual_wagon$Runs))  |> 
+                                   "<br>Runs Conceded:", bowling_individual_wagon$Runs))  |> 
     layout(xaxis = list(title = '', 
                         showticklabels = FALSE,
                         showgrid = FALSE),
