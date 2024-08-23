@@ -109,7 +109,7 @@ dashboardPage(
                 tabPanel("Batting - Dismissals", plotlyOutput("individual_dismissal_pie")),
                 tabPanel("Batting - By Position", reactableOutput("individual_batting_summary_position")),
                 tabPanel("Batting - By Opposition", reactableOutput("individual_batting_summary_opposition")),
-                tabPanel("Batting - WagonWheel", fluidRow(column(3,uiOutput("SelectTeamBattingWagon_Individual"), column(8,plotlyOutput("individual_batting_wagon_plotly"))))),
+                tabPanel("Batting - WagonWheel", fluidRow(column(3,uiOutput("SelectTeamBattingWagon_Individual")), column(8,plotlyOutput("individual_batting_wagon_plotly")))),
                 tabPanel("Batting - % Runs", "In Progress"),
                 tabPanel("Bowling - Summary", 
                          div(style = "width: 700px", reactableOutput("individual_bowling_summary"))),
@@ -131,12 +131,13 @@ dashboardPage(
                 uiOutput("SelectTeam_Awards"),
                 br(),
                 tabsetPanel(
-                  tabPanel("Summary", reactableOutput("awards_all")),
-                  tabPanel("Matt Hills Fielding Award"),
-                  tabPanel("Champagne Moment"),
-                  tabPanel("DoD"),
-                  tabPanel("Man of the Match"),
-                  tabPanel("Toby Gallington Fair Play Award"))
+                  tabPanel("Summary", reactableOutput("awards_all"))#,
+                  #tabPanel("Matt Hills Fielding Award"),
+                  #tabPanel("Champagne Moment"),
+                  #tabPanel("DoD"),
+                  #tabPanel("Man of the Match"),
+                  #tabPanel("Toby Gallington Fair Play Award")
+                  )
             )
         )
     )
