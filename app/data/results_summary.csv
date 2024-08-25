@@ -1,39 +1,39 @@
-id,status,published,last_updated,league_id,competition_name,competition_id,competition_type,match_type,game_type,countdown_cricket,match_date,match_time,ground_name,ground_id,home_team_name,home_team_id,home_club_name,home_club_id,away_team_name,away_team_id,away_club_name,away_club_id,umpire_1_name,umpire_1_id,umpire_2_name,umpire_2_id,umpire_3_name,umpire_3_id,referee_name,referee_id,scorer_1_name,scorer_1_id,scorer_2_name,scorer_2_id,toss_won_by_team_id,toss,batted_first,no_of_overs,balls_per_innings,no_of_innings,result,result_description,result_applied_to,home_confirmed,away_confirmed,result_locked,scorecard_locked,match_notes,points,innings,league_name
-6622896,New,Yes,30/06/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,07/05/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,1st XI,259398,Golden Sparrows CC,21345,,,,,,,,,,,,,,,259398,0,,1,W,Golden Sparrows CC - 1st XI - Won,259398,false,false,false,false,,,,Cherwell Cricket League
-5403141,New,Yes,30/06/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,14/05/2022,13:00,Wantage & Grove Cricket Club,47898,3rd XI,35370,Challow & Childrey CC,1747,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,,,284082,45,,1,W,Challow & Childrey CC - 3rd XI - Won,35370,false,false,false,false,,,,Cherwell Cricket League
-5312484,New,Yes,30/06/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,21/05/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,1st XI,73774,Bampton-in-the-Bush CC,898,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,73774,40,,1,W,Bampton-in-the-Bush CC - 1st XI - Won,73774,false,true,false,false,,,,Cherwell Cricket League
-6622998,New,Yes,30/06/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,28/05/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,1st XI,146741,Chalgrove CC,1745,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,0,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League
-5453494,New,Yes,30/06/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,04/06/2022,,Wadham College,57503,3rd XI,204999,Oxenford CC,4939,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,204999,45,,1,W,Oxenford CC - 3rd XI - Won,204999,false,false,false,false,,,,Cherwell Cricket League
-6624284,New,Yes,02/07/2024,16935,Osberton Radiators Cup,64951,Cup,Limited Overs,Standard,no,06/06/2022,13:00,WBH Recreation Ground,5468,2nd XI,176674,Wootton & Boars Hill CC,7083,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,176674,Wootton & Boars Hill CC - 2nd XI won the toss and elected to field,284082,,,1,W,Wootton & Boars Hill CC - 2nd XI - Won,176674,false,false,false,false,,,,Cherwell Cricket League
-5178048,New,Yes,01/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,11/06/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,43557,Kingston Bagpuize CC,3758,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,43557,50,,1,W,Kingston Bagpuize CC - 2nd XI - Won,43557,false,false,false,false,,,,Cherwell Cricket League
-6623823,New,Yes,01/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,18/06/2022,13:00,Boundary Park,37957,3rd XI,107885,Didcot CC,2301,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,107885,Didcot CC - 3rd XI won the toss and elected to field,284082,0,,1,W,Didcot CC - 3rd XI - Won,107885,false,false,false,false,,,,Cherwell Cricket League
+id,status,published,last_updated,league_id,competition_name,competition_id,competition_type,match_type,game_type,countdown_cricket,match_date,match_time,ground_name,ground_id,home_team_name,home_team_id,home_club_name,home_club_id,away_team_name,away_team_id,away_club_name,away_club_id,umpire_1_name,umpire_1_id,umpire_2_name,umpire_2_id,umpire_3_name,umpire_3_id,referee_name,referee_id,scorer_1_name,scorer_1_id,scorer_2_name,scorer_2_id,toss_won_by_team_id,toss,batted_first,no_of_overs,balls_per_innings,no_of_innings,result,result_description,result_applied_to,home_confirmed,away_confirmed,result_locked,scorecard_locked,match_notes,points,innings,league_name,starting_runs,dismissal_penalty
+6622896,New,Yes,30/06/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,07/05/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,1st XI,259398,Golden Sparrows CC,21345,,,,,,,,,,,,,,,259398,0,,1,W,Golden Sparrows CC - 1st XI - Won,259398,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+5403141,New,Yes,30/06/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,14/05/2022,13:00,Wantage & Grove Cricket Club,47898,3rd XI,35370,Challow & Childrey CC,1747,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,,,284082,45,,1,W,Challow & Childrey CC - 3rd XI - Won,35370,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+5312484,New,Yes,30/06/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,21/05/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,1st XI,73774,Bampton-in-the-Bush CC,898,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,73774,40,,1,W,Bampton-in-the-Bush CC - 1st XI - Won,73774,false,true,false,false,,,,Cherwell Cricket League,NA,NA
+6622998,New,Yes,30/06/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,28/05/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,1st XI,146741,Chalgrove CC,1745,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,0,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+5453494,New,Yes,30/06/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,04/06/2022,,Wadham College,57503,3rd XI,204999,Oxenford CC,4939,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,204999,45,,1,W,Oxenford CC - 3rd XI - Won,204999,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6624284,New,Yes,02/07/2024,16935,Osberton Radiators Cup,64951,Cup,Limited Overs,Standard,no,06/06/2022,13:00,WBH Recreation Ground,5468,2nd XI,176674,Wootton & Boars Hill CC,7083,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,176674,Wootton & Boars Hill CC - 2nd XI won the toss and elected to field,284082,,,1,W,Wootton & Boars Hill CC - 2nd XI - Won,176674,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+5178048,New,Yes,01/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,11/06/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,43557,Kingston Bagpuize CC,3758,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,43557,50,,1,W,Kingston Bagpuize CC - 2nd XI - Won,43557,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6623823,New,Yes,01/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,18/06/2022,13:00,Boundary Park,37957,3rd XI,107885,Didcot CC,2301,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,107885,Didcot CC - 3rd XI won the toss and elected to field,284082,0,,1,W,Didcot CC - 3rd XI - Won,107885,false,false,false,false,,,,Cherwell Cricket League,NA,NA
 6041690,New,Yes,01/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,25/06/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,Saturday League side,64414,Letcombe CC,3918,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,45,,1,D,Draw,,false,true,false,false,"<p>Win&nbsp;lose&nbsp;draw,&nbsp;Letcombe&nbsp;cling&nbsp;on&nbsp;with&nbsp;Sam&nbsp;and&nbsp;Jerry&nbsp;batting&nbsp;out&nbsp;7&nbsp;overs&nbsp;for&nbsp;the&nbsp;draw</p>
-",,,Cherwell Cricket League
-6623826,New,Yes,01/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,02/07/2022,13:00,WBH Recreation Ground,5468,2nd XI,176674,Wootton & Boars Hill CC,7083,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,0,,1,A,Abandoned,,false,false,false,false,,,,Cherwell Cricket League
-6623828,New,Yes,02/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,09/07/2022,13:00,,,1st XI,259398,Golden Sparrows CC,21345,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,0,,1,W,Golden Sparrows CC - 1st XI - Won,259398,false,false,false,false,,,,Cherwell Cricket League
-5403151,New,Yes,02/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,16/07/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,35370,Challow & Childrey CC,1747,,,,,,,,,,,,,35370,Challow & Childrey CC - 3rd XI won the toss and elected to bat,35370,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League
-5312497,New,Yes,02/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,23/07/2022,13:00,Bampton Recreation Ground,19237,1st XI,73774,Bampton-in-the-Bush CC,898,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,73774,40,,1,W,Harwell International CC - 1st XI - Won,284082,true,false,false,false,,,,Cherwell Cricket League
-6623829,New,Yes,02/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,30/07/2022,13:00,Chalgrove C C,39414,1st XI,146741,Chalgrove CC,1745,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,146741,0,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League
-5484918,New,Yes,04/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,06/08/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,204999,Oxenford CC,4939,,,,,,,,,,,,,204999,Oxenford CC - 3rd XI won the toss and elected to bat,204999,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League
-5178058,New,Yes,04/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,13/08/2022,13:00,The Kingston Bagpuize Sportsfield,12360,2nd XI,43557,Kingston Bagpuize CC,3758,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,43557,Kingston Bagpuize CC - 2nd XI won the toss and elected to bat,43557,50,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League
-6623830,New,Yes,04/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,20/08/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,107885,Didcot CC,2301,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,107885,0,,1,W,Didcot CC - 3rd XI - Won,107885,false,false,false,false,,,,Cherwell Cricket League
-6041953,New,Yes,04/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,27/08/2022,12:30,Letcombe Cricket Club,6582,Saturday League side,64414,Letcombe CC,3918,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League
-6623831,New,Yes,04/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,03/09/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,176674,Wootton & Boars Hill CC,7083,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,176674,0,,1,W,Wootton & Boars Hill CC - 2nd XI - Won,176674,false,false,false,false,,,,Cherwell Cricket League
-6626484,New,Yes,05/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,06/05/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,35370,Challow & Childrey CC,1747,,,,,,,,,,,,,,,,0,,1,A,Abandoned,,false,false,false,false,,,,Cherwell Cricket League
-6626485,New,Yes,05/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,13/05/2023,13:00,,,1st XI,211958,Marcham CC,4207,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,211958,0,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League
-5978070,New,Yes,05/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,20/05/2023,13:00,Marston Road Sports Ground,57672,4th XI,40064,Oxford CC,4941,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,,,,45,,1,A,Abandoned,,false,false,false,false,,,,Cherwell Cricket League
-6626486,New,Yes,06/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,27/05/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,77936,Abingdon Vale CC,599,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,0,,1,W,Abingdon Vale CC - 3rd XI - Won,77936,false,false,false,false,,,,Cherwell Cricket League
-6626488,New,Yes,06/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,03/06/2023,13:00,Boundary Park,37957,3rd XI,107885,Didcot CC,2301,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,0,,1,W,Didcot CC - 3rd XI - Won,107885,false,false,false,false,,,,Cherwell Cricket League
-6626490,New,Yes,06/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,10/06/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,43557,Kingston Bagpuize CC,3758,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,0,,1,D,Draw,,false,false,false,false,,,,Cherwell Cricket League
-5834302,New,Yes,05/09/2023,16935,Division 7C,112647,League,Limited Overs,Standard,no,17/06/2023,13:00,,,Saturday XI,190569,"Uffington CC, Oxon",6501,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,190569,45,,1,W,"Uffington CC, Oxon - Saturday XI - Won",190569,false,false,false,false,,,,Cherwell Cricket League
-6626491,New,Yes,06/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,24/06/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,210130,Wolvercote CC,7024,,,,,,,,,,,,,210130,Wolvercote CC - 3rd XI won the toss and elected to bat,210130,0,,1,D,Draw,,false,false,false,false,,,,Cherwell Cricket League
-6626492,New,Yes,06/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,01/07/2023,13:00,Dorchester Recreation Ground,33082,2nd XI,356209,Dorchester-on-Thames CC,9839,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,356209,Dorchester-on-Thames CC - 2nd XI won the toss and elected to field,284082,0,,1,D,Draw,,false,false,false,false,,,,Cherwell Cricket League
-6626494,New,Yes,06/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,08/07/2023,13:00,Letcombe Cricket Club,6582,3rd XI,35370,Challow & Childrey CC,1747,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,35370,Challow & Childrey CC - 3rd XI won the toss and elected to field,284082,0,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League
-6626496,New,Yes,06/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,15/07/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,1st XI,211958,Marcham CC,4207,,,,,,,,,,,,,211958,Marcham CC - 1st XI won the toss and elected to field,284082,0,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League
-5978085,New,Yes,07/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,22/07/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,4th XI,40064,Oxford CC,4941,,,,,,,,,,,,,,,,NA,,1,A,Abandoned,,false,false,false,false,,,,Cherwell Cricket League
-6626498,New,Yes,07/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,29/07/2023,13:00,Abingdon Vale CC,14131,3rd XI,77936,Abingdon Vale CC,599,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,77936,0,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League
-6626499,New,Yes,07/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,05/08/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,107885,Didcot CC,2301,,,,,,,,,,,,,,,,0,,1,A,Abandoned,,false,false,false,false,,,,Cherwell Cricket League
-6626500,New,Yes,07/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,12/08/2023,13:00,The Kingston Bagpuize Sportsfield,12360,2nd XI,43557,Kingston Bagpuize CC,3758,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,0,,1,W,Kingston Bagpuize CC - 2nd XI - Won,43557,false,false,false,false,,,,Cherwell Cricket League
+",,,Cherwell Cricket League,NA,NA
+6623826,New,Yes,01/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,02/07/2022,13:00,WBH Recreation Ground,5468,2nd XI,176674,Wootton & Boars Hill CC,7083,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,0,,1,A,Abandoned,,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6623828,New,Yes,02/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,09/07/2022,13:00,,,1st XI,259398,Golden Sparrows CC,21345,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,0,,1,W,Golden Sparrows CC - 1st XI - Won,259398,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+5403151,New,Yes,02/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,16/07/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,35370,Challow & Childrey CC,1747,,,,,,,,,,,,,35370,Challow & Childrey CC - 3rd XI won the toss and elected to bat,35370,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+5312497,New,Yes,02/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,23/07/2022,13:00,Bampton Recreation Ground,19237,1st XI,73774,Bampton-in-the-Bush CC,898,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,73774,40,,1,W,Harwell International CC - 1st XI - Won,284082,true,false,false,false,,,,Cherwell Cricket League,NA,NA
+6623829,New,Yes,02/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,30/07/2022,13:00,Chalgrove C C,39414,1st XI,146741,Chalgrove CC,1745,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,146741,0,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+5484918,New,Yes,04/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,06/08/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,204999,Oxenford CC,4939,,,,,,,,,,,,,204999,Oxenford CC - 3rd XI won the toss and elected to bat,204999,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+5178058,New,Yes,04/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,13/08/2022,13:00,The Kingston Bagpuize Sportsfield,12360,2nd XI,43557,Kingston Bagpuize CC,3758,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,43557,Kingston Bagpuize CC - 2nd XI won the toss and elected to bat,43557,50,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6623830,New,Yes,04/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,20/08/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,107885,Didcot CC,2301,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,107885,0,,1,W,Didcot CC - 3rd XI - Won,107885,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6041953,New,Yes,04/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,27/08/2022,12:30,Letcombe Cricket Club,6582,Saturday League side,64414,Letcombe CC,3918,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6623831,New,Yes,04/07/2024,16935,Division 7C,103293,League,Limited Overs,Standard,no,03/09/2022,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,176674,Wootton & Boars Hill CC,7083,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,176674,0,,1,W,Wootton & Boars Hill CC - 2nd XI - Won,176674,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6626484,New,Yes,05/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,06/05/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,35370,Challow & Childrey CC,1747,,,,,,,,,,,,,,,,0,,1,A,Abandoned,,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6626485,New,Yes,05/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,13/05/2023,13:00,,,1st XI,211958,Marcham CC,4207,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,211958,0,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+5978070,New,Yes,05/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,20/05/2023,13:00,Marston Road Sports Ground,,4th XI,40064,Oxford CC,4941,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,,,,45,,1,A,Abandoned,,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6626486,New,Yes,06/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,27/05/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,77936,Abingdon Vale CC,599,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,0,,1,W,Abingdon Vale CC - 3rd XI - Won,77936,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6626488,New,Yes,06/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,03/06/2023,13:00,Boundary Park,37957,3rd XI,107885,Didcot CC,2301,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,0,,1,W,Didcot CC - 3rd XI - Won,107885,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6626490,New,Yes,06/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,10/06/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,43557,Kingston Bagpuize CC,3758,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,0,,1,D,Draw,,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+5834302,New,Yes,05/09/2023,16935,Division 7C,112647,League,Limited Overs,Standard,no,17/06/2023,13:00,,,Saturday XI,190569,"Uffington CC, Oxon",6501,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,190569,45,,1,W,"Uffington CC, Oxon - Saturday XI - Won",190569,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6626491,New,Yes,06/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,24/06/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,210130,Wolvercote CC,7024,,,,,,,,,,,,,210130,Wolvercote CC - 3rd XI won the toss and elected to bat,210130,0,,1,D,Draw,,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6626492,New,Yes,06/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,01/07/2023,13:00,Dorchester Recreation Ground,33082,2nd XI,356209,Dorchester-on-Thames CC,9839,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,356209,Dorchester-on-Thames CC - 2nd XI won the toss and elected to field,284082,0,,1,D,Draw,,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6626494,New,Yes,06/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,08/07/2023,13:00,Letcombe Cricket Club,6582,3rd XI,35370,Challow & Childrey CC,1747,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,35370,Challow & Childrey CC - 3rd XI won the toss and elected to field,284082,0,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6626496,New,Yes,06/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,15/07/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,1st XI,211958,Marcham CC,4207,,,,,,,,,,,,,211958,Marcham CC - 1st XI won the toss and elected to field,284082,0,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+5978085,New,Yes,07/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,22/07/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,4th XI,40064,Oxford CC,4941,,,,,,,,,,,,,,,,NA,,1,A,Abandoned,,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6626498,New,Yes,07/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,29/07/2023,13:00,Abingdon Vale CC,14131,3rd XI,77936,Abingdon Vale CC,599,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,77936,0,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6626499,New,Yes,07/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,05/08/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,107885,Didcot CC,2301,,,,,,,,,,,,,,,,0,,1,A,Abandoned,,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6626500,New,Yes,07/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,12/08/2023,13:00,The Kingston Bagpuize Sportsfield,12360,2nd XI,43557,Kingston Bagpuize CC,3758,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,0,,1,W,Kingston Bagpuize CC - 2nd XI - Won,43557,false,false,false,false,,,,Cherwell Cricket League,NA,NA
 5834324,New,Yes,07/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,19/08/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,Saturday XI,190569,"Uffington CC, Oxon",6501,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,190569,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Uffington CC, Oxon Saturday XI Innings</b><br/>
 20.6 Uffington CC, Oxon Saturday XI: 50 runs in 20.5 overs, 70 minutes, 5 extras<br/>25.4 Hassan Safdar: 50 runs in 73 balls, 67 minutes (6x4)<br/>29.1 Uffington CC, Oxon Saturday XI: 100 runs in 29.1 overs, 107 minutes, 8 extras
 <br/>
@@ -41,19 +41,19 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Harwell International CC 1st XI Innings</b><br/>
 13.5 1st Wicket: 50 runs in 83 balls, 52 minutes, Graham Stevens 31 (44), Rakesh Shah 10 (39), 9 extras<br/>13.5 Harwell International CC 1st XI: 50 runs in 13.5 overs, 52 minutes, 9 extras<br/>18.2 Graham Stevens: 50 runs in 62 balls, 69 minutes (7x4)<br/>25.4 Harwell International CC 1st XI: 100 runs in 25.4 overs, 104 minutes, 13 extras
 <br/>
-",,,Cherwell Cricket League
-6626501,New,Yes,07/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,26/08/2023,13:00,,,3rd XI,210130,Wolvercote CC,7024,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,210130,Wolvercote CC - 3rd XI won the toss and elected to field,284082,0,,1,A,Abandoned,,false,false,false,false,,,,Cherwell Cricket League
-6626502,New,Yes,07/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,02/09/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,356209,Dorchester-on-Thames CC,9839,,,,,,,,,,,,,356209,Dorchester-on-Thames CC - 2nd XI won the toss and elected to bat,356209,0,,1,W,Dorchester-on-Thames CC - 2nd XI - Won,356209,false,false,false,false,,,,Cherwell Cricket League
+",,,Cherwell Cricket League,NA,NA
+6626501,New,Yes,07/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,26/08/2023,13:00,,,3rd XI,210130,Wolvercote CC,7024,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,210130,Wolvercote CC - 3rd XI won the toss and elected to field,284082,0,,1,A,Abandoned,,false,false,false,false,,,,Cherwell Cricket League,NA,NA
+6626502,New,Yes,07/07/2024,16935,Division 7C,112647,League,Limited Overs,Standard,no,02/09/2023,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,356209,Dorchester-on-Thames CC,9839,,,,,,,,,,,,,356209,Dorchester-on-Thames CC - 2nd XI won the toss and elected to bat,356209,0,,1,W,Dorchester-on-Thames CC - 2nd XI - Won,356209,false,false,false,false,,,,Cherwell Cricket League,NA,NA
 6366477,New,Yes,28/04/2024,,,,Friendly,Limited Overs,Standard,no,28/04/2024,14:00,Witney Mills,38266,Friendly XI,105141,Oxfordshire County Council Staff CC,4947,Friendly XI,15138,Harwell International CC,3220,,,,,,,,,,,,,,,,,,1,C,Cancelled,,false,false,false,false,"<p>Rained&nbsp;off</p>
-",,,NA
-6586586,New,Yes,04/05/2024,,,,Friendly,Limited Overs,Standard,no,04/05/2024,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,248249,Garsington CC,2861,,,,,,,,,,,,,248249,Garsington CC - 2nd XI won the toss and elected to field,284082,,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Harwell International CC 1st XI Innings</b><br/>
+",,,NA,NA,NA
+6586586,New,Yes,26/07/2024,,,,Friendly,Limited Overs,Standard,no,04/05/2024,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,248249,Garsington CC,2861,,,,,,,,,,,,,248249,Garsington CC - 2nd XI won the toss and elected to field,284082,,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Harwell International CC 1st XI Innings</b><br/>
 9.6 Harwell International CC 1st XI: 50 runs in 9.5 overs, 43 minutes, 20 extras<br/>22.4 Harwell International CC 1st XI: 100 runs in 22.4 overs, 93 minutes, 29 extras<br/>24.3 Matt Davies: 50 runs in 83 balls, 100 minutes (8x4)
 <br/>
-",,,NA
+",,,NA,NA,NA
 6279722,New,Yes,05/05/2024,,,,Friendly,Limited Overs,Standard,no,05/05/2024,13:30,Harwell,11535,Friendly XI,15138,Harwell International CC,3220,Sunday XI,53920,Goring on Thames CC,2946,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to bat,15138,,,1,A,Abandoned,,false,true,false,false,"<b>Harwell International CC Friendly XI Innings</b><br/>
 15.4 Harwell International CC Friendly XI: 50 runs in 15.4 overs, 62 minutes, 3 extras<br/>22.7 5th Wicket: 50 runs in 55 balls, 36 minutes, Graham Stevens 36 (37), Sandeep Gumudelli 11 (18), 4 extras<br/>23.3 Harwell International CC Friendly XI: 100 runs in 23.3 overs, 95 minutes, 8 extras<br/>25.1 Graham Stevens: 50 runs in 63 balls, 64 minutes (8x4)
 <br/>
-",,,NA
+",,,NA,NA,NA
 6289938,New,Yes,08/05/2024,16676,Division 3 North,119698,League,Limited Overs,Standard,no,08/05/2024,18:00,Harwell,11535,Midweek XI,15137,Harwell International CC,3220,Midweek XI,216693,Metal Box CC,11949,,,,,,,,,,,,,15137,Harwell International CC - Midweek XI won the toss and elected to field,216693,20,,1,W,Harwell International CC - Midweek XI - Won,15137,false,false,false,false,"<b>Metal Box CC Midweek XI Innings</b><br/>
 10.3 Metal Box CC Midweek XI: 50 runs in 10.3 overs, 41 minutes, 20 extras<br/>18.4 Metal Box CC Midweek XI: 100 runs in 18.4 overs, 70 minutes, 34 extras
 <br/>
@@ -61,7 +61,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Harwell International CC Midweek XI Innings</b><br/>
 7.1 Harwell International CC Midweek XI: 50 runs in 7.1 overs, 23 minutes, 13 extras<br/>17.3 Harwell International CC Midweek XI: 100 runs in 17.3 overs, 62 minutes, 28 extras
 <br/>
-",,,Downs League
+",,,Downs League,NA,NA
 6309995,New,Yes,14/05/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,11/05/2024,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,1st XI,356211,Letcombe CC,3918,,,,,,,,,,,,,356211,Letcombe CC - 1st XI won the toss and elected to bat,356211,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,true,false,false,"<p><strong>Letcombe&nbsp;CC&nbsp;1st&nbsp;XI&nbsp;Innings</strong><br />
 13.5&nbsp;Letcombe&nbsp;CC&nbsp;1st&nbsp;XI:&nbsp;50&nbsp;runs&nbsp;in&nbsp;13.5&nbsp;overs,&nbsp;54&nbsp;minutes,&nbsp;1&nbsp;extra<br />
 26.7&nbsp;Letcombe&nbsp;CC&nbsp;1st&nbsp;XI:&nbsp;100&nbsp;runs&nbsp;in&nbsp;26.5&nbsp;overs,&nbsp;107&nbsp;minutes,&nbsp;10&nbsp;extras<br />
@@ -71,7 +71,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 21.2&nbsp;Harwell&nbsp;International&nbsp;CC&nbsp;1st&nbsp;XI:&nbsp;100&nbsp;runs&nbsp;in&nbsp;21.2&nbsp;overs,&nbsp;85&nbsp;minutes,&nbsp;13&nbsp;extras<br />
 21.5&nbsp;Max&nbsp;Schofield:&nbsp;50&nbsp;runs&nbsp;in&nbsp;55&nbsp;balls,&nbsp;86&nbsp;minutes&nbsp;(8x4)<br />
 25.1&nbsp;3rd&nbsp;Wicket:&nbsp;50&nbsp;runs&nbsp;in&nbsp;55&nbsp;balls,&nbsp;37&nbsp;minutes,&nbsp;Max&nbsp;Schofield&nbsp;35&nbsp;(28),&nbsp;Graham&nbsp;Stevens&nbsp;14&nbsp;(27),&nbsp;1&nbsp;extra</p>
-",,,Cherwell League
+",,,Cherwell League,NA,NA
 6588534,New,Yes,12/05/2024,,,,Friendly,Limited Overs,Standard,no,12/05/2024,14:00,Harwell,11535,Friendly XI,15138,Harwell International CC,3220,Friendly XI,201547,Holton & Wheatley CC,12627,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to bat,15138,,,1,W,Holton & Wheatley CC - Friendly XI - Won,201547,false,false,false,false,"<b>Harwell International CC Friendly XI Innings</b><br/>
 13.5 Harwell International CC Friendly XI: 50 runs in 13.4 overs, 59 minutes, 2 extras<br/>34.4 Harwell International CC Friendly XI: 100 runs in 34.4 overs, 145 minutes, 13 extras
 <br/>
@@ -79,7 +79,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Holton & Wheatley CC Friendly XI Innings</b><br/>
 7.3 1st Wicket: 50 runs in 44 balls, 32 minutes, C Walia 37 (18), B Malhutra 15 (26), 1 extra<br/>7.3 Holton & Wheatley CC Friendly XI: 50 runs in 7.2 overs, 32 minutes, 1 extra<br/>7.6 C Walia: 50 runs in 21 balls, 34 minutes (5x4, 5x6)<br/>10.3 Holton & Wheatley CC Friendly XI: 100 runs in 10.3 overs, 56 minutes, 6 extras
 <br/>
-",,,NA
+",,,NA,NA,NA
 6289955,New,Yes,15/05/2024,16676,Division 3 North,119698,League,Limited Overs,Standard,no,15/05/2024,18:00,Steventon CC,,Midweek XI,230019,Steventon CC,6038,Midweek XI,15137,Harwell International CC,3220,Ian Royle,4973200,,,,,,,Rebecca Lake,5850964,,,230019,Steventon CC - Midweek XI won the toss and elected to field,15137,20,,1,W,Harwell International CC - Midweek XI - Won,15137,false,false,false,false,"<b>Harwell International CC Midweek XI Innings</b><br/>
 6.6 1st Wicket: 50 runs in 39 balls, 24 minutes, James Goldsby-West 24 (21), Paul Eccleston 18 (18), 8 extras<br/>6.6 Harwell International CC Midweek XI: 50 runs in 7.0 overs, 24 minutes, 8 extras<br/>16.1 Harwell International CC Midweek XI: 100 runs in 16.1 overs, 61 minutes, 13 extras
 <br/>
@@ -87,8 +87,8 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Steventon CC Midweek XI Innings</b><br/>
 8.5 Steventon CC Midweek XI: 50 runs in 8.5 overs, 29 minutes, 17 extras<br/>15.2 Steventon CC Midweek XI: 100 runs in 15.2 overs, 56 minutes, 32 extras
 <br/>
-",,,Downs League
-6309997,New,Yes,21/06/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,18/05/2024,13:00,Add New Ground,,3rd XI,43570,Cumnor CC,2190,1st XI,284082,Harwell International CC,3220,,,Martin Friend,6287797,,,,,,,,,43570,Cumnor CC - 3rd XI won the toss and elected to field,284082,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell League
+",,,Downs League,NA,NA
+6309997,New,Yes,21/06/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,18/05/2024,13:00,Add New Ground,,3rd XI,43570,Cumnor CC,2190,1st XI,284082,Harwell International CC,3220,,,Martin Friend,6287797,,,,,,,,,43570,Cumnor CC - 3rd XI won the toss and elected to field,284082,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,,,,Cherwell League,NA,NA
 6407042,New,Yes,19/05/2024,,,,Friendly,Limited Overs,Standard,no,19/05/2024,14:00,Harwell,11535,Friendly XI,15138,Harwell International CC,3220,Friendly XI,121326,Wantage & Grove CC,6648,,,,,,,,,,,,,121326,Wantage & Grove CC - Friendly XI won the toss and elected to bat,121326,,,1,W,Wantage & Grove CC - Friendly XI - Won,121326,false,false,false,false,"<b>Wantage & Grove CC Friendly XI Innings</b><br/>
 8.1 Wantage & Grove CC Friendly XI: 50 runs in 8.1 overs, 38 minutes, 7 extras<br/>9.1 2nd Wicket: 50 runs in 41 balls, 30 minutes, Steve Bramley 23 (20), Chris Rolls 19 (21), 8 extras<br/>15.4 Wantage & Grove CC Friendly XI: 100 runs in 15.3 overs, 76 minutes, 16 extras<br/>22.3 Chris Rolls: 50 runs in 59 balls, 92 minutes (6x4)<br/>23.4 Wantage & Grove CC Friendly XI: 150 runs in 23.4 overs, 112 minutes, 25 extras<br/>29.4 4th Wicket: 50 runs in 52 balls, 37 minutes, Chris Rolls 34 (34), Tom Sparrow 14 (18), 2 extras<br/>33.3 Wantage & Grove CC Friendly XI: 200 runs in 33.3 overs, 151 minutes, 26 extras
 <br/>
@@ -96,7 +96,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Harwell International CC Friendly XI Innings</b><br/>
 16.5 Harwell International CC Friendly XI: 50 runs in 16.5 overs, 61 minutes, 7 extras
 <br/>
-",,,NA
+",,,NA,NA,NA
 6310005,New,Yes,21/06/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,25/05/2024,13:00,Steventon Green,,1st XI,189998,Steventon CC,6038,1st XI,284082,Harwell International CC,3220,Joe Oldfield,6362242,S Yakkalakota,6375132,,,,,Rebecca Lake,5850964,,,189998,Steventon CC - 1st XI won the toss and elected to bat,189998,45,,1,W,Steventon CC - 1st XI - Won,189998,false,false,false,false,"<b>Steventon CC 1st XI Innings</b><br/>
 17.4 Steventon CC 1st XI: 50 runs in 17.4 overs, 74 minutes, 12 extras<br/>36.3 Steventon CC 1st XI: 100 runs in 36.3 overs, 141 minutes, 15 extras
 <br/>
@@ -104,8 +104,8 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Harwell International CC 1st XI Innings</b><br/>
 6.4 T Cannon: 5 wickets (3.4-1-4-5)<br/>15.2 Harwell International CC 1st XI: 50 runs in 15.1 overs, 63 minutes, 9 extras<br/>34.3 Harwell International CC 1st XI: 100 runs in 34.3 overs, 132 minutes, 20 extras
 <br/>
-",,,Cherwell League
-6588537,New,Yes,07/06/2024,,,,Friendly,Limited Overs,Standard,no,26/05/2024,13:30,Wadham College,57503,Friendly XI,76718,Oxenford CC,4939,Friendly XI,15138,Harwell International CC,3220,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to field,76718,,,1,A,Abandoned,,false,false,false,false,,,,NA
+",,,Cherwell League,NA,NA
+6588537,New,Yes,07/06/2024,,,,Friendly,Limited Overs,Standard,no,26/05/2024,13:30,Wadham College,57503,Friendly XI,76718,Oxenford CC,4939,Friendly XI,15138,Harwell International CC,3220,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to field,76718,,,1,A,Abandoned,,false,false,false,false,,,,NA,NA,NA
 6289991,New,Yes,29/05/2024,16676,Division 3 North,119698,League,Limited Overs,Standard,no,29/05/2024,18:00,Harwell,11535,Midweek XI,15137,Harwell International CC,3220,Downs 2nd XI,354155,Didcot CC,2301,,,,,,,,,,,,,354155,Didcot CC - Downs 2nd XI won the toss and elected to bat,354155,20,,1,W,Harwell International CC - Midweek XI - Won,15137,false,false,false,false,"<b>Didcot CC Downs 2nd XI Innings</b><br/>
 8.4 Didcot CC Downs 2nd XI: 50 runs in 8.4 overs, 31 minutes, 10 extras<br/>16.5 Didcot CC Downs 2nd XI: 100 runs in 16.5 overs, 64 minutes, 14 extras<br/>18.5 4th Wicket: 50 runs in 35 balls, 24 minutes, Adam McBrien 21 (15), James Head 28 (20), 4 extras<br/>19.2 Adam McBrien: 50 runs in 47 balls, 73 minutes (6x4, 1x6)
 <br/>
@@ -113,7 +113,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Harwell International CC Midweek XI Innings</b><br/>
 6.6 Harwell International CC Midweek XI: 50 runs in 7.0 overs, 22 minutes, 28 extras<br/>15.5 Harwell International CC Midweek XI: 100 runs in 15.5 overs, 54 minutes, 45 extras
 <br/>
-",,,Downs League
+",,,Downs League,NA,NA
 6310007,New,Yes,01/06/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,01/06/2024,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,77936,Abingdon Vale CC,599,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,77936,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Abingdon Vale CC 3rd XI Innings</b><br/>
 21.3 Toby Gallington: 5 wickets (6.3-1-10-5)
 <br/>
@@ -121,7 +121,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Harwell International CC 1st XI Innings</b><br/>
 12.3 Harwell International CC 1st XI: 50 runs in 12.3 overs, 61 minutes, 15 extras
 <br/>
-",,,Cherwell League
+",,,Cherwell League,NA,NA
 6290009,New,Yes,05/06/2024,16676,Division 3 North,119698,League,Limited Overs,Standard,no,05/06/2024,18:00,Harwell,11535,Midweek XI,15137,Harwell International CC,3220,1st XI,234429,Evotec CC,18257,,,,,,,,,,,,,15137,Harwell International CC - Midweek XI won the toss and elected to field,234429,20,,1,W,Evotec CC - 1st XI - Won,234429,false,false,false,false,"<b>Evotec CC 1st XI Innings</b><br/>
 7.5 Evotec CC 1st XI: 50 runs in 7.5 overs, 30 minutes, 17 extras<br/>9.1 3rd Wicket: 50 runs in 33 balls, 23 minutes, James Grosvenor 30 (22), Vikram Bagwani 9 (11), 11 extras<br/>11.6 James Grosvenor: 50 runs in 36 balls, 45 minutes (8x4)<br/>14.3 Evotec CC 1st XI: 100 runs in 14.3 overs, 56 minutes, 19 extras<br/>19.3 Evotec CC 1st XI: 150 runs in 19.3 overs, 74 minutes, 23 extras<br/>19.4 James Grosvenor: 100 runs in 64 balls, 74 minutes (14x4, 1x6)
 <br/>
@@ -129,7 +129,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Harwell International CC Midweek XI Innings</b><br/>
 9.4 Harwell International CC Midweek XI: 50 runs in 9.4 overs, 27 minutes, 17 extras<br/>19.1 Harwell International CC Midweek XI: 100 runs in 19.1 overs, 58 minutes, 31 extras<br/>19.8 N Patel: 5 wickets (2-0-9-5)
 <br/>
-",,,Downs League
+",,,Downs League,NA,NA
 6310013,New,Yes,08/06/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,08/06/2024,13:00,Dorchester Recreation Ground,33082,2nd XI,356209,Dorchester-on-Thames CC,9839,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,356209,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Dorchester-on-Thames CC 2nd XI Innings</b><br/>
 10.1 Dorchester-on-Thames CC 2nd XI: 50 runs in 10.1 overs, 43 minutes, 11 extras<br/>21.3 Dorchester-on-Thames CC 2nd XI: 100 runs in 21.3 overs, 79 minutes, 18 extras<br/>31.4 Keir Walker: 50 runs in 77 balls, 92 minutes (7x4)
 <br/>
@@ -137,15 +137,15 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Harwell International CC 1st XI Innings</b><br/>
 10.1 Harwell International CC 1st XI: 50 runs in 10.1 overs, 42 minutes, 4 extras<br/>22.4 Harwell International CC 1st XI: 100 runs in 22.3 overs, 92 minutes, 9 extras
 <br/>
-",,,Cherwell League
-6306185,New,Yes,09/06/2024,,,,Friendly,Limited Overs,Standard,no,09/06/2024,13:00,Harwell,,Friendly XI,15138,Harwell International CC,3220,Friendly XI,196653,Ewelme & Benson CC,2633,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to field,196653,,,1,W,Ewelme & Benson CC - Friendly XI - Won,196653,false,false,false,false,"<b>Ewelme & Benson CC Friendly XI Innings</b><br/>
+",,,Cherwell League,NA,NA
+6306185,New,Yes,17/08/2024,,,,Friendly,Limited Overs,Standard,no,09/06/2024,13:00,Harwell,,Friendly XI,15138,Harwell International CC,3220,Friendly XI,196653,Ewelme & Benson CC,2633,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to field,196653,,,1,W,Ewelme & Benson CC - Friendly XI - Won,196653,false,true,false,false,"<b>Ewelme & Benson CC Friendly XI Innings</b><br/>
 9.4 Ewelme & Benson CC Friendly XI: 50 runs in 9.3 overs, 38 minutes, 10 extras<br/>11.4 2nd Wicket: 50 runs in 61 balls, 35 minutes, Joe Maggs 20 (30), Keir Walker 20 (31), 10 extras<br/>16.1 Ewelme & Benson CC Friendly XI: 100 runs in 16.0 overs, 60 minutes, 18 extras<br/>20.2 Keir Walker: 50 runs in 55 balls, 74 minutes (7x4)<br/>23.5 Ewelme & Benson CC Friendly XI: 150 runs in 23.5 overs, 96 minutes, 29 extras<br/>28.4 4th Wicket: 50 runs in 36 balls, 23 minutes, Keir Walker 24 (14), Fabian Mcelwaine-Johnn 22 (22), 6 extras<br/>28.6 Ewelme & Benson CC Friendly XI: 200 runs in 28.4 overs, 117 minutes, 34 extras<br/>34.3 Keir Walker: 100 runs in 103 balls, 131 minutes (14x4)
 <br/>
 <br/>
 <b>Harwell International CC Friendly XI Innings</b><br/>
 15.2 Harwell International CC Friendly XI: 50 runs in 15.2 overs, 51 minutes, 6 extras<br/>19.7 2nd Wicket: 50 runs in 58 balls, 36 minutes, Dan Strangward 18 (34), Jamie Ross 32 (24), 3 extras<br/>23.1 Harwell International CC Friendly XI: 100 runs in 23.1 overs, 82 minutes, 9 extras<br/>23.2 Jamie Ross: 50 runs in 34 balls, 47 minutes (9x4)<br/>30.4 Dan Strangward: 50 runs in 104 balls, 109 minutes (7x4)<br/>33.6 Harwell International CC Friendly XI: 150 runs in 34.0 overs, 122 minutes, 13 extras
 <br/>
-",,,NA
+",,,NA,NA,NA
 6290026,New,Yes,12/06/2024,16676,Division 3 North,119698,League,Limited Overs,Standard,no,12/06/2024,18:00,Boundary Park Pitch 2,59099,Midweek XI,216693,Metal Box CC,11949,Midweek XI,15137,Harwell International CC,3220,,,,,,,,,,,,,15137,Harwell International CC - Midweek XI won the toss and elected to bat,15137,20,,1,W,Harwell International CC - Midweek XI - Won,15137,false,false,false,false,"<b>Harwell International CC Midweek XI Innings</b><br/>
 7.3 Harwell International CC Midweek XI: 50 runs in 7.3 overs, 28 minutes, 20 extras<br/>8.4 3rd Wicket: 50 runs in 28 balls, 21 minutes, James Goldsby-West 17 (18), Jayesh Manwani 14 (10), 19 extras<br/>13.6 Harwell International CC Midweek XI: 100 runs in 14.0 overs, 49 minutes, 25 extras
 <br/>
@@ -153,7 +153,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Metal Box CC Midweek XI Innings</b><br/>
 10.1 Metal Box CC Midweek XI: 50 runs in 10.1 overs, 38 minutes, 21 extras<br/>15.2 5th Wicket: 50 runs in 33 balls, 22 minutes, Josh Cole 23 (16), Liam Cole 10 (17), 19 extras<br/>16.2 Josh Cole: 50 runs in 44 balls, 57 minutes (7x4)<br/>16.6 Metal Box CC Midweek XI: 100 runs in 17.0 overs, 59 minutes, 28 extras
 <br/>
-",,,Downs League
+",,,Downs League,NA,NA
 6310017,New,Yes,17/06/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,15/06/2024,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,35370,Challow & Childrey CC,1747,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,35370,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Challow & Childrey CC 3rd XI Innings</b><br/>
 29.3 Challow & Childrey CC 3rd XI: 50 runs in 29.3 overs, 104 minutes, 15 extras
 <br/>
@@ -161,7 +161,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Harwell International CC 1st XI Innings</b><br/>
 20.5 Harwell International CC 1st XI: 50 runs in 20.5 overs, 72 minutes, 4 extras
 <br/>
-",,,Cherwell League
+",,,Cherwell League,NA,NA
 6588538,New,Yes,17/06/2024,,,,Friendly,Limited Overs,Standard,no,16/06/2024,00:00,Harwell,11535,Friendly XI,15138,Harwell International CC,3220,Friendly XI,87484,"Appleton CC, Oxon",736,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to field,87484,,,1,W,Harwell International CC - Friendly XI - Won,15138,false,true,false,false,"<b>Appleton CC, Oxon Friendly XI Innings</b><br/>
 12.4 Appleton CC, Oxon Friendly XI: 50 runs in 12.3 overs, 58 minutes, 3 extras<br/>15.1 3rd Wicket: 50 runs in 29 balls, 24 minutes, A Gilkes 33 (15), Phil Atkinson 16 (14), 1 extra<br/>16.2 Appleton CC, Oxon Friendly XI: 100 runs in 16.2 overs, 75 minutes, 3 extras<br/>16.6 A Gilkes: 50 runs in 31 balls, 49 minutes (7x4, 2x6)<br/>20.1 3rd Wicket: 100 runs in 59 balls, 49 minutes, A Gilkes 65 (32), Phil Atkinson 32 (27), 3 extras<br/>23.3 Appleton CC, Oxon Friendly XI: 150 runs in 23.3 overs, 105 minutes, 6 extras<br/>35.6 A Gilkes: 100 runs in 90 balls, 130 minutes (15x4, 2x6)<br/>35.7 Appleton CC, Oxon Friendly XI: 200 runs in 35.5 overs, 157 minutes, 15 extras<br/>39.6 7th Wicket: 50 runs in 39 balls, 29 minutes, A Gilkes 35 (34), - Timmins 2 (5), 14 extras
 <br/>
@@ -169,7 +169,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Harwell International CC Friendly XI Innings</b><br/>
 8.2 Harwell International CC Friendly XI: 50 runs in 8.2 overs, 36 minutes, 8 extras<br/>11.8 5th Wicket: 50 runs in 34 balls, 25 minutes, Jamie Ross 38 (22), Patrick Harland 5 (12), 7 extras<br/>12.1 Jamie Ross: 50 runs in 33 balls, 38 minutes (9x4)<br/>15.2 Harwell International CC Friendly XI: 100 runs in 15.1 overs, 67 minutes, 13 extras<br/>25.2 Harwell International CC Friendly XI: 150 runs in 25.2 overs, 108 minutes, 17 extras<br/>31.6 9th Wicket: 50 runs in 54 balls, 29 minutes, M Date 32 (32), Stephen Boag 14 (22), 4 extras<br/>34.5 M Date: 50 runs in 53 balls, 67 minutes (5x4)<br/>34.5 Harwell International CC Friendly XI: 200 runs in 34.5 overs, 140 minutes, 21 extras
 <br/>
-",,,NA
+",,,NA,NA,NA
 6290046,New,Yes,19/06/2024,16676,Division 3 North,119698,League,Limited Overs,Standard,no,19/06/2024,18:00,Harwell,11535,Midweek XI,15137,Harwell International CC,3220,Midweek XI,230019,Steventon CC,6038,Ian Royle,4973200,,,,,,,,,,,15137,Harwell International CC - Midweek XI won the toss and elected to field,230019,20,,1,W,Steventon CC - Midweek XI - Won,230019,false,false,false,false,"<b>Steventon CC Midweek XI Innings</b><br/>
 8.6 Steventon CC Midweek XI: 50 runs in 9.0 overs, 34 minutes, 17 extras<br/>16.5 Steventon CC Midweek XI: 100 runs in 16.5 overs, 71 minutes, 30 extras
 <br/>
@@ -177,7 +177,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Harwell International CC Midweek XI Innings</b><br/>
 8.4 Harwell International CC Midweek XI: 50 runs in 8.4 overs, 33 minutes, 20 extras<br/>15.1 Harwell International CC Midweek XI: 100 runs in 15.1 overs, 64 minutes, 38 extras
 <br/>
-",,,Downs League
+",,,Downs League,NA,NA
 6310023,New,Yes,22/06/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,22/06/2024,13:00,East & West Hendred Cricket Club,60425,2nd XI,119942,East & West Hendred CC,2436,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,119942,East & West Hendred CC - 2nd XI won the toss and elected to bat,119942,45,,1,D,Harwell International CC - 1st XI - Winning Draw,284082,false,false,false,false,"<b>East & West Hendred CC 2nd XI Innings</b><br/>
 14.4 1st Wicket: 50 runs in 89 balls, 49 minutes, Ivan Mulford 24 (50), Liam Richards 18 (39), 10 extras<br/>14.4 East & West Hendred CC 2nd XI: 50 runs in 14.4 overs, 49 minutes, 10 extras<br/>25.6 East & West Hendred CC 2nd XI: 100 runs in 25.4 overs, 93 minutes, 17 extras<br/>40.6 East & West Hendred CC 2nd XI: 150 runs in 41.0 overs, 148 minutes, 19 extras
 <br/>
@@ -185,7 +185,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Harwell International CC 1st XI Innings</b><br/>
 16.1 Harwell International CC 1st XI: 50 runs in 16.1 overs, 61 minutes, 12 extras<br/>26.3 Harwell International CC 1st XI: 100 runs in 26.3 overs, 100 minutes, 14 extras<br/>40.3 Harwell International CC 1st XI: 150 runs in 40.3 overs, 154 minutes, 18 extras
 <br/>
-",,,Cherwell League
+",,,Cherwell League,NA,NA
 6290063,New,Yes,26/06/2024,16676,Division 3 North,119698,League,Limited Overs,Standard,no,26/06/2024,18:00,Harwell,11535,Midweek XI,15137,Harwell International CC,3220,Twenty20,332704,Wantage & Grove CC,6648,,,,,,,,,,,,,15137,Harwell International CC - Midweek XI won the toss and elected to field,332704,20,,1,W,Harwell International CC - Midweek XI - Won,15137,false,false,false,false,"<b>Wantage & Grove CC Twenty20 Innings</b><br/>
 10.1 Wantage & Grove CC Twenty20: 50 runs in 10.1 overs, 36 minutes, 12 extras<br/>14.6 Wantage & Grove CC Twenty20: 100 runs in 15.0 overs, 58 minutes, 17 extras<br/>15.4 Dave Spencer: 50 runs in 29 balls, 39 minutes (5x4, 2x6)<br/>15.4 3rd Wicket: 50 runs in 25 balls, 21 minutes, Dave Spencer 38 (18), Bhu Basilisco-Gurung 5 (7), 9 extras
 <br/>
@@ -193,7 +193,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Harwell International CC Midweek XI Innings</b><br/>
 7.2 Harwell International CC Midweek XI: 50 runs in 7.2 overs, 28 minutes, 18 extras<br/>15.2 Harwell International CC Midweek XI: 100 runs in 15.2 overs, 61 minutes, 27 extras
 <br/>
-",,,Downs League
+",,,Downs League,NA,NA
 6310031,New,Yes,29/06/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,29/06/2024,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,210130,Wolvercote CC,7024,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,45,,1,D,Harwell International CC - 1st XI - Winning Draw,284082,false,false,false,false,"<b>Harwell International CC 1st XI Innings</b><br/>
 15.2 Harwell International CC 1st XI: 50 runs in 15.2 overs, 60 minutes, 3 extras<br/>29.1 Harwell International CC 1st XI: 100 runs in 29.1 overs, 104 minutes, 5 extras<br/>31.5 4th Wicket: 50 runs in 87 balls, 49 minutes, Toby Gallington 23 (47), Joe Braham 27 (40), 1 extra<br/>35.4 Toby Gallington: 50 runs in 106 balls, 119 minutes (5x4)<br/>39.2 Harwell International CC 1st XI: 150 runs in 39.2 overs, 147 minutes, 13 extras
 <br/>
@@ -201,7 +201,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Wolvercote CC 3rd XI Innings</b><br/>
 19.6 Wolvercote CC 3rd XI: 50 runs in 19.5 overs, 82 minutes, 8 extras<br/>39.6 Wolvercote CC 3rd XI: 100 runs in 40.0 overs, 154 minutes, 10 extras
 <br/>
-",,,Cherwell League
+",,,Cherwell League,NA,NA
 6290080,New,Yes,03/07/2024,16676,Division 3 North,119698,League,Limited Overs,Standard,no,03/07/2024,18:00,Boundary Park,37957,Downs 2nd XI,354155,Didcot CC,2301,Midweek XI,15137,Harwell International CC,3220,,,,,,,,,Graham Stevens,5527461,,,15137,Harwell International CC - Midweek XI won the toss and elected to bat,15137,20,,1,W,Harwell International CC - Midweek XI - Won,15137,false,false,false,false,"<b>Harwell International CC Midweek XI Innings</b><br/>
 5.3 1st Wicket: 50 runs in 24 balls, 20 minutes, James Goldsby-West 14 (10), Paul Eccleston 15 (14), 24 extras<br/>5.3 Harwell International CC Midweek XI: 50 runs in 5.3 overs, 20 minutes, 24 extras<br/>13.4 Harwell International CC Midweek XI: 100 runs in 13.4 overs, 49 minutes, 32 extras<br/>18.1 Harwell International CC Midweek XI: 150 runs in 18.1 overs, 66 minutes, 46 extras<br/>18.3 7th Wicket: 50 runs in 19 balls, 11 minutes, Sooraj Pradeep 26 (9), Ethin George 8 (10), 16 extras
 <br/>
@@ -209,5 +209,126 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Didcot CC Downs 2nd XI Innings</b><br/>
 8.4 Didcot CC Downs 2nd XI: 50 runs in 8.4 overs, 32 minutes, 4 extras<br/>12.3 Matthew Hanson: 50 runs in 39 balls, 37 minutes (10x4, 1x6)<br/>12.6 4th Wicket: 50 runs in 41 balls, 25 minutes, Matthew Hanson 26 (26), Peter Sykes 22 (15), 3 extras<br/>13.6 Didcot CC Downs 2nd XI: 100 runs in 14.0 overs, 50 minutes, 8 extras<br/>19.3 Didcot CC Downs 2nd XI: 150 runs in 19.3 overs, 72 minutes, 13 extras<br/>19.4 Matthew Hanson: 100 runs in 67 balls, 65 minutes (15x4, 4x6)
 <br/>
-",,,Downs League
-6310035,New,Yes,07/07/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,06/07/2024,11:00,Boundary Park,37957,4th XI,107886,Didcot CC,2301,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,,,,45,,1,A,Abandoned,,false,false,false,false,,,,Cherwell League
+",,,Downs League,NA,NA
+6310035,New,Yes,07/07/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,06/07/2024,11:00,Boundary Park,37957,4th XI,107886,Didcot CC,2301,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,,,,45,,1,A,Abandoned,,false,false,false,false,,,,Cherwell League,NA,NA
+6626762,New,Yes,07/07/2024,,,,Friendly,Limited Overs,Standard,no,07/07/2024,13:30,Aston,,Friendly XI,336093,"Astons CC, Oxon",818,Friendly XI,15138,Harwell International CC,3220,,,,,,,,,Graham Stevens,5527461,,,15138,Harwell International CC - Friendly XI won the toss and elected to field,336093,,,1,W,Harwell International CC - Friendly XI - Won,15138,false,false,false,false,"<b>Astons CC, Oxon Friendly XI Innings</b><br/>
+13.6 1st Wicket: 50 runs in 86 balls, 48 minutes, R Smith 28 (52), - Blewitt 11 (34), 11 extras<br/>13.6 Astons CC, Oxon Friendly XI: 50 runs in 14.0 overs, 48 minutes, 11 extras<br/>21.1 R Smith: 50 runs in 72 balls, 79 minutes (6x4)<br/>21.6 Astons CC, Oxon Friendly XI: 100 runs in 21.5 overs, 82 minutes, 14 extras<br/>29.7 Astons CC, Oxon Friendly XI: 150 runs in 30.0 overs, 113 minutes, 21 extras
+<br/>
+<br/>
+<b>Harwell International CC Friendly XI Innings</b><br/>
+16.6 Harwell International CC Friendly XI: 50 runs in 17.0 overs, 65 minutes, 7 extras<br/>17.2 2nd Wicket: 50 runs in 96 balls, 53 minutes, Dan Strangward 21 (58), Thomas Forrest 22 (38), 7 extras<br/>23.1 Harwell International CC Friendly XI: 100 runs in 23.1 overs, 90 minutes, 10 extras<br/>29.3 Jayesh Manwani: 50 runs in 27 balls, 30 minutes (3x4, 3x6)<br/>29.4 Harwell International CC Friendly XI: 150 runs in 29.4 overs, 115 minutes, 13 extras
+<br/>
+",,,NA,NA,NA
+6289918,New,Yes,29/07/2024,16676,Division 3 North,119698,League,Limited Overs,Standard,no,10/07/2024,18:00,Add New Ground,,1st XI,234429,Evotec CC,18257,Midweek XI,15137,Harwell International CC,3220,,,,,,,,,,,,,234429,Evotec CC - 1st XI won the toss and elected to field,15137,20,,1,W,Evotec CC - 1st XI - Won,234429,false,false,false,false,,,,Downs League,NA,NA
+6310037,New,Yes,16/08/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,13/07/2024,13:00,Letcombe,,1st XI,356211,Letcombe CC,3918,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,356211,Letcombe CC - 1st XI won the toss and elected to field,284082,45,,1,W,Harwell International CC - 1st XI - Won,284082,true,false,false,false,"<b>Harwell International CC 1st XI Innings</b><br/>
+17.5 Harwell International CC 1st XI: 50 runs in 17.5 overs, 70 minutes, 11 extras<br/>30.4 Harwell International CC 1st XI: 100 runs in 30.4 overs, 113 minutes, 15 extras<br/>31.2 5th Wicket: 50 runs in 60 balls, 33 minutes, Joe Braham 9 (22), Max Schofield 41 (38), 1 extra<br/>33.4 Max Schofield: 50 runs in 47 balls, 39 minutes (8x4)<br/>37.5 Harwell International CC 1st XI: 150 runs in 37.5 overs, 135 minutes, 15 extras
+<br/>
+<br/>
+<b>Letcombe CC 1st XI Innings</b><br/>
+13.7 Letcombe CC 1st XI: 50 runs in 14.0 overs, 48 minutes, 7 extras<br/>18.4 3rd Wicket: 50 runs in 70 balls, 39 minutes, Zeeshan Najmi 15 (26), Josh Godwin 33 (44), 2 extras<br/>26.3 Letcombe CC 1st XI: 100 runs in 26.3 overs, 90 minutes, 8 extras<br/>29.4 Josh Godwin: 50 runs in 71 balls, 75 minutes (7x4)<br/>30.5 4th Wicket: 50 runs in 52 balls, 29 minutes, Josh Godwin 17 (21), Daniel Taylor 31 (31), 2 extras<br/>37.3 Letcombe CC 1st XI: 150 runs in 37.3 overs, 135 minutes, 13 extras<br/>40.2 Ben Richmond: 5 wickets (8.2-1-24-5)
+<br/>
+",,,Cherwell League,NA,NA
+6399990,New,Yes,14/07/2024,,,,Friendly,Limited Overs,Standard,no,14/07/2024,13:30,Harwell,11535,Friendly XI,15138,Harwell International CC,3220,Friendly XI,76718,Oxenford CC,4939,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to bat,15138,,,1,W,Oxenford CC - Friendly XI - Won,76718,false,false,false,false,"<b>Harwell International CC Friendly XI Innings</b><br/>
+16.6 Harwell International CC Friendly XI: 50 runs in 16.5 overs, 69 minutes, 15 extras<br/>25.4 Jamie Ross: 50 runs in 65 balls, 107 minutes (10x4)<br/>26.5 Harwell International CC Friendly XI: 100 runs in 26.5 overs, 113 minutes, 17 extras
+<br/>
+<br/>
+<b>Oxenford CC Friendly XI Innings</b><br/>
+8.4 Oxenford CC Friendly XI: 50 runs in 8.3 overs, 34 minutes, 2 extras<br/>23.3 Oxenford CC Friendly XI: 100 runs in 23.3 overs, 91 minutes, 12 extras
+<br/>
+",,,NA,NA,NA
+6404165,New,Yes,16/07/2024,,,,Friendly,Limited Overs,Standard,no,16/07/2024,14:00,Harwell,11535,Midweek XI,15137,Harwell International CC,3220,Thames Tour XI,169,Old Merchant Taylors CC,168,,,,,,,,,,,,,15137,Harwell International CC - Midweek XI won the toss and elected to field,169,,,1,W,Old Merchant Taylors CC - Thames Tour XI - Won,169,false,false,false,false,"<b>Old Merchant Taylors CC Thames Tour XI Innings</b><br/>
+13.6 Old Merchant Taylors CC Thames Tour XI: 50 runs in 14.0 overs, 47 minutes, 7 extras<br/>20.4 2nd Wicket: 50 runs in 66 balls, 40 minutes, Shripal Shah 16 (21), John Walter 31 (45), 3 extras<br/>21.9 Old Merchant Taylors CC Thames Tour XI: 100 runs in 22.0 overs, 79 minutes, 12 extras<br/>25.4 John Walter: 50 runs in 64 balls, 58 minutes (3x4)<br/>29.1 Old Merchant Taylors CC Thames Tour XI: 150 runs in 29.0 overs, 105 minutes, 18 extras
+<br/>
+<br/>
+<b>Harwell International CC Midweek XI Innings</b><br/>
+15.2 Harwell International CC Midweek XI: 50 runs in 15.2 overs, 76 minutes, 1 extra
+<br/>
+",,,NA,NA,NA
+6310046,New,Yes,21/07/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,20/07/2024,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,3rd XI,43570,Cumnor CC,2190,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,43570,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Cumnor CC 3rd XI Innings</b><br/>
+19.2 Cumnor CC 3rd XI: 50 runs in 19.2 overs, 76 minutes, 4 extras<br/>30.6 Ben Richmond: 5 wickets (9-2-13-5)
+<br/>
+<br/>
+<b>Harwell International CC 1st XI Innings</b><br/>
+16.4 Harwell International CC 1st XI: 50 runs in 16.4 overs, 64 minutes, 5 extras
+<br/>
+",,,Cherwell League,NA,NA
+6634001,New,Yes,23/07/2024,,,,Friendly,Limited Overs,Standard,no,21/07/2024,13:30,Nettlebed,,Sunday 1st XI,216781,Nettlebed CC,15727,Friendly XI,15138,Harwell International CC,3220,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to bat,15138,,,1,W,Nettlebed CC - Sunday 1st XI - Won,216781,true,false,false,false,"<b>Harwell International CC Friendly XI Innings</b><br/>
+23.1 Harwell International CC Friendly XI: 50 runs in 23.1 overs, 84 minutes, 12 extras
+<br/>
+<br/>
+<b>Nettlebed CC Sunday 1st XI Innings</b><br/>
+4.6 1st Wicket: 50 runs in 30 balls, 22 minutes, Danny McAllister 35 (16), M Bryant 10 (14), 6 extras<br/>4.6 Nettlebed CC Sunday 1st XI: 50 runs in 4.5 overs, 22 minutes, 6 extras<br/>6.5 Danny McAllister: 50 runs in 23 balls, 29 minutes (4x4, 4x6)<br/>9.4 Nettlebed CC Sunday 1st XI: 100 runs in 9.4 overs, 49 minutes, 11 extras
+<br/>
+",,,NA,NA,NA
+6289974,New,Yes,24/07/2024,16676,Division 3 North,119698,League,Limited Overs,Standard,no,24/07/2024,18:00,Charlton Village Road,491,Twenty20,332704,Wantage & Grove CC,6648,Midweek XI,15137,Harwell International CC,3220,,,,,,,,,,,,,332704,Wantage & Grove CC - Twenty20 won the toss and elected to field,15137,20,,1,W,Wantage & Grove CC - Twenty20 - Won,332704,false,false,false,false,"<b>Harwell International CC Midweek XI Innings</b><br/>
+8.3 Harwell International CC Midweek XI: 50 runs in 8.3 overs, 31 minutes, 15 extras<br/>14.2 Harwell International CC Midweek XI: 100 runs in 14.2 overs, 53 minutes, 20 extras
+<br/>
+<br/>
+<b>Wantage & Grove CC Twenty20 Innings</b><br/>
+6.3 1st Wicket: 50 runs in 31 balls, 23 minutes, Colin Mercer 22 (18), Jordan Galsworthy 6 (13), 24 extras<br/>6.3 Wantage & Grove CC Twenty20: 50 runs in 6.3 overs, 23 minutes, 24 extras<br/>12.4 1st Wicket: 100 runs in 66 balls, 43 minutes, Colin Mercer 43 (37), Jordan Galsworthy 27 (29), 32 extras<br/>12.4 Wantage & Grove CC Twenty20: 100 runs in 12.4 overs, 43 minutes, 32 extras
+<br/>
+",,,Downs League,NA,NA
+6310048,New,Yes,27/07/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,27/07/2024,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,1st XI,189998,Steventon CC,6038,,,,,,,,,,,,,189998,Steventon CC - 1st XI won the toss and elected to field,284082,45,,1,D,Harwell International CC - 1st XI - Winning Draw,284082,false,false,false,false,"<b>Harwell International CC 1st XI Innings</b><br/>
+17.3 Harwell International CC 1st XI: 50 runs in 17.3 overs, 67 minutes, 3 extras<br/>21.5 3rd Wicket: 50 runs in 65 balls, 37 minutes, Graham Stevens 25 (28), Max Schofield 25 (37), 0 extras<br/>30.1 Graham Stevens: 50 runs in 87 balls, 111 minutes (6x4)<br/>31.3 Harwell International CC 1st XI: 100 runs in 31.3 overs, 116 minutes, 4 extras<br/>39.2 Harwell International CC 1st XI: 150 runs in 39.2 overs, 149 minutes, 13 extras<br/>42.6 Graham Stevens: 100 runs in 133 balls, 165 minutes (13x4)<br/>43.3 6th Wicket: 50 runs in 33 balls, 24 minutes, Graham Stevens 27 (19), Rakesh Shah 16 (14), 7 extras<br/>46.2 Harwell International CC 1st XI: 200 runs in 46.2 overs, 181 minutes, 20 extras
+<br/>
+<br/>
+<b>Steventon CC 1st XI Innings</b><br/>
+13.3 Steventon CC 1st XI: 50 runs in 13.3 overs, 51 minutes, 3 extras<br/>28.4 Steventon CC 1st XI: 100 runs in 28.4 overs, 104 minutes, 11 extras
+<br/>
+",,,Cherwell League,NA,NA
+6588540,New,Yes,30/07/2024,,,,Friendly,Limited Overs,Standard,no,28/07/2024,00:00,Harwell,11535,Friendly XI,15138,Harwell International CC,3220,Friendly XI,330767,Ascott-under-Wychwood CC,765,,,,,,,,,,,,,330767,Ascott-under-Wychwood CC - Friendly XI won the toss and elected to bat,330767,,,1,W,Harwell International CC - Friendly XI - Won,15138,false,false,false,false,"<b>Ascott under Wychwood CC Friendly XI Innings</b><br/>
+14.4 Ascott under Wychwood CC Friendly XI: 50 runs in 14.4 overs, 61 minutes, 7 extras<br/>24.7 Steve Russell: 50 runs in 83 balls, 109 minutes (3x4)<br/>26.6 Ascott under Wychwood CC Friendly XI: 100 runs in 27.0 overs, 122 minutes, 14 extras
+<br/>
+<br/>
+<b>Harwell International CC Friendly XI Innings</b><br/>
+11.5 1st Wicket: 50 runs in 71 balls, 46 minutes, Dan Strangward 16 (39), Jamie Ross 30 (32), 7 extras<br/>11.5 Harwell International CC Friendly XI: 50 runs in 11.5 overs, 46 minutes, 7 extras<br/>25.2 Harwell International CC Friendly XI: 100 runs in 25.2 overs, 109 minutes, 16 extras<br/>26.3 2nd Wicket: 50 runs in 91 balls, 66 minutes, Dan Strangward 18 (42), Rick Tanner 24 (49), 9 extras
+<br/>
+",,,NA,NA,NA
+6310054,New,Yes,03/08/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,03/08/2024,13:00,Appleton CC,,3rd XI,77936,Abingdon Vale CC,599,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,77936,Abingdon Vale CC - 3rd XI won the toss and elected to field,284082,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Harwell International CC 1st XI Innings</b><br/>
+13.4 Harwell International CC 1st XI: 50 runs in 13.3 overs, 52 minutes, 12 extras<br/>17.4 4th Wicket: 50 runs in 59 balls, 35 minutes, Graham Stevens 21 (26), Joe Braham 18 (33), 11 extras<br/>23.4 Harwell International CC 1st XI: 100 runs in 23.4 overs, 90 minutes, 22 extras<br/>32.5 Harwell International CC 1st XI: 150 runs in 32.5 overs, 123 minutes, 27 extras
+<br/>
+<br/>
+<b>Abingdon Vale CC 3rd XI Innings</b><br/>
+17.3 Abingdon Vale CC 3rd XI: 50 runs in 17.3 overs, 61 minutes, 12 extras<br/>21.3 Sooraj Pradeep: 5 wickets (4.3-0-10-5)<br/>33.2 Abingdon Vale CC 3rd XI: 100 runs in 33.2 overs, 116 minutes, 23 extras
+<br/>
+",,,Cherwell League,NA,NA
+6310058,New,Yes,10/08/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,10/08/2024,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,356209,Dorchester-on-Thames CC,9839,,,,,,,,,,,,,356209,Dorchester-on-Thames CC - 2nd XI won the toss and elected to bat,356209,45,,1,W,Dorchester-on-Thames CC - 2nd XI - Won,356209,false,false,false,false,"<b>Dorchester-on-Thames CC 2nd XI Innings</b><br/>
+24.5 Dorchester-on-Thames CC 2nd XI: 50 runs in 24.5 overs, 94 minutes, 9 extras<br/>43.3 Dorchester-on-Thames CC 2nd XI: 100 runs in 43.3 overs, 161 minutes, 19 extras
+<br/>
+<br/>
+<b>Harwell International CC 1st XI Innings</b><br/>
+28.5 Harwell International CC 1st XI: 50 runs in 28.5 overs, 115 minutes, 7 extras
+<br/>
+",,,Cherwell League,NA,NA
+6407059,New,Yes,11/08/2024,,,,Friendly,Limited Overs,Standard,no,11/08/2024,14:00,Charlton Village Road,491,Friendly XI,121326,Wantage & Grove CC,6648,Friendly XI,15138,Harwell International CC,3220,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to field,121326,,,1,W,Harwell International CC - Friendly XI - Won,15138,false,false,false,false,"<b>Wantage & Grove CC Friendly XI Innings</b><br/>
+14.2 Wantage & Grove CC Friendly XI: 50 runs in 14.1 overs, 74 minutes, 17 extras<br/>33.1 Wantage & Grove CC Friendly XI: 100 runs in 33.1 overs, 146 minutes, 32 extras
+<br/>
+<br/>
+<b>Harwell International CC Friendly XI Innings</b><br/>
+7.6 Harwell International CC Friendly XI: 50 runs in 8.0 overs, 39 minutes, 11 extras<br/>9.5 2nd Wicket: 50 runs in 52 balls, 39 minutes, Jay Mumtaz 27 (21), Andy Smith 13 (31), 10 extras<br/>20.6 Harwell International CC Friendly XI: 100 runs in 21.0 overs, 93 minutes, 14 extras
+<br/>
+",,,NA,NA,NA
+6310064,New,Yes,17/08/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,17/08/2024,13:00,West Ilsley Cricket Club,,3rd XI,35370,Challow & Childrey CC,1747,1st XI,284082,Harwell International CC,3220,,,,,,,,,Cordelia Williams,6446400,,,284082,Harwell International CC - 1st XI won the toss and elected to field,35370,45,,1,W,Challow & Childrey CC - 3rd XI - Won,35370,false,false,false,false,"<b>Challow & Childrey CC 3rd XI Innings</b><br/>
+11.6 Challow & Childrey CC 3rd XI: 50 runs in 11.4 overs, 46 minutes, 9 extras<br/>24.5 Challow & Childrey CC 3rd XI: 100 runs in 24.5 overs, 92 minutes, 12 extras<br/>39.1 Challow & Childrey CC 3rd XI: 150 runs in 39.1 overs, 138 minutes, 17 extras
+<br/>
+<br/>
+<b>Harwell International CC 1st XI Innings</b><br/>
+14.5 Harwell International CC 1st XI: 50 runs in 14.4 overs, 56 minutes, 17 extras<br/>33.8 Harwell International CC 1st XI: 100 runs in 33.5 overs, 116 minutes, 30 extras<br/>36.4 8th Wicket: 50 runs in 71 balls, 39 minutes, Sooraj Pradeep 16 (33), Ethin George 22 (38), 12 extras
+<br/>
+",,,Cherwell League,NA,NA
+6588542,New,Yes,18/08/2024,,,,Friendly,Limited Overs,Standard,no,18/08/2024,00:00,Aldworth CC - Recreation Ground,59468,Friendly XI,190178,Aldworth CC,11866,Friendly XI,15138,Harwell International CC,3220,,,,,,,,,,,,,190178,Aldworth CC - Friendly XI won the toss and elected to bat,190178,,,1,W,Aldworth CC - Friendly XI - Won,190178,false,false,false,false,"<b>Aldworth CC Friendly XI Innings</b><br/>
+9.2 Aldworth CC Friendly XI: 50 runs in 9.2 overs, 35 minutes, 10 extras<br/>9.4 2nd Wicket: 50 runs in 47 balls, 28 minutes, Sam Wardlaw 9 (24), A Wardlaw 35 (23), 9 extras<br/>12.2 A Wardlaw: 50 runs in 31 balls, 37 minutes (8x4, 2x6)<br/>14.6 Aldworth CC Friendly XI: 100 runs in 15.0 overs, 59 minutes, 12 extras<br/>15.2 2nd Wicket: 100 runs in 81 balls, 52 minutes, Sam Wardlaw 27 (42), A Wardlaw 59 (39), 15 extras<br/>18.3 Aldworth CC Friendly XI: 150 runs in 18.3 overs, 80 minutes, 18 extras<br/>19.4 A Wardlaw: 100 runs in 54 balls, 77 minutes (12x4, 7x6)<br/>20.5 4th Wicket: 50 runs in 18 balls, 16 minutes, A Wardlaw 23 (9), Hamish Smellie 32 (9), 0 extras<br/>21.4 Aldworth CC Friendly XI: 200 runs in 21.4 overs, 97 minutes, 18 extras<br/>25.3 4th Wicket: 100 runs in 46 balls, 36 minutes, A Wardlaw 61 (25), Hamish Smellie 41 (21), 1 extra<br/>26.3 Aldworth CC Friendly XI: 250 runs in 26.3 overs, 117 minutes, 20 extras<br/>26.4 A Wardlaw: 150 runs in 77 balls, 108 minutes (17x4, 12x6)<br/>26.8 Hamish Smellie: 50 runs in 25 balls, 43 minutes (4x4, 4x6)<br/>28.1 4th Wicket: 150 runs in 65 balls, 49 minutes, A Wardlaw 82 (34), Hamish Smellie 64 (31), 4 extras<br/>29.3 Aldworth CC Friendly XI: 300 runs in 29.3 overs, 132 minutes, 22 extras<br/>31.1 Hamish Smellie: 100 runs in 45 balls, 61 minutes (10x4, 8x6)<br/>31.1 4th Wicket: 200 runs in 84 balls, 62 minutes, A Wardlaw 90 (39), Hamish Smellie 105 (45), 5 extras<br/>31.4 Aldworth CC Friendly XI: 350 runs in 31.4 overs, 141 minutes, 23 extras<br/>33.6 A Wardlaw: 200 runs in 97 balls, 144 minutes (23x4, 14x6)<br/>34.3 4th Wicket: 250 runs in 104 balls, 79 minutes, A Wardlaw 122 (52), Hamish Smellie 126 (52), 5 extras
+<br/>
+<br/>
+<b>Harwell International CC Friendly XI Innings</b><br/>
+5.1 2nd Wicket: 50 runs in 29 balls, 23 minutes, Jamie Ross 22 (17), James Goldsby-West 25 (12), 5 extras<br/>5.1 Harwell International CC Friendly XI: 50 runs in 5.1 overs, 24 minutes, 5 extras<br/>17.2 Harwell International CC Friendly XI: 100 runs in 17.2 overs, 73 minutes, 10 extras<br/>22.7 6th Wicket: 50 runs in 56 balls, 32 minutes, Thomas Forrest 13 (25), Chamal Perera 30 (31), 8 extras<br/>23.6 Harwell International CC Friendly XI: 150 runs in 23.5 overs, 95 minutes, 20 extras<br/>29.1 6th Wicket: 100 runs in 93 balls, 50 minutes, Thomas Forrest 45 (50), Chamal Perera 44 (43), 14 extras<br/>30.4 Thomas Forrest: 50 runs in 71 balls, 77 minutes (7x4, 1x6)<br/>30.5 Harwell International CC Friendly XI: 200 runs in 30.5 overs, 114 minutes, 21 extras<br/>31.6 Chamal Perera: 50 runs in 50 balls, 58 minutes (10x4)
+<br/>
+",,,NA,NA,NA
+6310071,New,Yes,24/08/2024,275,Division 7C,119996,League,Limited Overs,Standard,no,24/08/2024,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,119942,East & West Hendred CC,2436,,,,,,,,,,,,,119942,East & West Hendred CC - 2nd XI won the toss and elected to field,284082,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Harwell International CC 1st XI Innings</b><br/>
+9.1 Harwell International CC 1st XI: 50 runs in 9.1 overs, 37 minutes, 7 extras<br/>21.1 Harwell International CC 1st XI: 100 runs in 21.1 overs, 90 minutes, 13 extras<br/>22.3 5th Wicket: 50 runs in 51 balls, 50 minutes, Joe Braham 8 (16), Max Schofield 36 (35), 6 extras
+<br/>
+<br/>
+<b>East & West Hendred CC 2nd XI Innings</b><br/>
+12.2 Toby Liam Gallington: 5 wickets (3.2-1-5-5)
+<br/>
+",,,Cherwell League,NA,NA
