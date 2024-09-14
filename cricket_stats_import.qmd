@@ -206,10 +206,10 @@ for (i in 1:nrow(results_data)) {
     # also get the partnership of not out batsman
     #check if the innings exists or if it was abandoned
     if(length(results_detail_batting) == 0){
-      next
+      NULL
       #check if partnerships is empty
     } else if(length(results_detail_partnerships) == 0){
-      next
+      NULL
       #check the number of not out batters
     } else if(nrow(results_detail_batting |> filter(how_out == "not out")) == 2){
       #get dataframe of not out batters
@@ -254,13 +254,42 @@ for (i in 1:nrow(results_data)) {
     #get the wicket details from the club, including fielders
     results_detail_bowling_wickets <- results_detail_innings_bowl$bat[[1]]
 
+    if (length(results_detail_bowling) == 0){
+      NULL
+    } else {
 
     # write data to the dataframes
+      
+      if(length(results_detail_players_home) == 0){
+        NULL
+      } else{
     data_players <- data_players |> bind_rows(results_detail_players_home |> mutate(match_id = match_id))
+      }
+      
+    if(length(results_detail_batting) == 0){
+        NULL
+      } else{
     data_batting <- data_batting |> bind_rows(results_detail_batting |> mutate(match_id = match_id))
+      }
+      
+      if(length(results_detail_partnerships) == 0){
+        NULL
+      } else{
     data_partnerships <- data_partnerships |> bind_rows(results_detail_partnerships |> mutate(match_id = match_id))
-    data_bowling <- data_bowling |> bind_rows(results_detail_bowling |> mutate(match_id = match_id))
+      }
+      
+      if(length(results_detail_bowling) == 0){
+        NULL
+      } else{
+    data_bowling <- data_bowling |> bind_rows(results_detail_bowling |> mutate(match_id = match_id))}
+      
+      if(length(results_detail_bowling_wickets) == 0){
+        NULL
+      } else{
     data_bowling_wicket_detail <- data_bowling_wicket_detail |> bind_rows(results_detail_bowling_wickets |> mutate(match_id = match_id))
+      }
+      
+    }
 }
 
 ```
