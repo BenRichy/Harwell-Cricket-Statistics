@@ -182,7 +182,7 @@ for (i in 1:nrow(results_data)) {
     results_detail_data <- fromJSON(rawToChar(results_detail_return$content))$match_details
 
     # if the result was cancelled then go to the next match
-    if (results_detail_data["result"][[1]] %in% c("C","A")) {
+    if (results_detail_data["result"][[1]] %in% c("C")) {
         next
     }
     
@@ -205,7 +205,7 @@ for (i in 1:nrow(results_data)) {
     results_detail_partnerships <- results_detail_innings_bat$fow[[1]]
     # also get the partnership of not out batsman
     #check if the innings exists or if it was abandoned
-    if(nrow(results_detail_batting) == 0){
+    if(length(results_detail_batting) == 0){
       next
       #check if partnerships is empty
     } else if(length(results_detail_partnerships) == 0){
