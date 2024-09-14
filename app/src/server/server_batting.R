@@ -57,7 +57,7 @@ batting_summary_default <- batting_summary |>
         strike_rate = round((runs / balls_faced) * 100,0),
         percent_runs_boundaries = round(((fours * 4 + sixes * 6) / runs)*100,2)
     ) |> 
-  arrange(desc(average)) |> 
+  arrange(desc(runs)) |> 
   select(Batter = batsman_name,
          `# Innings` = innings,
          `# Out` = dismissed,
