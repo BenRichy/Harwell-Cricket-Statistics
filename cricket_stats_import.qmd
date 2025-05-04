@@ -13,7 +13,7 @@ library(DBI)
 ```
 
 ```{r Globals}
-season <- c(2022:2024)
+season <- c(2022:2025)
 team_name <- "Harwell"
 club_name <- "Harwell International CC"
 team_ids <- c(284082,15138,15137)
