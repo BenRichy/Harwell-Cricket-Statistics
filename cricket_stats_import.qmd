@@ -27,6 +27,8 @@ FP_api_key <- "api/playcricket_api_key.txt"
 FP_club_id <- "api/playcricket_club_id.txt"
 FP_results_summary <- "app/data/results_summary.csv"
 FP_data_base <- "app/data/cricket_detail_database.sqlite"
+FP_ball_by_ball_annual <- "app/data/ball-data-dump-year/"
+FP_match_type_annual <- "app/data/match-date-to-league-year/"
 
 
 
@@ -453,6 +455,48 @@ dbDisconnect(cricket_database)
 
 ```
 
+
+Concatenate the ball-by-ball data and the summary of fixtures by league/team from annual data
+```{r ConcatAnnualBallByBall}
+
+#read in ball by ball data
+ball_data_files <- list.files(FP_ball_by_ball_annual)
+complete_ball_data <- data.frame()
+
+
+for (file_name in 1:length(ball_data_files)) {
+  ball_data_year <- read_csv(paste0(FP_ball_by_ball_annual,ball_data_files[file_name]))
+  
+  #combine all ball by ball data
+  complete_ball_data <- complete_ball_data |> 
+    bind_rows(ball_data_year)
+  
+}
+
+#output combined data
+write_csv(complete_ball_data, "app/data/ball-data-dump.csv")
+
+
+#repeat for match types
+#read in ball by ball data
+match_type_files <- list.files(FP_match_type_annual)
+complete_match_type <- data.frame()
+
+
+for (file_name in 1:length(match_type_files)) {
+  match_type_year <- read_csv(paste0(FP_match_type_annual,match_type_files[file_name]))
+  
+  #combine all ball by ball data
+  complete_match_type <- complete_match_type |> 
+    bind_rows(match_type_year)
+  
+}
+
+#output combined data
+write_csv(complete_match_type, "app/data/match_date_to_league.csv")
+
+
+```
 
 Create csv files from the database
 ```{r csv_out}
