@@ -16,8 +16,8 @@ library(DBI)
 season <- c(2022:2025)
 team_name <- "Harwell"
 club_name <- "Harwell International CC"
-team_ids <- c(284082,15138,15137)
-saturday_team_id <- 284082
+team_ids <- c(284082,15138,15137, 378560)
+saturday_team_id <- c(284082, 378560)
 
 ```
 
@@ -414,9 +414,8 @@ results <- results_data |>
         ),
         #overwrites for specific leagues
         league_name = case_when(
-            is.na(league_name) ~ "Friendly",
-            league_name == "Cherwell Cricket League" ~ "Cherwell League",
-            TRUE ~ league_name
+            home_away == "Home" ~ away_team_name,
+            TRUE ~ home_team_name
         ), season = as.numeric(str_sub(match_date, start = -4))
     ) |>
     select(
