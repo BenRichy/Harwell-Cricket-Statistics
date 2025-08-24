@@ -12,7 +12,7 @@ if(file.exists("app") == TRUE){
 #get the bowling data only
 detailed_bowling_import <- read_csv(bowling_detail_fp) |> 
   filter(grepl("Harwell.*",`Bowling Team`)) |> 
-  left_join(read_csv(match_date_fp), by = c("Date" = "match_date"))
+  left_join(read_csv(match_date_fp), by = c("Date" = "match_date", "Match" = "match_fixture"))
 
 observeEvent(c(input$team_scope_bowling,
                input$year_scope_bowling), {
