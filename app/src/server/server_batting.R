@@ -37,18 +37,61 @@ observeEvent(c(input$team_scope_batting,
     input_year_scope <- input$year_scope_batting
   }              
 
+#get high score, number of 50s, 100s, ducks
+batting_summary_fifties <- batting_summary |> 
+  filter(league_name %in% input_team_scope,
+         season %in% input_year_scope) |>
+  group_by(batsman_name) |> 
+  filter(runs >= 50) |> 
+  add_tally() |> 
+  ungroup() |> 
+  select(batsman_name,
+         fifties = n) |> 
+  distinct()
+
+batting_summary_hundreds <- batting_summary |> 
+  filter(league_name %in% input_team_scope,
+         season %in% input_year_scope) |>
+  group_by(batsman_name) |> 
+  filter(runs >= 100) |> 
+  add_tally() |> 
+  ungroup() |> 
+  select(batsman_name,
+         hundreds = n) |> 
+  distinct()
+
+batting_summary_hundreds_fifties <- batting_summary_fifties |> 
+  left_join(batting_summary_hundreds, by = c("batsman_name")) |> 
+  mutate(hundreds = case_when(is.na(hundreds) ~ 0,
+                              TRUE ~ hundreds),
+         fifties = fifties - hundreds)
+
+batting_summary_ducks <- batting_summary |> 
+  filter(league_name %in% input_team_scope,
+         season %in% input_year_scope) |>
+  group_by(batsman_name) |> 
+  filter(runs == 0,
+         count_out == 1) |> 
+  add_tally() |> 
+  ungroup() |> 
+  select(batsman_name,
+         ducks = n) |> 
+  distinct()
+                 
 # Produce summary table of batting stats
 batting_summary_default <- batting_summary |>
   filter(league_name %in% input_team_scope,
-         season %in% input_year_scope) |> 
+        season %in% input_year_scope) |>
     group_by(batsman_name) |>
+    mutate(high_score = max(runs, na.rm = TRUE)) |> 
     summarise(
         innings = sum(count_innings, na.rm = TRUE),
         dismissed = sum(count_out, na.rm = TRUE),
         runs = sum(runs, na.rm = TRUE),
         balls_faced = sum(balls, na.rm = TRUE),
         fours = sum(fours, na.rm = TRUE),
-        sixes = sum(sixes, na.rm = TRUE)
+        sixes = sum(sixes, na.rm = TRUE),
+        high_score = max(high_score, na.rm = TRUE)
     ) |>
     ungroup() |>
     mutate(
@@ -58,13 +101,25 @@ batting_summary_default <- batting_summary |>
         percent_runs_boundaries = round(((fours * 4 + sixes * 6) / runs)*100,2)
     ) |> 
   arrange(desc(runs)) |> 
+  left_join(batting_summary_ducks, by = c("batsman_name")) |> 
+  left_join(batting_summary_hundreds_fifties, by = c("batsman_name")) |> 
+  mutate(fifties = case_when(is.na(fifties) ~ 0,
+                             TRUE ~ fifties),
+         hundreds = case_when(is.na(hundreds) ~ 0,
+                             TRUE ~ hundreds),
+         ducks = case_when(is.na(ducks) ~ 0,
+                             TRUE ~ ducks)) |> 
   select(Batter = batsman_name,
          `# Innings` = innings,
          `# Out` = dismissed,
          Runs = runs,
          `Balls Faced` = balls_faced,
+         `High Score` = high_score,
          Fours = fours,
          Sixes = sixes,
+         `50s` = fifties,
+         `100s` = hundreds,
+         Ducks = ducks,
          `Runs/Innings` = runs_per_innings,
          Average = average,
          `Strike Rate` = strike_rate,
@@ -79,18 +134,65 @@ output$batting_summary <- renderReactable({reactable(batting_summary_default,
                                                      showSortable = TRUE)})
 
 
+#get high score, number of 50s, 100s, ducks
+batting_position_fifties <- batting_summary |> 
+  filter(league_name %in% input_team_scope,
+         season %in% input_year_scope) |>
+  group_by(batsman_name, position) |> 
+  filter(runs >= 50) |> 
+  add_tally() |> 
+  ungroup() |> 
+  select(batsman_name,
+         position,
+         fifties = n) |> 
+  distinct()
+
+batting_position_hundreds <- batting_summary |> 
+  filter(league_name %in% input_team_scope,
+         season %in% input_year_scope) |>
+  group_by(batsman_name, position) |> 
+  filter(runs >= 100) |> 
+  add_tally() |> 
+  ungroup() |> 
+  select(batsman_name,
+         position,
+         hundreds = n) |> 
+  distinct()
+
+batting_position_hundreds_fifties <- batting_position_fifties |> 
+  left_join(batting_position_hundreds, by = c("batsman_name", "position")) |> 
+  mutate(hundreds = case_when(is.na(hundreds) ~ 0,
+                              TRUE ~ hundreds),
+         fifties = fifties - hundreds)
+
+batting_position_ducks <- batting_summary |> 
+  filter(league_name %in% input_team_scope,
+         season %in% input_year_scope) |>
+  group_by(batsman_name, position) |> 
+  filter(runs == 0,
+         count_out == 1) |> 
+  add_tally() |> 
+  ungroup() |> 
+  select(batsman_name,
+         position,
+         ducks = n) |> 
+  distinct()
+
+
 # runs by position for each batter
 runs_batter_position <- batting_summary |> 
   filter(league_name %in% input_team_scope,
          season %in% input_year_scope) |> 
   group_by(batsman_name, position) |> 
+  mutate(high_score = max(runs, na.rm = TRUE)) |> 
   summarise(
     innings = sum(count_innings, na.rm = TRUE),
     dismissed = sum(count_out, na.rm = TRUE),
     runs = sum(runs, na.rm = TRUE),
     balls_faced = sum(balls, na.rm = TRUE),
     fours = sum(fours, na.rm = TRUE),
-    sixes = sum(sixes, na.rm = TRUE)
+    sixes = sum(sixes, na.rm = TRUE),
+    high_score = max(high_score, na.rm = TRUE)
   ) |>
   ungroup() |>
   mutate(
@@ -100,6 +202,14 @@ runs_batter_position <- batting_summary |>
     percent_runs_boundaries = round(((fours * 4 + sixes * 6) / runs)*100,2)
   ) |>
   ungroup() |> 
+  left_join(batting_position_ducks, by = c("batsman_name", "position")) |> 
+  left_join(batting_position_hundreds_fifties, by = c("batsman_name", "position")) |> 
+  mutate(fifties = case_when(is.na(fifties) ~ 0,
+                             TRUE ~ fifties),
+         hundreds = case_when(is.na(hundreds) ~ 0,
+                              TRUE ~ hundreds),
+         ducks = case_when(is.na(ducks) ~ 0,
+                           TRUE ~ ducks)) |> 
   arrange(position,
           batsman_name) |> 
   select(Batter = batsman_name,
@@ -108,8 +218,12 @@ runs_batter_position <- batting_summary |>
          `# Out` = dismissed,
          Runs = runs,
          `Balls Faced` = balls_faced,
+         `High Score` = high_score,
          Fours = fours,
          Sixes = sixes,
+         `50s` = fifties,
+         `100s` = hundreds,
+         Ducks = ducks,
          `Runs/Innings` = runs_per_innings,
          Average = average,
          `Strike Rate` = strike_rate,
