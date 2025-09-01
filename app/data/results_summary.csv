@@ -378,14 +378,6 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 ",,,NA,NA,NA
 6974182,New,Yes,05/05/2025,,,,Friendly,Limited Overs,Standard,no,04/05/2025,13:00,Gardiner Recreation Ground,7664,Sunday XI,53920,Goring on Thames CC,2946,Friendly XI,15138,Harwell International CC,3220,,,,,,,,,,,,,53920,Goring on Thames CC - Sunday XI won the toss and elected to bat,53920,,,1,W,Goring on Thames CC - Sunday XI - Won,53920,false,false,false,false,,,,NA,NA,NA
 6924687,New,Yes,08/05/2025,16676,Division 3 South,128550,League,Limited Overs,Standard,no,07/05/2025,18:00,Newbury Cricket Club,10285,Midweek Development XI,329433,Newbury CC,4560,Midweek XI,15137,Harwell International CC,3220,,,,,,,,,,,,,329433,Newbury CC - Midweek Development XI won the toss and elected to field,15137,20,,1,W,Newbury CC - Midweek Development XI - Won,329433,false,false,false,false,,,,Downs League,NA,NA
-6910096,New,Yes,11/05/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,10/05/2025,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,4th XI,107886,Didcot CC,2301,,,,,,,,,,,,,107886,Didcot CC - 4th XI won the toss and elected to bat,107886,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<p><strong>Didcot&nbsp;CC&nbsp;4th&nbsp;XI&nbsp;Innings</strong><br />
-12.3&nbsp;Didcot&nbsp;CC&nbsp;4th&nbsp;XI:&nbsp;50&nbsp;runs&nbsp;in&nbsp;12.3&nbsp;overs,&nbsp;62&nbsp;minutes,&nbsp;5&nbsp;extras<br />
-24.1&nbsp;Didcot&nbsp;CC&nbsp;4th&nbsp;XI:&nbsp;100&nbsp;runs&nbsp;in&nbsp;24.1&nbsp;overs,&nbsp;112&nbsp;minutes,&nbsp;10&nbsp;extras<br />
-<br />
-<strong>Harwell&nbsp;International&nbsp;CC&nbsp;1st&nbsp;XI&nbsp;Innings</strong><br />
-17.2&nbsp;Harwell&nbsp;International&nbsp;CC&nbsp;1st&nbsp;XI:&nbsp;50&nbsp;runs&nbsp;in&nbsp;17.1&nbsp;overs,&nbsp;73&nbsp;minutes,&nbsp;13&nbsp;extras<br />
-30.3&nbsp;Harwell&nbsp;International&nbsp;CC&nbsp;1st&nbsp;XI:&nbsp;100&nbsp;runs&nbsp;in&nbsp;30.3&nbsp;overs,&nbsp;124&nbsp;minutes,&nbsp;26&nbsp;extras</p>
-",,,Cherwell League,NA,NA
 6910819,New,Yes,10/05/2025,275,Division 9B,126849,League,Limited Overs,Standard,no,10/05/2025,13:00,Marcham,,2nd XI,195890,Marcham CC,4207,2nd XI,378560,Harwell International CC,3220,,,,,,,,,Cordelia Williams,6446400,,,195890,Marcham CC - 2nd XI won the toss and elected to bat,195890,40,,1,W,Harwell International CC - 2nd XI - Won,378560,false,false,false,false,"<b>Marcham CC 2nd XI Innings</b><br/>
 11.3 Marcham CC 2nd XI: 50 runs in 11.3 overs, 52 minutes, 5 extras<br/>20.4 Marcham CC 2nd XI: 100 runs in 20.4 overs, 102 minutes, 17 extras<br/>32.4 Marcham CC 2nd XI: 150 runs in 32.4 overs, 155 minutes, 28 extras
 <br/>
@@ -393,6 +385,14 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <b>Harwell International CC 2nd XI Innings</b><br/>
 7.5 Harwell International CC 2nd XI: 50 runs in 7.4 overs, 35 minutes, 13 extras<br/>11.6 Paul Eccleston: 50 runs in 36 balls, 53 minutes (10x4)<br/>13.2 Harwell International CC 2nd XI: 100 runs in 13.1 overs, 64 minutes, 17 extras<br/>19.4 Harwell International CC 2nd XI: 150 runs in 19.4 overs, 95 minutes, 26 extras<br/>20.5 5th Wicket: 50 runs in 42 balls, 32 minutes, Thomas Forrest 4 (14), Sooraj Pradeep 40 (28), 8 extras
 <br/>
+",,,Cherwell League,NA,NA
+6910096,New,Yes,11/05/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,10/05/2025,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,4th XI,107886,Didcot CC,2301,,,,,,,,,,,,,107886,Didcot CC - 4th XI won the toss and elected to bat,107886,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<p><strong>Didcot&nbsp;CC&nbsp;4th&nbsp;XI&nbsp;Innings</strong><br />
+12.3&nbsp;Didcot&nbsp;CC&nbsp;4th&nbsp;XI:&nbsp;50&nbsp;runs&nbsp;in&nbsp;12.3&nbsp;overs,&nbsp;62&nbsp;minutes,&nbsp;5&nbsp;extras<br />
+24.1&nbsp;Didcot&nbsp;CC&nbsp;4th&nbsp;XI:&nbsp;100&nbsp;runs&nbsp;in&nbsp;24.1&nbsp;overs,&nbsp;112&nbsp;minutes,&nbsp;10&nbsp;extras<br />
+<br />
+<strong>Harwell&nbsp;International&nbsp;CC&nbsp;1st&nbsp;XI&nbsp;Innings</strong><br />
+17.2&nbsp;Harwell&nbsp;International&nbsp;CC&nbsp;1st&nbsp;XI:&nbsp;50&nbsp;runs&nbsp;in&nbsp;17.1&nbsp;overs,&nbsp;73&nbsp;minutes,&nbsp;13&nbsp;extras<br />
+30.3&nbsp;Harwell&nbsp;International&nbsp;CC&nbsp;1st&nbsp;XI:&nbsp;100&nbsp;runs&nbsp;in&nbsp;30.3&nbsp;overs,&nbsp;124&nbsp;minutes,&nbsp;26&nbsp;extras</p>
 ",,,Cherwell League,NA,NA
 7065275,New,Yes,27/06/2025,,,,Friendly,Limited Overs,Standard,no,11/05/2025,13:30,Harwell,11535,Friendly XI,15138,Harwell International CC,3220,Friendly XI,105141,Oxfordshire County Council Staff CC,4947,,,,,,,,,,,,,105141,Oxfordshire County Council Staff CC - Friendly XI won the toss and elected to bat,105141,,,1,W,Oxfordshire County Council Staff CC - Friendly XI - Won,105141,false,false,false,false,"<b>Oxfordshire County Council Staff CC Friendly XI Innings</b><br/>
 11.3 Oxfordshire County Council Staff CC Friendly XI: 50 runs in 11.3 overs, 47 minutes, 8 extras<br/>19.5 Oxfordshire County Council Staff CC Friendly XI: 100 runs in 19.5 overs, 85 minutes, 13 extras<br/>20.5 5th Wicket: 50 runs in 51 balls, 36 minutes, - Amir 23 (26), Umar Mehmood 21 (25), 6 extras<br/>21.5 - Amir: 50 runs in 57 balls, 75 minutes (10x4)<br/>23.7 Oxfordshire County Council Staff CC Friendly XI: 150 runs in 24.0 overs, 104 minutes, 21 extras<br/>25.2 5th Wicket: 100 runs in 80 balls, 58 minutes, - Amir 44 (42), Umar Mehmood 46 (38), 12 extras<br/>26.2 Umar Mehmood: 50 runs in 41 balls, 61 minutes (9x4)<br/>29.1 Oxfordshire County Council Staff CC Friendly XI: 200 runs in 29.1 overs, 136 minutes, 24 extras
@@ -403,7 +403,6 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <br/>
 ",,,NA,NA,NA
 6924876,New,Yes,25/07/2025,16676,Division 3 South,128550,League,Limited Overs,Standard,no,14/05/2025,18:00,Add New Ground,,Midweek XI,222461,The Pirates CC,16332,Midweek XI,15137,Harwell International CC,3220,,,,,,,,,,,,,222461,The Pirates CC - Midweek XI won the toss and elected to field,15137,20,,1,W,The Pirates CC - Midweek XI - Won,222461,false,false,false,false,,,,Downs League,NA,NA
-6910103,New,Yes,26/05/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,17/05/2025,13:00,Frieth Cricket Club,41999,1st XI,68775,Frieth CC,8317,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,68775,45,,1,W,Frieth CC - 1st XI - Won,68775,true,false,false,false,,,,Cherwell League,NA,NA
 6910820,New,Yes,19/05/2025,275,Division 9B,126849,League,Limited Overs,Standard,no,17/05/2025,13:00,Harwell,11535,2nd XI,378560,Harwell International CC,3220,2nd XI,378562,West Ilsley CC,9181,,,,,,,,,,,,,378562,West Ilsley CC - 2nd XI won the toss and elected to field,378560,40,,1,W,West Ilsley CC - 2nd XI - Won,378562,false,true,false,false,"<b>Harwell International CC 2nd XI Innings</b><br/>
 16.3 Harwell International CC 2nd XI: 50 runs in 16.3 overs, 75 minutes, 10 extras
 <br/>
@@ -412,6 +411,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 11.4 1st Wicket: 50 runs in 72 balls, 43 minutes, Ralph Taylor 10 (40), George Briggs 28 (32), 14 extras<br/>11.4 West Ilsley CC 2nd XI: 50 runs in 11.4 overs, 43 minutes, 14 extras<br/>17.6 West Ilsley CC 2nd XI: 100 runs in 18.0 overs, 70 minutes, 20 extras
 <br/>
 ",,,Cherwell League,NA,NA
+6910103,New,Yes,26/05/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,17/05/2025,13:00,Frieth Cricket Club,41999,1st XI,68775,Frieth CC,8317,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,68775,45,,1,W,Frieth CC - 1st XI - Won,68775,true,false,false,false,,,,Cherwell League,NA,NA
 6845727,New,Yes,18/05/2025,,,,Friendly,Limited Overs,Standard,no,18/05/2025,14:00,Harwell,11535,Friendly XI,15138,Harwell International CC,3220,Friendly XI,121326,Wantage & Grove CC,6648,,,,,,,,,Simon Wilkinson,5626441,,,121326,Wantage & Grove CC - Friendly XI won the toss and elected to field,15138,,,1,W,Harwell International CC - Friendly XI - Won,15138,false,false,false,false,"<b>Harwell International CC Friendly XI Innings</b><br/>
 14.3 1st Wicket: 50 runs in 87 balls, 47 minutes, Dan Strangward 15 (44), Jay Mumtaz 31 (43), 4 extras<br/>14.3 Harwell International CC Friendly XI: 50 runs in 14.3 overs, 47 minutes, 4 extras<br/>17.2 Jay Mumtaz: 50 runs in 56 balls, 57 minutes (10x4)<br/>21.1 Harwell International CC Friendly XI: 100 runs in 21.1 overs, 78 minutes, 8 extras<br/>26.7 4th Wicket: 50 runs in 35 balls, 26 minutes, Jamie Ross 26 (14), Raunakk Banerjee 15 (21), 9 extras<br/>26.7 Harwell International CC Friendly XI: 150 runs in 27.0 overs, 107 minutes, 17 extras<br/>33.5 Harwell International CC Friendly XI: 200 runs in 33.4 overs, 135 minutes, 23 extras
 <br/>
@@ -452,20 +452,20 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 4.5 Harwell International CC Midweek XI: 50 runs in 4.5 overs, 22 minutes, 16 extras<br/>12.1 Harwell International CC Midweek XI: 100 runs in 12.1 overs, 51 minutes, 24 extras<br/>16.2 Rakesh Shah: 50 runs in 44 balls, 63 minutes (5x4)<br/>18.4 Harwell International CC Midweek XI: 150 runs in 18.4 overs, 75 minutes, 34 extras
 <br/>
 ",,,Downs League,NA,NA
-6910110,New,Yes,31/05/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,31/05/2025,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,191770,Stokenchurch CC,6076,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,45,,1,W,Stokenchurch CC - 2nd XI - Won,191770,false,false,false,false,"<b>Harwell International CC 1st XI Innings</b><br/>
-13.1 Harwell International CC 1st XI: 50 runs in 13.1 overs, 48 minutes, 5 extras<br/>15.6 4th Wicket: 50 runs in 65 balls, 41 minutes, Graham Stevens 23 (25), Raunakk Banerjee 28 (40), 2 extras<br/>20.5 Raunakk Banerjee: 50 runs in 56 balls, 56 minutes (8x4, 1x6)<br/>22.3 Harwell International CC 1st XI: 100 runs in 22.3 overs, 84 minutes, 14 extras<br/>23.6 4th Wicket: 100 runs in 113 balls, 68 minutes, Graham Stevens 33 (50), Raunakk Banerjee 56 (63), 11 extras<br/>30.5 Graham Stevens: 50 runs in 73 balls, 99 minutes (6x4)<br/>32.4 Harwell International CC 1st XI: 150 runs in 32.4 overs, 122 minutes, 17 extras<br/>33.1 4th Wicket: 150 runs in 168 balls, 103 minutes, Graham Stevens 69 (80), Raunakk Banerjee 67 (88), 14 extras<br/>40.2 Harwell International CC 1st XI: 200 runs in 40.2 overs, 151 minutes, 21 extras<br/>43.1 6th Wicket: 50 runs in 34 balls, 21 minutes, Max Schofield 25 (17), Ethin George 17 (17), 9 extras
-<br/>
-<br/>
-<b>Stokenchurch CC 2nd XI Innings</b><br/>
-13.1 Stokenchurch CC 2nd XI: 50 runs in 13.1 overs, 50 minutes, 8 extras<br/>17.4 3rd Wicket: 50 runs in 64 balls, 43 minutes, Huzaifa Latif 26 (34), K Patel 22 (30), 4 extras<br/>18.5 Huzaifa Latif: 50 runs in 63 balls, 77 minutes (7x4)<br/>19.1 Stokenchurch CC 2nd XI: 100 runs in 19.1 overs, 79 minutes, 11 extras<br/>27.2 K Patel: 50 runs in 62 balls, 74 minutes (5x4, 2x6)<br/>27.4 3rd Wicket: 100 runs in 126 balls, 77 minutes, Huzaifa Latif 44 (62), K Patel 54 (64), 5 extras<br/>28.4 Stokenchurch CC 2nd XI: 150 runs in 28.3 overs, 111 minutes, 16 extras<br/>33.5 3rd Wicket: 150 runs in 163 balls, 104 minutes, Huzaifa Latif 66 (81), K Patel 74 (82), 10 extras<br/>38.1 Stokenchurch CC 2nd XI: 200 runs in 38.1 overs, 154 minutes, 21 extras<br/>42.3 Huzaifa Latif: 100 runs in 129 balls, 174 minutes (13x4)
-<br/>
-",,,Cherwell League,NA,NA
 6910831,New,Yes,31/05/2025,275,Division 9B,126849,League,Limited Overs,Standard,no,31/05/2025,13:00,Abingdon Vale CC - Hales Meadow,14131,4th XI,93320,Abingdon Vale CC,599,2nd XI,378560,Harwell International CC,3220,Nathaniel Brown,4958839,,,,,,,,,,,378560,Harwell International CC - 2nd XI won the toss and elected to bat,378560,40,,1,W,Harwell International CC - 2nd XI - Won,378560,false,false,false,false,"<b>Harwell International CC 2nd XI Innings</b><br/>
 16.2 Harwell International CC 2nd XI: 50 runs in 16.2 overs, 74 minutes, 14 extras<br/>26.4 Harwell International CC 2nd XI: 100 runs in 26.4 overs, 123 minutes, 30 extras<br/>29.3 4th Wicket: 50 runs in 18 balls, 15 minutes, Joe Braham 6 (7), Jayesh Manwani 40 (11), 5 extras<br/>29.7 Harwell International CC 2nd XI: 150 runs in 30.0 overs, 138 minutes, 36 extras<br/>38.4 Giriraj Deshpande: 5 wickets (7.4-2-23-5)
 <br/>
 <br/>
 <b>Abingdon Vale CC 4th XI Innings</b><br/>
 14.3 Abingdon Vale CC 4th XI: 50 runs in 14.3 overs, 49 minutes, 7 extras
+<br/>
+",,,Cherwell League,NA,NA
+6910110,New,Yes,31/05/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,31/05/2025,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,191770,Stokenchurch CC,6076,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,45,,1,W,Stokenchurch CC - 2nd XI - Won,191770,false,false,false,false,"<b>Harwell International CC 1st XI Innings</b><br/>
+13.1 Harwell International CC 1st XI: 50 runs in 13.1 overs, 48 minutes, 5 extras<br/>15.6 4th Wicket: 50 runs in 65 balls, 41 minutes, Graham Stevens 23 (25), Raunakk Banerjee 28 (40), 2 extras<br/>20.5 Raunakk Banerjee: 50 runs in 56 balls, 56 minutes (8x4, 1x6)<br/>22.3 Harwell International CC 1st XI: 100 runs in 22.3 overs, 84 minutes, 14 extras<br/>23.6 4th Wicket: 100 runs in 113 balls, 68 minutes, Graham Stevens 33 (50), Raunakk Banerjee 56 (63), 11 extras<br/>30.5 Graham Stevens: 50 runs in 73 balls, 99 minutes (6x4)<br/>32.4 Harwell International CC 1st XI: 150 runs in 32.4 overs, 122 minutes, 17 extras<br/>33.1 4th Wicket: 150 runs in 168 balls, 103 minutes, Graham Stevens 69 (80), Raunakk Banerjee 67 (88), 14 extras<br/>40.2 Harwell International CC 1st XI: 200 runs in 40.2 overs, 151 minutes, 21 extras<br/>43.1 6th Wicket: 50 runs in 34 balls, 21 minutes, Max Schofield 25 (17), Ethin George 17 (17), 9 extras
+<br/>
+<br/>
+<b>Stokenchurch CC 2nd XI Innings</b><br/>
+13.1 Stokenchurch CC 2nd XI: 50 runs in 13.1 overs, 50 minutes, 8 extras<br/>17.4 3rd Wicket: 50 runs in 64 balls, 43 minutes, Huzaifa Latif 26 (34), K Patel 22 (30), 4 extras<br/>18.5 Huzaifa Latif: 50 runs in 63 balls, 77 minutes (7x4)<br/>19.1 Stokenchurch CC 2nd XI: 100 runs in 19.1 overs, 79 minutes, 11 extras<br/>27.2 K Patel: 50 runs in 62 balls, 74 minutes (5x4, 2x6)<br/>27.4 3rd Wicket: 100 runs in 126 balls, 77 minutes, Huzaifa Latif 44 (62), K Patel 54 (64), 5 extras<br/>28.4 Stokenchurch CC 2nd XI: 150 runs in 28.3 overs, 111 minutes, 16 extras<br/>33.5 3rd Wicket: 150 runs in 163 balls, 104 minutes, Huzaifa Latif 66 (81), K Patel 74 (82), 10 extras<br/>38.1 Stokenchurch CC 2nd XI: 200 runs in 38.1 overs, 154 minutes, 21 extras<br/>42.3 Huzaifa Latif: 100 runs in 129 balls, 174 minutes (13x4)
 <br/>
 ",,,Cherwell League,NA,NA
 7140705,New,Yes,01/06/2025,,,,Friendly,Limited Overs,Standard,no,01/06/2025,13:30,Harwell,11535,Friendly XI,15138,Harwell International CC,3220,Friendly XI,204393,Far from the MCC,14355,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to bat,15138,,,1,W,Harwell International CC - Friendly XI - Won,15138,false,false,false,false,"<b>Harwell International CC Friendly XI Innings</b><br/>
@@ -484,20 +484,20 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 7.6 Didcot CC Downs 3rd XI: 50 runs in 8.0 overs, 27 minutes, 19 extras<br/>16.2 Didcot CC Downs 3rd XI: 100 runs in 16.2 overs, 59 minutes, 30 extras
 <br/>
 ",,,Downs League,NA,NA
-6910838,New,Yes,07/06/2025,275,Division 9B,126849,League,Limited Overs,Standard,no,07/06/2025,13:00,Harwell,11535,2nd XI,378560,Harwell International CC,3220,2nd XI,126922,Sunningwell CC,6158,,,,,,,,,,,,,126922,Sunningwell CC - 2nd XI won the toss and elected to field,378560,40,,1,A,Abandoned,,false,false,false,false,"<b>Harwell International CC 2nd XI Innings</b><br/>
-12.4 1st Wicket: 50 runs in 77 balls, 63 minutes, Thomas Forrest 23 (43), Sooraj Pradeep 16 (34), 12 extras<br/>12.4 Harwell International CC 2nd XI: 50 runs in 12.4 overs, 63 minutes, 12 extras<br/>21.3 1st Wicket: 100 runs in 130 balls, 95 minutes, Thomas Forrest 36 (67), Sooraj Pradeep 47 (63), 17 extras<br/>21.3 Harwell International CC 2nd XI: 100 runs in 21.2 overs, 95 minutes, 17 extras<br/>21.7 Sooraj Pradeep: 50 runs in 64 balls, 96 minutes (7x4)
-<br/>
-<br/>
-<b>Sunningwell CC 2nd XI Innings</b><br/>
-8.6 Sunningwell CC 2nd XI: 50 runs in 8.5 overs, 38 minutes, 3 extras<br/>13.10 Sunningwell CC 2nd XI: 100 runs in 14.0 overs, 64 minutes, 12 extras
-<br/>
-",,,Cherwell League,NA,NA
 6910117,New,Yes,08/06/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,07/06/2025,13:00,Steventon Green,,1st XI,189998,Steventon CC,6038,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,189998,Steventon CC - 1st XI won the toss and elected to field,284082,45,,1,W,Harwell International CC - 1st XI - Won,284082,true,false,false,false,"<b>Harwell International CC 1st XI Innings</b><br/>
 11.1 1st Wicket: 50 runs in 68 balls, 48 minutes, James Wilson 14 (27), Raunakk Banerjee 34 (41), 5 extras<br/>11.1 Harwell International CC 1st XI: 50 runs in 11.1 overs, 48 minutes, 5 extras<br/>25.6 Harwell International CC 1st XI: 100 runs in 26.0 overs, 116 minutes, 9 extras
 <br/>
 <br/>
 <b>Steventon CC 1st XI Innings</b><br/>
 13.4 Steventon CC 1st XI: 50 runs in 13.4 overs, 63 minutes, 10 extras
+<br/>
+",,,Cherwell League,NA,NA
+6910838,New,Yes,07/06/2025,275,Division 9B,126849,League,Limited Overs,Standard,no,07/06/2025,13:00,Harwell,11535,2nd XI,378560,Harwell International CC,3220,2nd XI,126922,Sunningwell CC,6158,,,,,,,,,,,,,126922,Sunningwell CC - 2nd XI won the toss and elected to field,378560,40,,1,A,Abandoned,,false,false,false,false,"<b>Harwell International CC 2nd XI Innings</b><br/>
+12.4 1st Wicket: 50 runs in 77 balls, 63 minutes, Thomas Forrest 23 (43), Sooraj Pradeep 16 (34), 12 extras<br/>12.4 Harwell International CC 2nd XI: 50 runs in 12.4 overs, 63 minutes, 12 extras<br/>21.3 1st Wicket: 100 runs in 130 balls, 95 minutes, Thomas Forrest 36 (67), Sooraj Pradeep 47 (63), 17 extras<br/>21.3 Harwell International CC 2nd XI: 100 runs in 21.2 overs, 95 minutes, 17 extras<br/>21.7 Sooraj Pradeep: 50 runs in 64 balls, 96 minutes (7x4)
+<br/>
+<br/>
+<b>Sunningwell CC 2nd XI Innings</b><br/>
+8.6 Sunningwell CC 2nd XI: 50 runs in 8.5 overs, 38 minutes, 3 extras<br/>13.10 Sunningwell CC 2nd XI: 100 runs in 14.0 overs, 64 minutes, 12 extras
 <br/>
 ",,,Cherwell League,NA,NA
 7027950,New,Yes,05/07/2025,,,,Friendly,Limited Overs,Standard,no,08/06/2025,13:00,Harwell,11535,Friendly XI,15138,Harwell International CC,3220,Friendly XI,196653,Ewelme & Benson CC,2633,,,,,,,,,,,,,196653,Ewelme & Benson CC - Friendly XI won the toss and elected to bat,196653,,,1,W,Ewelme & Benson CC - Friendly XI - Won,196653,false,true,false,false,"<b>Ewelme & Benson CC Friendly XI Innings</b><br/>
@@ -516,20 +516,20 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 7.3 Harwell International CC Midweek XI: 50 runs in 7.3 overs, 29 minutes, 18 extras<br/>16.5 Harwell International CC Midweek XI: 100 runs in 16.5 overs, 63 minutes, 34 extras
 <br/>
 ",,,Downs League,NA,NA
-6910842,New,Yes,12/07/2025,275,Division 9B,126849,League,Limited Overs,Standard,no,14/06/2025,13:00,Stanton Harcourt,,2nd XI,356214,Stanton Harcourt CC,6010,2nd XI,378560,Harwell International CC,3220,,,,,,,,,,,,,378560,Harwell International CC - 2nd XI won the toss and elected to field,356214,40,,1,W,Stanton Harcourt CC - 2nd XI - Won,356214,false,false,false,false,"<b>Stanton Harcourt CC 2nd XI Innings</b><br/>
-8.4 Stanton Harcourt CC 2nd XI: 50 runs in 8.4 overs, 39 minutes, 7 extras<br/>9.4 3rd Wicket: 50 runs in 33 balls, 21 minutes, P Farrell 13 (14), O Pascoe 34 (19), 7 extras<br/>13.1 O Pascoe: 50 runs in 31 balls, 35 minutes (6x4, 4x6)<br/>14.1 Stanton Harcourt CC 2nd XI: 100 runs in 14.1 overs, 63 minutes, 9 extras<br/>21.2 Stanton Harcourt CC 2nd XI: 150 runs in 21.1 overs, 94 minutes, 20 extras<br/>25.1 O Pascoe: 100 runs in 59 balls, 84 minutes (12x4, 6x6)
-<br/>
-<br/>
-<b>Harwell International CC 2nd XI Innings</b><br/>
-10.5 Harwell International CC 2nd XI: 50 runs in 10.5 overs, 35 minutes, 8 extras<br/>23.2 Harwell International CC 2nd XI: 100 runs in 23.2 overs, 80 minutes, 21 extras<br/>26.6 6th Wicket: 50 runs in 62 balls, 33 minutes, Matt Davies 39 (38), James Warren 2 (24), 9 extras<br/>34.4 Harwell International CC 2nd XI: 150 runs in 34.4 overs, 119 minutes, 25 extras
-<br/>
-",,,Cherwell League,NA,NA
 6910120,New,Yes,14/06/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,14/06/2025,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,77935,Abingdon Vale CC,599,Arthur Strain,6362215,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,77935,45,,1,D,Abingdon Vale CC - 2nd XI - Winning Draw,77935,false,false,false,false,"<b>Abingdon Vale CC 2nd XI Innings</b><br/>
 15.6 Abingdon Vale CC 2nd XI: 50 runs in 16.0 overs, 66 minutes, 3 extras<br/>20.7 Gareth Ellis: 50 runs in 68 balls, 85 minutes (9x4)<br/>24.2 Abingdon Vale CC 2nd XI: 100 runs in 24.2 overs, 98 minutes, 14 extras<br/>33.5 Abingdon Vale CC 2nd XI: 150 runs in 33.5 overs, 133 minutes, 16 extras<br/>35.1 5th Wicket: 50 runs in 53 balls, 32 minutes, Paul Butcher 33 (27), mark cairns 17 (26), 2 extras<br/>36.2 Paul Butcher: 50 runs in 58 balls, 67 minutes (9x4)<br/>42.3 Abingdon Vale CC 2nd XI: 200 runs in 42.3 overs, 167 minutes, 18 extras
 <br/>
 <br/>
 <b>Harwell International CC 1st XI Innings</b><br/>
 14.1 Harwell International CC 1st XI: 50 runs in 14.1 overs, 63 minutes, 9 extras<br/>22.3 Harwell International CC 1st XI: 100 runs in 22.3 overs, 106 minutes, 15 extras<br/>29.1 7th Wicket: 50 runs in 64 balls, 44 minutes, Max Schofield 38 (37), Toby Gallington 8 (27), 4 extras<br/>34.3 Harwell International CC 1st XI: 150 runs in 34.3 overs, 160 minutes, 21 extras
+<br/>
+",,,Cherwell League,NA,NA
+6910842,New,Yes,12/07/2025,275,Division 9B,126849,League,Limited Overs,Standard,no,14/06/2025,13:00,Stanton Harcourt,,2nd XI,356214,Stanton Harcourt CC,6010,2nd XI,378560,Harwell International CC,3220,,,,,,,,,,,,,378560,Harwell International CC - 2nd XI won the toss and elected to field,356214,40,,1,W,Stanton Harcourt CC - 2nd XI - Won,356214,false,false,false,false,"<b>Stanton Harcourt CC 2nd XI Innings</b><br/>
+8.4 Stanton Harcourt CC 2nd XI: 50 runs in 8.4 overs, 39 minutes, 7 extras<br/>9.4 3rd Wicket: 50 runs in 33 balls, 21 minutes, P Farrell 13 (14), O Pascoe 34 (19), 7 extras<br/>13.1 O Pascoe: 50 runs in 31 balls, 35 minutes (6x4, 4x6)<br/>14.1 Stanton Harcourt CC 2nd XI: 100 runs in 14.1 overs, 63 minutes, 9 extras<br/>21.2 Stanton Harcourt CC 2nd XI: 150 runs in 21.1 overs, 94 minutes, 20 extras<br/>25.1 O Pascoe: 100 runs in 59 balls, 84 minutes (12x4, 6x6)
+<br/>
+<br/>
+<b>Harwell International CC 2nd XI Innings</b><br/>
+10.5 Harwell International CC 2nd XI: 50 runs in 10.5 overs, 35 minutes, 8 extras<br/>23.2 Harwell International CC 2nd XI: 100 runs in 23.2 overs, 80 minutes, 21 extras<br/>26.6 6th Wicket: 50 runs in 62 balls, 33 minutes, Matt Davies 39 (38), James Warren 2 (24), 9 extras<br/>34.4 Harwell International CC 2nd XI: 150 runs in 34.4 overs, 119 minutes, 25 extras
 <br/>
 ",,,Cherwell League,NA,NA
 6924776,New,Yes,18/06/2025,16676,Division 3 South,128550,League,Limited Overs,Standard,no,18/06/2025,18:00,Harwell,11535,Midweek XI,15137,Harwell International CC,3220,Midweek XI,222461,The Pirates CC,16332,,,,,,,,,,,,,15137,Harwell International CC - Midweek XI won the toss and elected to field,222461,20,,1,W,Harwell International CC - Midweek XI - Won,15137,false,false,false,false,"<b>The Pirates CC Midweek XI Innings</b><br/>
@@ -540,6 +540,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 5.6 Harwell International CC Midweek XI: 50 runs in 6.0 overs, 26 minutes, 19 extras<br/>9.4 3rd Wicket: 50 runs in 27 balls, 18 minutes, Sooraj Pradeep 22 (13), Raunakk Banerjee 18 (14), 10 extras<br/>10.3 Harwell International CC Midweek XI: 100 runs in 10.3 overs, 44 minutes, 27 extras<br/>18.3 Harwell International CC Midweek XI: 150 runs in 18.3 overs, 76 minutes, 44 extras
 <br/>
 ",,,Downs League,NA,NA
+6910126,New,Yes,21/06/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,21/06/2025,13:00,"Horspath Recreation Ground, The Village Hall",36253,4th XI,136094,Horspath CC,8683,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,,,,45,,1,CON,Horspath CC - 4th XI - Conceded,284082,false,false,false,false,,,,Cherwell League,NA,NA
 6910845,New,Yes,21/06/2025,275,Division 9B,126849,League,Limited Overs,Standard,no,21/06/2025,13:00,Harwell,11535,2nd XI,378560,Harwell International CC,3220,1st XI,378558,Gaerse Dun CC,29227,,,,,,,,,,,,,378558,Gaerse Dun CC - 1st XI won the toss and elected to field,378560,40,,1,W,Harwell International CC - 2nd XI - Won,378560,false,false,false,false,"<b>Harwell International CC 2nd XI Innings</b><br/>
 23.2 Harwell International CC 2nd XI: 50 runs in 23.2 overs, 92 minutes, 8 extras<br/>38.4 Harwell International CC 2nd XI: 100 runs in 38.4 overs, 151 minutes, 10 extras
 <br/>
@@ -548,7 +549,6 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 18.2 Gaerse Dun CC 1st XI: 50 runs in 18.1 overs, 78 minutes, 11 extras
 <br/>
 ",,,Cherwell League,NA,NA
-6910126,New,Yes,21/06/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,21/06/2025,13:00,"Horspath Recreation Ground, The Village Hall",36253,4th XI,136094,Horspath CC,8683,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,,,,45,,1,CON,Horspath CC - 4th XI - Conceded,284082,false,false,false,false,,,,Cherwell League,NA,NA
 7152970,New,Yes,22/06/2025,275,Steve Dixon Memorial Cup,67395,Cup,Limited Overs,Standard,no,22/06/2025,14:00,Swinbrook 1st XI Square ,61642,1st XI,21620,Swinbrook CC,6202,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Harwell International CC 1st XI Innings</b><br/>
 8.3 Harwell International CC 1st XI: 50 runs in 8.3 overs, 39 minutes, 1 extra<br/>15.2 Harwell International CC 1st XI: 100 runs in 15.2 overs, 68 minutes, 2 extras<br/>15.6 Jayesh Manwani: 50 runs in 21 balls, 38 minutes (3x4, 6x6)<br/>16.5 6th Wicket: 50 runs in 38 balls, 27 minutes, Jayesh Manwani 32 (13), Toby Gallington 18 (25), 3 extras<br/>25.2 Harwell International CC 1st XI: 150 runs in 25.2 overs, 106 minutes, 10 extras
 <br/>
@@ -558,20 +558,20 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <br/>
 ",,,Cherwell League,NA,NA
 6924925,New,Yes,25/06/2025,16676,Division 3 South,128550,League,Limited Overs,Standard,no,25/06/2025,18:00,Add New Ground,,Midweek XI,329065,Chilton Foliat CC,26576,Midweek XI,15137,Harwell International CC,3220,,,,,,,,,,,,,329065,Chilton Foliat CC - Midweek XI won the toss and elected to field,15137,20,,1,W,Harwell International CC - Midweek XI - Won,15137,false,false,false,false,,,,Downs League,NA,NA
-6910853,New,Yes,30/06/2025,275,Division 9B,126849,League,Limited Overs,Standard,no,28/06/2025,13:00,Ardington,,3rd XI,345111,East & West Hendred CC,2436,2nd XI,378560,Harwell International CC,3220,,,,,,,,,,,,,345111,East & West Hendred CC - 3rd XI won the toss and elected to field,378560,40,,1,D,Harwell International CC - 2nd XI - Winning Draw,378560,true,false,false,false,"<b>Harwell International CC 2nd XI Innings</b><br/>
-15.2 1st Wicket: 50 runs in 91 balls, 65 minutes, Thomas Forrest 10 (46), Matt Davies 23 (45), 17 extras<br/>15.2 Harwell International CC 2nd XI: 50 runs in 15.1 overs, 65 minutes, 17 extras<br/>21.5 Harwell International CC 2nd XI: 100 runs in 21.4 overs, 97 minutes, 26 extras<br/>23.3 Matt Davies: 50 runs in 79 balls, 105 minutes (9x4)<br/>29.1 2nd Wicket: 50 runs in 55 balls, 35 minutes, Matt Davies 24 (26), Paul Eccleston 24 (29), 3 extras<br/>29.6 Harwell International CC 2nd XI: 150 runs in 30.0 overs, 131 minutes, 28 extras<br/>35.6 Matt Davies: 100 runs in 114 balls, 160 minutes (18x4)<br/>38.5 Harwell International CC 2nd XI: 200 runs in 38.5 overs, 170 minutes, 35 extras
-<br/>
-<br/>
-<b>East & West Hendred CC 3rd XI Innings</b><br/>
-13.6 1st Wicket: 50 runs in 87 balls, 49 minutes, Tom Atkins 22 (49), Joe Shuff 17 (38), 11 extras<br/>13.6 East & West Hendred CC 3rd XI: 50 runs in 14.0 overs, 49 minutes, 11 extras<br/>22.2 Tom Atkins: 50 runs in 72 balls, 82 minutes (9x4)<br/>23.6 2nd Wicket: 50 runs in 58 balls, 35 minutes, Tom Atkins 33 (27), G Street 15 (31), 5 extras<br/>23.6 East & West Hendred CC 3rd XI: 100 runs in 24.0 overs, 88 minutes, 16 extras<br/>29.4 2nd Wicket: 100 runs in 92 balls, 56 minutes, Tom Atkins 62 (48), G Street 29 (44), 9 extras<br/>29.4 East & West Hendred CC 3rd XI: 150 runs in 29.4 overs, 109 minutes, 20 extras<br/>31.6 Tom Atkins: 100 runs in 108 balls, 120 minutes (19x4)
-<br/>
-",,,Cherwell League,NA,NA
 6910133,New,Yes,28/06/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,28/06/2025,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,2nd XI,49117,Bledlow Ridge CC,7799,Ian Murdoch,4586366,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Harwell International CC 1st XI Innings</b><br/>
 15.4 Harwell International CC 1st XI: 50 runs in 15.4 overs, 61 minutes, 14 extras<br/>25.2 Harwell International CC 1st XI: 100 runs in 25.2 overs, 94 minutes, 15 extras<br/>32.1 Max Schofield: 50 runs in 50 balls, 70 minutes (7x4)<br/>32.6 James Dow: 5 wickets (12-4-37-5)<br/>35.3 Harwell International CC 1st XI: 150 runs in 35.3 overs, 139 minutes, 17 extras<br/>46.2 Harwell International CC 1st XI: 200 runs in 46.1 overs, 183 minutes, 22 extras
 <br/>
 <br/>
 <b>Bledlow Ridge CC 2nd XI Innings</b><br/>
 9.1 Bledlow Ridge CC 2nd XI: 50 runs in 9.1 overs, 42 minutes, 7 extras<br/>28.5 Bledlow Ridge CC 2nd XI: 100 runs in 28.4 overs, 120 minutes, 21 extras<br/>36.3 Max Schofield: 5 wickets (10.3-1-51-5)
+<br/>
+",,,Cherwell League,NA,NA
+6910853,New,Yes,30/06/2025,275,Division 9B,126849,League,Limited Overs,Standard,no,28/06/2025,13:00,Ardington,,3rd XI,345111,East & West Hendred CC,2436,2nd XI,378560,Harwell International CC,3220,,,,,,,,,,,,,345111,East & West Hendred CC - 3rd XI won the toss and elected to field,378560,40,,1,D,Harwell International CC - 2nd XI - Winning Draw,378560,true,false,false,false,"<b>Harwell International CC 2nd XI Innings</b><br/>
+15.2 1st Wicket: 50 runs in 91 balls, 65 minutes, Thomas Forrest 10 (46), Matt Davies 23 (45), 17 extras<br/>15.2 Harwell International CC 2nd XI: 50 runs in 15.1 overs, 65 minutes, 17 extras<br/>21.5 Harwell International CC 2nd XI: 100 runs in 21.4 overs, 97 minutes, 26 extras<br/>23.3 Matt Davies: 50 runs in 79 balls, 105 minutes (9x4)<br/>29.1 2nd Wicket: 50 runs in 55 balls, 35 minutes, Matt Davies 24 (26), Paul Eccleston 24 (29), 3 extras<br/>29.6 Harwell International CC 2nd XI: 150 runs in 30.0 overs, 131 minutes, 28 extras<br/>35.6 Matt Davies: 100 runs in 114 balls, 160 minutes (18x4)<br/>38.5 Harwell International CC 2nd XI: 200 runs in 38.5 overs, 170 minutes, 35 extras
+<br/>
+<br/>
+<b>East & West Hendred CC 3rd XI Innings</b><br/>
+13.6 1st Wicket: 50 runs in 87 balls, 49 minutes, Tom Atkins 22 (49), Joe Shuff 17 (38), 11 extras<br/>13.6 East & West Hendred CC 3rd XI: 50 runs in 14.0 overs, 49 minutes, 11 extras<br/>22.2 Tom Atkins: 50 runs in 72 balls, 82 minutes (9x4)<br/>23.6 2nd Wicket: 50 runs in 58 balls, 35 minutes, Tom Atkins 33 (27), G Street 15 (31), 5 extras<br/>23.6 East & West Hendred CC 3rd XI: 100 runs in 24.0 overs, 88 minutes, 16 extras<br/>29.4 2nd Wicket: 100 runs in 92 balls, 56 minutes, Tom Atkins 62 (48), G Street 29 (44), 9 extras<br/>29.4 East & West Hendred CC 3rd XI: 150 runs in 29.4 overs, 109 minutes, 20 extras<br/>31.6 Tom Atkins: 100 runs in 108 balls, 120 minutes (19x4)
 <br/>
 ",,,Cherwell League,NA,NA
 7069678,New,Yes,29/06/2025,,,,Friendly,Limited Overs,Standard,no,29/06/2025,00:00,Harwell,11535,Friendly XI,15138,Harwell International CC,3220,Sunday 1st XI,203446,Hampstead Norreys CC,14194,,,,,,,,,,,,,203446,Hampstead Norreys CC - Sunday 1st XI won the toss and elected to bat,203446,,,1,T,Tied,,false,false,false,false,"<b>Hampstead Norreys CC Sunday 1st XI Innings</b><br/>
@@ -583,20 +583,20 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 <br/>
 ",,,NA,NA,NA
 6924806,New,Yes,02/07/2025,16676,Division 3 South,128550,League,Limited Overs,Standard,no,02/07/2025,18:00,Donnington CC Ground,13390,Wednesday XI,230068,Donnington CC,7773,Midweek XI,15137,Harwell International CC,3220,,,,,,,,,,,,,230068,Donnington CC - Wednesday XI won the toss and elected to field,15137,20,,1,W,Harwell International CC - Midweek XI - Won,15137,false,false,false,false,,,,Downs League,NA,NA
-6910136,New,Yes,05/07/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,05/07/2025,13:00,Clifton Hampden,,1st XI,225824,Clifton Hampden CC,1927,1st XI,284082,Harwell International CC,3220,Rohit Aggarwal,6375025,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Harwell International CC 1st XI Innings</b><br/>
-18.5 Harwell International CC 1st XI: 50 runs in 18.5 overs, 80 minutes, 16 extras<br/>30.1 Harwell International CC 1st XI: 100 runs in 30.1 overs, 128 minutes, 18 extras<br/>40.3 Harwell International CC 1st XI: 150 runs in 40.3 overs, 172 minutes, 28 extras<br/>40.6 Toby Gallington: 50 runs in 110 balls, 135 minutes (9x4)
-<br/>
-<br/>
-<b>Clifton Hampden CC 1st XI Innings</b><br/>
-9.1 Clifton Hampden CC 1st XI: 50 runs in 9.1 overs, 37 minutes, 7 extras<br/>11.4 Max Schofield: 5 wickets (5.4-1-15-5)<br/>24.3 Clifton Hampden CC 1st XI: 100 runs in 24.3 overs, 102 minutes, 17 extras
-<br/>
-",,,Cherwell League,NA,NA
 6910855,New,Yes,05/07/2025,275,Division 9B,126849,League,Limited Overs,Standard,no,05/07/2025,13:00,Harwell,11535,2nd XI,378560,Harwell International CC,3220,6th XI,378557,Didcot CC,2301,,,,,,,,,,,,,378560,Harwell International CC - 2nd XI won the toss and elected to field,378557,40,,1,W,Harwell International CC - 2nd XI - Won,378560,false,false,false,false,"<b>Didcot CC 6th XI Innings</b><br/>
 15.4 Didcot CC 6th XI: 50 runs in 15.4 overs, 13 minutes, 10 extras<br/>17.5 3rd Wicket: 50 runs in 99 balls, 13 minutes, James Casson 15 (53), Peter Sykes 26 (46), 11 extras<br/>23.3 Didcot CC 6th XI: 100 runs in 23.2 overs, 21 minutes, 18 extras<br/>24.2 3rd Wicket: 100 runs in 139 balls, 20 minutes, James Casson 37 (76), Peter Sykes 46 (63), 17 extras<br/>25.6 Peter Sykes: 50 runs in 66 balls, 20 minutes (8x4)<br/>32.3 Didcot CC 6th XI: 150 runs in 32.3 overs, 34 minutes, 25 extras
 <br/>
 <br/>
 <b>Harwell International CC 2nd XI Innings</b><br/>
 8.5 Harwell International CC 2nd XI: 50 runs in 8.4 overs, 5 minutes, 8 extras<br/>18.1 Harwell International CC 2nd XI: 100 runs in 18.1 overs, 16 minutes, 11 extras<br/>18.4 Paul Eccleston: 50 runs in 46 balls, 12 minutes (11x4)<br/>27.4 Harwell International CC 2nd XI: 150 runs in 27.2 overs, 24 minutes, 13 extras<br/>32.2 8th Wicket: 50 runs in 56 balls, 5 minutes, J Southorn 47 (35), Stephen Boag 2 (21), 2 extras<br/>32.4 J Southorn: 50 runs in 39 balls, 6 minutes (12x4)
+<br/>
+",,,Cherwell League,NA,NA
+6910136,New,Yes,05/07/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,05/07/2025,13:00,Clifton Hampden,,1st XI,225824,Clifton Hampden CC,1927,1st XI,284082,Harwell International CC,3220,Rohit Aggarwal,6375025,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to bat,284082,45,,1,W,Harwell International CC - 1st XI - Won,284082,false,false,false,false,"<b>Harwell International CC 1st XI Innings</b><br/>
+18.5 Harwell International CC 1st XI: 50 runs in 18.5 overs, 80 minutes, 16 extras<br/>30.1 Harwell International CC 1st XI: 100 runs in 30.1 overs, 128 minutes, 18 extras<br/>40.3 Harwell International CC 1st XI: 150 runs in 40.3 overs, 172 minutes, 28 extras<br/>40.6 Toby Gallington: 50 runs in 110 balls, 135 minutes (9x4)
+<br/>
+<br/>
+<b>Clifton Hampden CC 1st XI Innings</b><br/>
+9.1 Clifton Hampden CC 1st XI: 50 runs in 9.1 overs, 37 minutes, 7 extras<br/>11.4 Max Schofield: 5 wickets (5.4-1-15-5)<br/>24.3 Clifton Hampden CC 1st XI: 100 runs in 24.3 overs, 102 minutes, 17 extras
 <br/>
 ",,,Cherwell League,NA,NA
 6924821,New,Yes,09/07/2025,16676,Division 3 South,128550,League,Limited Overs,Standard,no,09/07/2025,18:00,Harwell,11535,Midweek XI,15137,Harwell International CC,3220,Downs 3rd XI,381696,Didcot CC,2301,,,,,,,,,,,,,381696,Didcot CC - Downs 3rd XI won the toss and elected to bat,381696,20,,1,W,Didcot CC - Downs 3rd XI - Won,381696,false,false,false,false,"<b>Didcot CC Downs 3rd XI Innings</b><br/>
@@ -615,7 +615,6 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 9.2 Harwell International CC Midweek XI: 50 runs in 9.2 overs, 34 minutes, 3 extras<br/>19.4 Harwell International CC Midweek XI: 100 runs in 19.4 overs, 75 minutes, 7 extras
 <br/>
 ",,,NA,NA,NA
-6910143,New,Yes,15/07/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,12/07/2025,13:00,Boundary Park,37957,4th XI,107886,Didcot CC,2301,1st XI,284082,Harwell International CC,3220,David Hughes,6374987,,,,,,,,,,,107886,Didcot CC - 4th XI won the toss and elected to bat,107886,45,,1,D,Harwell International CC - 1st XI - Winning Draw,284082,false,false,false,false,,,,Cherwell League,NA,NA
 6910861,New,Yes,12/07/2025,275,Division 9B,126849,League,Limited Overs,Standard,no,12/07/2025,13:00,Harwell,11535,2nd XI,378560,Harwell International CC,3220,2nd XI,195890,Marcham CC,4207,,,,,,,,,,,,,378560,Harwell International CC - 2nd XI won the toss and elected to field,195890,40,,1,W,Harwell International CC - 2nd XI - Won,378560,false,false,false,false,"<b>Marcham CC 2nd XI Innings</b><br/>
 17.6 Marcham CC 2nd XI: 50 runs in 18.0 overs, 77 minutes, 8 extras<br/>19.5 2nd Wicket: 50 runs in 101 balls, 65 minutes, James Cox 18 (44), J Moore 29 (57), 5 extras<br/>27.3 J Moore: 50 runs in 85 balls, 93 minutes (8x4, 1x6)<br/>33.1 Marcham CC 2nd XI: 100 runs in 33.1 overs, 137 minutes, 10 extras
 <br/>
@@ -624,6 +623,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 17.5 Harwell International CC 2nd XI: 50 runs in 17.4 overs, 71 minutes, 20 extras<br/>20.2 3rd Wicket: 50 runs in 86 balls, 54 minutes, Thomas Forrest 12 (41), Joe Braham 17 (45), 21 extras<br/>28.2 Harwell International CC 2nd XI: 100 runs in 28.2 overs, 112 minutes, 26 extras<br/>32.3 Joe Braham: 50 runs in 87 balls, 100 minutes (8x4)
 <br/>
 ",,,Cherwell League,NA,NA
+6910143,New,Yes,15/07/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,12/07/2025,13:00,Boundary Park,37957,4th XI,107886,Didcot CC,2301,1st XI,284082,Harwell International CC,3220,David Hughes,6374987,,,,,,,,,,,107886,Didcot CC - 4th XI won the toss and elected to bat,107886,45,,1,D,Harwell International CC - 1st XI - Winning Draw,284082,false,false,false,false,,,,Cherwell League,NA,NA
 7167524,New,Yes,13/07/2025,,,,Friendly,Limited Overs,Standard,no,13/07/2025,13:30,Boundary Park,37957,Friendly XI,219953,Didcot CC,2301,Friendly XI,15138,Harwell International CC,3220,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to bat,15138,,,1,W,Didcot CC - Friendly XI - Won,219953,false,false,false,false,"<b>Harwell International CC Friendly XI Innings</b><br/>
 15.6 Harwell International CC Friendly XI: 50 runs in 16.0 overs, 67 minutes, 11 extras<br/>23.1 3rd Wicket: 50 runs in 49 balls, 38 minutes, Raunakk Banerjee 22 (24), Graham Stevens 27 (25), 4 extras<br/>23.3 Harwell International CC Friendly XI: 100 runs in 23.3 overs, 102 minutes, 15 extras<br/>26.6 Raunakk Banerjee: 50 runs in 72 balls, 121 minutes (6x4)<br/>31.2 Mark Telkman: 5 wickets (4.2-0-17-5)
 <br/>
@@ -632,12 +632,12 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 7.4 Didcot CC Friendly XI: 50 runs in 7.4 overs, 33 minutes, 11 extras<br/>11.3 Mark Telkman: 50 runs in 32 balls, 50 minutes (8x4)<br/>14.2 Didcot CC Friendly XI: 100 runs in 14.2 overs, 74 minutes, 14 extras
 <br/>
 ",,,NA,NA,NA
-6910148,New,Yes,26/07/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,19/07/2025,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,1st XI,68775,Frieth CC,8317,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,68775,45,,1,A,Abandoned,,false,true,false,false,"<b>Frieth CC 1st XI Innings</b><br/>
-12.5 Frieth CC 1st XI: 50 runs in 12.5 overs, 194 minutes, 6 extras
-<br/>
-",,,Cherwell League,NA,NA
 6910865,New,Yes,24/07/2025,275,Division 9B,126849,League,Limited Overs,Standard,no,19/07/2025,13:00,West Ilsley CC,5252,2nd XI,378562,West Ilsley CC,9181,2nd XI,378560,Harwell International CC,3220,,,,,,,,,,,,,378562,West Ilsley CC - 2nd XI won the toss and elected to field,378560,40,,1,A,Abandoned,,true,false,false,false,"<b>Harwell International CC 2nd XI Innings</b><br/>
 10.2 1st Wicket: 50 runs in 64 balls, 44 minutes, Thomas Forrest 14 (39), James Wilson 16 (25), 21 extras<br/>10.2 Harwell International CC 2nd XI: 50 runs in 10.2 overs, 44 minutes, 21 extras<br/>21.4 Harwell International CC 2nd XI: 100 runs in 21.3 overs, 85 minutes, 35 extras
+<br/>
+",,,Cherwell League,NA,NA
+6910148,New,Yes,26/07/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,19/07/2025,13:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,1st XI,68775,Frieth CC,8317,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,68775,45,,1,A,Abandoned,,false,true,false,false,"<b>Frieth CC 1st XI Innings</b><br/>
+12.5 Frieth CC 1st XI: 50 runs in 12.5 overs, 194 minutes, 6 extras
 <br/>
 ",,,Cherwell League,NA,NA
 7170082,New,Yes,20/07/2025,275,Steve Dixon Memorial Cup,67395,Cup,Limited Overs,Standard,no,20/07/2025,14:00,Harwell,11535,1st XI,284082,Harwell International CC,3220,1st XI,161618,Silverstone CC,10923,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,161618,,,1,W,Silverstone CC - 1st XI - Won,161618,false,false,false,false,"<b>Silverstone CC 1st XI Innings</b><br/>
@@ -730,6 +730,7 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 7.5 Wantage & Grove CC Friendly XI: 50 runs in 7.4 overs, 33 minutes, 10 extras<br/>8.2 3rd Wicket: 50 runs in 30 balls, 21 minutes, Jonny Walker 6 (9), Stephen Bramley 39 (21), 6 extras<br/>19.4 Wantage & Grove CC Friendly XI: 100 runs in 19.4 overs, 87 minutes, 15 extras
 <br/>
 ",,,NA,NA,NA
+6910167,New,Yes,21/08/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,16/08/2025,13:00,Abingdon Vale CC - Hales Meadow,14131,2nd XI,77935,Abingdon Vale CC,599,1st XI,284082,Harwell International CC,3220,,,Richard Chamberlain,6375080,,,,,,,,,77935,Abingdon Vale CC - 2nd XI won the toss and elected to bat,77935,45,,1,W,Abingdon Vale CC - 2nd XI - Won,77935,false,false,false,false,,,,Cherwell League,NA,NA
 6910889,New,Yes,16/08/2025,275,Division 9B,126849,League,Limited Overs,Standard,no,16/08/2025,13:00,Harwell,11535,2nd XI,378560,Harwell International CC,3220,2nd XI,356214,Stanton Harcourt CC,6010,,,,,,,,,,,,,378560,Harwell International CC - 2nd XI won the toss and elected to field,356214,40,,1,W,Harwell International CC - 2nd XI - Won,378560,false,false,false,false,"<b>Stanton Harcourt CC 2nd XI Innings</b><br/>
 13.4 Stanton Harcourt CC 2nd XI: 50 runs in 13.4 overs, 56 minutes, 13 extras<br/>26.6 Stanton Harcourt CC 2nd XI: 100 runs in 26.5 overs, 107 minutes, 21 extras
 <br/>
@@ -738,7 +739,6 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 9.1 Harwell International CC 2nd XI: 50 runs in 9.1 overs, 42 minutes, 10 extras<br/>16.3 4th Wicket: 50 runs in 67 balls, 42 minutes, Yaqoob Syed 24 (31), Adam Shorten 18 (36), 8 extras<br/>18.1 Harwell International CC 2nd XI: 100 runs in 18.1 overs, 75 minutes, 15 extras
 <br/>
 ",,,Cherwell League,NA,NA
-6910167,New,Yes,21/08/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,16/08/2025,13:00,Abingdon Vale CC - Hales Meadow,14131,2nd XI,77935,Abingdon Vale CC,599,1st XI,284082,Harwell International CC,3220,,,Richard Chamberlain,6375080,,,,,,,,,77935,Abingdon Vale CC - 2nd XI won the toss and elected to bat,77935,45,,1,W,Abingdon Vale CC - 2nd XI - Won,77935,false,false,false,false,,,,Cherwell League,NA,NA
 7184003,New,Yes,17/08/2025,,,,Friendly,Limited Overs,Standard,no,17/08/2025,14:00,Harwell,11535,Friendly XI,15138,Harwell International CC,3220,Friendly XI,190178,Aldworth CC,11866,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to bat,15138,,,1,W,Aldworth CC - Friendly XI - Won,190178,false,false,false,false,"<b>Harwell International CC Friendly XI Innings</b><br/>
 18.4 Harwell International CC Friendly XI: 50 runs in 18.4 overs, 81 minutes, 14 extras
 <br/>
@@ -763,3 +763,20 @@ id,status,published,last_updated,league_id,competition_name,competition_id,compe
 18.3 Horspath CC 4th XI: 50 runs in 18.3 overs, 75 minutes, 23 extras<br/>30.6 Horspath CC 4th XI: 100 runs in 30.5 overs, 130 minutes, 31 extras
 <br/>
 ",,,Cherwell League,NA,NA
+6910896,New,Yes,30/08/2025,275,Division 9B,126849,League,Limited Overs,Standard,no,30/08/2025,12:30,Harwell,11535,2nd XI,378560,Harwell International CC,3220,3rd XI,345111,East & West Hendred CC,2436,,,,,,,,,,,,,378560,Harwell International CC - 2nd XI won the toss and elected to field,345111,40,,1,W,Harwell International CC - 2nd XI - Won,378560,false,true,false,false,"<b>East & West Hendred CC 3rd XI Innings</b><br/>
+13.3 East & West Hendred CC 3rd XI: 50 runs in 13.3 overs, 52 minutes, 12 extras<br/>15.4 3rd Wicket: 50 runs in 63 balls, 38 minutes, Andy Buckland 25 (34), George Brook 17 (29), 10 extras<br/>27.2 Stephen Boag: 5 wickets (7.2-1-20-5)<br/>31.2 East & West Hendred CC 3rd XI: 100 runs in 31.2 overs, 112 minutes, 17 extras
+<br/>
+<br/>
+<b>Harwell International CC 2nd XI Innings</b><br/>
+9.3 Harwell International CC 2nd XI: 50 runs in 9.3 overs, 41 minutes, 4 extras<br/>21.6 4th Wicket: 50 runs in 72 balls, 54 minutes, Matt Davies 17 (35), Thomas Forrest 25 (37), 8 extras<br/>21.6 Harwell International CC 2nd XI: 100 runs in 22.0 overs, 99 minutes, 12 extras
+<br/>
+",,,Cherwell League,NA,NA
+6910176,New,Yes,01/09/2025,275,Division 6C,126840,League,Limited Overs,Standard,no,30/08/2025,12:30,Meadow Styles Playing Field,2578,2nd XI,49117,Bledlow Ridge CC,7799,1st XI,284082,Harwell International CC,3220,,,,,,,,,,,,,284082,Harwell International CC - 1st XI won the toss and elected to field,49117,45,,1,A,Abandoned,,false,false,false,false,,,,Cherwell League,NA,NA
+7190472,New,Yes,31/08/2025,,,,Friendly,Limited Overs,Standard,no,31/08/2025,13:30,Memorial Playing Field,59174,Friendly XI,330767,Ascott-under-Wychwood CC,765,Friendly XI,15138,Harwell International CC,3220,,,,,,,,,,,,,15138,Harwell International CC - Friendly XI won the toss and elected to bat,15138,,,1,W,Ascott-under-Wychwood CC - Friendly XI - Won,330767,false,false,false,false,"<b>Harwell International CC Friendly XI Innings</b><br/>
+10.1 Harwell International CC Friendly XI: 50 runs in 10.1 overs, 41 minutes, 7 extras<br/>22.2 Harwell International CC Friendly XI: 100 runs in 22.2 overs, 88 minutes, 22 extras<br/>30.5 7th Wicket: 50 runs in 103 balls, 54 minutes, Davindra Sanghera 34 (60), Ronnie Strangward 1 (43), 15 extras
+<br/>
+<br/>
+<b>Ascott under Wychwood CC Friendly XI Innings</b><br/>
+9.1 Ascott under Wychwood CC Friendly XI: 50 runs in 9.1 overs, 36 minutes, 2 extras<br/>13.1 2nd Wicket: 50 runs in 42 balls, 27 minutes, Stewart Moss 16 (17), Will Harvey 30 (25), 4 extras<br/>14.5 Ascott under Wychwood CC Friendly XI: 100 runs in 14.5 overs, 61 minutes, 6 extras
+<br/>
+",,,NA,NA,NA
