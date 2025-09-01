@@ -51,11 +51,36 @@ observeEvent(c(input$team_scope_bowling,
                  }              
                  
 
+#get number of 5 wicket hauls
+bowling_summary_5fer <- bowling_summary |> 
+  filter(league_name %in% input_team_scope,
+         season %in% input_year_scope) |> 
+  group_by(bowler_name) |>
+  filter(wickets >= 5) |>
+  add_tally() |> 
+  ungroup() |> 
+  select(bowler_name,
+         five_fors = n) |> 
+  distinct()
+                 
+bowling_summary_best <- bowling_summary |> 
+  filter(league_name %in% input_team_scope,
+         season %in% input_year_scope) |> 
+  group_by(bowler_name) |>
+  arrange(bowler_name,
+          desc(wickets),
+          runs) |> 
+  slice_head() |> 
+  mutate(best_bowling = paste0(wickets,"-",runs)) |> 
+  select(bowler_name,
+         best_bowling)
+
+
 
 # Produce summary table of bowling stats
 bowling_summary_default <- bowling_summary |>
   filter(league_name %in% input_team_scope,
-         season %in% input_year_scope) |> 
+       season %in% input_year_scope) |> 
     group_by(bowler_name) |>
     summarise(
         ball_count = sum(ball_count, na.rm = TRUE),
@@ -74,6 +99,10 @@ bowling_summary_default <- bowling_summary |>
         strike_rate = round(ball_count / wickets,2),
         economy = round(runs / (complete_overs + (residual_balls / 6)),2),
         percent_runs_extras = round(((no_balls + wides) / runs)*100,2)) |>
+  left_join(bowling_summary_5fer, by = c("bowler_name")) |> 
+  left_join(bowling_summary_best, by = c("bowler_name")) |> 
+  mutate(five_fors = case_when(is.na(five_fors) ~ 0,
+                               TRUE ~ five_fors)) |> 
   select(
     "Bowler" = bowler_name,
     "Overs" = overs,
@@ -83,6 +112,8 @@ bowling_summary_default <- bowling_summary |>
     "Average" = average,
     "Strike Rate" = strike_rate,
     "Economy" = economy,
+    "Five-fors" = five_fors,
+    "Best Bowling" = best_bowling,
     "Wides" = wides,
     "No Balls" = no_balls,
     "%Runs from Extras" = percent_runs_extras
