@@ -1,45 +1,45 @@
-﻿match_fixture,match_date,league_name,season,,,
-Harwell International CC 1st XI v Garsington CC 2nd XI,04/05/2024,Friendly,2024,,,
-,05/05/2024,Friendly,2024,,,
-,08/05/2024,Downs League,2024,,,
-Harwell International CC 1st XI v Letcombe CC 1st XI,11/05/2024,1st XI,2024,,,
-Harwell International CC Friendly XI v Holton & Wheatley CC Friendly XI,12/05/2024,Friendly,2024,,,
-Steventon CC Midweek XI v Harwell International CC Midweek XI,15/05/2024,Downs League,2024,,,
-,18/05/2024,1st XI,2024,,,
-Harwell International CC Friendly XI v Wantage & Grove CC Friendly XI,19/05/2024,Friendly,2024,,,
-Steventon CC 1st XI v Harwell International CC 1st XI,25/05/2024,1st XI,2024,,,
-,26/05/2024,Friendly,2024,,,
-Harwell International CC Midweek XI v Didcot CC Downs 2nd XI,29/05/2024,Downs League,2024,,,
-Harwell International CC 1st XI v Abingdon Vale CC 3rd XI,01/06/2024,1st XI,2024,,,
-Harwell International CC Midweek XI v Evotec CC 1st XI,05/06/2024,Downs League,2024,,,
-Dorchester-on-Thames CC 2nd XI v Harwell International CC 1st XI,08/06/2024,1st XI,2024,,,
-Harwell International CC Friendly XI v Ewelme & Benson CC Friendly XI,09/06/2024,Friendly,2024,,,
-Metal Box CC Midweek XI v Harwell International CC Midweek XI,12/06/2024,Downs League,2024,,,
-Harwell International CC 1st XI v Challow & Childrey CC 3rd XI,15/06/2024,1st XI,2024,,,
-"Harwell International CC Friendly XI v Appleton CC, Oxon Friendly XI",16/06/2024,Friendly,2024,,,
-Harwell International CC Midweek XI v Steventon CC Midweek XI,19/06/2024,Downs League,2024,,,
-East & West Hendred CC 2nd XI v Harwell International CC 1st XI,22/06/2024,1st XI,2024,,,
-Harwell International CC Midweek XI v Wantage & Grove CC Twenty20,26/06/2024,Downs League,2024,,,
-Harwell International CC 1st XI v Wolvercote CC 3rd XI,29/06/2024,1st XI,2024,,,
-Didcot CC Downs 2nd XI v Harwell International CC Midweek XI,03/07/2024,Downs League,2024,,,
-"Astons CC, Oxon Friendly XI v Harwell International CC Friendly XI",07/07/2024,Friendly,2024,,,
-,10/07/2024,Downs League,2024,,,
-Letcombe CC 1st XI v Harwell International CC 1st XI,13/07/2024,1st XI,2024,,,
-Harwell International CC Friendly XI v Oxenford CC Friendly XI,14/07/2024,Friendly,2024,,,
-Harwell International CC Midweek XI v Old Merchant Taylors CC Thames Tour XI,16/07/2024,Friendly,2024,,,
-Harwell International CC 1st XI v Cumnor CC 3rd XI,20/07/2024,1st XI,2024,,,
-Nettlebed CC Sunday 1st XI v Harwell International CC Friendly XI,21/07/2024,Friendly,2024,,,
-Wantage & Grove CC Twenty20 v Harwell International CC Midweek XI,24/07/2024,Downs League,2024,,,
-Harwell International CC 1st XI v Steventon CC 1st XI,27/07/2024,1st XI,2024,,,
-Harwell International CC Friendly XI v Ascott under Wychwood CC Friendly XI,28/07/2024,Friendly,2024,,,
-Abingdon Vale CC 3rd XI v Harwell International CC 1st XI,03/08/2024,1st XI,2024,,,
-Harwell International CC 1st XI v Dorchester-on-Thames CC 2nd XI,10/08/2024,1st XI,2024,,,
-Wantage & Grove CC Friendly XI v Harwell International CC Friendly XI,11/08/2024,Friendly,2024,,,
-Challow & Childrey CC 3rd XI v Harwell International CC 1st XI,17/08/2024,1st XI,2024,,,
-Aldworth CC Friendly XI v Harwell International CC Friendly XI,18/08/2024,Friendly,2024,,,
-Harwell International CC 1st XI v East & West Hendred CC 2nd XI,24/08/2024,1st XI,2024,,,
-Oxfordshire County Council Staff CC Friendly XI v Harwell International CC Friendly XI,25/08/2024,Friendly,2024,,,
-Wolvercote CC 3rd XI v Harwell International CC 1st XI,31/08/2024,1st XI,2024,,,
-Harwell International CC Friendly XI v Mandarins CC Friendly XI,01/09/2024,Friendly,2024,,,
-Harwell International CC 1st XI v Didcot CC 4th XI,07/09/2024,1st XI,2024,,,
-Ewelme & Benson CC Friendly XI v Harwell International CC Friendly XI,08/09/2024,Friendly,2024,,,
+﻿match_fixture,match_date,league_name,season
+Harwell International CC 1st XI v Garsington CC 2nd XI,04/05/2024,Friendly XI,2024
+,05/05/2024,Friendly XI,2024
+,08/05/2024,Midweek XI,2024
+Harwell International CC 1st XI v Letcombe CC 1st XI,11/05/2024,1st XI,2024
+Harwell International CC Friendly XI v Holton & Wheatley CC Friendly XI,12/05/2024,Friendly XI,2024
+Steventon CC Midweek XI v Harwell International CC Midweek XI,15/05/2024,Midweek XI,2024
+,18/05/2024,1st XI,2024
+Harwell International CC Friendly XI v Wantage & Grove CC Friendly XI,19/05/2024,Friendly XI,2024
+Steventon CC 1st XI v Harwell International CC 1st XI,25/05/2024,1st XI,2024
+,26/05/2024,Friendly XI,2024
+Harwell International CC Midweek XI v Didcot CC Downs 2nd XI,29/05/2024,Midweek XI,2024
+Harwell International CC 1st XI v Abingdon Vale CC 3rd XI,01/06/2024,1st XI,2024
+Harwell International CC Midweek XI v Evotec CC 1st XI,05/06/2024,Midweek XI,2024
+Dorchester-on-Thames CC 2nd XI v Harwell International CC 1st XI,08/06/2024,1st XI,2024
+Harwell International CC Friendly XI v Ewelme & Benson CC Friendly XI,09/06/2024,Friendly XI,2024
+Metal Box CC Midweek XI v Harwell International CC Midweek XI,12/06/2024,Midweek XI,2024
+Harwell International CC 1st XI v Challow & Childrey CC 3rd XI,15/06/2024,1st XI,2024
+"Harwell International CC Friendly XI v Appleton CC, Oxon Friendly XI",16/06/2024,Friendly XI,2024
+Harwell International CC Midweek XI v Steventon CC Midweek XI,19/06/2024,Midweek XI,2024
+East & West Hendred CC 2nd XI v Harwell International CC 1st XI,22/06/2024,1st XI,2024
+Harwell International CC Midweek XI v Wantage & Grove CC Twenty20,26/06/2024,Midweek XI,2024
+Harwell International CC 1st XI v Wolvercote CC 3rd XI,29/06/2024,1st XI,2024
+Didcot CC Downs 2nd XI v Harwell International CC Midweek XI,03/07/2024,Midweek XI,2024
+"Astons CC, Oxon Friendly XI v Harwell International CC Friendly XI",07/07/2024,Friendly XI,2024
+,10/07/2024,Midweek XI,2024
+Letcombe CC 1st XI v Harwell International CC 1st XI,13/07/2024,1st XI,2024
+Harwell International CC Friendly XI v Oxenford CC Friendly XI,14/07/2024,Friendly XI,2024
+Harwell International CC Midweek XI v Old Merchant Taylors CC Thames Tour XI,16/07/2024,Friendly XI,2024
+Harwell International CC 1st XI v Cumnor CC 3rd XI,20/07/2024,1st XI,2024
+Nettlebed CC Sunday 1st XI v Harwell International CC Friendly XI,21/07/2024,Friendly XI,2024
+Wantage & Grove CC Twenty20 v Harwell International CC Midweek XI,24/07/2024,Midweek XI,2024
+Harwell International CC 1st XI v Steventon CC 1st XI,27/07/2024,1st XI,2024
+Harwell International CC Friendly XI v Ascott under Wychwood CC Friendly XI,28/07/2024,Friendly XI,2024
+Abingdon Vale CC 3rd XI v Harwell International CC 1st XI,03/08/2024,1st XI,2024
+Harwell International CC 1st XI v Dorchester-on-Thames CC 2nd XI,10/08/2024,1st XI,2024
+Wantage & Grove CC Friendly XI v Harwell International CC Friendly XI,11/08/2024,Friendly XI,2024
+Challow & Childrey CC 3rd XI v Harwell International CC 1st XI,17/08/2024,1st XI,2024
+Aldworth CC Friendly XI v Harwell International CC Friendly XI,18/08/2024,Friendly XI,2024
+Harwell International CC 1st XI v East & West Hendred CC 2nd XI,24/08/2024,1st XI,2024
+Oxfordshire County Council Staff CC Friendly XI v Harwell International CC Friendly XI,25/08/2024,Friendly XI,2024
+Wolvercote CC 3rd XI v Harwell International CC 1st XI,31/08/2024,1st XI,2024
+Harwell International CC Friendly XI v Mandarins CC Friendly XI,01/09/2024,Friendly XI,2024
+Harwell International CC 1st XI v Didcot CC 4th XI,07/09/2024,1st XI,2024
+Ewelme & Benson CC Friendly XI v Harwell International CC Friendly XI,08/09/2024,Friendly XI,2024

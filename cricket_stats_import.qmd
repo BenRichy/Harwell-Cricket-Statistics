@@ -13,7 +13,7 @@ library(DBI)
 ```
 
 ```{r Globals}
-season <- c(2022:2025)
+season <- c(2022:2026)
 team_name <- "Harwell"
 club_name <- "Harwell International CC"
 team_ids <- c(284082,15138,15137, 378560)
@@ -31,6 +31,57 @@ FP_ball_by_ball_annual <- "app/data/ball-data-dump-year/"
 FP_match_type_annual <- "app/data/match-date-to-league-year/"
 
 
+play_cricket_get_json <- function(url, max_attempts = 3) {
+  if (requireNamespace("chromote", quietly = TRUE)) {
+    browser_text <- NULL
+    browser_path <- chromote::chrome_versions_add("119.0.6034.3", "chrome")
+
+    for (attempt in seq_len(max_attempts)) {
+      browser_text <- tryCatch({
+        suppressWarnings(
+          chromote::with_chromote_chrome(browser_path, {
+            browser_session <- get("ChromoteSession", asNamespace("chromote"))[['new']]()
+            browser_session[['default_timeout']] <- 30
+
+            browser_session[['go_to']](url)
+            browser_session[['Runtime']][['evaluate']]("document.body.innerText")[['result']][['value']]
+          })
+        )
+      }, error = function(e) {
+        NULL
+      })
+
+      if (!is.null(browser_text)) break
+      Sys.sleep(2)
+    }
+
+    if (!is.null(browser_text)) {
+      return(fromJSON(browser_text))
+    }
+  }
+
+  response <- GET(url, user_agent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"))
+  response_text <- content(response, as = "text", encoding = "UTF-8")
+
+  if (status_code(response) >= 300) {
+    response_summary <- trimws(gsub("<[^>]+>", " ", substr(response_text, 1, 250)))
+    stop(
+      sprintf(
+        "Play-Cricket API request failed with HTTP %s. %s",
+        status_code(response),
+        response_summary
+      )
+    )
+  }
+
+  if (!grepl("json", http_type(response), ignore.case = TRUE)) {
+    stop("Play-Cricket API returned a non-JSON response. Check the URL, token, and site access.")
+  }
+
+  fromJSON(response_text)
+}
+
+
 
 ```
 
@@ -46,14 +97,13 @@ for(year in 1:length(season)){
 
 # get the list of matches for the defined season
 get_matches_query <- sprintf(
-    "http://play-cricket.com/api/v2/result_summary.json?&site_id=%s&season=%s&api_token=%s",
+  "https://play-cricket.com/api/v2/result_summary.json?&site_id=%s&season=%s&api_token=%s",
     club_id,
     season[year],
     api_key
 )
 
-results_return <- GET(get_matches_query)
-results_data_year <- fromJSON(rawToChar(results_return$content))$result_summary
+results_data_year <- play_cricket_get_json(get_matches_query)$result_summary
 
 #filter data so that pre-2024 it's only the Saturday team
 if(season[year] < 2024) {
@@ -71,14 +121,13 @@ results_data <- results_data |>
 
 #get match summaries
 get_matches_summary_query <- sprintf(
-    "http://play-cricket.com/api/v2/matches.json?&site_id=%s&season=%s&api_token=%s",
+  "https://play-cricket.com/api/v2/matches.json?&site_id=%s&season=%s&api_token=%s",
     club_id,
     season[year],
     api_key
 )
 
-matches_return <- GET(get_matches_summary_query)
-matches_data <- fromJSON(rawToChar(matches_return$content))$matches |> 
+matches_data <- play_cricket_get_json(get_matches_summary_query)$matches |> 
   select(match_id = id,
          ground_latitude,
          ground_longitude)
@@ -102,10 +151,22 @@ innings_info <- tibble(match_id = as.integer(),
                        bowling_byes_conceded = as.integer(),
                        bowling_leg_byes_conceded = as.integer())
 
+#start j as 0, use this to deal with rows being skipped
+j <- 0
+
 for (i in 1:nrow(results_data)) {
   
+  
+  # if the result was cancelled then go to the next match
+    if (results_data["result"][[1]][[i]] %in% c("C")) {
+        next
+    }
+  
+  #if not Cancelled, then increment j
+  j <- j + 1
+  
   #set match id to the correct match
-  innings_info[i,"match_id"] <- results_data[i,"id"]
+  innings_info[j,"match_id"] <- results_data[i,"id"]
   
   #get the innings data for each match
   innings_data_frame <- results_data$innings[[i]]
@@ -116,32 +177,32 @@ for (i in 1:nrow(results_data)) {
   
   #assign values for each of the variables
   #batting variables
-  innings_info[i,"batting_runs_scored"] <- as.integer(innings_data_frame_team[1,"runs"])
+  innings_info[j,"batting_runs_scored"] <- as.integer(innings_data_frame_team[1,"runs"])
   #get the number of overs and balls as integers
   batting_overs_faced <- as.numeric(innings_data_frame_team[1,"overs"])
   batting_overs_faced_calc_overs <- floor(batting_overs_faced)
   batting_overs_faced_calc_balls <- round((batting_overs_faced - batting_overs_faced_calc_overs)*10)
   
-  innings_info[i,"batting_overs_faced_overs"] <- batting_overs_faced_calc_overs
-  innings_info[i,"batting_overs_faced_balls"] <- batting_overs_faced_calc_balls
+  innings_info[j,"batting_overs_faced_overs"] <- batting_overs_faced_calc_overs
+  innings_info[j,"batting_overs_faced_balls"] <- batting_overs_faced_calc_balls
   
-  innings_info[i,"batting_wickets_lost"] <- as.integer(innings_data_frame_team[1,"wickets"])
+  innings_info[j,"batting_wickets_lost"] <- as.integer(innings_data_frame_team[1,"wickets"])
   
   #bowling variables
-  innings_info[i,"bowling_runs_conceded"] <- as.integer(innings_data_frame_oppo[1,"runs"])
+  innings_info[j,"bowling_runs_conceded"] <- as.integer(innings_data_frame_oppo[1,"runs"])
   #get the number of overs and balls as integers
   bowling_overs_faced <- as.numeric(innings_data_frame_oppo[1,"overs"])
   bowling_overs_faced_calc_overs <- floor(bowling_overs_faced)
   bowling_overs_faced_calc_balls <- round((bowling_overs_faced - bowling_overs_faced_calc_overs)*10)
   
-  innings_info[i,"bowling_overs_bowled_overs"] <- bowling_overs_faced_calc_overs
-  innings_info[i,"bowling_overs_bowled_balls"] <- bowling_overs_faced_calc_balls
+  innings_info[j,"bowling_overs_bowled_overs"] <- bowling_overs_faced_calc_overs
+  innings_info[j,"bowling_overs_bowled_balls"] <- bowling_overs_faced_calc_balls
   
-  innings_info[i,"bowling_wickets_taken"] <- as.integer(innings_data_frame_oppo[1,"wickets"])
-  innings_info[i,"bowling_wides_conceded"] <- as.integer(innings_data_frame_oppo[1,"extra_wides"])
-  innings_info[i,"bowling_no_balls_conceded"] <- as.integer(innings_data_frame_oppo[1,"extra_no_balls"])
-  innings_info[i,"bowling_byes_conceded"] <- as.integer(innings_data_frame_oppo[1,"extra_byes"])
-  innings_info[i,"bowling_leg_byes_conceded"] <- as.integer(innings_data_frame_oppo[1,"extra_leg_byes"])
+  innings_info[j,"bowling_wickets_taken"] <- as.integer(innings_data_frame_oppo[1,"wickets"])
+  innings_info[j,"bowling_wides_conceded"] <- as.integer(innings_data_frame_oppo[1,"extra_wides"])
+  innings_info[j,"bowling_no_balls_conceded"] <- as.integer(innings_data_frame_oppo[1,"extra_no_balls"])
+  innings_info[j,"bowling_byes_conceded"] <- as.integer(innings_data_frame_oppo[1,"extra_byes"])
+  innings_info[j,"bowling_leg_byes_conceded"] <- as.integer(innings_data_frame_oppo[1,"extra_leg_byes"])
   
 }
 
@@ -173,15 +234,14 @@ for (i in 1:nrow(results_data)) {
 
     # set the gettter
     get_matches_detail_query <- sprintf(
-        "http://play-cricket.com/api/v2/match_detail.json?&match_id=%s&api_token=%s",
+      "https://play-cricket.com/api/v2/match_detail.json?&match_id=%s&api_token=%s",
         match_id,
         api_key
     )
 
     # get the detailed match data
-    results_detail_return <- GET(get_matches_detail_query)
     # pull out the detail
-    results_detail_data <- fromJSON(rawToChar(results_detail_return$content))$match_details
+    results_detail_data <- play_cricket_get_json(get_matches_detail_query)$match_details
 
     # if the result was cancelled then go to the next match
     if (results_detail_data["result"][[1]] %in% c("C")) {
@@ -464,7 +524,8 @@ complete_ball_data <- data.frame()
 
 
 for (file_name in 1:length(ball_data_files)) {
-  ball_data_year <- read_csv(paste0(FP_ball_by_ball_annual,ball_data_files[file_name]))
+  ball_data_year <- read_csv(paste0(FP_ball_by_ball_annual,ball_data_files[file_name])) |> 
+    mutate(`Start Time` = paste0(`Start Time`))
   
   #combine all ball by ball data
   complete_ball_data <- complete_ball_data |> 
